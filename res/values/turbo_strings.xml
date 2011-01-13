@@ -27,6 +27,9 @@
     <!-- Developer options -->
     <string name="show_dev_already_enabled">No need, Development settings are enabled by default.</string>
 
+    <!-- Hostname setting -->
+    <string name="device_hostname">Device hostname</string>
+
     <!-- Turbo Extra info -->
     <string name="turbo_extrainfo">Extra information</string>
     <string name="turbo_extrainfo_summary">Display extra info for the CPU, display, etc.</string>
