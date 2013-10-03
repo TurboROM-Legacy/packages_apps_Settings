@@ -1167,4 +1167,11 @@
     <string name="text_title">Text</string>
     <string name="reset_lock_screen_weather">OK</string>
     <string name="reset_values_message">Reset values?</string>
+
+    <!-- LCD density -->
+    <string name="lcd_density">LCD density</string>
+    <string name="dialog_title_lcd_density">LCD density</string>
+    <string name="lcd_density_value_format">%d DPI</string>
+    <string name="lcd_density_default_value_format">%d DPI (default)</string>
+    <string name="restarting_ui">Restarting UI\u2026</string>
 </resources>
