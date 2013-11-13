@@ -30,6 +30,12 @@
     <!-- Hostname setting -->
     <string name="device_hostname">Device hostname</string>
 
+    <!-- ADB debugging notifications -->
+    <string name="enable_adb_custom">Android debugging</string>
+    <string name="enable_adb_summary_custom">Enable the Android Debug Bridge (adb) interface</string>
+    <string name="adb_notify">ADB notification</string>
+    <string name="adb_notify_summary">Display a notification when android debugging is enabled</string>
+
     <!-- Turbo Extra info -->
     <string name="turbo_extrainfo">Extra information</string>
     <string name="turbo_extrainfo_summary">Display extra info for the CPU, display, etc.</string>
