@@ -39,6 +39,11 @@
     <PreferenceCategory
         android:title="@string/notification_panel_title">
 
+        <com.android.settings.preference.SystemSettingSwitchPreference
+            android:key="force_expanded_notifications"
+            android:title="@string/force_expanded_notifications_title"
+            android:summary="@string/force_expanded_notifications_summary" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>
