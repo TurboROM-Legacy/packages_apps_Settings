@@ -19,9 +19,24 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/button_settings" >
 
-	<PreferenceScreen
-	    android:key="hardwarekeys_settings"
-            android:fragment="com.android.settings.turbo.HardwareKeysSettings"
-            android:title="@string/hw_keys_title" />
+    <PreferenceCategory
+        android:title="@string/general_options_title" />
+
+    <PreferenceScreen
+        android:key="hardwarekeys_settings"
+        android:fragment="com.android.settings.turbo.HardwareKeysSettings"
+        android:title="@string/hw_keys_title" />
+
+    <PreferenceCategory
+        android:title="@string/global_menu_title" />
+
+    <ListPreference
+        android:key="advanced_reboot"
+        android:title="@string/advanced_reboot_title"
+        android:dialogTitle="@string/advanced_reboot_dialog_title"
+        android:entries="@array/advanced_reboot_entries"
+        android:entryValues="@array/advanced_reboot_values"
+        android:summary="%s"
+        android:persistent="false" />
 
 </PreferenceScreen>

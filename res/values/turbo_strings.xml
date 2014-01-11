@@ -132,6 +132,7 @@
     <!-- Button strings -->
     <string name="button_settings">Buttons</string>
     <string name="hw_keys_title">Hardware keys</string>
+    <string name="global_menu_title">Global menu</string>
 
     <!-- Hardware key strings -->
     <string name="keys_action_double">Double tap</string>
@@ -840,4 +841,11 @@
     <string name="heads_up_timeout_6sec">6 seconds</string>
     <string name="heads_up_timeout_8sec">8 seconds</string>
     <string name="heads_up_timeout_10sec">10 seconds</string>
+
+    <!-- Advanced reboot options -->
+    <string name="advanced_reboot_title">Advanced reboot</string>
+    <string name="advanced_reboot_dialog_title">Advanced reboot menu</string>
+    <string name="advanced_reboot_disabled">Disable</string>
+    <string name="advanced_reboot_hide_on_keyguard">Hide on lock screen</string>
+    <string name="advanced_reboot_show_always">Show always</string>
 </resources>
