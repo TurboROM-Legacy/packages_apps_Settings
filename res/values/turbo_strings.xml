@@ -774,4 +774,7 @@
     <string name="multitasking_category">Multi-Tasking</string>
     <string name="system_category">System</string>
 
+    <!-- Customization -->
+    <string name="header_category_custom">Customization</string>
+
 </resources>
