@@ -36,4 +36,7 @@
     <!-- Slim's DSLV -->
     <color name="dslv_icon_color">#ff009688</color>
     <color name="dslv_float_cackground_color">#ffe1e1e0</color>
+
+    <!-- Added with blacklist -->
+    <color name="floating_action_button_touch_tint">#80ffffff</color>
 </resources>
