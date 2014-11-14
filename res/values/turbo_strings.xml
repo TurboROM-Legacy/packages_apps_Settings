@@ -457,6 +457,14 @@
     <string name="su_indicator_summary_on">Superuser indicator is visible when a session is active</string>
     <string name="su_indicator_summary_off">Toggle to show superuser indicator when a session is active</string>
 
+    <!-- Additional storage strings -->
+    <!-- SD card & phone storage settings title. Displayed as a title when showing the total usage of Android system. Below it will be a number like "123.4 MB" indicating used storage. [CHAR LIMIT=50] -->
+    <string name="memory_android_system_usage">Android System</string>
+    <!-- Item title describing storage used by Android system [CHAR LIMIT=48] -->
+    <string name="storage_detail_android_system">Android System</string>
+    <!-- Toast message shown when storage item of Android system is clicked [CHAR LIMIT=NONE]-->
+    <string name="storage_detail_android_system_version">Android System <xliff:g id="version">%s</xliff:g></string>
+
     <!-- Advanced storage settings -->
     <string name="storage_advanced_titlebar">Advanced storage</string>
     <string name="storage_menu_advanced">Advanced</string>
