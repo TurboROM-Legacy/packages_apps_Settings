@@ -315,6 +315,14 @@
                 android:icon="@drawable/ic_settings_root"
                 />
 
+        <!-- Privacy Guard -->
+        <dashboard-tile
+                android:id="@+id/privacy_guard"
+                android:title="@string/privacy_guard_title"
+                android:fragment="com.android.settings.privacyguard.PrivacyGuardManager"
+                android:icon="@drawable/ic_privacy_guard_alternate"
+                />
+
  	<!-- Kernel Auditor -->
         <dashboard-tile
             android:id="@+id/kernel_adiutor"
