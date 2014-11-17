@@ -89,13 +89,6 @@
                 android:summary="@string/tap_to_wake_summary"
                 android:persistent="false" />
 
-        <com.android.settings.FontDialogPreference
-                android:key="font_size"
-                android:title="@string/title_font_size"
-                settings:keywords="@string/keywords_display_font_size"
-                android:summary="@string/summary_font_size"
-                android:dialogTitle="@string/dialog_title_font_size" />
-
         <PreferenceScreen
                 android:key="display_rotation"
                 android:fragment="com.android.settings.turbo.DisplayRotation"
@@ -106,6 +99,23 @@
                 android:title="@string/wifi_display_settings_title"
                 settings:keywords="@string/keywords_display_cast_screen"
                 android:fragment="com.android.settings.wfd.WifiDisplaySettings" />
+
+	<PreferenceCategory
+        	android:title="@string/display_category">
+
+        	<PreferenceScreen
+                    android:key="expanded_desktop"
+                    android:title="@string/power_menu_expanded_desktop"
+                    android:fragment="com.android.settings.applications.ExpandedDesktopPreferenceFragment" />
+
+        	<com.android.settings.FontDialogPreference
+                    android:key="font_size"
+                    android:title="@string/title_font_size"
+                    settings:keywords="@string/keywords_display_font_size"
+                    android:summary="@string/summary_font_size"
+                    android:dialogTitle="@string/dialog_title_font_size" />
+
+	</PreferenceCategory>
 
 	<PreferenceCategory
 		android:key="category_wakeup_options"
