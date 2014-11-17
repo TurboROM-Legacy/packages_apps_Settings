@@ -108,6 +108,16 @@
                 android:fragment="com.android.settings.wfd.WifiDisplaySettings" />
 
         <PreferenceCategory
+            android:title="@string/display_category_interface_options_title" >
+
+            <PreferenceScreen
+                android:key="expanded_desktop"
+                android:title="@string/expanded_desktop_title"
+                android:fragment="com.android.settings.applications.ExpandedDesktopPreferenceFragment" />
+
+        </PreferenceCategory>
+
+        <PreferenceCategory
             android:key="category_wake_up_options"
             android:title="@string/display_category_wake_up_options_title" >
 

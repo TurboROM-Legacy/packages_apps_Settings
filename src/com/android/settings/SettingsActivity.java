@@ -71,6 +71,7 @@ import com.android.settings.accessibility.CaptionPropertiesFragment;
 import com.android.settings.accounts.AccountSettings;
 import com.android.settings.accounts.AccountSyncSettings;
 import com.android.settings.applications.DrawOverlayDetails;
+import com.android.settings.applications.ExpandedDesktopPreferenceFragment;
 import com.android.settings.applications.InstalledAppDetails;
 import com.android.settings.applications.ManageApplications;
 import com.android.settings.applications.ManageAssist;
@@ -361,6 +362,7 @@ public class SettingsActivity extends Activity
             DrawOverlayDetails.class.getName(),
             WriteSettingsDetails.class.getName(),
 	    MainSettings.class.getName(),
+            ExpandedDesktopPreferenceFragment.class.getName(),
 	    com.android.settings.privacyguard.PrivacyGuardManager.class.getName()
     };
 

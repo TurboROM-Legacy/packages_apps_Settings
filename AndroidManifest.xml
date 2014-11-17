@@ -898,6 +898,32 @@
                 android:value="true" />
         </activity>
 
+        <!-- Expanded desktop settings activity. -->
+        <activity android:name="Settings$ExpandedDesktopSettingsActivity"
+                android:label="@string/expanded_desktop_title"
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.applications.ExpandedDesktopPreferenceFragment" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/display_settings" />
+        </activity>
+
+        <!-- Keep compatibility with old shortcuts. -->
+        <activity-alias android:name=".applications.ExpandedDesktopPreferenceFragment"
+                  android:label="@string/expanded_desktop_title"
+                  android:clearTaskOnLaunch="true"
+                  android:exported="true"
+                  android:targetActivity="Settings$ExpandedDesktopSettingsActivity">
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.applications.ExpandedDesktopPreferenceFragment" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/display_settings" />
+        </activity-alias>
+
         <activity android:name="Settings$ManageApplicationsActivity"
                 android:label="@string/applications_settings"
                 android:taskAffinity="">
