@@ -16,30 +16,103 @@
 
 package com.android.settings.turbo;
 
+import android.content.ContentResolver;
+import android.content.Context;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.preference.ListPreference;
 import android.preference.Preference;
-import android.preference.PreferenceScreen;
+import android.preference.Preference.OnPreferenceChangeListener;
+import android.provider.SearchIndexableResource;
+import android.provider.Settings;
+import android.telephony.TelephonyManager;
+import android.text.format.DateFormat;
+import android.view.View;
 
 import com.android.internal.logging.MetricsLogger;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.Utils;
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settings.search.Indexable;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
-public class StatusBarSettings extends SettingsPreferenceFragment {
+public class StatusBarSettings extends SettingsPreferenceFragment
+        implements OnPreferenceChangeListener, Indexable {
+
+    private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
+    private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
+
+    private static final int STATUS_BAR_BATTERY_STYLE_HIDDEN = 4;
+    private static final int STATUS_BAR_BATTERY_STYLE_TEXT = 6;
+
+    private ListPreference mStatusBarBattery;
+    private ListPreference mStatusBarBatteryShowPercent;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.status_bar_settings);
+
+        ContentResolver resolver = getActivity().getContentResolver();
+
+        mStatusBarBattery = (ListPreference) findPreference(STATUS_BAR_BATTERY_STYLE);
+        mStatusBarBatteryShowPercent =
+                (ListPreference) findPreference(STATUS_BAR_SHOW_BATTERY_PERCENT);
+
+        int batteryStyle = Settings.System.getInt(resolver,
+                Settings.System.STATUS_BAR_BATTERY_STYLE, 0);
+        mStatusBarBattery.setValue(String.valueOf(batteryStyle));
+        mStatusBarBattery.setSummary(mStatusBarBattery.getEntry());
+        mStatusBarBattery.setOnPreferenceChangeListener(this);
+
+        int batteryShowPercent = Settings.System.getInt(resolver,
+                Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, 0);
+        mStatusBarBatteryShowPercent.setValue(String.valueOf(batteryShowPercent));
+        mStatusBarBatteryShowPercent.setSummary(mStatusBarBatteryShowPercent.getEntry());
+        enableStatusBarBatteryDependents(batteryStyle);
+        mStatusBarBatteryShowPercent.setOnPreferenceChangeListener(this);
     }
     
     @Override
     protected int getMetricsCategory()
     {
-	return MetricsLogger.APPLICATION;
+	return MetricsLogger.DONT_TRACK_ME_BRO;
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mStatusBarBattery) {
+            int batteryStyle = Integer.valueOf((String) newValue);
+            int index = mStatusBarBattery.findIndexOfValue((String) newValue);
+            Settings.System.putInt(
+                    resolver, Settings.System.STATUS_BAR_BATTERY_STYLE, batteryStyle);
+            mStatusBarBattery.setSummary(mStatusBarBattery.getEntries()[index]);
+            enableStatusBarBatteryDependents(batteryStyle);
+            return true;
+        } else if (preference == mStatusBarBatteryShowPercent) {
+            int batteryShowPercent = Integer.valueOf((String) newValue);
+            int index = mStatusBarBatteryShowPercent.findIndexOfValue((String) newValue);
+            Settings.System.putInt(
+                    resolver, Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, batteryShowPercent);
+            mStatusBarBatteryShowPercent.setSummary(
+                    mStatusBarBatteryShowPercent.getEntries()[index]);
+            return true;
+        }
+        return false;
+    }
+
+    private void enableStatusBarBatteryDependents(int batteryIconStyle) {
+        if (batteryIconStyle == STATUS_BAR_BATTERY_STYLE_HIDDEN ||
+                batteryIconStyle == STATUS_BAR_BATTERY_STYLE_TEXT) {
+            mStatusBarBatteryShowPercent.setEnabled(false);
+        } else {
+            mStatusBarBatteryShowPercent.setEnabled(true);
+        }
     }
 }
