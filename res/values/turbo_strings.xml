@@ -468,4 +468,8 @@
     <string name="selinux_enforcing_title">Enforcing</string>
     <string name="selinux_permissive_toast_title">SELinux set to permissive</string>
 
+    <!-- Volume rocker music seek options -->
+    <string name="volbtn_music_controls_title">Volume rocker music controls</string>
+    <string name="volbtn_music_controls_summary">When screen is off, long-pressing the volume rockers will seek music tracks</string>
+
 </resources>
