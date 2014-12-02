@@ -29,11 +29,17 @@ import android.preference.PreferenceScreen;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.provider.Settings;
 
+import com.android.internal.logging.MetricsLogger;
+import com.android.internal.widget.LockPatternUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.internal.logging.MetricsLogger;
 import com.android.settings.turbo.SeekBarPreference;
 import com.android.settings.Utils;
+
+import android.text.TextUtils;
+import android.view.View;
+
+import java.util.Locale;
 
 public class LockScreen extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -43,11 +49,15 @@ public class LockScreen extends SettingsPreferenceFragment implements
     private static final String LOCKSCREEN_ALPHA = "lockscreen_alpha";
     private static final String LOCKSCREEN_SECURITY_ALPHA = "lockscreen_security_alpha";
     private static final String KEY_BLUR_RADIUS = "lockscreen_blur_radius";
+    private static final String PREF_BLOCK_ON_SECURE_KEYGUARD = "block_on_secure_keyguard";
 
     private SwitchPreference mKeyguardTorch;
     private SeekBarPreference mLsAlpha;
     private SeekBarPreference mLsSecurityAlpha;
     private SeekBarPreference mBlurRadius;
+    private SwitchPreference mBlockOnSecureKeyguard;
+
+    private static final int MY_USER_ID = UserHandle.myUserId();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -57,6 +67,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
         PreferenceScreen prefSet = getPreferenceScreen();
 
         ContentResolver resolver = getActivity().getContentResolver();
+	final LockPatternUtils lockPatternUtils = new LockPatternUtils(getActivity());
 
         mKeyguardTorch = (SwitchPreference) findPreference(KEYGUARD_TOGGLE_TORCH);
         mKeyguardTorch.setOnPreferenceChangeListener(this);
@@ -75,6 +86,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
                     Settings.System.LOCKSCREEN_BLUR_RADIUS, 14);
             mBlurRadius.setValue(blurRadius);
             mBlurRadius.setOnPreferenceChangeListener(this);
+    	}
 
         mLsAlpha = (SeekBarPreference) findPreference(LOCKSCREEN_ALPHA);
         float alpha = Settings.System.getFloat(resolver,
@@ -87,8 +99,17 @@ public class LockScreen extends SettingsPreferenceFragment implements
                 Settings.System.LOCKSCREEN_SECURITY_ALPHA, 0.75f);
         mLsSecurityAlpha.setValue((int)(100 * alpha2));
         mLsSecurityAlpha.setOnPreferenceChangeListener(this);
+
+        mBlockOnSecureKeyguard = (SwitchPreference) findPreference(PREF_BLOCK_ON_SECURE_KEYGUARD);
+        if (lockPatternUtils.isSecure(MY_USER_ID)) {
+            mBlockOnSecureKeyguard.setChecked(Settings.Secure.getInt(getContentResolver(),
+                    Settings.Secure.STATUS_BAR_LOCKED_ON_SECURE_KEYGUARD, 1) == 1);
+            mBlockOnSecureKeyguard.setOnPreferenceChangeListener(this);
+        } else if (mBlockOnSecureKeyguard != null) {
+            prefSet.removePreference(mBlockOnSecureKeyguard);
+        }
+
     }
- }
 
     @Override
     protected int getMetricsCategory() {
@@ -132,7 +153,12 @@ public class LockScreen extends SettingsPreferenceFragment implements
                 int width = ((Integer)newValue).intValue();
                 Settings.System.putInt(resolver,
                         Settings.System.LOCKSCREEN_BLUR_RADIUS, width);
-                return true;
+	    return true;
+        } else if (preference == mBlockOnSecureKeyguard) {
+	    Settings.Secure.putInt(getContentResolver(),
+		    Settings.Secure.STATUS_BAR_LOCKED_ON_SECURE_KEYGUARD,
+		    (Boolean) newValue ? 1 : 0);
+	    return true;
 	}
         return false;
     }

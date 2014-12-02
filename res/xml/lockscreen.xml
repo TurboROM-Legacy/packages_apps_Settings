@@ -18,6 +18,12 @@
     android:layout="@layout/tab"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+        <SwitchPreference
+            android:key="block_on_secure_keyguard"
+            android:title="@string/block_on_secure_keyguard_title"
+            android:summary="@string/block_on_secure_keyguard_summary"
+            android:persistent="false" />
+
          <PreferenceScreen
             android:title="@string/lockscreen_targets_message" 
 	    android:summary="@string/lockscreen_targets_summary" >

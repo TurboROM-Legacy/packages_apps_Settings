@@ -1339,4 +1339,8 @@
     <string name="uber_flags">Build flags</string>
     <string name="uber_flags_default">None</string>
 
+    <!-- Disable Quick Settings on lock screen -->
+    <string name="block_on_secure_keyguard_title">Disable Quick Settings</string>
+    <string name="block_on_secure_keyguard_summary">Disables Quick Settings on the lock screen (for a secure lock only)</string>
+
 </resources>
