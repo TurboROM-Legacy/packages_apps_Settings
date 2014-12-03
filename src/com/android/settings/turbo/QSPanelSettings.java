@@ -47,9 +47,11 @@ public class QSPanelSettings extends SettingsPreferenceFragment implements
 	OnPreferenceChangeListener, Indexable {
 
     private static final String QUICK_PULLDOWN = "quick_pulldown";
+    private static final String SMART_PULLDOWN = "smart_pulldown";
     private static final String PREF_QS_COLUMNS = "sysui_qs_num_columns";
 
     private ListPreference mQuickPulldown;
+    ListPreference mSmartPulldown;
     private ListPreference mNumColumns;
 
     @Override
@@ -65,6 +67,13 @@ public class QSPanelSettings extends SettingsPreferenceFragment implements
             Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0, UserHandle.USER_CURRENT);
         mQuickPulldown.setValue(String.valueOf(quickPulldownValue));
         updatePulldownSummary(quickPulldownValue);
+
+        mSmartPulldown = (ListPreference) findPreference(SMART_PULLDOWN);
+        mSmartPulldown.setOnPreferenceChangeListener(this);
+        int smartPulldownValue = Settings.System.getIntForUser(resolver,
+                Settings.System.STATUS_BAR_QS_SMART_PULLDOWN, 0, UserHandle.USER_CURRENT);
+        mSmartPulldown.setValue(String.valueOf(smartPulldownValue));
+        updateSmartPulldownSummary(smartPulldownValue);
 
         mNumColumns = (ListPreference) findPreference(PREF_QS_COLUMNS);
         int numColumns = Settings.Secure.getIntForUser(resolver,
@@ -90,6 +99,12 @@ public class QSPanelSettings extends SettingsPreferenceFragment implements
                 quickPulldownValue, UserHandle.USER_CURRENT);
             updatePulldownSummary(quickPulldownValue);
             return true;
+        } else if (preference == mSmartPulldown) {
+            int smartPulldownValue = Integer.valueOf((String) newValue);
+            Settings.System.putIntForUser(resolver, Settings.System.STATUS_BAR_QS_SMART_PULLDOWN, 
+                smartPulldownValue, UserHandle.USER_CURRENT);
+            updateSmartPulldownSummary(smartPulldownValue);
+            return true;
         } else if (preference == mNumColumns) {
             int numColumns = Integer.valueOf((String) newValue);
             Settings.Secure.putIntForUser(resolver, Settings.Secure.QS_NUM_TILE_COLUMNS,
@@ -114,6 +129,22 @@ public class QSPanelSettings extends SettingsPreferenceFragment implements
                     ? R.string.quick_pulldown_left
                     : R.string.quick_pulldown_right);
             mQuickPulldown.setSummary(res.getString(R.string.quick_pulldown_summary, direction));
+        }
+    }
+
+    private void updateSmartPulldownSummary(int value) {
+        Resources res = getResources();
+
+        if (value == 0) {
+            // Smart pulldown deactivated
+            mSmartPulldown.setSummary(res.getString(R.string.smart_pulldown_off));
+        } else if (value == 3) {
+            mSmartPulldown.setSummary(res.getString(R.string.smart_pulldown_none_summary));
+        } else {
+            String type = res.getString(value == 1
+                    ? R.string.smart_pulldown_dismissable
+                    : R.string.smart_pulldown_ongoing);
+            mSmartPulldown.setSummary(res.getString(R.string.smart_pulldown_summary, type.toLowerCase()));
         }
     }
 

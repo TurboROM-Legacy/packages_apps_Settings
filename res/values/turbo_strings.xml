@@ -532,6 +532,15 @@
     <string name="quick_pulldown_left">Left</string>
     <string name="quick_pulldown_always">Always</string>
 
+    <!-- Smart pull-down-->
+    <string name="smart_pulldown_title">Smart pull-down</string>
+    <string name="smart_pulldown_summary">Open Quick Settings when there are %1$s notifications</string>
+    <string name="smart_pulldown_none_summary">Open Quick Settings when there are no notifications</string>
+    <string name="smart_pulldown_off">Off</string>
+    <string name="smart_pulldown_none">No notifications</string>
+    <string name="smart_pulldown_dismissable">No dismissable</string>
+    <string name="smart_pulldown_ongoing">No ongoing</string>
+
     <!-- QS main tiles -->
     <string name="qs_main_tiles_title">Enlarge first row</string>
     <string name="qs_main_tiles_summary">Use two larger main tiles on the first row</string>
