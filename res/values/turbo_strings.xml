@@ -520,4 +520,8 @@
     <string name="changelog_turbo_title">Changelog</string>
     <string name="changelog_turbo_error">Unable to load changelog</string>
 
+    <!-- Status bar notification counter -->
+    <string name="status_bar_notif_count_title">Show notification count</string>
+    <string name="status_bar_notif_count_summary">Display the number of pending notifications</string>
+
 </resources>
