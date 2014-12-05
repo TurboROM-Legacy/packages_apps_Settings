@@ -953,6 +953,10 @@
     <string name="voicemail_breath_title">Breathing voicemail</string>
     <string name="voicemail_breath_summary">This will give your voicemail notifications a breathing effect in the status bar</string>
 
+    <!-- Status bar notification counter -->
+    <string name="status_bar_notif_count_title">Show notification count</string>
+    <string name="status_bar_notif_count_summary">Display the number of pending notifications</string>
+
     <!-- Lock screen strings -->
     <string name="lock_screen_title">Lock screen</string>
     <string name="keyguard_shortcuts_category">Shortcuts</string>
