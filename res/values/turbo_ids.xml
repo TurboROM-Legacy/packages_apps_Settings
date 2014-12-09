@@ -15,9 +15,5 @@
      limitations under the License.
 -->
 <resources>
-    <!-- The theme accent -->
-    <color name="theme_accent">#ff606060</color>
-
-    <!-- Slim's DSLV -->
-    <color name="dslv_icon_color">#ff606060</color>
+    <item type="id" name="drag_handle" />
 </resources>

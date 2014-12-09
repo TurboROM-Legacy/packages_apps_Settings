@@ -29,4 +29,7 @@
     <drawable name="expanded_item_bg">@android:color/background_light</drawable>
     <color name="expanded_button_color_normal">#4CAF50</color>
     <color name="expanded_button_color_close">#F44336</color>
+
+    <!-- Slim's DSLV -->
+    <color name="dslv_icon_color">#ff009688</color>
 </resources>
