@@ -229,4 +229,8 @@
     <string name="shortcut_action_reset">Reset</string>
     <string name="shortcut_action_add">Add</string>
 
+    <!-- Unaccounted and overcounted battery stats -->
+    <string name="show_unac_and_overcounted_stats_title">Show unaccounted and over-counted stats</string>
+    <string name="show_unac_and_overcounted_stats_summary">Show unaccounted and over-counted usage in battery statistics.</string>
+
 </resources>
