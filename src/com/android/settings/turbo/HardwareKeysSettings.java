@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014-2015 Slimroms
+ * Copyright (C) 2014-2015 SlimRoms
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,6 +47,7 @@ import com.android.internal.util.slim.HwKeyHelper;
 
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
+import com.android.settings.turbo.ButtonBacklightBrightness;
 import com.android.settings.turbo.util.ShortcutPickerHelper;
 
 import java.util.HashMap;
@@ -67,8 +68,9 @@ public class HardwareKeysSettings extends SettingsPreferenceFragment implements
     private static final String CATEGORY_ASSIST = "button_keys_assist";
     private static final String CATEGORY_APPSWITCH = "button_keys_appSwitch";
 
-    private static final String KEYS_CATEGORY_BINDINGS = "keys_bindings";
+    private static final String KEYS_GENERAL_CAT = "general_keys_cat";
     private static final String KEYS_ENABLE_CUSTOM = "enable_hardware_rebind";
+    private static final String KEYS_BUTTON_BACKLIGHT = "button_backlight";
     private static final String KEYS_BACK_PRESS = "keys_back_press";
     private static final String KEYS_BACK_LONG_PRESS = "keys_back_long_press";
     private static final String KEYS_BACK_DOUBLE_TAP = "keys_back_double_tap";
@@ -173,6 +175,9 @@ public class HardwareKeysSettings extends SettingsPreferenceFragment implements
         boolean hasAppSwitchKey = (deviceKeys & KEY_MASK_APP_SWITCH) != 0;
         boolean hasCameraKey = (deviceKeys & KEY_MASK_CAMERA) != 0;
 
+
+        PreferenceCategory keysGeneralCategory =
+                (PreferenceCategory) prefs.findPreference(KEYS_GENERAL_CAT);
         PreferenceCategory keysCategory =
                 (PreferenceCategory) prefs.findPreference(CATEGORY_KEYS);
         PreferenceCategory keysBackCategory =
@@ -226,6 +231,12 @@ public class HardwareKeysSettings extends SettingsPreferenceFragment implements
                 KEYS_APP_SWITCH_LONG_PRESS);
         mAppSwitchDoubleTapAction = (Preference) prefs.findPreference(
                 KEYS_APP_SWITCH_DOUBLE_TAP);
+
+        final ButtonBacklightBrightness backlight = (ButtonBacklightBrightness)
+                findPreference(KEYS_BUTTON_BACKLIGHT);
+        if (!backlight.isButtonSupported()) {
+            keysGeneralCategory.removePreference(backlight);
+        }
 
         if (hasBackKey) {
             // Back key
