@@ -38,6 +38,7 @@
     <string name="ok">OK</string>
     <string name="ok_string">OK</string>
     <string name="reset">Reset</string>
+    <string name="reset_title">Reset</string>
     <string name="reset_default_message">Reset to default</string>
     <string name="reset_message">Reset all entries to default?</string>
     <string name="turbo_settings_title">Turbo settings</string>
@@ -300,5 +301,17 @@
     <string name="display_rotation_90_title">90 degrees</string>
     <string name="display_rotation_180_title">180 degrees</string>
     <string name="display_rotation_270_title">270 degrees</string>
+
+    <!-- Key backlight -->
+    <string name="button_backlight_title">Backlight</string>
+    <string name="button_backlight_enabled">Illuminate buttons</string>
+    <string name="keyboard_backlight_enabled">Illuminate keyboard</string>
+    <string name="button_backlight_seekbar_title">Button brightness</string>
+    <string name="keyboard_backlight_seekbar_title">Keyboard brightness</string>
+    <string name="backlight_timeout_title">Illumination timeout</string>
+    <string name="backlight_timeout_unlimited">Don\'t turn off</string>
+    <string name="backlight_summary_disabled">Disabled</string>
+    <string name="backlight_summary_enabled_with_timeout">Enabled for <xliff:g id="timeout">%s</xliff:g></string>
+    <string name="backlight_summary_enabled">Enabled</string>
 
 </resources>
