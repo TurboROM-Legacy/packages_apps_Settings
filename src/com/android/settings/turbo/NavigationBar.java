@@ -33,6 +33,7 @@ import android.provider.Settings;
 import android.util.Log;
 
 import com.android.internal.logging.MetricsLogger;
+import com.android.internal.util.turbo.TurboActionUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
@@ -40,12 +41,25 @@ public class NavigationBar extends SettingsPreferenceFragment {
 
     private static final String TAG = NavigationBar.class.getSimpleName();
 
+    private static final String KEY_CATEGORY_NAVIGATION_GENERAL = "category_navbar_general";
+    private static final String KEY_NAVIGATION_BAR_LEFT = "navigation_bar_left";
+
+    private PreferenceCategory mNavGeneral;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.navigation_bar);
+
+        mNavGeneral = (PreferenceCategory) findPreference(KEY_CATEGORY_NAVIGATION_GENERAL);
+
+        // Navigation bar left-in-landscape
+        // remove if not a phone
+        if (!TurboActionUtils.isNormalScreen()) {
+            mNavGeneral.removePreference(findPreference(KEY_NAVIGATION_BAR_LEFT));
+        }
     }
-    
+
     @Override
         protected int getMetricsCategory() {
         return MetricsLogger.DONT_TRACK_ME_BRO;

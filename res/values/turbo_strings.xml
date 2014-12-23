@@ -1054,4 +1054,8 @@
     <string name="navbar_title">Navigation bar</string>
     <string name="navbar_summary">Customize the options and items in the navigation bar</string>
 
+    <!-- Navigation bar left in landscape -->
+    <string name="navigation_bar_left_title">Left-handed mode</string>
+    <string name="navigation_bar_left_summary">Place the navigation bar on the left side of the screen in landscape mode</string>
+
 </resources>
