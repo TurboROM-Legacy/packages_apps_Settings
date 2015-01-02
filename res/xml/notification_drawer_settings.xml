@@ -18,6 +18,17 @@
     <PreferenceCategory
         android:title="@string/qs_panel_title">
 
+        <Preference
+            android:key="qs_order"
+            android:title="@string/qs_order_title" />
+
+        <com.android.settings.preference.SecureSettingSwitchPreference
+            android:key="sysui_qs_main_tiles"
+            android:title="@string/qs_main_tiles_title"
+            android:summaryOn="@string/qs_main_tiles_summary_on"
+            android:summaryOff="@string/qs_main_tiles_summary_off"
+            android:defaultValue="true" />
+
         <com.android.settings.preference.SecureSettingSwitchPreference
             android:key="qs_show_brightness_slider"
             android:title="@string/qs_brightness_slider_title"
