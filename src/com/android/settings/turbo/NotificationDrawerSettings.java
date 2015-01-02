@@ -26,10 +26,17 @@ import android.preference.PreferenceScreen;
 import android.provider.Settings;
 
 import com.android.settings.R;
+import com.android.settings.turbo.qs.QSTiles;
 import com.android.settings.SettingsPreferenceFragment;
 
 public class NotificationDrawerSettings extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
+
+    private static final String QUICK_PULLDOWN = "quick_pulldown";
+    private static final String QS_ORDER = "qs_order";
+
+    private Preference mQSTiles;
+    private ListPreference mQuickPulldown;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -43,12 +50,61 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment
         super.onActivityCreated(savedInstanceState);
 
         PreferenceScreen prefSet = getPreferenceScreen();
+        mQSTiles = prefSet.findPreference(QS_ORDER);
 
+        ContentResolver resolver = getActivity().getContentResolver();
+        mQuickPulldown = (ListPreference) prefSet.findPreference(QUICK_PULLDOWN);
+
+        mQuickPulldown.setOnPreferenceChangeListener(this);
+        int quickPulldownValue = Settings.System.getIntForUser(resolver,
+                Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 1, UserHandle.USER_CURRENT);
+        mQuickPulldown.setValue(String.valueOf(quickPulldownValue));
+        updatePulldownSummary(quickPulldownValue);
     }
 
     @Override
     public void onResume() {
         super.onResume();
+
+        int qsTileCount = QSTiles.determineTileCount(getActivity());
+        mQSTiles.setSummary(getResources().getQuantityString(R.plurals.qs_tiles_summary,
+                    qsTileCount, qsTileCount));
     }
 
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mQuickPulldown) {
+            int quickPulldownValue = Integer.valueOf((String) newValue);
+            Settings.System.putIntForUser(resolver, Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN,
+                    quickPulldownValue, UserHandle.USER_CURRENT);
+            updatePulldownSummary(quickPulldownValue);
+            return true;
+        }
+        return false;
+    }
+
+    private void updatePulldownSummary(int value) {
+        Resources res = getResources();
+
+        if (value == 0) {
+            // quick pulldown deactivated
+            mQuickPulldown.setSummary(res.getString(R.string.quick_pulldown_off));
+        } else {
+            String direction = res.getString(value == 2
+                    ? R.string.quick_pulldown_summary_left
+                    : R.string.quick_pulldown_summary_right);
+            mQuickPulldown.setSummary(res.getString(R.string.quick_pulldown_summary, direction));
+        }
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference pref) {
+        if (pref == mQSTiles) {
+            ((TinkerActivity)getActivity()).displaySubFrag(getString(R.string.qs_order_title));
+
+            return true;
+        }
+        return false;
+    }
 }
