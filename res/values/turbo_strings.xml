@@ -524,4 +524,8 @@
     <!-- QS tiles configuration (in SystemUI Tuner) -->
     <string name="qs_configure_tiles_title">Tile configuration</string>
     <string name="qs_configure_tiles_summary">Add, remove, or arrange QS tiles</string>
+
+    <!-- Advanced location tile in QS -->
+    <string name="qs_advanced_location_title">Advanced location settings</string>
+    <string name="qs_advanced_location_summary">Enable advanced settings in the Quick Settings location tile</string>
 </resources>

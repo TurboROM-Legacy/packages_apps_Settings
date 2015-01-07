@@ -53,6 +53,12 @@
             android:entryValues="@array/qs_num_columns_values"
             android:persistent="false" />
 
+	<com.android.settings.preference.SecureSettingSwitchPreference
+            android:key="qs_location_tile_advanced"
+            android:title="@string/qs_advanced_location_title"
+            android:summary="@string/qs_advanced_location_summary"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>
