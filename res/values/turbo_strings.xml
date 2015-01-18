@@ -538,4 +538,8 @@
     <string name="status_bar_custom_header_default_title">Contexual header images</string>
     <string name="status_bar_custom_header_default_summary">Enable for Polygraphic HD images. Disable for original images.</string>
 
+    <!-- Lock screen shortcuts -->
+    <string name="lockscreen_targets_message">Bottom lock screen shortcuts</string>
+    <string name="lock_screen_category">Lock screen shortcuts</string>
+
 </resources>

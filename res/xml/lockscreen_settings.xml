@@ -17,6 +17,18 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceCategory
+        android:title="@string/lock_screen_category">
+
+        <PreferenceScreen
+            android:title="@string/lockscreen_targets_message" >
+            <intent
+                android:targetPackage="com.android.systemui"
+                android:targetClass="com.android.systemui.cm.LockscreenShortcutsActivity" />
+        </PreferenceScreen>
+
+    </PreferenceCategory>
+
     <com.android.settings.preference.SecureSettingSwitchPreference
         android:key="doze_notification_invert_enabled"
         android:title="@string/doze_notification_color_invert_title"
