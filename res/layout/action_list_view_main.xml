@@ -63,5 +63,6 @@
         settings:sortEnabled="true"
         settings:removeEnabled="true"
         settings:dragStartMode="onMove"
-        settings:removeMode="flingRemove" />
+        settings:removeMode="flingRemove"
+        settings:floatBackgroundColor="@color/dslv_float_cackground_color" />
 </LinearLayout>

@@ -945,4 +945,13 @@
     <string name="missed_call_breath_summary">This will give your missed call notifications a breathing effect in the status bar</string>
     <string name="voicemail_breath_title">Breathing voicemail</string>
     <string name="voicemail_breath_summary">This will give your voicemail notifications a breathing effect in the status bar</string>
+
+    <!-- Lock screen strings -->
+    <string name="lock_screen_title">Lock screen</string>
+
+    <!-- Slim's lock screen shortcuts -->
+    <string name="keyguard_shortcuts_title">Mid-screen shortcuts</string>
+    <string name="keyguard_shortcuts_summary">Configure shortcuts to show on the lock screen</string>
+    <string name="keyguard_shorcuts_longpress_title">Shortcuts longpress</string>
+    <string name="keyguard_shorcuts_longpress_summary">Open custom lock screen shortcuts on longpress</string>
 </resources>

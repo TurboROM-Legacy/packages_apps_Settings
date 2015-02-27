@@ -94,7 +94,7 @@ public class ActionListViewSettings extends ListFragment implements
     private static final int PIE                   = 1;
     private static final int PIE_SECOND            = 2;
     private static final int NAV_RING              = 3;
-    private static final int LOCKSCREEN_SHORTCUT   = 4;
+    private static final int KEYGUARD_SHORTCUTS    = 4;
     private static final int GLOBAL_MENU_SHORTCUT  = 5;
     private static final int SHAKE_EVENTS_DISABLED = 6;
     private static final int RECENT_APP_SIDEBAR    = 7;
@@ -549,9 +549,9 @@ public class ActionListViewSettings extends ListFragment implements
             case RECENT_APP_SIDEBAR:
                 return ActionHelper.getRecentAppSidebarConfigWithDescription(
                     mActivity, mActionValuesKey, mActionEntriesKey);
+            case KEYGUARD_SHORTCUTS:
+                return ActionHelper.getLockScreenShortcutConfig(mActivity);
             /* Disabled for now till all features are back. Enable it step by step!
-            case LOCKSCREEN_SHORTCUT:
-                return ActionHelper.getLockscreenShortcutConfig(mActivity);
             case NAV_BAR:
                 return ActionHelper.getNavBarConfigWithDescription(
                     mActivity, mActionValuesKey, mActionEntriesKey);
@@ -579,10 +579,10 @@ public class ActionListViewSettings extends ListFragment implements
             case RECENT_APP_SIDEBAR:
                 ActionHelper.setRecentAppSidebarConfig(mActivity, actionConfigs, reset);
                 break;
-            /* Disabled for now till all features are back. Enable it step by step!
-            case LOCKSCREEN_SHORTCUT:
-                ActionHelper.setLockscreenShortcutConfig(mActivity, actionConfigs, reset);
+            case KEYGUARD_SHORTCUTS:
+                ActionHelper.setLockScreenShortcutConfig(mActivity, actionConfigs, reset);
                 break;
+            /* Disabled for now till all features are back. Enable it step by step!
             case NAV_BAR:
                 ActionHelper.setNavBarConfig(mActivity, actionConfigs, reset);
                 break;
@@ -760,7 +760,7 @@ public class ActionListViewSettings extends ListFragment implements
                     String actionMode;
                     String icon = "";
                     switch (getOwner().mActionMode) {
-                        case LOCKSCREEN_SHORTCUT:
+                        case KEYGUARD_SHORTCUTS:
                         case GLOBAL_MENU_SHORTCUT:
                             actionMode = res.getString(R.string.shortcut_action_help_shortcut);
                             break;

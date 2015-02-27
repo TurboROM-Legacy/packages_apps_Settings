@@ -26,6 +26,13 @@
 	android:fragment="com.android.settings.turbo.ButtonSettings"
 	/>
 
+    <!-- Lock screen -->
+    <PreferenceScreen
+	android:id="@+id/lock_screen_settings"
+	android:fragment="com.android.settings.turbo.LockScreenSettings"
+	android:title="@string/lock_screen_title"
+	/>
+
     <!-- Quick Settings -->
     <PreferenceScreen
 	android:id="@+id/qs_panel_settings"
