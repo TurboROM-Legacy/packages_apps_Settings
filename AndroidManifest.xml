@@ -2600,6 +2600,24 @@
         <activity
              android:name=".turbo.MainSettings" />
 
+        <!-- Display rotation -->
+        <activity android:name="Settings$DisplayRotationActivity"
+                android:label="@string/display_rotation_title"
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.settings.DISPLAY_ROTATION_SETTINGS" />
+                <action android:name="com.android.settings.DISPLAY_ROTATION_SETTINGS" />
+                <category android:name="android.intent.category.VOICE_LAUNCH" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.SHORTCUT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.turbo.DisplayRotation" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/display_settings" />
+        </activity>
+
         <!-- Turbo Extra info -->
         <activity android:name="com.android.settings.turbo.extrainfo.MainActivity"
                   android:theme="@style/Theme.Material.Light.Dialog.NoActionBar.MinWidth">
