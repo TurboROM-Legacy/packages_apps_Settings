@@ -15,27 +15,34 @@
 */
 package com.android.settings.turbo;
 
+import com.android.internal.logging.MetricsLogger;
+
+import android.app.Activity;
+import android.app.WallpaperManager;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.Preference;
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 
 import com.android.settings.R;
 import com.android.settings.preference.SystemSettingSwitchPreference;
 import com.android.settings.SettingsPreferenceFragment;
-
-import java.util.List;
-
-import com.android.internal.logging.MetricsLogger;
+import com.android.settings.Utils;
 
 public class LockScreenSettings extends SettingsPreferenceFragment {
+
+    private static final String LSWEATHER = "ls_weather";
+
+    private Preference mLsWeather;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.lockscreen_settings);
+
+        mLsWeather = (Preference)findPreference(LSWEATHER);
     }
     
     @Override
