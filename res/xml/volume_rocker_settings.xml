@@ -48,4 +48,10 @@
            android:persistent="false"
            android:defaultValue="true" />
 
+        <PreferenceScreen
+           android:key="vol_steps"
+           android:fragment="com.android.settings.turbo.VolumeStepsSettings"
+           android:title="@string/volume_steps_title" 
+           android:summary="@string/volume_steps_summary"/>
+
 </PreferenceScreen>
