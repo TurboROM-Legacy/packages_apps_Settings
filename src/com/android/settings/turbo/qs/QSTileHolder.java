@@ -122,6 +122,10 @@ public class QSTileHolder {
                 resourceName = "ic_qs_power";
                 stringId = R.string.qs_screen_off_tile;
                 break;
+            case QSConstants.TILE_AMBIENT_DISPLAY:
+                resourceName = "ic_qs_ambientdisplay_on";
+                stringId = R.string.qs_tile_ambient_display;
+                break;
             default:
                 return null;
         }
