@@ -20,6 +20,9 @@
     <string name="turbo_version_default">Unknown</string>
     <string name="build_date">Build date</string>
 
+    <!-- Developer options -->
+    <string name="show_dev_already_enabled">No need, Development settings are enabled by default.</string>
+
     <!-- Turbo Extra info -->
     <string name="turbo_extrainfo">Extra information</string>
     <string name="turbo_extrainfo_summary">Display extra info for the CPU, display, etc.</string>
