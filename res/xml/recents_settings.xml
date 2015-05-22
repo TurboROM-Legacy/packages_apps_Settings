@@ -21,7 +21,13 @@
         android:key="recents_panel"
         android:title="@string/recents_panel_category" >
 
-	<com.android.settings.preference.SystemSettingSwitchPreference
+        <com.android.settings.preference.SystemSettingSwitchPreference
+            android:key="systemui_recents_mem_display"
+            android:title="@string/recents_show_membar_title"
+            android:summary="@string/recents_show_membar_summary"
+            android:defaultValue="false" />
+
+        <com.android.settings.preference.SystemSettingSwitchPreference
             android:key="recents_show_search_bar"
             android:title="@string/recents_searchbar_title"
             android:summary="@string/recents_searchbar_summary"

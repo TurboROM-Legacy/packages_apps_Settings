@@ -61,6 +61,9 @@
     <!-- Full screen recents -->
     <string name="recents_full_screen_title">Full screen recents</string>
     <string name="recents_full_screen_summary">Makes the recents screen go into immersive mode</string>
+    <!-- Membar in recent apps -->
+    <string name="recents_show_membar_title">Memory bar</string>
+    <string name="recents_show_membar_summary">Show a bar with the device\'s available memory</string>
  
     <!-- Status bar strings -->
     <string name="status_bar_title">Status bar</string>
