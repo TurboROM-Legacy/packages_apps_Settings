@@ -542,4 +542,14 @@
     <string name="lockscreen_targets_message">Bottom lock screen shortcuts</string>
     <string name="lock_screen_category">Lock screen shortcuts</string>
 
+    <!-- Breathing Notifications -->
+    <string name="breathing_notifications_title">Breathing notifications</string>
+    <string name="breathing_notifications_summary">Select what notifications you want to "breath" in the status bar</string>
+    <string name="sms_breath_title">Breathing SMS</string>
+    <string name="sms_breath_summary">This will give your sms notifications a breathing effect in the status bar</string>
+    <string name="missed_call_breath_title">Breathing Missed Call</string>
+    <string name="missed_call_breath_summary">This will give your missed call notifications a breathing effect in the status bar</string>
+    <string name="voicemail_breath_title">Breathing Voicemail</string>
+    <string name="voicemail_breath_summary">This will give your voicemail notifications a breathing effect in the status bar</string>
+
 </resources>
