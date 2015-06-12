@@ -71,4 +71,13 @@
             android:targetClass="com.android.systemui.tuner.TunerActivity" />
     </PreferenceScreen>
 
+    <PreferenceCategory
+        android:title="@string/status_bar_notifications_category" />
+
+    <PreferenceScreen
+        android:key="status_bar_notifications"
+        android:title="@string/status_bar_notifications_title"
+        android:summary="@string/status_bar_notifications_summary" 
+        android:fragment="com.android.settings.turbo.StatusBarNotificationSettings" />
+
 </PreferenceScreen>

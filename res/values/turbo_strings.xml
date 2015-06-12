@@ -169,6 +169,8 @@
     <string name="status_bar_title">Status bar</string>
     <string name="status_bar_battery_title">Battery indicator</string>
     <string name="status_bar_clock_title">Clock and date style</string>
+    <string name="status_bar_notifications_category">Notifications</string>
+    <string name="breathing_notifications_category">Breathing notifications</string>
 
     <!-- Status bar icons -->
     <string name="status_bar_icon_blacklist_title">Status bar icons</string>
@@ -929,4 +931,18 @@
     <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">Quick unlock</string>
     <string name="unlock_quick_unlock_control_summary">Automatically unlock as soon as the correct PIN/password has been entered\nNote: will only work for a 4 digit PIN/Password!</string>
+
+    <!-- Notification options -->
+    <string name="status_bar_notifications_title">Notifications</string>
+    <string name="status_bar_notifications_summary">Configure options for notifications in the status bar</string>
+
+    <!-- Breathing notifications -->
+    <string name="breathing_notifications_title">Breathing notifications</string>
+    <string name="breathing_notifications_summary">Select what notifications you want to "breath" in the status bar</string>
+    <string name="sms_breath_title">Breathing SMS</string>
+    <string name="sms_breath_summary">This will give your SMS notifications a breathing effect in the status bar</string>
+    <string name="missed_call_breath_title">Breathing missed call</string>
+    <string name="missed_call_breath_summary">This will give your missed call notifications a breathing effect in the status bar</string>
+    <string name="voicemail_breath_title">Breathing voicemail</string>
+    <string name="voicemail_breath_summary">This will give your voicemail notifications a breathing effect in the status bar</string>
 </resources>
