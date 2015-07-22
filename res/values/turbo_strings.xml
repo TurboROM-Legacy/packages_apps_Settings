@@ -1061,4 +1061,8 @@
     <string name="lockscreen_alpha">Alpha setting</string>
     <string name="lockscreen_security_alpha">Bouncer alpha setting</string>
 
+    <!-- Status bar Turbo logo -->
+    <string name="status_bar_turbo_title">Turbo ROM logo in status bar</string>
+    <string name="status_bar_turbo_summary">Display the Turbo ROM logo on the status bar</string>
+
 </resources>
