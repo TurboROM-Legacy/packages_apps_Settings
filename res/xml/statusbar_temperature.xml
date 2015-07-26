@@ -31,6 +31,15 @@
         android:entries="@array/status_bar_temperature_location_entries"
         android:entryValues="@array/status_bar_temperature_location_values" />
 
+    <com.android.settings.preference.SeekBarPreference
+        android:key="status_bar_weather_size"
+        android:title="@string/status_bar_weather_size_title"
+        android:max="23"
+        settings:minimum="4"
+        settings:defaultVal="14"
+        settings:unitsLeft=""
+        settings:unitsRight="dp" />
+
     <net.margaritov.preference.colorpicker.ColorPickerPreference
         android:key="status_bar_weather_color"
         android:title="@string/status_bar_weather_color_title"
