@@ -140,8 +140,10 @@ public class SBTemperature extends SettingsPreferenceFragment implements
                 .getContentResolver(), Settings.System.STATUS_BAR_SHOW_WEATHER_TEMP,0);
         if (temperatureShow == 0) {
             mStatusBarTemperatureStyle.setEnabled(false);
+            mStatusBarTemperatureColor.setEnabled(false);
         } else {
             mStatusBarTemperatureStyle.setEnabled(true);
+            mStatusBarTemperatureColor.setEnabled(true);
         }
     }
 }
