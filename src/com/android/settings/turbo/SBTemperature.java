@@ -43,8 +43,10 @@ public class SBTemperature extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
 
     private static final String STATUS_BAR_TEMPERATURE_STYLE = "status_bar_temperature_style";
+    private static final String STATUS_BAR_TEMPERATURE = "status_bar_temperature";
 
     private ListPreference mStatusBarTemperature;
+    private ListPreference mStatusBarTemperatureStyle;
      
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -55,12 +57,21 @@ public class SBTemperature extends SettingsPreferenceFragment implements
         PreferenceScreen prefSet = getPreferenceScreen();
         
         // Temperature
-        mStatusBarTemperature = (ListPreference) findPreference(STATUS_BAR_TEMPERATURE_STYLE);
-        int temperatureStyle = Settings.System.getInt(resolver,
+        mStatusBarTemperature = (ListPreference) findPreference(STATUS_BAR_TEMPERATURE);
+        int temperatureShow = Settings.System.getInt(getContentResolver(),
                 Settings.System.STATUS_BAR_SHOW_WEATHER_TEMP, 0);
-        mStatusBarTemperature.setValue(String.valueOf(temperatureStyle));
+        mStatusBarTemperature.setValue(String.valueOf(temperatureShow));
         mStatusBarTemperature.setSummary(mStatusBarTemperature.getEntry());
         mStatusBarTemperature.setOnPreferenceChangeListener(this);
+        
+        mStatusBarTemperatureStyle = (ListPreference) findPreference(STATUS_BAR_TEMPERATURE_STYLE);
+        int temperatureStyle = Settings.System.getInt(getContentResolver(),
+                Settings.System.STATUS_BAR_WEATHER_TEMP_STYLE, 0);
+        mStatusBarTemperatureStyle.setValue(String.valueOf(temperatureStyle));
+        mStatusBarTemperatureStyle.setSummary(mStatusBarTemperatureStyle.getEntry());
+        mStatusBarTemperatureStyle.setOnPreferenceChangeListener(this);
+
+        enableStatusBarTemperatureDependents();
     }
     
     @Override
@@ -81,14 +92,35 @@ public class SBTemperature extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         if (preference == mStatusBarTemperature) {
-            int temperatureStyle = Integer.valueOf((String) newValue);
-            int index = mStatusBarTemperature.findIndexOfValue((String) newValue);
-            Settings.System.putInt(
-                    resolver, Settings.System.STATUS_BAR_SHOW_WEATHER_TEMP, temperatureStyle);
+            int temperatureShow = Integer.valueOf((String) objValue);
+            int index = mStatusBarTemperature.findIndexOfValue((String) objValue);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.STATUS_BAR_SHOW_WEATHER_TEMP, 
+                    temperatureShow);
             mStatusBarTemperature.setSummary(
                     mStatusBarTemperature.getEntries()[index]);
+            enableStatusBarTemperatureDependents();
+            return true;
+        } else if (preference == mStatusBarTemperatureStyle) {
+            int temperatureStyle = Integer.valueOf((String) objValue);
+            int index = mStatusBarTemperatureStyle.findIndexOfValue((String) objValue);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.STATUS_BAR_WEATHER_TEMP_STYLE,
+                    temperatureStyle);
+            mStatusBarTemperatureStyle.setSummary(
+                    mStatusBarTemperatureStyle.getEntries()[index]);
             return true;
         }
         return false;
+    }
+
+    private void enableStatusBarTemperatureDependents() {
+        int temperatureShow = Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.STATUS_BAR_SHOW_WEATHER_TEMP,0);
+        if (temperatureShow == 0) {
+            mStatusBarTemperatureStyle.setEnabled(false);
+        } else {
+            mStatusBarTemperatureStyle.setEnabled(true);
+        }
     }
 }
