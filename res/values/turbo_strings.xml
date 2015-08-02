@@ -772,6 +772,7 @@
     <string name="breathing_notifications_category">Breathing notifications</string>
     <string name="category_heads_up">Heads Up</string>
     <string name="recents_category">Recents panel</string>
+    <string name="temperature_category">Temperature</string>
 
     <!-- Turbo Tweaks tabs -->
     <string name="generalui_category">General UI</string>
@@ -913,5 +914,11 @@
     <string name="pa_pie_juice_title">Battery juice color</string>
     <string name="pa_pie_button_color">Button color</string>
     <string name="pa_pie_button_color_title">Buttons color</string>
+
+    <!-- Status bar temperature -->
+    <string name="status_bar_temperature_title">Temperature style</string>
+    <string name="status_bar_temperature_hidden">Hidden</string>
+    <string name="status_bar_temperature_show_scale">Scale showing</string>
+    <string name="status_bar_temperature_hide_scale">Scale hidden</string>
 
 </resources>
