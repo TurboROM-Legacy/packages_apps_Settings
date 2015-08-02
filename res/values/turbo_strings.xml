@@ -322,6 +322,12 @@
     <!-- Volume rocker wake -->
     <string name="volume_rocker_wake_title">Volume rocker wake</string>
     <string name="volume_rocker_wake_summary">Pressing the volume keys will wake your device</string>
-   <string name="volume_rocker_screen_title">Volume rocker</string>
+    <string name="volume_rocker_screen_title">Volume rocker</string>
+
+    <!-- Lock screen wallpaper -->
+    <string name="lockscreen_wallpaper_settings">Lock screen wallpaper</string>
+    <string name="lockscreen_wallpaper_title">Lock screen wallpaper</string>
+    <string name="lockscreen_wallpaper_set_title">Set lock screen wallpaper</string>
+    <string name="lockscreen_wallpaper_clear_title">Clear lock screen wallpaper</string>
 
 </resources>
