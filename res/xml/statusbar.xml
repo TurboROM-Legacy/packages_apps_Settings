@@ -46,4 +46,9 @@
                  android:targetClass="com.android.systemui.tuner.TunerActivity" />
      	 </PreferenceScreen>
 
+	<PreferenceScreen
+            android:key="temperature"
+            android:fragment="com.android.settings.turbo.SBTemperature"
+            android:title="@string/temperature_category" />
+
 </PreferenceScreen>
