@@ -17,6 +17,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <com.android.settings.preference.SecureSettingSwitchPreference
+        android:key="doze_notification_invert_enabled"
+        android:title="@string/doze_notification_color_invert_title"
+        android:summaryOn="@string/doze_notification_color_invert_summary_on"
+        android:summaryOff="@string/doze_notification_color_invert_summary_off"
+        android:defaultValue="true" />
+
     <ListPreference
         android:key="lock_clock_fonts"
         android:title="@string/lock_clock_font_title"
