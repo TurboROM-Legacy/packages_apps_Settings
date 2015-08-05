@@ -505,4 +505,9 @@
     <string name="dbl_tap_vib_title">Double tap power for vibration upon camera open</string>
     <string name="dbl_tap_vib_summary">Enable vibration when opening camera with a double tap of the power button</string>
 
+    <!-- Doze notification color inversion -->
+    <string name="doze_notification_color_invert_title">Ambient display notification inversion</string>
+    <string name="doze_notification_color_invert_summary_off">Ambient display notifications will not be inverted. Use for dark themes.</string>
+    <string name="doze_notification_color_invert_summary_on">Ambient display notifications will show as inverted. Use for light/stock theme.</string>
+
 </resources>
