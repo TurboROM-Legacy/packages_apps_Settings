@@ -282,6 +282,7 @@
     <string name="qs_tile_hotspot">Hotspot</string>
     <string name="qs_tile_screen_timeout">Screen timeout</string>
     <string name="qs_tile_sync">Sync</string>
+    <string name="qs_tile_volume_panel">Volume panel</string>
     <string name="qs_battery_saver_tile">Battery saver</string>
     <string name="qs_brightness_tile">Brightness</string>
     <string name="qs_screen_off_tile">Screen off</string>
