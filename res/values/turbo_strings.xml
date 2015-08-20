@@ -282,5 +282,6 @@
     <string name="qs_screen_off_tile">Screen off</string>
     <string name="qs_advanced_location_title">Advanced location settings</string>
     <string name="qs_advanced_location_summary">Enable advanced settings in the location tile in Quick Settings</string>
+    <string name="quick_settings_reset_message">Reset Quick Settings tiles?</string>
 
 </resources>
