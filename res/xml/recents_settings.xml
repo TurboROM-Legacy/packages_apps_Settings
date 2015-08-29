@@ -148,6 +148,19 @@
             alphaSlider="true" 
             android:dependency="use_slim_recents" />
 
+        <PreferenceScreen
+            android:key="recent_app_sidebar_content"
+            android:fragment="com.android.settings.turbo.dslv.ActionListViewSettings"
+            android:title="@string/recent_app_sidebar_title"
+            android:summary="@string/recent_app_sidebar_summary"
+            android:dependency="use_slim_recents" >
+                <extra android:name="actionMode" android:value="7" />
+                <extra android:name="maxAllowedActions" android:value="-1" />
+                <extra android:name="disableLongpress" android:value="true" />
+                <extra android:name="useAppPickerOnly" android:value="true" />
+                <extra android:name="fragment" android:value="com.android.settings.turbo.RecentAppSidebarFragment" />
+        </PreferenceScreen>
+
     </PreferenceCategory>
 
 </PreferenceScreen>

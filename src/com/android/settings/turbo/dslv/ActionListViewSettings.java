@@ -95,8 +95,9 @@ public class ActionListViewSettings extends ListFragment implements
     private static final int PIE_SECOND            = 2;
     private static final int NAV_RING              = 3;
     private static final int LOCKSCREEN_SHORTCUT   = 4;
-    private static final int GLOBAL_MENU_SHORTCUT   = 5;
+    private static final int GLOBAL_MENU_SHORTCUT  = 5;
     private static final int SHAKE_EVENTS_DISABLED = 6;
+    private static final int RECENT_APP_SIDEBAR    = 7;
 
     private static final int DEFAULT_MAX_ACTION_NUMBER = 5;
 
@@ -545,6 +546,9 @@ public class ActionListViewSettings extends ListFragment implements
             case GLOBAL_MENU_SHORTCUT:
                 return ActionHelper.getGlobalMenuConfigWithDescription(
                     mActivity, mActionValuesKey, mActionEntriesKey);
+            case RECENT_APP_SIDEBAR:
+                return ActionHelper.getRecentAppSidebarConfigWithDescription(
+                    mActivity, mActionValuesKey, mActionEntriesKey);
             /* Disabled for now till all features are back. Enable it step by step!
             case LOCKSCREEN_SHORTCUT:
                 return ActionHelper.getLockscreenShortcutConfig(mActivity);
@@ -571,6 +575,9 @@ public class ActionListViewSettings extends ListFragment implements
         switch (mActionMode) {
             case GLOBAL_MENU_SHORTCUT:
                 ActionHelper.setGlobalMenuConfig(mActivity, actionConfigs, reset);
+                break;
+            case RECENT_APP_SIDEBAR:
+                ActionHelper.setRecentAppSidebarConfig(mActivity, actionConfigs, reset);
                 break;
             /* Disabled for now till all features are back. Enable it step by step!
             case LOCKSCREEN_SHORTCUT:
@@ -764,6 +771,7 @@ public class ActionListViewSettings extends ListFragment implements
                         case NAV_RING:
                         case PIE:
                         case PIE_SECOND:
+                        case RECENT_APP_SIDEBAR:
                         default:
                             actionMode = res.getString(R.string.shortcut_action_help_button);
                             break;
