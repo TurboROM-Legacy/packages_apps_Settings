@@ -952,6 +952,8 @@
     <!-- Slim's lock screen shortcuts -->
     <string name="keyguard_shortcuts_title">Mid-screen shortcuts</string>
     <string name="keyguard_shortcuts_summary">Configure shortcuts to show on the lock screen</string>
-    <string name="keyguard_shorcuts_longpress_title">Shortcuts longpress</string>
-    <string name="keyguard_shorcuts_longpress_summary">Open custom lock screen shortcuts on longpress</string>
+    <string name="keyguard_shorcuts_launch_type_title">Shortcut click type</string>
+    <string name="keyguard_shortcuts_single_tap">Click</string>
+    <string name="keyguard_shortcuts_double_tap">Double tap</string>
+    <string name="keyguard_shortcuts_longpress">Longpress</string>
 </resources>
