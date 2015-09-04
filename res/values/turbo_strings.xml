@@ -528,4 +528,8 @@
     <string name="hide_lockscreen_clock_title">Show lock screen clock</string>
     <string name="hide_lockscreen_date_title">Show lock screen date</string>
 
+    <!-- Custom status bar header -->
+    <string name="status_bar_custom_header_title">Time contextual header</string>
+    <string name="status_bar_custom_header_summary">Enable custom Quick Settings panel header image</string>
+
 </resources>
