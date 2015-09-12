@@ -577,4 +577,8 @@
     <string name="battery_saver_title">Warning color</string>
     <string name="battery_saver_style_reset_message">Reset battery saver warning color?</string>
 
+    <!-- Media art -->
+    <string name="media_art_title">Media cover art</string>
+    <string name="media_art_summary">Enable media cover art on the lock screen</string>
+
 </resources>
