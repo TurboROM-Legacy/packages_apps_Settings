@@ -16,5 +16,9 @@
     <!-- About device screen, Turbo version -->
     <string name="turbo_version_title">Turbo version</string>
     <string name="turbo_version_default">Unknown</string>
+    <string name="cpu_info">CPU</string>
+    <string name="mem_info">RAM</string>
+    <string name="build_id">Android-build ID</string>
+    <string name="build_date">Build date</string>
 
 </resources>
