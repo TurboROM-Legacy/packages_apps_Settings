@@ -68,4 +68,9 @@
     <!-- Gestures -->
     <string name="gesture_settings_title">Gestures</string>
 
+    <!-- Wake up options -->
+    <string name="display_category_wakeup_options_title">Wake up options</string>
+    <string name="wakeup_when_plugged_unplugged_title">Wake up on charge</string>
+    <string name="wakeup_when_plugged_unplugged_summary">Wake up device if charger is plugged/unplugged</string>  
+
 </resources>
