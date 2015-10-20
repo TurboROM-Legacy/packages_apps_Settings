@@ -100,8 +100,9 @@
     <!-- Embedded ViPER4Android -->
     <string name="viper_settings_title">ViPER4Android</string>
 
-    <!-- Color Picker -->
-    <string name="dialog_color_picker">Color Picker</string>
+    <!-- Color picker -->
+    <string name="dialog_color_picker">Color picker</string>
+    <string name="dialog_color_picker_title">Color picker</string>
     <string name="press_color_to_apply">Press on color below to apply</string>
     <string name="arrow_right">→</string>
     <string name="arrow_down">↓</string>
@@ -1243,5 +1244,10 @@
     <string name="text_title">Text</string>
     <string name="options_title">Options</string>
     <string name="colors_title">Colors</string>
+    <string name="palette_darkkat_title">Turbo</string>
+    <string name="palette_material_title">Material</string>
+    <string name="palette_rgb_title">RGB</string>
+    <string name="reset_android_title">Android default</string>
+    <string name="reset_darkkat_title">Turbo default</string>
 
 </resources>
