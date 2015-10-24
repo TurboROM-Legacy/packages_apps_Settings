@@ -28,6 +28,7 @@
     <string name="additional_options_title">Additional options</string>
     <string name="attention">Attention</string>
     <string name="category_general_title">General options</string>
+    <string name="choose_app">Choose application</string>
     <string name="default_string">Default</string>
     <string name="disabled">Disabled</string>
     <string name="enabled">Enabled</string>
@@ -143,5 +144,15 @@
     <string name="notification_light_voicemail_title">Voicemail</string>
     <string name="allow_lights_title">Lights in do not disturb mode</string>
     <string name="notification_light_screen_on">Lights with screen on</string>
+
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">Color Picker</string>
+    <string name="press_color_to_apply">Press on color below to apply</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#ff000000</string>
+    <string name="set">Set</string>
+    <string name="color_default">Default</string>
 
 </resources>
