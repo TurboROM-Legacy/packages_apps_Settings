@@ -64,6 +64,7 @@
     <string name="additional_options_title">Additional options</string>
     <string name="attention">Attention</string>
     <string name="category_general_title">General options</string>
+    <string name="choose_app">Choose application</string>
     <string name="default_string">Default</string>
     <string name="disabled">Disabled</string>
     <string name="enabled">Enabled</string>
@@ -166,4 +167,14 @@
     <!-- Battery stats reset -->
     <string name="battery_stats_reset">Reset stats</string>
     <string name="battery_stats_message">Battery history stats are going to be reset</string>
+
+    <!-- Color picker -->
+    <string name="dialog_color_picker">Color Picker</string>
+    <string name="press_color_to_apply">Press on color below to apply</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
+    <string name="hex">Hex:</string>
+    <string name="hex_hint">#ff000000</string>
+    <string name="set">Set</string>
+    <string name="color_default">Default</string>
 </resources>
