@@ -28,6 +28,7 @@
    <style name="DashboardCategory">
    <!--<item name="android:background">#HEX</item>-->
    <!--<item name="android:textColorPrimary">#HEX</item>-->
+   </style>
    <style name="DashboardTile">
    <!--<item name="android:background">#HEX</item>-->
    <!--<item name="android:textColorPrimary">#HEX</item>-->
