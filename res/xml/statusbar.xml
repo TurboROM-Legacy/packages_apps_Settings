@@ -23,6 +23,11 @@
             android:fragment="com.android.settings.turbo.BatterySettings"
             android:title="@string/battery_title" />
 
+         <Preference
+            android:key="statusbarclock"
+            android:fragment="com.android.settings.turbo.StatusbarClock"
+            android:title="@string/status_bar_clock" />
+
          <PreferenceScreen
             android:key="statusbar_notifications"
             android:fragment="com.android.settings.turbo.StatusbarNotifications"
