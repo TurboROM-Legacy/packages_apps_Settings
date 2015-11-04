@@ -47,4 +47,20 @@
         android:summary="@string/status_bar_notif_count_summary"
         android:defaultValue="false" />
 
+    <PreferenceCategory
+        android:key="notification_cat_colors"
+        android:title="@string/colors_title">
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+           android:key="notification_icon_color"
+           android:title="@string/notification_icon_color_title"
+           android:defaultValue="#ffffffff" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+           android:key="notification_icon_color_dark_mode"
+           android:title="@string/color_dark_mode_title"
+           android:defaultValue="#ff000000" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
