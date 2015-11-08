@@ -952,6 +952,9 @@
     <!-- Lock screen strings -->
     <string name="lock_screen_title">Lock screen</string>
 
+    <!-- CyanogenMod lock screen shortcuts -->
+    <string name="lock_screen_targets_message">Bottom L/R shortcuts</string>
+
     <!-- Slim's lock screen shortcuts -->
     <string name="keyguard_shortcuts_title">Mid-screen shortcuts</string>
     <string name="keyguard_shortcuts_summary">Configure shortcuts to show on the lock screen</string>

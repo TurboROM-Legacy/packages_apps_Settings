@@ -20,6 +20,13 @@
     android:title="@string/lock_screen_title" >
 
     <PreferenceScreen
+        android:title="@string/lock_screen_targets_message" >
+        <intent
+            android:targetPackage="com.android.systemui"
+            android:targetClass="com.android.systemui.cm.LockScreenShortcutsActivity" />
+    </PreferenceScreen>
+
+    <PreferenceScreen
         android:key="lock_screen_shortcuts"
         android:fragment="com.android.settings.turbo.dslv.ActionListViewSettings"
         android:title="@string/keyguard_shortcuts_title"
