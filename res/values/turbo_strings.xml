@@ -777,4 +777,7 @@
     <!-- Customization -->
     <string name="header_category_custom">Customization</string>
 
+    <!-- Google -->
+    <string name="google_title">Google</string>
+
 </resources>
