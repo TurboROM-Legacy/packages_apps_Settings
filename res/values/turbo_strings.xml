@@ -523,6 +523,15 @@
     <string name="qs_brightness_slider_title">Brightness slider</string>
     <string name="qs_brightness_slider_summary">Enable the brightness slider in the Quick Settings panel</string>
 
+    <!-- Quick pull-down-->
+    <string name="quick_pulldown_title">Quick pull-down</string>
+    <string name="quick_pulldown_summary">%1$s edge of the status bar pulls down Quick Settings</string>
+    <string name="quick_pulldown_summary_always">Always show Quick Settings upon a status bar pull-down</string>
+    <string name="quick_pulldown_off">Off</string>
+    <string name="quick_pulldown_right">Right</string>
+    <string name="quick_pulldown_left">Left</string>
+    <string name="quick_pulldown_always">Always</string>
+
     <!-- QS main tiles -->
     <string name="qs_main_tiles_title">Enlarge first row</string>
     <string name="qs_main_tiles_summary">Use two larger main tiles on the first row</string>
