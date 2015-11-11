@@ -15,12 +15,6 @@
      limitations under the License.
 -->
 <resources>
-    <!-- Turbo Extra info -->
-    <color name="extrainfo_separator">#ffffffff</color>
-    <color name="extrainfo_cat_background">#ff263238</color>
-    <color name="extrainfo_cat_text">#ffffffff</color>
-    <color name="extrainfo_value_text">#ff263238</color>
-
     <!-- The theme accent -->
-    <color name="theme_accent">#ff009688</color>
+    <color name="theme_accent">#ff606060</color>
 </resources>
