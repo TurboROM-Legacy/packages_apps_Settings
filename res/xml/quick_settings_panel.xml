@@ -27,6 +27,13 @@
             android:summary="@string/qs_brightness_slider_summary"
             android:defaultValue="true"/>
 
+        <ListPreference
+            android:key="quick_pulldown"
+            android:title="@string/quick_pulldown_title"
+            android:entries="@array/quick_pulldown_entries"
+            android:entryValues="@array/quick_pulldown_values"
+            android:persistent="false" />
+
         <PreferenceScreen
             android:id="@+id/qs_settings"
             android:title="@string/qs_settings_title"
