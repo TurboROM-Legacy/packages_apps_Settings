@@ -59,6 +59,7 @@ public class Animations extends SettingsPreferenceFragment implements OnPreferen
     private static final String WALLPAPER_CLOSE = "wallpaper_close";
     private static final String WALLPAPER_INTRA_OPEN = "wallpaper_intra_open";
     private static final String WALLPAPER_INTRA_CLOSE = "wallpaper_intra_close";
+    private static final String KEY_TOAST_ANIMATION = "toast_animation";
     private static final String POWER_MENU_ANIMATIONS = "power_menu_animations";
 
     ListPreference mActivityOpenPref;
@@ -71,6 +72,7 @@ public class Animations extends SettingsPreferenceFragment implements OnPreferen
     ListPreference mWallpaperClose;
     ListPreference mWallpaperIntraOpen;
     ListPreference mWallpaperIntraClose;
+    ListPreference mToastAnimation;
     AnimBarPreference mAnimationDuration;
     SwitchPreference mAnimNoOverride;
     ListPreference mPowerMenuAnimations;
@@ -96,6 +98,13 @@ public class Animations extends SettingsPreferenceFragment implements OnPreferen
             mAnimationsStrings[i] = AwesomeAnimationHelper.getProperName(mContext, mAnimations[i]);
             mAnimationsNum[i] = String.valueOf(mAnimations[i]);
         }
+
+        mToastAnimation = (ListPreference) findPreference(KEY_TOAST_ANIMATION);
+        mToastAnimation.setSummary(mToastAnimation.getEntry());
+        int CurrentToastAnimation = Settings.System.getInt(getContentResolver(), Settings.System.TOAST_ANIMATION, 1);
+        mToastAnimation.setValueIndex(CurrentToastAnimation); //set to index of default value
+        mToastAnimation.setSummary(mToastAnimation.getEntries()[CurrentToastAnimation]);
+        mToastAnimation.setOnPreferenceChangeListener(this);
 
         //mAnimNoOverride = (SwitchPreference) findPreference(ANIMATION_NO_OVERRIDE);
         //mAnimNoOverride.setChecked(Settings.System.getBoolean(mContentRes,
@@ -244,6 +253,12 @@ public class Animations extends SettingsPreferenceFragment implements OnPreferen
             int val = Integer.parseInt((String) newValue);
             Settings.System.putInt(mContentRes,
                     Settings.System.ANIMATION_CONTROLS_DURATION, val);
+        } else if (preference == mToastAnimation) {
+            int index = mToastAnimation.findIndexOfValue((String) newValue);
+            Settings.System.putString(getContentResolver(), Settings.System.TOAST_ANIMATION, (String) newValue);
+            mToastAnimation.setSummary(mToastAnimation.getEntries()[index]);
+            Toast.makeText(mContext, "Toast Test", Toast.LENGTH_SHORT).show();
+            return true;
         } else if (preference == mPowerMenuAnimations) {
             Settings.System.putInt(getContentResolver(), Settings.System.POWER_MENU_ANIMATIONS,
                     Integer.valueOf((String) newValue));
