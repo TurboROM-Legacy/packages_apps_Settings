@@ -18,10 +18,9 @@
     android:layout="@layout/tab"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-         <PreferenceScreen
-            android:key="navigationbar"
-            android:fragment="com.android.settings.turbo.NavigationBar"
-            android:title="@string/navbar_title" 
-            android:summary="@string/navbar_summary" />
+        <Preference
+            android:key="aosp_navbar_settings"
+            android:fragment="com.android.settings.dui.nav.NavbarSettings"
+            android:title="@string/aosp_navigation_bar" />
 
 </PreferenceScreen>
