@@ -22,6 +22,12 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
          <PreferenceScreen
+            android:key="battery_bar_options"
+            android:fragment="com.android.settings.turbo.BatteryBar"
+            android:title="@string/battery_bar_title"
+            android:summary="@string/battery_bar_summary" />
+
+         <PreferenceScreen
             android:key="expanded_desktop"
             android:fragment="com.android.settings.applications.ExpandedDesktopPreferenceFragment"
             android:summary="@string/expanded_desktop_summary"
