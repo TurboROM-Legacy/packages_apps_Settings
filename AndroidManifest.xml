@@ -2095,6 +2095,21 @@
                 android:value="true" />
         </activity>
 
+        <!-- Battery bar -->
+        <activity android:name="Settings$BatteryBarSettingsActivity"
+                android:label="@string/battery_bar_title"
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.SHORTCUT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.turbo.BatteryBarSettings" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/battery_settings" />
+        </activity>
+
         <activity android:name=".fuelgauge.BatterySaverModeVoiceActivity"
                 android:label="@string/power_usage_summary_title"
                 android:theme="@android:style/Theme.Material.Light.Voice"

@@ -959,4 +959,20 @@
 
     <!-- Weather settings -->
     <string name="weather_settings">Weather</string>
+
+    <!-- Battery bar -->
+    <string name="battery_bar_title">Battery bar</string>
+    <string name="battery_bar">Battery bar location</string>
+    <string name="battery_bar_color">Battery bar color</string>
+    <string name="battery_bar_cat">Battery bar style</string>
+    <string name="battery_bar_style_title">Battery bar alignment</string>
+    <string name="battery_bar_thickness_title">Battery bar thickness</string>
+    <string name="battery_bar_animate_title">Charging animation</string>
+    <string name="battery_bar_animate_summary">Enable to animate the battery bar while charging</string>
+    <string name="battery_bar_style_regular">Regular</string>
+    <string name="battery_bar_style_center_mirrored">Center-mirrored</string>
+    <string name="battery_bar_hide">Hide</string>
+    <string name="battery_bar_status_bar">Status bar</string>
+    <string name="battery_bar_top_navbar">Top of navbar</string>
+    <string name="battery_bar_bottom_navbar">Bottom of navbar</string>
 </resources>

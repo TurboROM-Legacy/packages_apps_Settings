@@ -118,6 +118,7 @@ import com.android.settings.search.Index;
 import com.android.settings.privacyguard.PrivacyGuardPrefs;
 import com.android.settings.sim.SimSettings;
 import com.android.settings.tts.TextToSpeechSettings;
+import com.android.settings.turbo.BatteryBarSettings;
 import com.android.settings.turbo.MainSettings;
 import com.android.settings.turbo.DisplayRotation;
 import com.android.settings.turbo.HeadsUpSettings;
@@ -363,6 +364,7 @@ public class SettingsActivity extends Activity
             ProcessStatsSummary.class.getName(),
             DrawOverlayDetails.class.getName(),
             WriteSettingsDetails.class.getName(),
+            BatteryBarSettings.class.getName(),
 	    MainSettings.class.getName(),
             com.android.settings.turbo.DisplayRotation.class.getName(),
             ExpandedDesktopPreferenceFragment.class.getName(),
