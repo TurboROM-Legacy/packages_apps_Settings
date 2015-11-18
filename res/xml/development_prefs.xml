@@ -56,6 +56,11 @@
         android:summary="@string/runningservices_settings_summary"
         android:fragment="com.android.settings.applications.RunningServices" />
 
+    <com.android.settings.preference.SystemSettingSwitchPreference
+        android:key="disable_fc_notifications"
+        android:title="@string/disable_fc_notifications_title"
+        android:summary="@string/disable_fc_notifications_summary" />
+
     <com.android.settings.ColorModePreference
         android:key="color_mode"
         android:title="@string/picture_color_mode"
