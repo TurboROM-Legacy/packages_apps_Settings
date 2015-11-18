@@ -15,4 +15,19 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/notification_drawer_title">
 
+    <PreferenceCategory
+        android:title="@string/qs_panel_title">
+
+        <com.android.settings.preference.SecureSettingSwitchPreference
+            android:key="qs_show_brightness_slider"
+            android:title="@string/qs_brightness_slider_title"
+            android:defaultValue="true"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/notification_panel_title">
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
