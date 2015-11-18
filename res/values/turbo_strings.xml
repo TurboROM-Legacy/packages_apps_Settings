@@ -1065,4 +1065,15 @@
     <string name="status_bar_turbo_title">Turbo ROM logo in status bar</string>
     <string name="status_bar_turbo_summary">Display the Turbo ROM logo on the status bar</string>
 
+    <!-- Battery Bar -->
+    <string name="battery_bar_title">Battery bar</string>
+    <string name="battery_bar_summary">Configure a battery bar on either the navbar or status bar</string>
+    <string name="battery_bar">Battery bar location</string>
+    <string name="battery_bar_color">Battery bar color</string>
+    <string name="battery_bar_cat">Battery bar style</string>
+    <string name="battery_bar_style_title">Battery bar alignment</string>
+    <string name="battery_bar_thickness_title">Battery bar thickness</string>
+    <string name="battery_bar_animate_title">Charging animation</string>
+    <string name="battery_bar_animate_summary">Enable to animate the battery bar while charging</string>
+
 </resources>
