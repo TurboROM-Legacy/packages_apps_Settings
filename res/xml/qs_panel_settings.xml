@@ -18,4 +18,15 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/qs_panel_title" >
 
+    <PreferenceCategory
+        android:title="@string/qs_general_title" >
+
+	<com.android.settings.preference.SecureSettingSwitchPreference
+	    android:key="qs_show_brightness_slider"
+	    android:title="@string/qs_brightness_slider_title"
+	    android:summary="@string/qs_brightness_slider_summary"
+	    android:defaultValue="true" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
