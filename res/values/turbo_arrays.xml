@@ -380,6 +380,21 @@
         <item>3</item>
     </string-array>
 
+    <!-- Carrier label -->
+    <string-array name="carrier_label_entries" translatable="false">
+        <item>@string/show_carrier_disabled</item>
+        <item>@string/show_carrier_keyguard</item>
+        <item>@string/show_carrier_status_bar</item>
+        <item>@string/show_carrier_enabled_both</item>
+    </string-array>
+
+    <string-array name="carrier_label_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
     <!-- Arrays for clock & date customization -->
     <string-array name="clock_style_entries" translatable="false">
         <item>@string/right_clock</item>
