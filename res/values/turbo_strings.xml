@@ -162,4 +162,8 @@
     <!-- Unaccounted and over-counted battery stats -->
     <string name="show_unac_and_overcounted_stats_title">Show unaccounted and over-counted stats</string>
     <string name="show_unac_and_overcounted_stats_summary">Show unaccounted and over-counted usage in battery statistics.</string>
+
+    <!-- Battery stats reset -->
+    <string name="battery_stats_reset">Reset stats</string>
+    <string name="battery_stats_message">Battery history stats are going to be reset</string>
 </resources>
