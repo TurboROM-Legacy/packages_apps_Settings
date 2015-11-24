@@ -1277,6 +1277,10 @@ public class SettingsActivity extends Activity
                     if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH)) {
                         removeTile = true;
                     }
+                 } else if (id == R.id.mobile_networks) {
+                    if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_TELEPHONY)) {
+                        removeTile = true;
+                    }
                 } else if (id == R.id.data_usage_settings) {
                     // Remove data usage when kernel module not enabled
                     if (!Utils.isBandwidthControlEnabled()) {
@@ -1570,3 +1574,4 @@ public class SettingsActivity extends Activity
         mResultIntentData = resultIntentData;
     }
 }
+
