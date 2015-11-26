@@ -20,30 +20,32 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.ContentResolver;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.ContentObserver;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.UserHandle;
 import android.preference.ListPreference;
-import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.Preference;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.preference.SlimSeekBarPreference;
 import android.preference.SwitchPreference;
-import android.provider.Settings.SettingNotFoundException;
 import android.provider.Settings;
-import android.util.Log;
+import android.provider.Settings.SettingNotFoundException;
 import android.view.Gravity;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.MenuInflater;
 import com.android.internal.logging.MetricsLogger;
+
 import com.android.settings.DialogCreatable;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.internal.util.slim.DeviceUtils;
+import com.android.settings.Utils;
 
+import com.android.internal.util.slim.DeviceUtils;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class Recents extends SettingsPreferenceFragment implements DialogCreatable,
@@ -55,6 +57,7 @@ public class Recents extends SettingsPreferenceFragment implements DialogCreatab
     private static final int DEFAULT_BACKGROUND_COLOR = 0x00ffffff;
 
     private static final String CATEGORY_STOCK_RECENTS = "stock_recents";
+    private static final String CATEGORY_OMNI_RECENTS = "omni_recents";
     private static final String CATEGORY_SLIM_RECENTS = "slim_recents_category";
     private static final String SHOW_CLEAR_ALL_RECENTS = "show_clear_all_recents";
     private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
@@ -69,8 +72,14 @@ public class Recents extends SettingsPreferenceFragment implements DialogCreatab
     private static final String RECENT_PANEL_BG_COLOR = "recent_panel_bg_color";
     private static final String RECENT_CARD_BG_COLOR = "recent_card_bg_color";
     private static final String RECENT_CARD_TEXT_COLOR = "recent_card_text_color";
+    private static final String RECENTS_USE_OMNISWITCH = "recents_use_omniswitch";
+    private static final String OMNISWITCH_START_SETTINGS = "omniswitch_start_settings";
+    public static final String OMNISWITCH_PACKAGE_NAME = "org.omnirom.omniswitch";
+    public static Intent INTENT_OMNISWITCH_SETTINGS = new Intent(Intent.ACTION_MAIN)
+            .setClassName(OMNISWITCH_PACKAGE_NAME, OMNISWITCH_PACKAGE_NAME + ".SettingsActivity");
 
     private PreferenceCategory mStockRecents;
+    private PreferenceCategory mOmniRecents;
     private PreferenceCategory mSlimRecents;
     private SwitchPreference mRecentsClearAll;
     private ListPreference mRecentsClearAllLocation;
@@ -85,6 +94,10 @@ public class Recents extends SettingsPreferenceFragment implements DialogCreatab
     private ColorPickerPreference mRecentPanelBgColor;
     private ColorPickerPreference mRecentCardBgColor;
     private ColorPickerPreference mRecentCardTextColor;
+    private Preference mOmniSwitchSettings;
+    private boolean mOmniSwitchInitCalled;
+    private PreferenceCategory mOmniSwitch;
+    private SwitchPreference mRecentsUseOmniSwitch;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -95,7 +108,29 @@ public class Recents extends SettingsPreferenceFragment implements DialogCreatab
         ContentResolver resolver = getActivity().getContentResolver();
         PreferenceScreen prefSet = getPreferenceScreen();
 
+        mRecentsUseOmniSwitch = (SwitchPreference)
+                prefSet.findPreference(RECENTS_USE_OMNISWITCH);
+
+        try {
+            mRecentsUseOmniSwitch.setChecked(Settings.System.getInt(resolver,
+                    Settings.System.RECENTS_USE_OMNISWITCH) == 1);
+            mOmniSwitchInitCalled = true;
+        } catch(SettingNotFoundException e){
+            // if the settings value is unset
+        }
+        mRecentsUseOmniSwitch.setOnPreferenceChangeListener(this);
+
+        mOmniSwitchSettings = (Preference)
+                prefSet.findPreference(OMNISWITCH_START_SETTINGS);
+        mOmniSwitchSettings.setEnabled(mRecentsUseOmniSwitch.isChecked());
+
+        mOmniSwitch = (PreferenceCategory) findPreference(CATEGORY_OMNI_RECENTS);
+        if (!Utils.isPackageInstalled(getActivity(), OMNISWITCH_PACKAGE_NAME)) {
+            prefSet.removePreference(mOmniSwitch);
+        }
+
         mStockRecents = (PreferenceCategory) findPreference(CATEGORY_STOCK_RECENTS);
+ 	mOmniRecents = (PreferenceCategory) findPreference(CATEGORY_OMNI_RECENTS);
         mSlimRecents = (PreferenceCategory) findPreference(CATEGORY_SLIM_RECENTS);
 
         mRecentsClearAll = (SwitchPreference) prefSet.findPreference(SHOW_CLEAR_ALL_RECENTS);
@@ -118,6 +153,16 @@ public class Recents extends SettingsPreferenceFragment implements DialogCreatab
     @Override
     protected int getMetricsCategory() {
         return MetricsLogger.DONT_TRACK_ME_BRO;
+    }
+
+
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        if (preference == mOmniSwitchSettings){
+            startActivity(INTENT_OMNISWITCH_SETTINGS);
+            return true;
+        }
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
     @Override
@@ -208,6 +253,19 @@ public class Recents extends SettingsPreferenceFragment implements DialogCreatab
             int value = Integer.parseInt((String) newValue);
             Settings.System.putInt(getContentResolver(),
                 Settings.System.RECENTS_MAX_APPS, value);
+            return true;
+        } else if (preference == mRecentsUseOmniSwitch) {
+            boolean value = (Boolean) newValue;
+
+            if (value && !mOmniSwitchInitCalled){
+                openOmniSwitchFirstTimeWarning();
+                mOmniSwitchInitCalled = true;
+            }
+
+            Settings.System.putInt(
+                    resolver, Settings.System.RECENTS_USE_OMNISWITCH, value ? 1 : 0);
+            mOmniSwitchSettings.setEnabled(value);
+            updateRecents();
             return true;
         }
         return false;
@@ -370,12 +428,31 @@ public class Recents extends SettingsPreferenceFragment implements DialogCreatab
         boolean slimRecent = Settings.System.getInt(getActivity().getContentResolver(),
                     Settings.System.USE_SLIM_RECENTS, 0) == 1;
 
+        boolean omniRecents = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.RECENTS_USE_OMNISWITCH, 0) == 1;
+
         if (slimRecent) {
             mSlimRecents.setEnabled(true);
             mStockRecents.setEnabled(false);
+            mOmniRecents.setEnabled(false);
+        } else if (omniRecents) {
+            mOmniRecents.setEnabled(true);
+            mStockRecents.setEnabled(false);
+            mSlimRecents.setEnabled(false);
         } else {
            mSlimRecents.setEnabled(true);
            mStockRecents.setEnabled(true);
+           mOmniSwitch.setEnabled(true);
         }
+    }
+
+    private void openOmniSwitchFirstTimeWarning() {
+        new AlertDialog.Builder(getActivity())
+                .setTitle(getResources().getString(R.string.omniswitch_first_time_title))
+                .setMessage(getResources().getString(R.string.omniswitch_first_time_message))
+                .setNegativeButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int whichButton) {
+                        }
+        }).show();
     }
 }
