@@ -58,6 +58,9 @@
     <string name="recents_clear_all_dismiss_all_summary">Include the foreground task when clearing all recents</string>
     <string name="recents_searchbar_title">Search bar</string>
     <string name="recents_searchbar_summary">Show a Google search bar in the recents screen</string>
+    <!-- Full screen recents -->
+    <string name="recents_full_screen_title">Full screen recents</string>
+    <string name="recents_full_screen_summary">Makes the recents screen go into immersive mode</string>
  
     <!-- Status bar strings -->
     <string name="status_bar_title">Status bar</string>
