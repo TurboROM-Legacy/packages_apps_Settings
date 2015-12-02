@@ -116,6 +116,7 @@ import com.android.settings.search.DynamicIndexableContentMonitor;
 import com.android.settings.search.Index;
 import com.android.settings.sim.SimSettings;
 import com.android.settings.tts.TextToSpeechSettings;
+import com.android.settings.turbo.MainSettings;
 import com.android.settings.users.UserSettings;
 import com.android.settings.vpn2.VpnSettings;
 import com.android.settings.wfd.WifiDisplaySettings;
@@ -278,7 +279,8 @@ public class SettingsActivity extends Activity
             R.id.print_settings,
             R.id.nfc_payment_settings,
             R.id.home_settings,
-            R.id.dashboard
+            R.id.main_settings,
+            R.id.dashboard,
     };
 
     private static final String[] ENTRY_FRAGMENTS = {
@@ -354,6 +356,7 @@ public class SettingsActivity extends Activity
             ProcessStatsSummary.class.getName(),
             DrawOverlayDetails.class.getName(),
             WriteSettingsDetails.class.getName(),
+	    MainSettings.class.getName()
     };
 
 
