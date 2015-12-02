@@ -2498,6 +2498,21 @@
             </intent-filter>
         </activity>
 
+        <!-- Turbo ROM Settings -->
+        <activity android:name="Settings$MainSettingsActivity"
+        	android:label="@string/turbo_settings_title"
+            	android:taskAffinity="">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.turbo.MainSettings" />
+        </activity>
+
+        <activity
+             android:name=".turbo.MainSettings" />
+
         <activity android:name="Settings$WifiCallingSettingsActivity"
                   android:label="@string/wifi_calling_settings_title"
                   android:taskAffinity="">
