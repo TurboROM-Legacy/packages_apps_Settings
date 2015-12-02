@@ -2517,6 +2517,20 @@
 
         <!-- Start of Turbo activities -->
  
+        <activity android:name="Settings$MainSettingsActivity"
+        	android:label="@string/turbo_settings_title"
+            	android:taskAffinity="">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.turbo.MainSettings" />
+        </activity>
+
+        <activity
+             android:name=".turbo.MainSettings" />
+
         <!-- Turbo Extra info -->
         <activity android:name="com.android.settings.turbo.extrainfo.MainActivity"
                   android:theme="@style/Theme.Material.Light.Dialog.NoActionBar.MinWidth">
