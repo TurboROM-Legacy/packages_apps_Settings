@@ -343,4 +343,9 @@
     <string name="volbtn_up_zen_title">Volume up to exit do not disturb</string>
     <string name="volbtn_up_zen_summary">Allow volume up to exit do not disturb mode</string>
 
+    <!-- Linked / unlinked notification volume -->
+    <string name="link_volume_option_title">Link ring and notification volumes</string>
+    <string name="notification_volume_option_title">Notification volume</string>
+    <string name="ring_notification_volume_option_title">Ring and notification volume</string>
+
 </resources>
