@@ -531,5 +531,7 @@
     <!-- Custom status bar header -->
     <string name="status_bar_custom_header_title">Time contextual header</string>
     <string name="status_bar_custom_header_summary">Enable custom Quick Settings panel header image</string>
+    <string name="status_bar_custom_header_default_title">Contexual header images</string>
+    <string name="status_bar_custom_header_default_summary">Enable for Polygraphic HD images. Disable for original images.</string>
 
 </resources>
