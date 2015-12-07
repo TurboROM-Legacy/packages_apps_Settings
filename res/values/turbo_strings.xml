@@ -1540,4 +1540,7 @@
     <string name="app_ops_labels_superuser">Root access</string>
     <string name="app_ops_disabled_by_optimization">Disabled by battery optimization</string>
 
+    <string name="privacy_guard_advanced_settings_title">Advanced</string>
+    <string name="privacy_guard_notification_title">Show notification</string>
+
 </resources>
