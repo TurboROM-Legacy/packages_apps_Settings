@@ -60,6 +60,8 @@
  
     <!-- Status bar strings -->
     <string name="status_bar_title">Status bar</string>
+    <string name="status_bar_icon_blacklist_title">Status bar icons</string>
+    <string name="status_bar_icon_blacklist_summary">Configure what icons are shown on the status bar</string>
 
     <!-- EdgeGesture service -->
     <string name="edge_gesture_service_title">Block gesture touch events</string>
@@ -72,5 +74,6 @@
     <string name="display_category_wakeup_options_title">Wake up options</string>
     <string name="wakeup_when_plugged_unplugged_title">Wake up on charge</string>
     <string name="wakeup_when_plugged_unplugged_summary">Wake up device if charger is plugged/unplugged</string>  
+
 
 </resources>
