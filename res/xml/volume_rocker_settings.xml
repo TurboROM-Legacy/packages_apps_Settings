@@ -22,4 +22,17 @@
             android:summary="@string/volume_rocker_wake_summary"
             android:title="@string/volume_rocker_wake_title" />
 
+        <com.android.settings.preference.SystemSettingSwitchPreference
+            android:key="volume_down_zen"
+            android:title="@string/volbtn_down_zen_title"
+            android:summary="@string/volbtn_down_zen_summary"
+            android:defaultValue="false"/>
+        
+        <com.android.settings.preference.SystemSettingSwitchPreference
+            android:key="volume_up_leave_zen"
+            android:title="@string/volbtn_up_zen_title"
+            android:summary="@string/volbtn_up_zen_summary"
+            android:defaultValue="false"
+            android:dependency="volume_down_zen" />
+
 </PreferenceScreen>
