@@ -337,4 +337,10 @@
     <!-- Power button settings -->
     <string name="power_button_settings">Power button</string>
 
+    <!-- Rocker out of dnd -->
+    <string name="volbtn_down_zen_title">Volume down to enter silent mode</string>
+    <string name="volbtn_down_zen_summary">Allow volume down to enter do not disturb mode</string>
+    <string name="volbtn_up_zen_title">Volume up to exit do not disturb</string>
+    <string name="volbtn_up_zen_summary">Allow volume up to exit do not disturb mode</string>
+
 </resources>
