@@ -25,7 +25,7 @@
         android:title="@string/keyguard_shortcuts_title"
         android:summary="@string/keyguard_shortcuts_summary" >
             <extra android:name="actionMode" android:value="4" />
-            <extra android:name="maxAllowedActions" android:value="5" />
+            <extra android:name="maxAllowedActions" android:value="20" />
             <extra android:name="disableLongpress" android:value="true" />
             <extra android:name="useAppPickerOnly" android:value="true" />
             <extra android:name="fragment" android:value="com.android.settings.turbo.KeyguardShortcutSettings" />
