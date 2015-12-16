@@ -477,4 +477,8 @@
     <string name="double_tap_to_sleep_lockscreen_title">Lock screen</string>
     <string name="double_tap_to_sleep_lockscreen_summary">Double-tap on the top third or bottom shortcut area of the lock screen to turn off the display</string>
 
+    <!-- Status bar brightness control -->
+    <string name="status_bar_toggle_brightness">Brightness control</string>
+    <string name="status_bar_toggle_brightness_summary">Adjust screen brightness by sliding across the status bar</string>
+
 </resources>
