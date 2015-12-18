@@ -89,7 +89,9 @@
     <string name="recents_clear_all_location_bottom_right">Bottom right</string>
     <string name="recents_clear_all_location_bottom_left">Bottom left</string>
     <string name="recents_clear_all_location_bottom_center">Bottom center</string>
-
+    <string name="recents_clear_all_dismiss_all_title">Clear all tasks</string>
+    <string name="recents_clear_all_dismiss_all_summary">Include the foreground task when clearing all recent tasks</string>
+ 
     <!-- Status bar strings -->
     <string name="status_bar_title">Status bar</string>
 </resources>
