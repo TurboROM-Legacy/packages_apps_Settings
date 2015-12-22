@@ -18,6 +18,12 @@
         android:key="category_dtts_options"
         android:title="@string/display_category_dtts_title" >
 
+            <com.android.settings.preference.SystemSettingSwitchPreference
+                android:key="double_tap_vibrate"
+                android:title="@string/dbl_tap_vib_title"
+                android:summary="@string/dbl_tap_vib_summary"
+                android:defaultValue="true" />
+
 	<com.android.settings.preference.SystemSettingSwitchPreference
             android:key="double_tap_sleep_gesture"
             android:title="@string/double_tap_to_sleep_title"
