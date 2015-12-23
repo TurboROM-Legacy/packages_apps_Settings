@@ -1133,4 +1133,8 @@
     <string name="dim_nav_buttons_touch_anywhere_summary_on">Touching anywhere on the screen will cause buttons to un-dim</string>
     <string name="dim_nav_buttons_touch_anywhere_summary_off">Only touches on the navbar will cause buttons to un-dim</string>
 
+    <!-- Double tap to sleep on navigation bar -->
+    <string name="double_tap_sleep_nav_bar_title">Double tap navigation bar to sleep</string>
+    <string name="double_tap_sleep_nav_bar_summary">Double tap on the navigation bar to turn off the display</string>
+
 </resources>
