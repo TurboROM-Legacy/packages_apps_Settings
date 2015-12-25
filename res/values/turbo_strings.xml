@@ -781,6 +781,7 @@
 
     <!-- Turbo tweaks categories -->
     <string name="turbo_tweaks">Turbo tweaks</string>
+    <string name="animations_category">Animations</string>
     <string name="battery_category">Battery</string>
     <string name="buttons_category">Buttons</string>
     <string name="expanded_desktop_category">Expanded desktop</string>
@@ -1093,5 +1094,14 @@
     <string name="ime_switcher_notify">Selector notification</string>
     <string name="ime_switcher_notify_summary">Display input method selector notification</string>
     <string name="attention">Attention</string>
+
+    <!-- Animations -->
+    <string name="animations_summary">Change and tweak system animations</string>
+    <string name="power_menu_animation_title">Power menu animation</string>
+    <string name="power_menu_animation_summary">Change the enter/exit animation of the power menu</string>
+    <string name="power_menu_animation_dialog_title">Select power menu animation</string>
+    <string name="power_menu_animation_aosp">AOSP (default)</string>
+    <string name="power_menu_animation_bottom">Bottom</string>
+    <string name="power_menu_animation_top">Top</string>
 
 </resources>
