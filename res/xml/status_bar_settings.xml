@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- 
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
      Copyright (C) 2016 Turbo ROM
 
      Licensed under the Apache License, Version 2.0 (the "License");
@@ -7,23 +7,15 @@
      You may obtain a copy of the License at
 
           http://www.apache.org/licenses/LICENSE-2.0
-     
+
      Unless required by applicable law or agreed to in writing, software
      distributed under the License is distributed on an "AS IS" BASIS,
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<PreferenceScreen 
-	    xmlns:android="http://schemas.android.com/apk/res/android"
-	    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-	    android:title="@string/turbo_settings_title" >
-
-    <!-- Status bar -->
-    <PreferenceScreen
-	android:id="@+id/status_bar_settings"
-	android:title="@string/status_bar_title"
-	android:fragment="com.android.settings.turbo.StatusBarSettings"
-	/>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/status_bar_title" >
 
 </PreferenceScreen>

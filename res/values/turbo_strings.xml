@@ -76,4 +76,7 @@
     <string name="reset_default_message">Reset to default</string>
     <string name="reset_message">Reset all entries to default?</string>
     <string name="turbo_settings_title">Turbo settings</string>
+
+    <!-- Status bar strings -->
+    <string name="status_bar_title">Status bar</string>
 </resources>
