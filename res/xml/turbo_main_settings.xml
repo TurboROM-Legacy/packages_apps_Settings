@@ -17,7 +17,6 @@
 	    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
 	    android:title="@string/turbo_settings_title" >
 
-
     <!-- Display -->
     <PreferenceScreen
          android:id="@+id/display_settings"
@@ -32,5 +31,11 @@
          android:fragment="com.android.settings.notification.NotificationSettings"
          />
 
+    <!-- Status bar -->
+    <PreferenceScreen
+         android:id="@+id/status_bar_settings"
+         android:title="@string/status_bar_title"
+         android:fragment="com.android.settings.turbo.StatusBarSettings"
+         />
 
 </PreferenceScreen>
