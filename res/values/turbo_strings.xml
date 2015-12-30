@@ -423,4 +423,7 @@
     <!-- Layers manager -->
     <string name="bitsyko_layers">Layers Manager</string>
 
+    <!-- Restart SystemUI -->
+    <string name="restart_systemui">Restart SystemUI</string>
+
 </resources>
