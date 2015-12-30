@@ -81,6 +81,7 @@ import com.android.settings.fuelgauge.InactiveApps;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 import com.android.settings.widget.SwitchBar;
+import com.android.settings.util.Helpers;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -116,6 +117,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
     private static final String ADB_TCPIP = "adb_over_network";
     private static final String CLEAR_ADB_KEYS = "clear_adb_keys";
     private static final String ENABLE_TERMINAL = "enable_terminal";
+    private static final String RESTART_SYSTEMUI = "restart_systemui";
     private static final String KEEP_SCREEN_ON = "keep_screen_on";
     private static final String BT_HCI_SNOOP_LOG = "bt_hci_snoop_log";
     private static final String ENABLE_OEM_UNLOCK = "oem_unlock_enable";
@@ -213,6 +215,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
     private SwitchPreference mAdbOverNetwork;
     private Preference mClearAdbKeys;
     private SwitchPreference mEnableTerminal;
+    private Preference mRestartSystemUI;
     private SwitchPreference mKeepScreenOn;
     private SwitchPreference mBtHciSnoopLog;
     private SwitchPreference mEnableOemUnlock;
@@ -334,6 +337,8 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
             debugDebuggingCategory.removePreference(mEnableTerminal);
             mEnableTerminal = null;
         }
+        
+        mRestartSystemUI = findPreference(RESTART_SYSTEMUI);
 
         mKeepScreenOn = findAndInitSwitchPref(KEEP_SCREEN_ON);
         mBtHciSnoopLog = findAndInitSwitchPref(BT_HCI_SNOOP_LOG);
@@ -1684,6 +1689,8 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
                         Settings.Secure.ADB_PORT, -1);
                 updateAdbOverNetwork();
             }
+        } else if (preference == mRestartSystemUI) {
+            Helpers.restartSystemUI(); 
         } else if (preference == mClearAdbKeys) {
             if (mAdbKeysDialog != null) dismissDialogs();
             mAdbKeysDialog = new AlertDialog.Builder(getActivity())
