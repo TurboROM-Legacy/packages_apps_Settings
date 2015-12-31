@@ -41,6 +41,9 @@
     <string name="reset_message">Reset all entries to default?</string>
     <string name="turbo_settings_title">Turbo settings</string>
 
+    <!-- Recents -->
+    <string name="recents_settings_title">Recents panel</string>
+
     <!-- Status bar strings -->
     <string name="status_bar_title">Status bar</string>
 
