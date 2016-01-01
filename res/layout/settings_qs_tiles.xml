@@ -15,7 +15,8 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:gravity="center_vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@color/qs_settings_background">
 
     <com.android.settings.turbo.qs.DraggableGridView
         android:id="@+id/qs_gridview"
