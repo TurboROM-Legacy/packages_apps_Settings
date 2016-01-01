@@ -94,6 +94,10 @@ public class QSTileHolder {
                 resourceName = "ic_qs_hotspot_on";
                 stringId = R.string.hotspot;
                 break;
+            case QSConstants.TILE_NFC:
+                resourceName = "ic_qs_nfc_on";
+                stringId = R.string.qs_tile_nfc;
+                break;
             default:
                 return null;
         }
