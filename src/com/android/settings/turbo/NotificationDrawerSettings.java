@@ -29,6 +29,8 @@ import com.android.settings.R;
 import com.android.settings.turbo.qs.QSTiles;
 import com.android.settings.SettingsPreferenceFragment;
 
+import com.android.internal.logging.MetricsLogger;
+
 public class NotificationDrawerSettings extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
@@ -65,10 +67,6 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment
     @Override
     public void onResume() {
         super.onResume();
-
-        int qsTileCount = QSTiles.determineTileCount(getActivity());
-        mQSTiles.setSummary(getResources().getQuantityString(R.plurals.qs_tiles_summary,
-                    qsTileCount, qsTileCount));
     }
 
     @Override
@@ -84,6 +82,11 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment
         return false;
     }
 
+    @Override
+    protected int getMetricsCategory() {
+        return MetricsLogger.APPLICATION;
+    }
+
     private void updatePulldownSummary(int value) {
         Resources res = getResources();
 
@@ -96,15 +99,5 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment
                     : R.string.quick_pulldown_summary_right);
             mQuickPulldown.setSummary(res.getString(R.string.quick_pulldown_summary, direction));
         }
-    }
-
-    @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference pref) {
-        if (pref == mQSTiles) {
-            ((TinkerActivity)getActivity()).displaySubFrag(getString(R.string.qs_order_title));
-
-            return true;
-        }
-        return false;
     }
 }
