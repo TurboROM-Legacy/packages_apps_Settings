@@ -1038,4 +1038,7 @@
     <string name="hotstpot_inactivity_timeout_10_minutes">10 minutes</string>
     <string name="hotstpot_inactivity_timeout_never_summary_text">Portable Wi\u2011Fi hotspot timeout never</string>
     <string name="hotstpot_inactivity_timeout_summary_text">Portable Wi\u2011Fi hotspot timeout after <xliff:g id="timeout">%1$s</xliff:g></string>
+
+    <!-- Memory -->
+    <string name="memory_startup_apps_title">Apps started on boot</string>
 </resources>
