@@ -1028,4 +1028,16 @@
     <string name="listview_anticipate_overshoot_interpolator">Anticipate and overshoot</string>
     <string name="listview_bounce_interpolator">Bounce</string>
 
+    <!-- Global menu -->
+    <string name="global_menu_title">Global menu</string>
+    <string name="global_menu_summary">Choose which options appear in the global menu</string>
+
+    <!-- Advanced reboot options -->
+    <string name="advanced_reboot_title">Advanced reboot</string>
+    <string name="advanced_reboot_summary">Include options in the power menu for rebooting into recovery and bootloader</string>
+    <string name="advanced_reboot_dialog_title">Advanced reboot menu</string>
+    <string name="advanced_reboot_disabled">Disable</string>
+    <string name="advanced_reboot_hide_on_keyguard">Hide on lock screen</string>
+    <string name="advanced_reboot_show_always">Always show</string>
+
 </resources>
