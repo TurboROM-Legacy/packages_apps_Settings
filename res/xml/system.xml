@@ -30,4 +30,10 @@
             android:title="@string/buttons_category" 
             android:summary="@string/button_summary" />
 
+         <PreferenceScreen
+            android:key="globalmenu"
+            android:fragment="com.android.settings.turbo.GlobalMenu"
+            android:title="@string/global_menu_title" 
+            android:summary="@string/global_menu_summary" />
+
 </PreferenceScreen>
