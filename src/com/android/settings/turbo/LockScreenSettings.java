@@ -19,22 +19,29 @@ import com.android.internal.logging.MetricsLogger;
 
 import android.app.Activity;
 import android.app.WallpaperManager;
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.ListPreference;
 import android.preference.Preference;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
+import android.provider.Settings;
 
 import com.android.settings.R;
 import com.android.settings.preference.SystemSettingSwitchPreference;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
-public class LockScreenSettings extends SettingsPreferenceFragment {
+public class LockScreenSettings extends SettingsPreferenceFragment 
+	implements OnPreferenceChangeListener  {
 
+    private static final String LOCK_CLOCK_FONTS = "lock_clock_fonts";
     private static final String LSWEATHER = "ls_weather";
 
+    ListPreference mLockClockFonts;
     private PreferenceScreen mLsWeather;
 
     @Override
@@ -43,6 +50,27 @@ public class LockScreenSettings extends SettingsPreferenceFragment {
         addPreferencesFromResource(R.xml.lockscreen_settings);
 
         mLsWeather = (PreferenceScreen)findPreference(LSWEATHER);
+
+        ContentResolver resolver = getActivity().getContentResolver();
+
+        mLockClockFonts = (ListPreference) findPreference(LOCK_CLOCK_FONTS);
+        mLockClockFonts.setValue(String.valueOf(Settings.System.getInt(
+	    resolver, Settings.System.LOCK_CLOCK_FONTS, 0)));
+        mLockClockFonts.setSummary(mLockClockFonts.getEntry());
+        mLockClockFonts.setOnPreferenceChangeListener(this);   
+     }
+
+     @Override
+     public boolean onPreferenceChange(Preference preference, Object newValue) {
+	ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mLockClockFonts) {
+            Settings.System.putInt(resolver, Settings.System.LOCK_CLOCK_FONTS,
+		Integer.valueOf((String) newValue));
+            mLockClockFonts.setValue(String.valueOf(newValue));
+            mLockClockFonts.setSummary(mLockClockFonts.getEntry());
+            return true;
+        }
+        return false;
     }
     
     @Override

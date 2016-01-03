@@ -17,6 +17,15 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <ListPreference
+        android:key="lock_clock_fonts"
+        android:title="@string/lock_clock_font_title"
+        android:dialogTitle="@string/lock_clock_font_title"
+        android:entries="@array/lock_clock_fonts_entries"
+        android:entryValues="@array/lock_clock_fonts_values"
+        android:summary="@string/lock_clock_font_summary"
+        android:persistent="false" />
+
     <PreferenceScreen
         android:key="ls_weather"
         android:title="@string/lockscreen_weather_fragment_title"
