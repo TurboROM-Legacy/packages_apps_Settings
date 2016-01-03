@@ -43,6 +43,13 @@
             android:title="@string/docking_sounds_title"
             android:persistent="false" />
 
+    <!-- Screenshot tone -->
+    <com.android.settings.preference.SystemSettingSwitchPreference
+            android:key="screenshot_sound"
+            android:title="@string/screenshot_sound_title"
+            android:summary="@string/screenshot_sound_summary"
+            android:defaultValue="true" />
+
     <!-- Touch sounds -->
     <SwitchPreference
             android:key="touch_sounds"
