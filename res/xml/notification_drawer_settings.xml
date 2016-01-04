@@ -18,6 +18,12 @@
     <PreferenceCategory
         android:title="@string/qs_panel_title">
 
+        <com.android.settings.preference.SystemSettingSwitchPreference
+            android:key="status_bar_show_weather"
+            android:title="@string/status_bar_show_weather_title"
+            android:summary="@string/status_bar_show_weather_summary"
+            android:defaultValue="true" />
+
         <com.android.settings.preference.SecureSettingSwitchPreference
             android:key="qs_show_brightness_slider"
             android:title="@string/qs_brightness_slider_title"
