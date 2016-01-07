@@ -988,4 +988,8 @@
     <string name="status_bar_weather_font_notoserif_bold">NotoSerif Bold</string>
     <string name="status_bar_weather_font_notoserif_bold_italic">NotoSerif Bold Italic</string>
 
+    <!-- QS auto brightness toggle -->
+    <string name="brightness_icon_title">Auto-brightness icon</string>
+    <string name="brightness_icon_summary">Show a brightness icon to the left of the brighness slider to adjust auto-brightness</string>
+
 </resources>
