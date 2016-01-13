@@ -534,12 +534,12 @@ public class ActionListViewSettings extends ListFragment implements
             case PIE_SECOND:
                 return ActionHelper.getPieSecondLayerConfigWithDescription(
                     mActivity, mActionValuesKey, mActionEntriesKey);
-            case POWER_MENU_SHORTCUT:
-                return PolicyHelper.getPowerMenuConfigWithDescription(
-                    mActivity, mActionValuesKey, mActionEntriesKey);
             case SHAKE_EVENTS_DISABLED:
                 return ActionHelper.getDisabledShakeApps(mActivity);
 */
+            case POWER_MENU_SHORTCUT:
+                return ActionHelper.getPowerMenuConfigWithDescription(
+                    mActivity, mActionValuesKey, mActionEntriesKey);
 	    case RECENT_APP_SIDEBAR:
                 return ActionHelper.getRecentAppSidebarConfigWithDescription(
 		    mActivity, mActionValuesKey, mActionEntriesKey);
@@ -565,13 +565,13 @@ public class ActionListViewSettings extends ListFragment implements
             case PIE_SECOND:
                 ActionHelper.setPieSecondLayerConfig(mActivity, actionConfigs, reset);
                 break;
-            case POWER_MENU_SHORTCUT:
-                PolicyHelper.setPowerMenuConfig(mActivity, actionConfigs, reset);
-                break;
             case SHAKE_EVENTS_DISABLED:
                 ActionHelper.setDisabledShakeApps(mActivity, actionConfigs, reset);
                 break;
 */
+            case POWER_MENU_SHORTCUT:
+                ActionHelper.setPowerMenuConfig(mActivity, actionConfigs, reset);
+                break;
             case RECENT_APP_SIDEBAR:
                 ActionHelper.setRecentAppSidebarConfig(mActivity, actionConfigs, reset);
                 break;
@@ -618,13 +618,14 @@ public class ActionListViewSettings extends ListFragment implements
                     getResources().getString(R.string.shortcut_action_longpress)
                     + " " + getItem(position).getLongpressActionDescription());
             }
-            if (mActionMode == POWER_MENU_SHORTCUT) {
-/* Disabled for now till slims power menu is back!!!!!!!!!!!!!!
 
-                holder.iconView.setImageDrawable(ImageHelper.resize(
-                        mActivity, PolicyHelper.getPowerMenuIconImage(mActivity,
+            Drawable d = null;
+            String iconUri = getItem(position).getIcon();
+            if (mActionMode == POWER_MENU_SHORTCUT) {
+                d = ImageHelper.resize(
+                        mActivity, ActionHelper.getPowerMenuIconImage(mActivity,
                         getItem(position).getClickAction(),
-                        getItem(position).getIcon(), false), 36)); */
+                        iconUri), 48);
             } else {
                 holder.iconView.setImageDrawable(ImageHelper.resize(
                         mActivity, ActionHelper.getActionIconImage(mActivity,
