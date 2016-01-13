@@ -1040,4 +1040,14 @@
     <string name="advanced_reboot_hide_on_keyguard">Hide on lock screen</string>
     <string name="advanced_reboot_show_always">Always show</string>
 
+    <!-- Global menu actions -->
+    <string name="global_menu_entries_title">Menu entries</string>
+    <string name="global_menu_entries_summary">Configure the entries to show in power menu (up to 6)</string>
+    <string name="shortcut_action_airplane">Airplane mode</string>
+    <string name="shortcut_action_power_off">Power off</string>
+    <string name="shortcut_action_reboot">Reboot</string>
+    <string name="shortcut_action_sound">Sound</string>
+    <string name="shortcut_action_users">Users</string>
+    <string name="shortcut_action_lockdown">Lock now</string>
+
 </resources>
