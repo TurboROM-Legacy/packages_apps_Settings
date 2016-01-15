@@ -20,6 +20,10 @@
     <string name="turbo_version_default">Unknown</string>
     <string name="build_date">Build date</string>
 
+    <!-- Changelog -->
+    <string name="changelog_turbo_title">Changelog</string>
+    <string name="changelog_turbo_error">Unable to load changelog</string>
+
     <!-- Developer options -->
     <string name="show_dev_already_enabled">No need, Development settings are enabled by default.</string>
 
