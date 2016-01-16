@@ -32,16 +32,19 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.MetricsLogger;
 
+import com.android.settings.turbo.SlimRecents;
+
 public class RecentsSettings extends SettingsPreferenceFragment
 	implements OnPreferenceChangeListener  {
 
 
     private static final String SHOW_CLEAR_ALL_RECENTS = "show_clear_all_recents";
     private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
-
+    private static final String USE_SLIM_RECENTS = "use_slim_recents";	
 
     private SwitchPreference mRecentsClearAll;
     private ListPreference mRecentsClearAllLocation;
+    private SwitchPreference mUseSlimRecents;
 
     @Override
     protected int getMetricsCategory() {
@@ -54,6 +57,9 @@ public class RecentsSettings extends SettingsPreferenceFragment
         addPreferencesFromResource(R.xml.recents_settings);
         ContentResolver resolver = getActivity().getContentResolver();
         PreferenceScreen prefSet = getPreferenceScreen();
+
+        boolean SlimRecents = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.USE_SLIM_RECENTS, 0) == 1;
 
         mRecentsClearAll = (SwitchPreference) prefSet.findPreference(SHOW_CLEAR_ALL_RECENTS);
 
