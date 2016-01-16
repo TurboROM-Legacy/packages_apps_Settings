@@ -61,12 +61,19 @@
     <string name="recents_clear_all_dismiss_all_summary">Include the foreground task when clearing all recents</string>
     <string name="recents_searchbar_title">Search bar</string>
     <string name="recents_searchbar_summary">Show a Google search bar in the recents screen</string>
-    <!-- Full screen recents -->
-    <string name="recents_full_screen_title">Full screen recents</string>
-    <string name="recents_full_screen_summary">Makes the recents screen go into immersive mode</string>
+
     <!-- Membar in recent apps -->
     <string name="recents_show_membar_title">Memory bar</string>
     <string name="recents_show_membar_summary">Show a bar with the device\'s available memory</string>
+
+    <!-- Immersive Recents -->
+    <string name="immersive_recents_title">Immersive recents</string>
+    <string name="immersive_recents_summary">Change the view of the recents screen</string>
+    <string name="immersive_recents_dialog_title">Select recents view</string>
+    <string name="immersive_recents_default">Default</string>
+    <string name="immersive_recents_fullscreen">Full-screen</string>
+    <string name="immersive_recents_statusbar">Status bar only</string>
+    <string name="immersive_recents_navbar">Navbar only</string>
  
     <!-- Status bar strings -->
     <string name="status_bar_title">Status bar</string>
