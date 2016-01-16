@@ -62,4 +62,17 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="recents_panel_style"
+        android:title="@string/recents_panel_style" >
+        
+        <!-- Slim Recents -->
+        <PreferenceScreen
+            android:key="slim_recents"
+            android:id="@+id/slim_recents"
+            android:title="@string/slim_recents_panel"
+            android:fragment="com.android.settings.turbo.SlimRecents" />
+            
+  </PreferenceCategory>
+
 </PreferenceScreen>
