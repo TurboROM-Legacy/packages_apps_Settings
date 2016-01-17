@@ -89,6 +89,7 @@ import com.android.settings.deviceinfo.PrivateVolumeForget;
 import com.android.settings.deviceinfo.PrivateVolumeSettings;
 import com.android.settings.deviceinfo.PublicVolumeSettings;
 import com.android.settings.deviceinfo.StorageSettings;
+import com.android.settings.dui.nav.NavbarSettings;
 import com.android.settings.fuelgauge.BatterySaverSettings;
 import com.android.settings.fuelgauge.PowerUsageDetail;
 import com.android.settings.fuelgauge.PowerUsageSummary;
@@ -372,7 +373,8 @@ public class SettingsActivity extends Activity
             BlacklistSettings.class.getName(),
 	    HeadsUpSettings.class.getName(),
  	    TurboTweaks.class.getName(),
-            com.android.settings.privacyguard.PrivacyGuardManager.class.getName()
+            com.android.settings.privacyguard.PrivacyGuardManager.class.getName(),
+            NavbarSettings.class.getName()
     };
 
 

@@ -2698,5 +2698,47 @@
                 android:value="com.android.settings.applications.WriteSettingsDetails" />
         </activity>
 
+        <!-- Navigation settings activity -->
+        <activity android:name="Settings$NavigationSettingsActivity"
+                android:label="@string/aosp_navigation_bar"
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.dui.NavbarSettings" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/user_settings" />
+        </activity>
+
+        <!-- System action picker -->
+        <activity android:name="com.android.settings.dui.ActionPickerDialogActivity"
+                android:theme="@android:style/Theme.Material.Light.Dialog.NoActionBar"
+                android:label="@string/choose_action_title"
+                android:excludeFromRecents="true">
+            <intent-filter>
+               <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <!-- Icon pack picker -->
+        <activity android:name="com.android.settings.dui.IconPickerActivity"
+                android:theme="@android:style/Theme.Material.Light.Dialog.NoActionBar"
+                android:label="@string/icon_pack_picker_dialog_title"
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <!-- Icon pack grid -->
+        <activity android:name="com.android.settings.dui.IconPackGridActivity"
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
     </application>
 </manifest>
