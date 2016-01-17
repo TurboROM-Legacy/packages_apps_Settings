@@ -21,15 +21,20 @@ import android.os.Bundle;
 import android.os.ServiceManager;
 import android.provider.Settings;
 import android.preference.Preference;
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.view.IWindowManager;
 
 import com.android.settings.R;
+import com.android.settings.preference.SystemSettingSwitchPreference;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.Utils;
 
 public class ButtonSettings extends SettingsPreferenceFragment {
 
     private static final String KEY_HARDWARE_KEYS = "hardwarekeys_settings";
+
+    private SystemSettingSwitchPreference mLsTorch;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -43,6 +48,14 @@ public class ButtonSettings extends SettingsPreferenceFragment {
                 com.android.internal.R.integer.config_deviceHardwareKeys);
         if (deviceKeys == 0 && hardwareKeys != null) {
             getPreferenceScreen().removePreference(hardwareKeys);
+        }
+
+        PreferenceCategory generalCategory = (PreferenceCategory) findPreference("lockscreen_gen");
+        PreferenceScreen prefScreen = getPreferenceScreen();
+        
+        mLsTorch = (SystemSettingSwitchPreference) prefScreen.findPreference("keyguard_toggle_torch");
+        if (!Utils.deviceSupportsFlashLight(getActivity())) {
+           generalCategory.removePreference(mLsTorch);
         }
     }
 

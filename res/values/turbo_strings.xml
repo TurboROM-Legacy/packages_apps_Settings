@@ -330,4 +330,8 @@
     <string name="lockscreen_wallpaper_set_title">Set lock screen wallpaper</string>
     <string name="lockscreen_wallpaper_clear_title">Clear lock screen wallpaper</string>
 
+    <!-- Lock screen torch -->
+    <string name="keyguard_torch_title">Lock screen torch</string>
+    <string name="keyguard_torch_summary">Long-press power button with screen off to turn on torch</string>
+
 </resources>
