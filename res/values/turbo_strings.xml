@@ -1523,6 +1523,9 @@
     <string name="select_custom_activity_title">Select custom activity</string>
     <string name="select_custom_app_title">Select custom app</string>
 
+    <!-- Icon pack picker -->
+    <string name="icon_pack_picker_dialog_title">Icon packs</string>
+
     <!-- Navigation Bar -->
     <string name="navbar_interface_title">Interface</string>
     <string name="navbar_size">Bar size</string>
@@ -1617,5 +1620,19 @@
     <string name="fling_pulse_color">Pulse color</string>
     <string name="eos_fling_lavalamp_title">Turn on Lava Lamp</string>
     <string name="eos_fling_lavalamp_summary">Pulse animates a smooth lava lamp style color blend</string>
+
+    <!-- SmartBar -->
+    <string name="smartbar_interface">SmartBar</string>
+    <string name="smartbar_category">SmartBar</string>
+    <string name="smartbar_settings_title">SmartBar settings</string>
+    <string name="smartbar_editor_title">Toggle button editor</string>
+    <string name="smartbar_editor_summary">Medium press and drag to change position. Long press to show edit menu. Button position may be changed while menu is showing.</string>
+    <string name="smartbar_context_menu_position_title">Context buttons layout position</string>
+    <string name="smartbar_context_menu_position_summary">Set the position of contextual buttons such as menu and IME selector</string>
+    <string name="smartbar_right">Right</string>
+    <string name="smartbar_left">Left</string>
+    <string name="smartbar_factory_reset_title">Restore stock settings</string>
+    <string name="smartbar_factory_reset_summary">SmartBar will reset to a factory configuration</string>
+    <string name="smartbar_factory_reset_confirm">Are you sure you want to reset SmartBar to stock settings?</string>
 
 </resources>
