@@ -522,9 +522,6 @@ public class ActionListViewSettings extends ListFragment implements
             case LOCKSCREEN_SHORTCUT:
                 return ActionHelper.getLockscreenShortcutConfig(mActivity);
 /* Disabled for now till all features are back. Enable it step per step!!!!!!
-            case NAV_BAR:
-                return ActionHelper.getNavBarConfigWithDescription(
-                    mActivity, mActionValuesKey, mActionEntriesKey);
             case NAV_RING:
                 return ActionHelper.getNavRingConfigWithDescription(
                     mActivity, mActionValuesKey, mActionEntriesKey);
@@ -537,6 +534,9 @@ public class ActionListViewSettings extends ListFragment implements
             case SHAKE_EVENTS_DISABLED:
                 return ActionHelper.getDisabledShakeApps(mActivity);
 */
+            case NAV_BAR:
+                return ActionHelper.getNavBarConfigWithDescription(
+                    mActivity, mActionValuesKey, mActionEntriesKey);
             case POWER_MENU_SHORTCUT:
                 return ActionHelper.getPowerMenuConfigWithDescription(
                     mActivity, mActionValuesKey, mActionEntriesKey);
@@ -553,9 +553,6 @@ public class ActionListViewSettings extends ListFragment implements
                 ActionHelper.setLockscreenShortcutConfig(mActivity, actionConfigs, reset);
                 break;
 /* Disabled for now till all features are back. Enable it step per step!!!!!!
-            case NAV_BAR:
-                ActionHelper.setNavBarConfig(mActivity, actionConfigs, reset);
-                break;
             case NAV_RING:
                 ActionHelper.setNavRingConfig(mActivity, actionConfigs, reset);
                 break;
@@ -569,6 +566,9 @@ public class ActionListViewSettings extends ListFragment implements
                 ActionHelper.setDisabledShakeApps(mActivity, actionConfigs, reset);
                 break;
 */
+            case NAV_BAR:
+                ActionHelper.setNavBarConfig(mActivity, actionConfigs, reset);
+                break;
             case POWER_MENU_SHORTCUT:
                 ActionHelper.setPowerMenuConfig(mActivity, actionConfigs, reset);
                 break;
