@@ -53,6 +53,7 @@ public class NavigationBar extends SettingsPreferenceFragment implements OnPrefe
     private static final String PREF_BUTTON_STYLE = "nav_bar_button_style";
     private static final String PREF_STYLE_DIMEN = "navbar_style_dimen_settings";
     private static final String PREF_NAVIGATION_BAR_CAN_MOVE = "navbar_can_move";
+    private static final String STATUS_BAR_IME_ARROWS = "status_bar_ime_arrows";
 
     private int mNavBarMenuDisplayValue;
 
@@ -63,6 +64,7 @@ public class NavigationBar extends SettingsPreferenceFragment implements OnPrefe
     PreferenceScreen mButtonPreference;
     PreferenceScreen mButtonStylePreference;
     PreferenceScreen mStyleDimenPreference;
+    SwitchPreference mStatusBarImeArrows;
     private PreferenceCategory mNavGeneral;
     private PreferenceCategory mNavAdvanced;
 
@@ -110,6 +112,11 @@ public class NavigationBar extends SettingsPreferenceFragment implements OnPrefe
                 Settings.System.NAVIGATION_BAR_CAN_MOVE,
                 DeviceUtils.isPhone(getActivity()) ? 1 : 0) == 0);
         mNavigationBarCanMove.setOnPreferenceChangeListener(this);
+
+        mStatusBarImeArrows = (SwitchPreference) findPreference(STATUS_BAR_IME_ARROWS);
+        mStatusBarImeArrows.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.STATUS_BAR_IME_ARROWS, 0) == 1);
+        mStatusBarImeArrows.setOnPreferenceChangeListener(this);
     }
 
     private void updateBarVisibleAndUpdatePrefs(boolean showing) {
@@ -140,6 +147,11 @@ public class NavigationBar extends SettingsPreferenceFragment implements OnPrefe
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.NAVIGATION_BAR_CAN_MOVE,
                     ((Boolean) newValue) ? 0 : 1);
+            return true;
+        } else if (preference == mStatusBarImeArrows) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.STATUS_BAR_IME_ARROWS,
+                    ((Boolean) newValue) ? 1 : 0);
             return true;
         }
         return false;
