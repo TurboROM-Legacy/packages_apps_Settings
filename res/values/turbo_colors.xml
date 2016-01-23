@@ -34,4 +34,7 @@
     <color name="blacklist_enabled">#DD2C00</color>
     <color name="blacklist_disabled">#D7D7D7</color>
 
+    <!-- DSLV colors -->
+    <color name="dslv_icon_dark">#ff009688</color>
+
 </resources>
