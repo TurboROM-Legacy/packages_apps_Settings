@@ -17,9 +17,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <Preference
+    <PreferenceScreen
         android:key="ls_weather"
         android:title="@string/lockscreen_weather_fragment_title"
-        android:summary="@string/lockscreen_weather_summary" />
+        android:summary="@string/lockscreen_weather_summary" 
+        android:fragment="com.android.settings.turbo.LockScreenWeather" />
 
 </PreferenceScreen>
