@@ -35,14 +35,14 @@ public class LockScreenSettings extends SettingsPreferenceFragment {
 
     private static final String LSWEATHER = "ls_weather";
 
-    private Preference mLsWeather;
+    private PreferenceScreen mLsWeather;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.lockscreen_settings);
 
-        mLsWeather = (Preference)findPreference(LSWEATHER);
+        mLsWeather = (PreferenceScreen)findPreference(LSWEATHER);
     }
     
     @Override
