@@ -87,6 +87,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private static final String KEY_ADVANCED_SECURITY = "advanced_security";
     private static final String KEY_MANAGE_TRUST_AGENTS = "manage_trust_agents";
     private static final String KEY_FINGERPRINT_SETTINGS = "fingerprint_settings";
+    private static final String KEY_KEYGUARD_QUICK_UNLOCK_CONTROL = "quick_unlock_control";
 
     private static final int SET_OR_CHANGE_LOCK_METHOD_REQUEST = 123;
     private static final int CHANGE_TRUST_AGENT_SETTINGS = 126;
@@ -107,7 +108,8 @@ public class SecuritySettings extends SettingsPreferenceFragment
     // These switch preferences need special handling since they're not all stored in Settings.
     private static final String SWITCH_PREFERENCE_KEYS[] = { KEY_LOCK_AFTER_TIMEOUT,
             KEY_VISIBLE_PATTERN, KEY_POWER_INSTANTLY_LOCKS, KEY_SHOW_PASSWORD,
-            KEY_TOGGLE_INSTALL_APPLICATIONS };
+            KEY_TOGGLE_INSTALL_APPLICATIONS,
+            KEY_KEYGUARD_QUICK_UNLOCK_CONTROL };
 
     // Only allow one trust agent on the platform.
     private static final boolean ONLY_ONE_TRUST_AGENT = true;
@@ -131,6 +133,7 @@ public class SecuritySettings extends SettingsPreferenceFragment
     private SwitchPreference mToggleAppInstallation;
     private DialogInterface mWarnInstallApps;
     private SwitchPreference mPowerButtonInstantlyLocks;
+    private SwitchPreference mQuickUnlockScreen;
 
     private boolean mIsPrimary;
 
@@ -258,6 +261,14 @@ public class SecuritySettings extends SettingsPreferenceFragment
             mPowerButtonInstantlyLocks.setSummary(getString(
                     R.string.lockpattern_settings_power_button_instantly_locks_summary,
                     trustAgentPreference.getTitle()));
+        }
+
+        // Quick Unlock Screen Control
+        mQuickUnlockScreen = (SwitchPreference) root
+                .findPreference(KEY_KEYGUARD_QUICK_UNLOCK_CONTROL);
+        if (mQuickUnlockScreen != null) {
+            mQuickUnlockScreen.setChecked(Settings.Secure.getInt(getContentResolver(),
+                    Settings.Secure.KEYGUARD_QUICK_UNLOCK_CONTROL, 0) == 1);
         }
 
         // Append the rest of the settings
@@ -704,6 +715,10 @@ public class SecuritySettings extends SettingsPreferenceFragment
             } else {
                 setNonMarketAppsAllowed(false);
             }
+        } else if (KEY_KEYGUARD_QUICK_UNLOCK_CONTROL.equals(key)) {
+            Settings.Secure.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.Secure.KEYGUARD_QUICK_UNLOCK_CONTROL,
+                    (Boolean) value ? 1 : 0);
         }
         return result;
     }
