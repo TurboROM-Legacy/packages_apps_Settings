@@ -44,6 +44,7 @@ import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceCategory;
 import android.preference.SeekBarVolumizer;
+import android.preference.SwitchPreference;
 import android.preference.TwoStatePreference;
 import android.provider.MediaStore;
 import android.provider.OpenableColumns;
@@ -121,7 +122,7 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
     private int mLockscreenSelectedValue;
     private ComponentName mSuppressor;
     private int mRingerMode = -1;
-
+    private SwitchPreference mVolumeLinkNotificationSwitch;
     private UserManager mUserManager;
 
     @Override
@@ -155,6 +156,8 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
             mRingPreference =
                     initVolumePreference(KEY_RING_VOLUME, AudioManager.STREAM_RING,
                             com.android.internal.R.drawable.ic_audio_ring_notif_mute);
+            mVolumeLinkNotificationSwitch = (SwitchPreference)
+                    sound.findPreference(KEY_VOLUME_LINK_NOTIFICATION);
         } else {
             sound.removePreference(sound.findPreference(KEY_RING_VOLUME));
             sound.removePreference(sound.findPreference(KEY_VOLUME_LINK_NOTIFICATION));
@@ -218,17 +221,17 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
     }
 
     private void updateNotificationPreferenceState() {
-        mNotificationPreference = initVolumePreference(KEY_NOTIFICATION_VOLUME,
-                AudioManager.STREAM_NOTIFICATION,
-                com.android.internal.R.drawable.ic_audio_ring_notif_mute);
+        if (mNotificationPreference == null) {
+            mNotificationPreference = initVolumePreference(KEY_NOTIFICATION_VOLUME,
+                    AudioManager.STREAM_NOTIFICATION,
+                    com.android.internal.R.drawable.ic_audio_ring_notif_mute);
+        }
 
         if (mVoiceCapable) {
-            final boolean enabled = Settings.System.getInt(getContentResolver(),
+            final boolean enabled = Settings.Secure.getInt(getContentResolver(),
                     Settings.Secure.VOLUME_LINK_NOTIFICATION, 1) == 1;
-
-            if (mNotificationPreference != null) {
-                boolean show = !enabled;
-                mNotificationPreference.setEnabled(show);
+            if (mVolumeLinkNotificationSwitch != null){
+                mVolumeLinkNotificationSwitch.setChecked(enabled);
             }
         }
     }
