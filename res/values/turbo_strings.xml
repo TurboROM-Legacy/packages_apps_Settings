@@ -69,6 +69,12 @@
 
     <!-- Gestures -->
     <string name="gesture_settings_title">Gestures</string>
+    <string name="gestures_title">Gestures</string>
+    <!-- DTTS -->
+    <string name="display_category_dtts_title">Double-tap to sleep gestures</string>
+    <!-- Three finger screenshot gesture -->
+    <string name="three_finger_gesture">Three finger gesture</string>
+    <string name="three_finger_gesture_summary">Swipe three fingers to take a screenshot</string>
 
     <!-- Wake up options -->
     <string name="display_category_wakeup_options_title">Wake up options</string>
