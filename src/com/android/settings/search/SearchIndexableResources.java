@@ -98,7 +98,7 @@ public final class SearchIndexableResources {
                         Ranking.getRankForClassName(MainSettings.class.getName()),
                         NO_DATA_RES_ID,
                         MainSettings.class.getName(),
-                        R.drawable.ic_turbo_interface));
+                        R.drawable.ic_turbo_settings));
 
 
         sResMap.put(SimSettings.class.getName(),
