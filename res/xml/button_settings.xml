@@ -26,6 +26,11 @@
             android:fragment="com.android.settings.turbo.HardwareKeysSettings"
             android:title="@string/button_keys_title" />
 
+        <PreferenceScreen
+             android:key="power_menu_general_category"
+             android:fragment="com.android.settings.turbo.PowerMenuActions"
+             android:title="@string/power_menu_title" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>
