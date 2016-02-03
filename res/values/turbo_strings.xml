@@ -247,4 +247,7 @@
     <string name="power_menu_sound_title">Sound panel</string>
     <string name="power_menu_bug_report_disabled">Bug reporting is disabled in development settings</string>
 
+    <!-- Notification drawer settings -->
+    <string name="notification_drawer_title">QS &amp; notification panel</string>
+
 </resources>

@@ -38,6 +38,13 @@
          android:title="@string/gestures_title" 
 	 />
 
+    <!-- Notification drawer -->
+    <PreferenceScreen
+         android:id="@+id/notification_drawer_settings"
+         android:title="@string/notification_drawer_title"
+         android:fragment="com.android.settings.turbo.NotificationDrawerSettings" 
+	 />
+
     <!-- Recents -->
     <PreferenceScreen
 	 android:id="@+id/recents_settings"
