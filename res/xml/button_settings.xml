@@ -31,6 +31,11 @@
              android:fragment="com.android.settings.turbo.PowerMenuActions"
              android:title="@string/power_menu_title" />
 
+        <PreferenceScreen
+             android:key="volume_rocker_general_category"
+             android:fragment="com.android.settings.turbo.VolumeRockerSettings"
+             android:title="@string/volume_rocker_screen_title" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>
