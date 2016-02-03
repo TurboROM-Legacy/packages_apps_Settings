@@ -2561,6 +2561,12 @@
                        android:resource="@id/wireless_settings" />
         </activity>
 
+        <receiver android:name="com.android.settings.turbo.OnBoot">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+
         <provider
             android:name=".search.SettingsSearchIndexablesProvider"
             android:authorities="com.android.settings"

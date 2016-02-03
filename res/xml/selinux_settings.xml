@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2016 Turbo ROM
 
      Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,16 +13,20 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-
-<PreferenceScreen
+<PreferenceScreen 
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings" 
+    android:title="@string/selinux_switch_title" >
 
-    <!-- SELinux -->
-    <PreferenceScreen
-         android:id="@+id/seLinux"
-	 android:fragment="com.android.settings.turbo.SELinuxSettings"
-	 android:title="@string/selinux_switch_title" 
-	 />
+    <Preference
+	android:key="selinux_switch"
+	android:title="@string/selinux_switch_title"
+	android:summary="@string/selinux_switch_summary"
+	android:selectable="false"/>
+
+    <SwitchPreference
+	android:key="selinux"
+	android:title="@string/selinux_title"
+	android:defaultValue="false" />
 
 </PreferenceScreen>
