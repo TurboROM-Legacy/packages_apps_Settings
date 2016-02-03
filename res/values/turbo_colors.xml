@@ -18,7 +18,7 @@
 
     <!-- QS -->
     <color name="cardlayout_bg">#ff424242</color>
-    <color name="col_accnt">#ffffff</color>
+    <color name="col_accnt">#039588</color>
     <color name="list_item_title">#ffeeeeee</color>
     <color name="qs_settings_background">#dddddd</color>
     <color name="qs_tile_tint_color">@color/col_accnt</color>
