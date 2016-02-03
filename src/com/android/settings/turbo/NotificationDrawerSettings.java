@@ -31,14 +31,11 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.android.internal.logging.MetricsLogger;
 
-public class NotificationDrawerSettings extends SettingsPreferenceFragment
-        implements Preference.OnPreferenceChangeListener {
+public class NotificationDrawerSettings extends SettingsPreferenceFragment {
 
-    private static final String QUICK_PULLDOWN = "quick_pulldown";
     private static final String QS_ORDER = "qs_order";
 
     private Preference mQSTiles;
-    private ListPreference mQuickPulldown;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -55,13 +52,6 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment
         mQSTiles = prefSet.findPreference(QS_ORDER);
 
         ContentResolver resolver = getActivity().getContentResolver();
-        mQuickPulldown = (ListPreference) prefSet.findPreference(QUICK_PULLDOWN);
-
-        mQuickPulldown.setOnPreferenceChangeListener(this);
-        int quickPulldownValue = Settings.System.getIntForUser(resolver,
-                Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 1, UserHandle.USER_CURRENT);
-        mQuickPulldown.setValue(String.valueOf(quickPulldownValue));
-        updatePulldownSummary(quickPulldownValue);
     }
 
     @Override
@@ -69,35 +59,10 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment
         super.onResume();
     }
 
-    @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mQuickPulldown) {
-            int quickPulldownValue = Integer.valueOf((String) newValue);
-            Settings.System.putIntForUser(resolver, Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN,
-                    quickPulldownValue, UserHandle.USER_CURRENT);
-            updatePulldownSummary(quickPulldownValue);
-            return true;
-        }
-        return false;
-    }
 
     @Override
     protected int getMetricsCategory() {
         return MetricsLogger.APPLICATION;
     }
 
-    private void updatePulldownSummary(int value) {
-        Resources res = getResources();
-
-        if (value == 0) {
-            // quick pulldown deactivated
-            mQuickPulldown.setSummary(res.getString(R.string.quick_pulldown_off));
-        } else {
-            String direction = res.getString(value == 2
-                    ? R.string.quick_pulldown_summary_left
-                    : R.string.quick_pulldown_summary_right);
-            mQuickPulldown.setSummary(res.getString(R.string.quick_pulldown_summary, direction));
-        }
-    }
 }
