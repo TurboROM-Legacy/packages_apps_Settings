@@ -334,4 +334,7 @@
     <string name="keyguard_torch_title">Lock screen torch</string>
     <string name="keyguard_torch_summary">Long-press power button with screen off to turn on torch</string>
 
+    <!-- Power button settings -->
+    <string name="power_button_settings">Power button</string>
+
 </resources>
