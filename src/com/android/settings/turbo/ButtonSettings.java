@@ -34,8 +34,6 @@ public class ButtonSettings extends SettingsPreferenceFragment {
 
     private static final String KEY_HARDWARE_KEYS = "hardwarekeys_settings";
 
-    private SystemSettingSwitchPreference mLsTorch;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,13 +48,6 @@ public class ButtonSettings extends SettingsPreferenceFragment {
             getPreferenceScreen().removePreference(hardwareKeys);
         }
 
-        PreferenceCategory generalCategory = (PreferenceCategory) findPreference("lockscreen_gen");
-        PreferenceScreen prefScreen = getPreferenceScreen();
-        
-        mLsTorch = (SystemSettingSwitchPreference) prefScreen.findPreference("keyguard_toggle_torch");
-        if (!Utils.deviceSupportsFlashLight(getActivity())) {
-           generalCategory.removePreference(mLsTorch);
-        }
     }
 
     @Override
