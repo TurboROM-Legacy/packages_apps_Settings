@@ -219,6 +219,7 @@
     <string name="shortcut_action_camera">Camera</string>
     <string name="shortcut_action_power">Screen off</string>
     <string name="shortcut_action_screenshot">Screenshot</string>
+    <string name="shortcut_action_now_on_tap">Now on Tap</string>
     <string name="shortcut_action_assist">Search</string>
     <string name="shortcut_action_search">Search in app</string>
     <string name="shortcut_action_theme_switch">Theme switcher</string>
