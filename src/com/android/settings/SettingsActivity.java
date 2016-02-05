@@ -282,6 +282,7 @@ public class SettingsActivity extends Activity
             R.id.home_settings,
             R.id.main_settings,
             R.id.dashboard,
+            R.id.bitsyko_layers
     };
 
     private static final String[] ENTRY_FRAGMENTS = {
@@ -1313,6 +1314,15 @@ public class SettingsActivity extends Activity
                     boolean hasPrintingSupport = getPackageManager().hasSystemFeature(
                             PackageManager.FEATURE_PRINTING);
                     if (!hasPrintingSupport) {
+                        removeTile = true;
+                    }
+                } else if (id == R.id.bitsyko_layers) {
+                    boolean supported = false;
+                    try {
+                        supported = (getPackageManager().getPackageInfo("com.lovejoy777.rroandlayersmanager", 0).versionCode > 0);
+                    } catch (PackageManager.NameNotFoundException e) {
+                    }
+                    if (!supported) {
                         removeTile = true;
                     }
                 } else if (id == R.id.development_settings) {
