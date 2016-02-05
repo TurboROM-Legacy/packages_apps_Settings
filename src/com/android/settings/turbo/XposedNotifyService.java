@@ -37,7 +37,7 @@ public class XposedNotifyService extends Service {
     private static final String TAG = "XPOSED_FRAMEWORKS_SERVICE";
 
     // Message to post
-    private static final String XPOSED_IS_INSTALLED_MESSAGE = "XPOSED DETECTED!! WARRANTY IS VOID!!!";
+    private static final String XPOSED_IS_INSTALLED_MESSAGE = "XPOSED DETECTED!! NO LOGS WILL BE ACCEPTED WITH XPOSED INSTALLED!!!";
 
     // Repeat interval in milliseconds
     static final int REPEAT_MESSAGE_INTERVAL = 3000;
