@@ -47,7 +47,9 @@ public class PowerMenuActions extends PreferenceFragment {
     private SwitchPreference mLockdownPref;
     private SwitchPreference mAssistPref;
     private SwitchPreference mVoicePref;
+    /*
     private SwitchPreference mBugReportPref;
+    */
     private SwitchPreference mSilentPref;
 
     Context mContext;
@@ -89,8 +91,10 @@ public class PowerMenuActions extends PreferenceFragment {
                 mAssistPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_ASSIST);
             } else if (action.equals(GLOBAL_ACTION_KEY_VOICEASSIST )) {
                 mVoicePref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_VOICEASSIST );
+	    /*
             } else if (action.equals(GLOBAL_ACTION_KEY_BUGREPORT)) {
                 mBugReportPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_BUGREPORT);
+	    */
             } else if (action.equals(GLOBAL_ACTION_KEY_SILENT)) {
                 mSilentPref = (SwitchPreference) findPreference(GLOBAL_ACTION_KEY_SILENT);
             }
@@ -145,9 +149,11 @@ public class PowerMenuActions extends PreferenceFragment {
             mVoicePref.setChecked(settingsArrayContains(GLOBAL_ACTION_KEY_VOICEASSIST));
         }
 
+	/*
         if (mBugReportPref != null) {
             mBugReportPref.setChecked(settingsArrayContains(GLOBAL_ACTION_KEY_BUGREPORT));
         }
+	*/
 
         if (mSilentPref != null) {
             mSilentPref.setChecked(settingsArrayContains(GLOBAL_ACTION_KEY_SILENT));
@@ -197,10 +203,12 @@ public class PowerMenuActions extends PreferenceFragment {
         } else if (preference == mVoicePref) {
             value = mVoicePref.isChecked();
             updateUserConfig(value, GLOBAL_ACTION_KEY_VOICEASSIST);
-
+	
+	/*
         } else if (preference == mBugReportPref) {
             value = mBugReportPref.isChecked();
             updateUserConfig(value, GLOBAL_ACTION_KEY_BUGREPORT);
+	*/
 
         } else if (preference == mSilentPref) {
             value = mSilentPref.isChecked();
@@ -237,6 +245,7 @@ public class PowerMenuActions extends PreferenceFragment {
     }
 
     private void updatePreferences() {
+	/*
         boolean bugreport = Settings.Secure.getInt(getActivity().getContentResolver(),
                 Settings.Secure.BUGREPORT_IN_POWER_MENU, 0) != 0;
 
@@ -248,6 +257,7 @@ public class PowerMenuActions extends PreferenceFragment {
                 mBugReportPref.setSummary(R.string.power_menu_bug_report_disabled);
             }
         }
+	*/
     }
 
     private void getUserConfig() {
