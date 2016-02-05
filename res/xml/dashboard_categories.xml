@@ -113,6 +113,16 @@
                 android:icon="@drawable/ic_turbo_settings" 
 		/>
 
+        <dashboard-tile
+                android:id="@+id/bitsyko_layers"
+                android:icon="@drawable/ic_bitsyko_layers"
+                android:title="@string/bitsyko_layers">
+		<intent
+                    android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.lovejoy777.rroandlayersmanager"
+                    android:targetClass="com.lovejoy777.rroandlayersmanager.menu" />
+        </dashboard-tile>
+
         <!-- Home -->
         <dashboard-tile
                 android:id="@+id/home_settings"
