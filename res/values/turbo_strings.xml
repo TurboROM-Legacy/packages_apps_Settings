@@ -524,4 +524,8 @@
     <string name="status_bar_notif_count_title">Show notification count</string>
     <string name="status_bar_notif_count_summary">Display the number of pending notifications</string>
 
+    <!-- Hide lock screen clock and date -->
+    <string name="hide_lockscreen_clock_title">Show lock screen clock</string>
+    <string name="hide_lockscreen_date_title">Show lock screen date</string>
+
 </resources>
