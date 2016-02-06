@@ -16,6 +16,29 @@
     android:title="@string/notification_drawer_title">
 
     <PreferenceCategory
+        android:title="@string/notification_panel_title">
+
+        <com.android.settings.preference.SystemSettingSwitchPreference
+            android:key="disable_immersive_message"
+            android:title="@string/disable_immersive_message_title"
+            android:summary="@string/disable_immersive_message_summary" />
+
+
+        <com.android.settings.preference.SystemSettingSwitchPreference
+            android:key="force_expanded_notifications"
+            android:title="@string/force_expanded_notifications_title"
+            android:summary="@string/force_expanded_notifications_summary" />
+
+        <!-- Heads up -->
+        <com.android.settings.preference.GlobalSettingSwitchPreference
+            android:key="heads_up_notifications_enabled"
+            android:title="@string/heads_up_notifications"
+            android:summaryOn="@string/summary_heads_up_enabled"
+            android:summaryOff="@string/summary_heads_up_disabled" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/qs_panel_title">
 
         <com.android.settings.preference.SystemSettingSwitchPreference
@@ -27,34 +50,14 @@
         <com.android.settings.preference.SecureSettingSwitchPreference
             android:key="qs_show_brightness_slider"
             android:title="@string/qs_brightness_slider_title"
+            android:summary="@string/qs_brightness_slider_summary"
             android:defaultValue="true"/>
 
         <PreferenceScreen
             android:id="@+id/qs_settings"
             android:title="@string/qs_settings_title"
+            android:summary="@string/qs_settings_summary"
             android:fragment="com.android.settings.turbo.QsSettings" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/notification_panel_title">
-
-        <com.android.settings.preference.SystemSettingSwitchPreference
-            android:key="force_expanded_notifications"
-            android:title="@string/force_expanded_notifications_title"
-            android:summary="@string/force_expanded_notifications_summary" />
-
-        <com.android.settings.preference.SystemSettingSwitchPreference
-            android:key="disable_immersive_message"
-            android:title="@string/disable_immersive_message_title"
-            android:summary="@string/disable_immersive_message_summary" />
-
-        <!-- Heads up -->
-        <com.android.settings.preference.GlobalSettingSwitchPreference
-            android:key="heads_up_notifications_enabled"
-            android:title="@string/heads_up_notifications"
-            android:summaryOn="@string/summary_heads_up_enabled"
-            android:summaryOff="@string/summary_heads_up_disabled" />
 
     </PreferenceCategory>
 
