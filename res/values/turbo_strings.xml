@@ -426,4 +426,7 @@
     <!-- Restart SystemUI -->
     <string name="restart_systemui">Restart SystemUI</string>
 
+    <!-- Lock screen -->
+    <string name="lock_screen_settings">Lock screen</string>
+
 </resources>
