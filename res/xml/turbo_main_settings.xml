@@ -45,6 +45,13 @@
          android:title="@string/lock_screen_settings" 
 	 />
 
+     <!-- Miscellaneous -->
+     <PreferenceScreen
+         android:id="@+id/misc_settings"
+         android:fragment="com.android.settings.turbo.MiscSettings"
+         android:title="@string/misc_settings_title" 
+	 />
+
     <!-- Notification drawer -->
     <PreferenceScreen
          android:id="@+id/notification_drawer_settings"
