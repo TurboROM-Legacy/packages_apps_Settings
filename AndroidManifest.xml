@@ -2615,6 +2615,34 @@
                 android:resource="@id/user_settings" />
         </activity>
 
+        <!-- Navigation settings activity. -->
+        <activity android:name="Settings$SmartbarSettingsActivity"
+                android:label="@string/smartbar_settings_title"
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.dui.nav.SmartBarSettings" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/user_settings" />
+        </activity>
+
+        <!-- Navigation settings activity. -->
+        <activity android:name="Settings$FlingSettingsActivity"
+                android:label="@string/fling_settings"
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.dui.nav.FlingSettings" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/user_settings" />
+        </activity>
+
         <!-- System action picker -->
         <activity android:name="com.android.settings.dui.ActionPickerDialogActivity"
                 android:theme="@android:style/Theme.Material.Light.Dialog.NoActionBar"
