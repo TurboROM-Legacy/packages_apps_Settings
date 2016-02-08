@@ -525,8 +525,12 @@
     <string name="status_bar_notif_count_summary">Display the number of pending notifications</string>
 
     <!-- Hide lock screen clock and date -->
-    <string name="hide_lockscreen_clock_title">Show lock screen clock</string>
-    <string name="hide_lockscreen_date_title">Show lock screen date</string>
+    <string name="hide_lockscreen_clock_title">Lock screen clock</string>
+    <string name="hide_lockscreen_clock_summary">Enable clock on lock screen</string>
+    <string name="hide_lockscreen_date_title">Lock screen date</string>
+    <string name="hide_lockscreen_date_summary">Enable date on lock screen</string>
+    <string name="hide_lockscreen_alarm_title">Lock screen alarm text</string>
+    <string name="hide_lockscreen_alarm_summary">Enable alarm text on lock screen</string>
 
     <!-- Custom status bar header -->
     <string name="status_bar_custom_header_title">Time contextual header</string>
