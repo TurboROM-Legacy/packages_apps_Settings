@@ -32,6 +32,11 @@ import com.android.internal.logging.MetricsLogger;
 
 public class MiscSettings extends SettingsPreferenceFragment {
 
+    private static final String KEY_LOCKCLOCK = "lockclock";
+    private static final String KEY_LOCKCLOCK_PACKAGE_NAME = "com.cyanogenmod.lockclock";
+
+    private PreferenceScreen mLockClock;
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
