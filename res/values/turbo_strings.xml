@@ -481,4 +481,8 @@
     <string name="status_bar_toggle_brightness">Brightness control</string>
     <string name="status_bar_toggle_brightness_summary">Adjust screen brightness by sliding across the status bar</string>
 
+    <!-- LockClock Setting -->
+    <string name="lockclock_settings_title">LockClock settings</string>
+    <string name="lockclock_settings_summary">Configure settings for the weather, calendar, and time widget (LockClock)</string>
+
 </resources>
