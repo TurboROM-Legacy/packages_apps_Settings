@@ -35,7 +35,7 @@
     <PreferenceScreen
 	 android:key="gestures_general_category"
          android:fragment="com.android.settings.turbo.GestureSettings"
-         android:title="@string/gestures_title" 
+         android:title="@string/gesture_settings_title" 
 	 />
  
     <!-- Lock screen settings -->

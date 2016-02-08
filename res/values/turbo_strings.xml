@@ -77,9 +77,9 @@
 
     <!-- Gestures -->
     <string name="gesture_settings_title">Gestures</string>
-    <string name="gestures_title">Gestures</string>
-    <!-- DTTS -->
-    <string name="display_category_dtts_title">Double-tap to sleep gestures</string>
+    <string name="gestures_title">Multi-finger gestures</string>
+    <!-- Double tap options -->
+    <string name="double_tap_options_title">Double tap gestures</string>
     <!-- Three finger screenshot gesture -->
     <string name="three_finger_gesture">Three finger gesture</string>
     <string name="three_finger_gesture_summary">Swipe three fingers to take a screenshot</string>
@@ -93,9 +93,9 @@
     <string name="proximity_wake_title">Prevent accidental wake up</string>
     <string name="proximity_wake_summary">Check the proximity sensor prior to waking up screen</string>
 
-    <!-- Double tap-to-sleep -->
-    <string name="double_tap_to_sleep_title">Double-tap to sleep</string>
-    <string name="double_tap_to_sleep_summary">Double-tap on the status bar to turn off the display</string>
+    <!-- Double tap to sleep -->
+    <string name="double_tap_to_sleep_title">Double tap to sleep on status bar</string>
+    <string name="double_tap_to_sleep_summary">Double tap on the status bar to turn off the display</string>
 
     <!-- Battery options -->
     <string name="battery_title">Battery </string>
@@ -474,8 +474,8 @@
     <string name="volume_button_toggle_info">Volume rocker wake must be disabled</string>
 
     <!-- Double tap lock screen to sleep -->
-    <string name="double_tap_to_sleep_lockscreen_title">Lock screen</string>
-    <string name="double_tap_to_sleep_lockscreen_summary">Double-tap on the top third or bottom shortcut area of the lock screen to turn off the display</string>
+    <string name="double_tap_to_sleep_lockscreen_title">Double tap to sleep on lock screen</string>
+    <string name="double_tap_to_sleep_lockscreen_summary">Double tap on the top third or bottom shortcut area of the lock screen to turn off the display</string>
 
     <!-- Status bar brightness control -->
     <string name="status_bar_toggle_brightness">Brightness control</string>
