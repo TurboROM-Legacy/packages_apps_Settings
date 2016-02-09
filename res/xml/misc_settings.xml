@@ -27,11 +27,12 @@
 	      android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
     </PreferenceScreen>
 
-    <!-- SELinux -->
+    <!-- SELinux
     <PreferenceScreen
          android:id="@+id/seLinux"
 	 android:fragment="com.android.settings.turbo.SELinuxSettings"
 	 android:title="@string/selinux_switch_title" 
 	 />
+     -->
 
 </PreferenceScreen>
