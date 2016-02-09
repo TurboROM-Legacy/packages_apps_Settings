@@ -137,8 +137,8 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
         super.onCreate(savedInstanceState);
         mContext = getActivity();
         mPM = mContext.getPackageManager();
-        mAudioManager = (AudioManager) getActivity().getSystemService(Context.AUDIO_SERVICE);
         mUserManager = UserManager.get(getContext());
+        mAudioManager = (AudioManager) getActivity().getSystemService(Context.AUDIO_SERVICE);
         mVoiceCapable = Utils.isVoiceCapable(mContext);
         mSecure = new LockPatternUtils(getActivity()).isSecure(UserHandle.myUserId());
 
@@ -161,13 +161,15 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
                         com.android.internal.R.drawable.ic_audio_ring_notif_mute);
 
         if (mVoiceCapable) {
-            mVolumeLinkNotification = (SwitchPreference) mSoundCategory.findPreference(KEY_VOLUME_LINK_NOTIFICATION);
+            mVolumeLinkNotification = (SwitchPreference) mSoundCategory.findPreference(
+                    KEY_VOLUME_LINK_NOTIFICATION);
             mRingPreference =
                     initVolumePreference(KEY_RING_VOLUME, AudioManager.STREAM_RING,
                             com.android.internal.R.drawable.ic_audio_ring_notif_mute);
         } else {
             mSoundCategory.removePreference(mSoundCategory.findPreference(KEY_RING_VOLUME));
-            mSoundCategory.removePreference(mSoundCategory.findPreference(KEY_VOLUME_LINK_NOTIFICATION));
+            mSoundCategory.removePreference(mSoundCategory.findPreference(
+                    KEY_VOLUME_LINK_NOTIFICATION));
         }
 
         initRingtones(mSoundCategory);
@@ -243,9 +245,14 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
         if (mNotificationPreference != null) {
             final boolean muted = mAudioManager.isStreamMute(AudioManager.STREAM_NOTIFICATION)
                     || mAudioManager.getStreamVolume(AudioSystem.STREAM_NOTIFICATION) == 0;
-            int iconId = getNotificationStreamIcon(mSuppressor != null || mRingerMode == AudioManager.RINGER_MODE_SILENT,
-                    mRingerMode == AudioManager.RINGER_MODE_VIBRATE, muted);
-            mNotificationPreference.showIcon(iconId);
+            mNotificationPreference.showIcon(mSuppressor != null ||
+                    mRingerMode == AudioManager.RINGER_MODE_SILENT
+                    ? com.android.internal.R.drawable.ic_audio_notification_mute_new
+                    : mRingerMode == AudioManager.RINGER_MODE_VIBRATE
+                    ? com.android.internal.R.drawable.ic_audio_ring_notif_vibrate
+                    : muted
+                    ? com.android.internal.R.drawable.ic_audio_notification_mute_new
+                    : com.android.internal.R.drawable.ic_audio_notification_new);
             mNotificationPreference.setEnabled(mRingerMode != AudioManager.RINGER_MODE_SILENT
                     && mRingerMode != AudioManager.RINGER_MODE_VIBRATE);
         }
@@ -573,8 +580,10 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
                         // set to same volume as ringer by default if link is enabled
                         // otherwise notification volume will only change after next
                         // change of ringer volume
-                        final int ringerVolume = mAudioManager.getStreamVolume(AudioSystem.STREAM_RING);
-                        mAudioManager.setStreamVolume(AudioSystem.STREAM_NOTIFICATION, ringerVolume, 0);  
+                        final int ringerVolume = mAudioManager.getStreamVolume(
+                                AudioSystem.STREAM_RING);
+                        mAudioManager.setStreamVolume(AudioSystem.STREAM_NOTIFICATION,
+                                ringerVolume, 0);
                     }
                     Settings.System.putInt(getContentResolver(),
                             Settings.System.VOLUME_LINK_NOTIFICATION, val ? 1 : 0);
@@ -736,25 +745,6 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
             } else if (AudioManager.INTERNAL_RINGER_MODE_CHANGED_ACTION.equals(action)) {
                 mHandler.sendEmptyMessage(H.UPDATE_RINGER_MODE);
             }
-        }
-    }
-
-    private int getNotificationStreamIcon(boolean silent, boolean vibrate, boolean muted) {
-        if (!mVoiceCapable) {
-            return vibrate ? com.android.internal.R.drawable.ic_audio_ring_notif_vibrate
-                : (silent || muted) ? com.android.internal.R.drawable.ic_audio_ring_notif_mute
-                : com.android.internal.R.drawable.ic_audio_ring_notif;
-        }
-        final boolean linkEnabled = Settings.System.getInt(getContentResolver(),
-                    Settings.System.VOLUME_LINK_NOTIFICATION, 1) == 1;
-        if (!linkEnabled) {
-            return vibrate ? com.android.internal.R.drawable.ic_audio_ring_notif_vibrate
-                : (silent || muted) ? com.android.internal.R.drawable.ic_audio_notification_mute_new
-                : com.android.internal.R.drawable.ic_audio_notification_new;
-        } else {
-            return vibrate ? com.android.internal.R.drawable.ic_audio_ring_notif_vibrate
-                : (silent || muted) ? com.android.internal.R.drawable.ic_audio_ring_notif_mute
-                : com.android.internal.R.drawable.ic_audio_ring_notif;
         }
     }
 
