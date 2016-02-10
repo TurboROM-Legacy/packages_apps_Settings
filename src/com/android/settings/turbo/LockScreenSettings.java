@@ -38,10 +38,8 @@ import com.android.settings.Utils;
 public class LockScreenSettings extends SettingsPreferenceFragment 
 	implements OnPreferenceChangeListener  {
 
-    private static final String LOCK_CLOCK_FONTS = "lock_clock_fonts";
     private static final String LSWEATHER = "ls_weather";
 
-    ListPreference mLockClockFonts;
     private PreferenceScreen mLsWeather;
 
     @Override
@@ -52,24 +50,11 @@ public class LockScreenSettings extends SettingsPreferenceFragment
         mLsWeather = (PreferenceScreen)findPreference(LSWEATHER);
 
         ContentResolver resolver = getActivity().getContentResolver();
+    }
 
-        mLockClockFonts = (ListPreference) findPreference(LOCK_CLOCK_FONTS);
-        mLockClockFonts.setValue(String.valueOf(Settings.System.getInt(
-	    resolver, Settings.System.LOCK_CLOCK_FONTS, 4)));
-        mLockClockFonts.setSummary(mLockClockFonts.getEntry());
-        mLockClockFonts.setOnPreferenceChangeListener(this);   
-     }
-
-     @Override
-     public boolean onPreferenceChange(Preference preference, Object newValue) {
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
 	ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mLockClockFonts) {
-            Settings.System.putInt(resolver, Settings.System.LOCK_CLOCK_FONTS,
-		Integer.valueOf((String) newValue));
-            mLockClockFonts.setValue(String.valueOf(newValue));
-            mLockClockFonts.setSummary(mLockClockFonts.getEntry());
-            return true;
-        }
         return false;
     }
     

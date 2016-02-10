@@ -18,35 +18,13 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <PreferenceCategory
-        android:title="@string/lockscreen_time_category">
+        android:title="@string/lockscreen_clock_options">
 
-        <com.android.settings.preference.SystemSettingSwitchPreference
-            android:key="hide_lockscreen_alarm"
-            android:title="@string/hide_lockscreen_alarm_title"
-            android:summary="@string/hide_lockscreen_alarm_summary"
-            android:defaultValue="true" />
-
-        <com.android.settings.preference.SystemSettingSwitchPreference
-            android:key="hide_lockscreen_clock"
-            android:title="@string/hide_lockscreen_clock_title"
-            android:summary="@string/hide_lockscreen_clock_summary"
-            android:defaultValue="true" />
-
-        <com.android.settings.preference.SystemSettingSwitchPreference
-            android:key="hide_lockscreen_date"
-            android:title="@string/hide_lockscreen_date_title"
-            android:summary="@string/hide_lockscreen_date_summary"
-            android:defaultValue="true" />
-
-        <ListPreference
-            android:key="lock_clock_fonts"
-            android:title="@string/lock_clock_font_title"
-            android:dialogTitle="@string/lock_clock_font_title"
-            android:entries="@array/lock_clock_fonts_entries"
-            android:entryValues="@array/lock_clock_fonts_values"
-            android:summary="@string/lock_clock_font_summary"
-            android:dependency="hide_lockscreen_clock"
-            android:persistent="false" />
+        <PreferenceScreen
+            android:key="lockscreen_time_options"
+            android:title="@string/lockscreen_clock_options"
+            android:summary="@string/lockscreen_clock_options_summary"
+            android:fragment="com.android.settings.turbo.LockscreenTimeOptions" />
 
     </PreferenceCategory>
 
