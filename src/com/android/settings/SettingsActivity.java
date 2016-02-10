@@ -92,6 +92,8 @@ import com.android.settings.deviceinfo.StorageSettings;
 import com.android.settings.fuelgauge.BatterySaverSettings;
 import com.android.settings.fuelgauge.PowerUsageDetail;
 import com.android.settings.fuelgauge.PowerUsageSummary;
+import com.android.settings.notification.NotificationManagerSettings;
+import com.android.settings.notification.SoundSettings;
 import com.android.settings.inputmethod.InputMethodAndLanguageSettings;
 import com.android.settings.inputmethod.KeyboardLayoutPickerFragment;
 import com.android.settings.inputmethod.SpellCheckersSettings;
@@ -101,7 +103,6 @@ import com.android.settings.nfc.AndroidBeam;
 import com.android.settings.nfc.PaymentSettings;
 import com.android.settings.notification.AppNotificationSettings;
 import com.android.settings.notification.NotificationAccessSettings;
-import com.android.settings.notification.NotificationSettings;
 import com.android.settings.notification.NotificationStation;
 import com.android.settings.notification.OtherSoundSettings;
 import com.android.settings.notification.ZenAccessSettings;
@@ -262,8 +263,9 @@ public class SettingsActivity extends Activity
             R.id.sim_settings,
             R.id.wireless_settings,
             R.id.device_section,
-            R.id.notification_settings,
-            R.id.display_settings,
+            R.id.sound_settings,
+            R.id.display_and_lights_settings,
+            R.id.notification_manager,
             R.id.storage_settings,
             R.id.application_settings,
             R.id.battery_settings,
@@ -339,7 +341,7 @@ public class SettingsActivity extends Activity
             PaymentSettings.class.getName(),
             KeyboardLayoutPickerFragment.class.getName(),
             ZenModeSettings.class.getName(),
-            NotificationSettings.class.getName(),
+            SoundSettings.class.getName(),
             ChooseLockPassword.ChooseLockPasswordFragment.class.getName(),
             ChooseLockPattern.ChooseLockPatternFragment.class.getName(),
             InstalledAppDetails.class.getName(),
@@ -359,7 +361,8 @@ public class SettingsActivity extends Activity
             DrawOverlayDetails.class.getName(),
             WriteSettingsDetails.class.getName(),
 	    MainSettings.class.getName(),
-            DisplayRotation.class.getName()
+            DisplayRotation.class.getName(),
+            NotificationManagerSettings.class.getName()
     };
 
 
