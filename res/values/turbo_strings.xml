@@ -352,6 +352,7 @@
     <string name="link_volume_option_title">Link ring and notification volumes</string>
     <string name="notification_volume_option_title">Notification volume</string>
     <string name="ring_notification_volume_option_title">Ring and notification volume</string>
+    <string name="notification_ringtone_title">Notification tone</string>
 
     <!-- Text for forcing expanded notifications -->
     <string name="disable_fc_notifications_title">Disable FC notifications</string>
@@ -551,5 +552,17 @@
     <string name="missed_call_breath_summary">This will give your missed call notifications a breathing effect in the status bar</string>
     <string name="voicemail_breath_title">Breathing Voicemail</string>
     <string name="voicemail_breath_summary">This will give your voicemail notifications a breathing effect in the status bar</string>
+
+    <!-- Reorganization -->
+    <string name="category_sounds">Sounds &amp; vibration</string>
+    <string name="notification_manager">Notifications</string>
+    <string name="lockscreen_settings">Lock screen</string>
+    <string name="category_lights">Lights</string>
+    <string name="category_volume">Volume</string>
+    <string name="category_vibrate">Vibrate</string>
+    <string name="category_misc">Miscellaneous</string>
+    <string name="title_general">General</string>
+    <string name="advanced">Advanced</string>
+    <string name="display_and_lights">Display &amp; lights</string>
 
 </resources>

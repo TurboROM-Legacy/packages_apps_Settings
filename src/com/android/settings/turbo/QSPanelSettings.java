@@ -31,7 +31,7 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.android.internal.logging.MetricsLogger;
 
-public class NotificationDrawerSettings extends SettingsPreferenceFragment {
+public class QSPanelSettings extends SettingsPreferenceFragment {
 
     private static final String QS_ORDER = "qs_order";
 
@@ -40,7 +40,7 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.notification_drawer_settings);
+        addPreferencesFromResource(R.xml.quick_settings_panel);
 
     }
 
