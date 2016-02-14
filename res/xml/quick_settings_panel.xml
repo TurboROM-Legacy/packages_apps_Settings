@@ -67,6 +67,13 @@
             android:summary="@string/qs_main_tiles_summary"
             android:defaultValue="true" />
 
+        <ListPreference
+            android:key="sysui_qs_num_columns"
+            android:title="@string/qs_num_columns_title"
+            android:entries="@array/qs_num_columns_entries"
+            android:entryValues="@array/qs_num_columns_values"
+            android:persistent="false" />
+
         <PreferenceScreen
                 android:title="@string/quick_settings_tiles_title"
                 android:summary="@string/quick_settings_tiles_summary" >
