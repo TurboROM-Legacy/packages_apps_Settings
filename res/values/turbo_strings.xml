@@ -262,9 +262,7 @@
     <string name="quick_pulldown_left">Left</string>
     <string name="quick_pulldown_right">Right</string>
     <string name="qs_main_tiles_title">Enlarge the first row</string>
-    <string name="qs_main_tiles_summary_on">Show two main tiles on the first row</string>
-    <string name="qs_main_tiles_summary_off">Show three tiles on each row</string>
-    <string name="qs_four_columns_title">Show four tiles per row</string>
+    <string name="qs_main_tiles_summary">Two main tiles on the first row</string>
     <string name="qs_advanced_location_title">Advanced location settings</string>
     <string name="qs_advanced_location_summary">Enable advanced settings in the location tile in Quick Settings</string>
     <string name="qs_category_title">Quick Settings</string>
@@ -274,6 +272,8 @@
     <string name="qs_tiles_title">QS tile options</string>
     <string name="quick_settings_tiles_title">Quick Settings tiles</string>
     <string name="quick_settings_tiles_summary">Configure Quick Settings tiles</string>
+    <string name="qs_num_columns_title">Number of tiles per row</string>
+    <string name="qs_num_columns_showing">%1$s tiles per row showing</string>
 
     <!-- Dev Options Enabled by Default -->
     <string name="show_dev_already_enabled">No need, development settings are enabled by default.</string>
