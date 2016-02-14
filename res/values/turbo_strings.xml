@@ -514,7 +514,7 @@
     <string name="lock_clock_font_condensed_light_italic">Roboto Condensed Light Italic</string>
 
     <!-- Double tap power button for camera vib toggle -->
-    <string name="dbl_tap_vib_title">Double tap power for vibration upon camera open</string>
+    <string name="dbl_tap_vib_title">Double tap power for vibration in camera</string>
     <string name="dbl_tap_vib_summary">Enable vibration when opening camera with a double tap of the power button</string>
 
     <!-- Doze notification color inversion -->
