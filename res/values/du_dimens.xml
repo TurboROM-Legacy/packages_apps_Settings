@@ -15,6 +15,9 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Icon pack picker -->
+    <dimen name="alert_dialog_padding_material">20dp</dimen>
+
     <!-- Nav. bar height -->
     <integer name="navigation_bar_height_min_percent">65</integer>
     <integer name="navigation_bar_height_max_percent">120</integer>
