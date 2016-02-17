@@ -715,4 +715,7 @@
     <string name="shortcut_action_help_delete_last_entry">Removing every %1$s in the list will disable the feature entirely.</string>
     <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Removing every %1$s in the list will disable the second pie layer entirely.</string>
 
+    <!-- Embedded ViPER4Android -->
+    <string name="viper_settings_title">ViPER4Android</string>
+
 </resources>
