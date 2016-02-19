@@ -26,7 +26,6 @@ import android.preference.PreferenceScreen;
 import android.provider.Settings;
 
 import com.android.settings.R;
-import com.android.settings.turbo.qs.QSTiles;
 import com.android.settings.Utils;
 import com.android.settings.SettingsPreferenceFragment;
 
@@ -40,17 +39,22 @@ public class QSPanelSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String PRE_QUICK_PULLDOWN = "quick_pulldown";
-    private static final String QS_ORDER = "qs_order";
 
     private ListPreference mQuickPulldown;
-    private Preference mQSTiles;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.quick_settings_panel);
 
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
         PreferenceScreen prefSet = getPreferenceScreen();
+ 	ContentResolver resolver = getActivity().getContentResolver();
 
         mQuickPulldown = (ListPreference) findPreference(PRE_QUICK_PULLDOWN);
         if (!Utils.isPhone(getActivity()) && !Utils.isTablet(getActivity())) {
@@ -63,22 +67,11 @@ public class QSPanelSettings extends SettingsPreferenceFragment implements
             mQuickPulldown.setValue(String.valueOf(statusQuickPulldown));
             updateQuickPulldownSummary(statusQuickPulldown);
         }
-
     }
 
     @Override
     protected int getMetricsCategory() {
         return -1;
-    }
-
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
-        PreferenceScreen prefSet = getPreferenceScreen();
-        mQSTiles = prefSet.findPreference(QS_ORDER);
-
-        ContentResolver resolver = getActivity().getContentResolver();
     }
 
     @Override
@@ -88,7 +81,7 @@ public class QSPanelSettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
-		if (preference == mQuickPulldown) {
+	if (preference == mQuickPulldown) {
             int statusQuickPulldown = Integer.valueOf((String) objValue);
             Settings.System.putInt(getContentResolver(),
                     Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN,
@@ -114,4 +107,5 @@ public class QSPanelSettings extends SettingsPreferenceFragment implements
             mQuickPulldown.setSummary(res.getString(R.string.summary_quick_pulldown, direction));
         }
     }
+
 }
