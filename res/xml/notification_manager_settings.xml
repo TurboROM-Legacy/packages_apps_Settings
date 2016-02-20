@@ -20,6 +20,12 @@
         android:title="@string/disable_immersive_message_title"
         android:summary="@string/disable_immersive_message_summary" />
 
+    <com.android.settings.preference.SystemSettingSwitchPreference
+        android:key="flashlight_notification"
+        android:title="@string/flashlight_notification_title"
+        android:summary="@string/flashlight_notification_summary"
+        android:defaultValue="false" />
+
 
     <com.android.settings.preference.SystemSettingSwitchPreference
         android:key="force_expanded_notifications"
