@@ -37,13 +37,13 @@
             android:entryValues="@array/quick_pulldown_values"
             android:persistent="false" />
 
-        <com.android.settings.preference.SystemSettingSwitchPreference
+        <SwitchPreference
             android:key="status_bar_custom_header"
             android:title="@string/status_bar_custom_header_title"
             android:summary="@string/status_bar_custom_header_summary"
             android:defaultValue="false"/>
 
-        <com.android.settings.preference.SystemSettingSwitchPreference
+        <SwitchPreference
             android:key="status_bar_custom_header_default"
             android:title="@string/status_bar_custom_header_default_title"
             android:summary="@string/status_bar_custom_header_default_summary"
