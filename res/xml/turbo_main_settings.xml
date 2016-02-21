@@ -19,72 +19,81 @@
 
     <!-- Buttons -->
     <PreferenceScreen
-         android:id="@+id/button_settings"
-         android:title="@string/button_settings"
-         android:fragment="com.android.settings.turbo.ButtonSettings"
-         />
+	android:icon="@drawable/ic_button_settings"
+	android:id="@+id/button_settings"
+	android:fragment="com.android.settings.turbo.ButtonSettings"
+	android:title="@string/button_settings"
+	/>
 
     <!-- Display -->
     <PreferenceScreen
-         android:id="@+id/display_and_lights_settings"
-         android:title="@string/display_and_lights"
-         android:fragment="com.android.settings.DisplaySettings"
-         />
+	android:icon="@drawable/ic_settings_display"
+	android:id="@+id/display_and_lights_settings"
+	android:fragment="com.android.settings.DisplaySettings"
+	android:title="@string/display_and_lights"
+	/>
 
     <!-- Gestures -->
     <PreferenceScreen
-	 android:key="gestures_general_category"
-         android:fragment="com.android.settings.turbo.GestureSettings"
-         android:title="@string/gesture_settings_title" 
-	 />
+	android:icon="@drawable/ic_gesture_settings"
+	android:fragment="com.android.settings.turbo.GestureSettings"
+	android:key="gestures_general_category"
+	android:title="@string/gesture_settings_title" 
+	/>
  
     <!-- Lock screen settings -->
     <PreferenceScreen
-         android:key="lock_screen_general_category"
-         android:fragment="com.android.settings.turbo.LockScreenSettings"
-         android:title="@string/lock_screen_settings" 
-	 />
+	android:icon="@drawable/ic_lockscreen_settings"
+	android:fragment="com.android.settings.turbo.LockScreenSettings"
+	android:key="lock_screen_general_category"
+	android:title="@string/lock_screen_settings" 
+	/>
 
      <!-- Miscellaneous -->
      <PreferenceScreen
-         android:id="@+id/misc_settings"
-         android:fragment="com.android.settings.turbo.MiscSettings"
-         android:title="@string/misc_settings_title" 
-	 />
+	android:icon="@drawable/ic_misc_settings"
+	android:id="@+id/misc_settings"
+	android:fragment="com.android.settings.turbo.MiscSettings"
+	android:title="@string/misc_settings_title" 
+	/>
 
     <!-- Notification manager -->
     <PreferenceScreen
-         android:id="@+id/notification_manager"
-         android:title="@string/notification_manager"
-         android:fragment="com.android.settings.notification.NotificationManagerSettings"
-         />
+	android:icon="@drawable/ic_settings_notifications"
+	android:id="@+id/notification_manager"
+	android:fragment="com.android.settings.notification.NotificationManagerSettings"
+	android:title="@string/notification_manager"
+	/>
 
     <!-- Quick Settings panel -->
     <PreferenceScreen
-         android:id="@+id/quick_settings_panel"
-         android:title="@string/qs_panel_title"
-         android:fragment="com.android.settings.turbo.QSPanelSettings" 
-	 />
+	android:icon="@drawable/ic_qs_settings"
+	android:id="@+id/quick_settings_panel"
+	android:fragment="com.android.settings.turbo.QSPanelSettings" 
+	android:title="@string/qs_panel_title"
+	/>
 
     <!-- Recents -->
     <PreferenceScreen
-	 android:id="@+id/recents_settings"
-	 android:fragment="com.android.settings.turbo.RecentsSettings"
-	 android:title="@string/recents_settings_title" />
+	android:icon="@drawable/ic_recents_settings"
+	android:id="@+id/recents_settings"
+	android:fragment="com.android.settings.turbo.RecentsSettings"
+	android:title="@string/recents_settings_title" />
 	 
-
     <!-- Sounds -->
-    <PreferenceScreen                
+    <PreferenceScreen   
+        android:icon="@drawable/ic_sound_settings"             
 	android:id="@+id/sound_settings"
-        android:title="@string/category_sounds"
         android:fragment="com.android.settings.notification.SoundSettings"
+        android:title="@string/category_sounds"
         />
 
     <!-- Status bar -->
     <PreferenceScreen
-         android:id="@+id/status_bar_settings"
-         android:title="@string/status_bar_title"
-         android:fragment="com.android.settings.turbo.StatusBarSettings"
-         />
+	android:icon="@drawable/ic_statusbar_settings" 
+	android:id="@+id/status_bar_settings"
+	android:fragment="com.android.settings.turbo.StatusBarSettings"
+	android:title="@string/status_bar_title"
+        />
 
 </PreferenceScreen>
