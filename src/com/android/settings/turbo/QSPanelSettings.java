@@ -23,6 +23,7 @@ import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
+import android.preference.SwitchPreference;
 import android.provider.Settings;
 
 import com.android.settings.R;
@@ -39,9 +40,13 @@ public class QSPanelSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String PRE_QUICK_PULLDOWN = "quick_pulldown";
+    private static final String PREF_CUSTOM_HEADER = "status_bar_custom_header";
+    private static final String PREF_CUSTOM_HEADER_DEFAULT = "status_bar_custom_header_default";
 
     private ListPreference mNumColumns;
     private ListPreference mQuickPulldown;
+    private SwitchPreference mCustomHeader;
+    private SwitchPreference mCustomHeaderDefault;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -68,6 +73,16 @@ public class QSPanelSettings extends SettingsPreferenceFragment implements
             mQuickPulldown.setValue(String.valueOf(statusQuickPulldown));
             updateQuickPulldownSummary(statusQuickPulldown);
         }
+
+        mCustomHeader = (SwitchPreference) prefSet.findPreference(PREF_CUSTOM_HEADER);
+        mCustomHeader.setChecked((Settings.System.getInt(resolver,
+                Settings.System.STATUS_BAR_CUSTOM_HEADER, 0) == 1));
+        mCustomHeader.setOnPreferenceChangeListener(this);
+
+        mCustomHeaderDefault = (SwitchPreference) prefSet.findPreference(PREF_CUSTOM_HEADER_DEFAULT);
+        mCustomHeaderDefault.setChecked((Settings.System.getInt(resolver,
+                Settings.System.STATUS_BAR_CUSTOM_HEADER_DEFAULT, 0) == 1));
+        mCustomHeaderDefault.setOnPreferenceChangeListener(this);
 
         mNumColumns = (ListPreference) findPreference("sysui_qs_num_columns");
         int numColumns = Settings.Secure.getIntForUser(resolver,
@@ -104,6 +119,14 @@ public class QSPanelSettings extends SettingsPreferenceFragment implements
             Settings.Secure.putIntForUser(resolver, Settings.Secure.QS_NUM_TILE_COLUMNS,
                     numColumns, UserHandle.USER_CURRENT);
             updateNumColumnsSummary(numColumns);
+            return true;
+        } else if (preference == mCustomHeader) {
+            Settings.System.putInt(resolver, Settings.System.STATUS_BAR_CUSTOM_HEADER,
+                    (Boolean) objValue ? 1 : 0);
+            return true;
+        } else if (preference == mCustomHeaderDefault) {
+            Settings.System.putInt(resolver, Settings.System.STATUS_BAR_CUSTOM_HEADER_DEFAULT,
+                    (Boolean) objValue ? 1 : 0);
             return true;
         }
         return false;
