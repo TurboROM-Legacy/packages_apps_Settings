@@ -63,7 +63,7 @@ public class MultiWindow extends SettingsPreferenceFragment implements OnPrefere
 
     @Override
     protected int getMetricsCategory() {
-        return -1;
+        return MetricsLogger.DONT_TRACK_ME_BRO;
     }
 
     @Override

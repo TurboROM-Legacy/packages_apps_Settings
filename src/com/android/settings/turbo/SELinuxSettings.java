@@ -73,7 +73,7 @@ public class SELinuxSettings extends SettingsPreferenceFragment implements OnPre
 
     @Override
     protected int getMetricsCategory() {
-        return -1;
+        return MetricsLogger.DONT_TRACK_ME_BRO;
     }
 
     @Override
