@@ -646,7 +646,7 @@
     <string name="lockscreen_fonts_category">Fonts</string>
 
     <!-- Lock screen colors -->
-    <string name="lockscreen_colors_title">Lock screen colors</string>
+    <string name="lockscreen_colors_title">Colors</string>
     <string name="lockscreen_owner_info_color">Owner info</string>
     <string name="lockscreen_alarm_color">Alarm</string>
     <string name="lockscreen_clock_color">Clock</string>
