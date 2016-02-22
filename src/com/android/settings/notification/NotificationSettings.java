@@ -230,7 +230,7 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
         if (mVoiceCapable) {
             final boolean enabled = Settings.Secure.getInt(getContentResolver(),
                     Settings.Secure.VOLUME_LINK_NOTIFICATION, 1) == 1;
-            if (mVolumeLinkNotificationSwitch != null){
+            if (mVolumeLinkNotificationSwitch != null) {
                 mVolumeLinkNotificationSwitch.setChecked(enabled);
             }
         }
@@ -242,7 +242,7 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
                     ? com.android.internal.R.drawable.ic_audio_ring_notif_mute
                     : mRingerMode == AudioManager.RINGER_MODE_VIBRATE || wasRingerModeVibrate()
                     ? com.android.internal.R.drawable.ic_audio_ring_notif_vibrate
-                    : com.android.internal.R.drawable.ic_audio_ring_notif);
+                    : R.drawable.ic_audio_ring);
         }
     }
 
