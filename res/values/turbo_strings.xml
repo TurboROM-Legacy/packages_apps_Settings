@@ -1041,4 +1041,15 @@
     <string name="remove_blacklist_entry">Do you want to remove this blocked phone number?</string>
     <string name="select_contact">Select contact</string>
 
+    <!-- Lock screen bouncer configuration -->
+    <string name="ls_bouncer_title">Bouncer configuration</string>
+    <string name="ls_bouncer_summary">Open lock screen directly to pin/pattern/password when there are %1$s notifications present</string>
+    <string name="ls_bouncer_on">On (default)</string>
+    <string name="ls_bouncer_on_summary">Stock bouncer behavior</string>
+    <string name="ls_bouncer_off">Off</string>
+    <string name="ls_bouncer_off_summary">Open lock screen directly to pin/pattern/password</string>
+    <string name="ls_bouncer_dismissable">No dismissable</string>
+    <string name="ls_bouncer_persistent">No persistent</string>
+    <string name="ls_bouncer_all">No dismissable or persistent</string>
+
 </resources>

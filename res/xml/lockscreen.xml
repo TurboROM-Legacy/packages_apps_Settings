@@ -18,6 +18,13 @@
     android:layout="@layout/tab"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+         <ListPreference
+             android:key="lockscreen_bouncer"
+             android:title="@string/ls_bouncer_title"
+             android:entries="@array/ls_bouncer_entries"
+             android:entryValues="@array/ls_bouncer_values"
+             android:persistent="false" />
+
          <com.android.settings.preference.SystemSettingSwitchPreference
              android:key="keyguard_toggle_torch"
              android:title="@string/keyguard_torch_title"

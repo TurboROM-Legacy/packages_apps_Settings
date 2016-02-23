@@ -40,8 +40,10 @@ public class Lockscreen extends SettingsPreferenceFragment implements
     private static final String TAG = "Lockscreen";
 
     private static final String KEYGUARD_TOGGLE_TORCH = "keyguard_toggle_torch";
+    private static final String PREF_LS_BOUNCER = "lockscreen_bouncer";
 
     private SwitchPreference mKeyguardTorch;
+    ListPreference mLsBouncer;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -60,6 +62,13 @@ public class Lockscreen extends SettingsPreferenceFragment implements
         mKeyguardTorch.setChecked((Settings.System.getInt(resolver,
                 Settings.System.KEYGUARD_TOGGLE_TORCH, 0) == 1));
         }
+
+        mLsBouncer = (ListPreference) findPreference(PREF_LS_BOUNCER);
+        mLsBouncer.setOnPreferenceChangeListener(this);
+        int lockbouncer = Settings.Secure.getInt(resolver,
+                Settings.Secure.LOCKSCREEN_BOUNCER, 0);
+        mLsBouncer.setValue(String.valueOf(lockbouncer));
+        updateBouncerSummary(lockbouncer);
     }
 
     @Override
@@ -89,7 +98,40 @@ public class Lockscreen extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.KEYGUARD_TOGGLE_TORCH, checked ? 1:0);
             return true;
-        }
+        } else if (preference == mLsBouncer) {
+            int lockbouncer = Integer.valueOf((String) newValue);
+            Settings.Secure.putInt(resolver, Settings.Secure.LOCKSCREEN_BOUNCER, lockbouncer);
+            updateBouncerSummary(lockbouncer);
+            return true;
+	}
         return false;
+    }
+
+    private void updateBouncerSummary(int value) {
+        Resources res = getResources();
+ 
+        if (value == 0) {
+            // stock bouncer
+            mLsBouncer.setSummary(res.getString(R.string.ls_bouncer_on_summary));
+        } else if (value == 1) {
+            // bypass bouncer
+            mLsBouncer.setSummary(res.getString(R.string.ls_bouncer_off_summary));
+        } else {
+            String type = null;
+            switch (value) {
+                case 2:
+                    type = res.getString(R.string.ls_bouncer_dismissable);
+                    break;
+                case 3:
+                    type = res.getString(R.string.ls_bouncer_persistent);
+                    break;
+                case 4:
+                    type = res.getString(R.string.ls_bouncer_all);
+                   break;
+            }
+            // Remove title capitalized formatting
+            type = type.toLowerCase();
+            mLsBouncer.setSummary(res.getString(R.string.ls_bouncer_summary, type));
+        }
     }
 }
