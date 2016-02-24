@@ -32,6 +32,7 @@ import android.provider.Settings;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.MetricsLogger;
+import com.android.settings.preference.SeekBarPreference;
 import com.android.settings.slim.fragments.LockscreenShortcutFragment;
 import com.android.settings.Utils;
 
@@ -41,9 +42,13 @@ public class Lockscreen extends SettingsPreferenceFragment implements
 
     private static final String KEYGUARD_TOGGLE_TORCH = "keyguard_toggle_torch";
     private static final String PREF_LS_BOUNCER = "lockscreen_bouncer";
+    private static final String LOCKSCREEN_ALPHA = "lockscreen_alpha";
+    private static final String LOCKSCREEN_SECURITY_ALPHA = "lockscreen_security_alpha";
 
     private SwitchPreference mKeyguardTorch;
     ListPreference mLsBouncer;
+    private SeekBarPreference mLsAlpha;
+    private SeekBarPreference mLsSecurityAlpha;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -69,6 +74,18 @@ public class Lockscreen extends SettingsPreferenceFragment implements
                 Settings.Secure.LOCKSCREEN_BOUNCER, 0);
         mLsBouncer.setValue(String.valueOf(lockbouncer));
         updateBouncerSummary(lockbouncer);
+
+        mLsAlpha = (SeekBarPreference) findPreference(LOCKSCREEN_ALPHA);
+        float alpha = Settings.System.getFloat(resolver,
+                Settings.System.LOCKSCREEN_ALPHA, 0.45f);
+        mLsAlpha.setValue((int)(100 * alpha));
+        mLsAlpha.setOnPreferenceChangeListener(this);
+
+        mLsSecurityAlpha = (SeekBarPreference) findPreference(LOCKSCREEN_SECURITY_ALPHA);
+        float alpha2 = Settings.System.getFloat(resolver,
+                Settings.System.LOCKSCREEN_SECURITY_ALPHA, 0.75f);
+        mLsSecurityAlpha.setValue((int)(100 * alpha2));
+        mLsSecurityAlpha.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -93,6 +110,7 @@ public class Lockscreen extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+	ContentResolver resolver = getActivity().getContentResolver();
         if  (preference == mKeyguardTorch) {
             boolean checked = ((SwitchPreference)preference).isChecked();
             Settings.System.putInt(getActivity().getContentResolver(),
@@ -102,6 +120,16 @@ public class Lockscreen extends SettingsPreferenceFragment implements
             int lockbouncer = Integer.valueOf((String) newValue);
             Settings.Secure.putInt(resolver, Settings.Secure.LOCKSCREEN_BOUNCER, lockbouncer);
             updateBouncerSummary(lockbouncer);
+            return true;
+        } else if (preference == mLsAlpha) {
+            int alpha = (Integer) newValue;
+            Settings.System.putFloat(resolver,
+                    Settings.System.LOCKSCREEN_ALPHA, alpha / 100.0f);
+            return true;
+        } else if (preference == mLsSecurityAlpha) {
+            int alpha2 = (Integer) newValue;
+            Settings.System.putFloat(resolver,
+                    Settings.System.LOCKSCREEN_SECURITY_ALPHA, alpha2 / 100.0f);
             return true;
 	}
         return false;

@@ -18,6 +18,26 @@
     android:layout="@layout/tab"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+         <com.android.settings.preference.SeekBarPreference
+             android:key="lockscreen_alpha"
+             android:title="@string/lockscreen_alpha"
+             android:max="100"
+             settings:minimum="0"
+             settings:interval="1"
+             settings:unitsLeft=""
+             settings:unitsRight="%"
+             android:persistent="false" />
+
+         <com.android.settings.preference.SeekBarPreference
+             android:key="lockscreen_security_alpha"
+             android:title="@string/lockscreen_security_alpha"
+             android:max="100"
+             settings:minimum="0"
+             settings:interval="1"
+             settings:unitsLeft=""
+             settings:unitsRight="%"
+             android:persistent="false" />
+
          <ListPreference
              android:key="lockscreen_bouncer"
              android:title="@string/ls_bouncer_title"
