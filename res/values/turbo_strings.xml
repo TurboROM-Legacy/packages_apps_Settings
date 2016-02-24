@@ -1041,7 +1041,7 @@
     <string name="remove_blacklist_entry">Do you want to remove this blocked phone number?</string>
     <string name="select_contact">Select contact</string>
 
-    <!-- Lock screen bouncer configuration -->
+    <!-- Lock screen bouncer & alpha configuration -->
     <string name="ls_bouncer_title">Bouncer configuration</string>
     <string name="ls_bouncer_summary">Open lock screen directly to pin/pattern/password when there are %1$s notifications present</string>
     <string name="ls_bouncer_on">On (default)</string>
@@ -1051,5 +1051,7 @@
     <string name="ls_bouncer_dismissable">No dismissable</string>
     <string name="ls_bouncer_persistent">No persistent</string>
     <string name="ls_bouncer_all">No dismissable or persistent</string>
+    <string name="lockscreen_alpha">Alpha setting</string>
+    <string name="lockscreen_security_alpha">Bouncer alpha setting</string>
 
 </resources>
