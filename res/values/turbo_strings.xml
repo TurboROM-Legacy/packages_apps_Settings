@@ -436,6 +436,13 @@
     <string name="dashboard_tileview_dividers_title">Dashboard dividers</string>
     <string name="dashboard_tileview_dividers_summary">Hide dashboard tile dividers</string>
 
+    <!-- Optional Dashboard Switches -->
+    <string name="dashboard_switches_title">Dashboard switches</string>
+    <string name="dashboard_switches_off">Switches are off</string>
+    <string name="dashboard_switches_on">Switches are on</string>
+    <string name="dashboard_switches_summary">Change the state of the dashboard switches</string>
+    <string name="dashboard_switches_dialog_title">Select switch state</string>
+
     <!-- Miscellaneous settings -->
     <string name="misc_settings_title">Miscellaneous</string>
 
