@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  Copyright (C) 2016 TurboROM
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ -->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/statusbar_category"
+    android:layout="@layout/tab"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+         <PreferenceScreen
+            android:key="battery"
+            android:fragment="com.android.settings.turbo.BatterySettings"
+            android:title="@string/battery_title" />
+
+         <PreferenceScreen
+            android:key="statusbar_notifications"
+            android:fragment="com.android.settings.turbo.StatusbarNotifications"
+            android:title="@string/statusbar_notifications_category" />
+
+	<PreferenceScreen
+            android:key="quicksettings"
+            android:fragment="com.android.settings.turbo.QSPanelSettings"
+            android:title="@string/quicksettings_panel_category" />
+
+    	 <PreferenceScreen
+ 	    android:key="systemui_tuner_statusbar"
+            android:title="@string/status_bar_icon_blacklist_title" >
+            <intent android:action="android.intent.action.MAIN"
+		 android:targetPackage="com.android.systemui"
+                 android:targetClass="com.android.systemui.tuner.TunerActivity" />
+     	 </PreferenceScreen>
+
+</PreferenceScreen>

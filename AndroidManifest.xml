@@ -2563,6 +2563,18 @@
                        android:resource="@id/wireless_settings" />
         </activity>
 
+	<!-- TurboTweaks -->
+        <activity android:name="Settings$TurboTweaksActivity"
+            android:label="@string/turbo_tweaks"
+            android:taskAffinity="">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.turbo.TurboTweaks" />
+        </activity>
+
         <receiver android:name="com.android.settings.turbo.OnBoot">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>

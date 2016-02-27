@@ -16,6 +16,6 @@
 -->
 
 <bitmap xmlns:android="http://schemas.android.com/apk/res/android"
-        android:src="@drawable/ic_turbo_settings_alpha"
+        android:src="@drawable/ic_turbotweaks_alpha"
         android:tint="?android:attr/colorAccent" />
 
