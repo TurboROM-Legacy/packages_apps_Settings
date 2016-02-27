@@ -2332,7 +2332,7 @@
         </activity>
 
         <activity android:name="Settings$SoundSettingsActivity"
-                android:label="@string/notification_settings"
+                android:label="@string/category_sounds"
                 android:exported="true"
                 android:taskAffinity="">
             <intent-filter android:priority="1">
@@ -2354,7 +2354,7 @@
 
         <!-- Keep compatibility with old shortcuts. -->
         <activity-alias android:name="Settings$SoundSettingsActivity"
-                android:label="@string/notification_settings"
+                android:label="@string/category_sounds"
                 android:taskAffinity=""
                 android:targetActivity="Settings$SoundSettingsActivity">
             <intent-filter android:priority="1">
@@ -2377,7 +2377,7 @@
 
         <!-- Keep compatibility with old shortcuts. -->
         <activity-alias android:name="SoundSettings"
-                android:label="@string/notification_settings"
+                android:label="@string/category_sounds"
                 android:exported="true"
                 android:targetActivity="Settings$SoundSettingsActivity">
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
