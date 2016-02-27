@@ -40,7 +40,6 @@
          <PreferenceScreen
                  android:key="slim_lockscreen_shortcuts"
                  android:fragment="com.android.settings.slim.dslv.ActionListViewSettings"
-                 android:summary="@string/lockscreen_shortcuts_summary"
                  android:title="@string/lockscreen_shortcuts_title">
              <extra android:name="actionMode" android:value="4" />
              <extra android:name="maxAllowedActions" android:value="20" />
@@ -50,9 +49,9 @@
          </PreferenceScreen>
 
          <PreferenceScreen
-            android:key="lockscreen_time_options"
-            android:title="@string/lockscreen_clock_options"
-            android:fragment="com.android.settings.turbo.LockscreenTimeOptions" />
+            android:key="lockscreen_colors_and_text"
+            android:title="@string/lockscreen_colors_and_text"
+            android:fragment="com.android.settings.turbo.LockscreenColorsAndText" />
 
          <PreferenceScreen
             android:key="lockscreen_wallpaper_changer"

@@ -15,22 +15,7 @@
 -->
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    android:title="@string/lockscreen_clock_options" >
-
-    <PreferenceCategory
-        android:title="@string/lockscreen_fonts_category" >
-
-        <ListPreference
-            android:key="lock_clock_fonts"
-            android:title="@string/lock_clock_font_title"
-            android:dialogTitle="@string/lock_clock_font_title"
-            android:entries="@array/lock_clock_fonts_entries"
-            android:entryValues="@array/lock_clock_fonts_values"
-            android:summary="@string/lock_clock_font_summary"
-            android:dependency="hide_lockscreen_clock"
-            android:persistent="false" />
-
-    </PreferenceCategory>
+    android:title="@string/lockscreen_colors_and_text" >
 
     <!-- Hide Lock screen alarm, clock, & date -->
     <PreferenceCategory
@@ -82,6 +67,21 @@
             android:title="@string/lockscreen_date_color"
             android:defaultValue="0xffffffff" 
             android:dependency="hide_lockscreen_date" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/lockscreen_fonts_category" >
+
+        <ListPreference
+            android:key="lock_clock_fonts"
+            android:title="@string/lock_clock_font_title"
+            android:dialogTitle="@string/lock_clock_font_title"
+            android:entries="@array/lock_clock_fonts_entries"
+            android:entryValues="@array/lock_clock_fonts_values"
+            android:summary="@string/lock_clock_font_summary"
+            android:dependency="hide_lockscreen_clock"
+            android:persistent="false" />
 
     </PreferenceCategory>
 

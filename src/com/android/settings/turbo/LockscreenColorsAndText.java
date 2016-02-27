@@ -39,9 +39,9 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
-public class LockscreenTimeOptions extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
+public class LockscreenColorsAndText extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
-    private static final String TAG = "LockscreenTimeOptions";
+    private static final String TAG = "LockscreenColorsAndText";
 
     private static final String LOCKSCREEN_OWNER_INFO_COLOR = "lockscreen_owner_info_color";
     private static final String LOCKSCREEN_ALARM_COLOR = "lockscreen_alarm_color";
@@ -62,7 +62,7 @@ public class LockscreenTimeOptions extends SettingsPreferenceFragment implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.lockscreen_clock_options);
+        addPreferencesFromResource(R.xml.lockscreen_colors_and_text);
 
         PreferenceScreen prefSet = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
