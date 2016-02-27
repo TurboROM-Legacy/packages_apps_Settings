@@ -743,4 +743,35 @@
     <string name="enable_multi_window_summary">Multiple activities on screen at the same time.</string>
     <string name="warning_multi_window_text">WARNING: This is a highly experimental feature that allows multiple activities on-screen at the same time through the Recent apps UI. Some apps may crash or not function correctly when used with this feature.</string>
 
+    <!-- Turbo Tweaks dialog -->
+    <string name="turbotweaks_dialog_title">Help me help you!!!</string>
+    <string name="turbotweaks_dialog_message">Unfortunately, I am not a wizard!\n\ If you find a bug with any of these settings, please contact me on XDA (@Yoshi_Guy) with the following.\n\n1. Logcat or Last_Kmsg\n2. Kernel and Mods used\n3. Useful information\n\nIf you fail to report something, do not expect things to be fixed. Remember, I am not a  wizard so I do miss things.</string>
+    <string name="turbotweaks_dialog_toast">Read this!</string>
+
+    <!-- Turbo Tweaks categories -->
+    <string name="turbo_tweaks">Turbo Tweaks</string>
+    <string name="battery_category">Battery</string>
+    <string name="buttons_category">Buttons</string>
+    <string name="expanded_desktop_category">Expanded desktop</string>
+    <string name="misctweaks_category">Misc. tweaks</string>
+    <string name="powermenu_category">Power menu</string>
+    <string name="quicksettings_panel_category">Quick Settings panel</string>
+    <string name="statusbar_items_category">Status bar items</string>
+    <string name="statusbar_notifications_category">Notifications</string>
+    <string name="lockscreen_notifications_category">Notifications</string>
+    <string name="gestures_category">Gestures</string>
+    <string name="multiwindow_category">Multi-window</string>
+    <string name="weather_category">Weather</string>
+    <string name="breathing_notifications_category">Breathing notifications</string>
+    <string name="category_heads_up">Heads Up</string>
+    <string name="recents_category">Recents panel</string>
+
+    <!-- Turbo Tweaks tabs -->
+    <string name="generalui_category">General UI</string>
+    <string name="lockscreen_category">Lock screen</string>
+    <string name="statusbar_category">Status bar</string>
+    <string name="navigation_category">Navigation</string>
+    <string name="multitasking_category">Multi-Tasking</string>
+    <string name="system_category">System</string>
+
 </resources>
