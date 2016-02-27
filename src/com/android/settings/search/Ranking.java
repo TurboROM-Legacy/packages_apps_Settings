@@ -16,7 +16,6 @@
 
 package com.android.settings.search;
 
-import com.android.settings.turbo.MainSettings;
 import com.android.settings.ChooseLockGeneric;
 import com.android.settings.DataUsageSummary;
 import com.android.settings.DateTimeSettings;
@@ -116,9 +115,6 @@ public final class Ranking {
 
         // Home
         sRankMap.put(HomeSettings.class.getName(), RANK_HOME);
-
-	// Turbo
-	sRankMap.put(MainSettings.class.getName(), RANK_TURBO);
 
         // Display
         sRankMap.put(DisplaySettings.class.getName(), RANK_DISPLAY);
