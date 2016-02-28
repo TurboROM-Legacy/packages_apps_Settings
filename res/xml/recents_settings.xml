@@ -17,16 +17,6 @@
     android:title="@string/recents_settings_title">
 
     <PreferenceCategory
-        android:title="@string/multiwindow_category" >
-
-        <PreferenceScreen
-            android:key="multitwindow"
-            android:fragment="com.android.settings.turbo.MultiWindow"
-            android:title="@string/multiwindow_category" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:key="recents_panel"
         android:title="@string/recents_panel_category" >
 
