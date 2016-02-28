@@ -876,7 +876,7 @@
     <string name="pa_pie_gravity_left">Left</string>
     <string name="pa_pie_gap_title">Item gap</string>
     <string name="pa_pie_gap_summary">Adjust the gap that separates the PIE elements</string>
-    <string name="pa_pie_angle_title">PIE Angle</string>
+    <string name="pa_pie_angle_title">PIE angle</string>
     <string name="pa_pie_angle_summary">Adjust the angle of PIE\'s egdes from the attachment</string>
     <string name="pa_pie_angle_none">None (old)</string>
     <string name="pa_pie_angle_small">Small</string>
@@ -887,7 +887,7 @@
     <string name="pa_pie_gap_small">Small</string>
     <string name="pa_pie_gap_big">Big (default)</string>
     <string name="pa_pie_gap_huge">Huge</string>
-    <string name="pa_pie_mode_title">PIE Style</string>
+    <string name="pa_pie_mode_title">PIE style</string>
     <string name="pa_pie_mode_summary">Manage how animations and status additions will be handled</string>
     <string name="pa_pie_mode_bare">Bare</string>
     <string name="pa_pie_mode_quick">Quick</string>
