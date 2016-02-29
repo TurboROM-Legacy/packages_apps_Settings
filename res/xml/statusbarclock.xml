@@ -40,9 +40,9 @@
         <com.android.settings.preference.SeekBarPreference
             android:key="status_bar_clock_font_size"
             android:title="@string/clock_font_size_title"
-            android:defaultValue="14"
-            android:max="23"
-            settings:min="4"
+	    android:max="23"
+            settings:minimum="4"
+            settings:defaultVal="14"
             settings:unitsLeft=""
             settings:unitsRight="dp" />
 
