@@ -35,4 +35,13 @@
         android:entryValues="@array/weather_condition_icon_values"
         android:dependency="lock_screen_show_weather" />
 
+    <PreferenceScreen 
+         android:key="lockclock"
+	 android:title="@string/lockclock_settings_title"
+	 android:summary="@string/lockclock_settings_summary">
+	 <intent android:action="android.intent.action.MAIN"
+	      android:targetPackage="com.cyanogenmod.lockclock"
+	      android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
+    </PreferenceScreen>
+
 </PreferenceScreen>

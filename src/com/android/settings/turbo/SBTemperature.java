@@ -46,12 +46,16 @@ import net.margaritov.preference.colorpicker.ColorPickerPreference;
 public class SBTemperature extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
 
+    private static final String KEY_LOCKCLOCK = "lockclock";
+    private static final String KEY_LOCKCLOCK_PACKAGE_NAME = "com.cyanogenmod.lockclock";
+
     private static final String STATUS_BAR_TEMPERATURE_STYLE = "status_bar_temperature_style";
     private static final String STATUS_BAR_TEMPERATURE = "status_bar_temperature";
     private static final String PREF_STATUS_BAR_WEATHER_COLOR = "status_bar_weather_color";
     private static final String PREF_STATUS_BAR_WEATHER_SIZE = "status_bar_weather_size";
     private static final String PREF_STATUS_BAR_WEATHER_FONT_STYLE = "status_bar_weather_font_style";
 
+    private PreferenceScreen mLockClock;
     private ListPreference mStatusBarTemperature;
     private ListPreference mStatusBarTemperatureStyle;
     private ColorPickerPreference mStatusBarTemperatureColor;
