@@ -152,7 +152,7 @@ public class StatusbarClock extends SettingsPreferenceFragment
         mFontStyle.setSummary(mFontStyle.getEntry());
 
         mStatusBarClockFontSize = (SeekBarPreference) findPreference(PREF_STATUS_BAR_CLOCK_FONT_SIZE);
-        mStatusBarClockFontSize.setValue(Settings.System.getInt(resolver,
+        mStatusBarClockFontSize.setValue(Settings.System.getInt(getContentResolver(),
                 Settings.System.STATUSBAR_CLOCK_FONT_SIZE, 14));
         mStatusBarClockFontSize.setOnPreferenceChangeListener(this);
 
@@ -318,14 +318,14 @@ public class StatusbarClock extends SettingsPreferenceFragment
             return true;
         } else if (preference == mFontStyle) {
             int val = Integer.parseInt((String) newValue);
-            int index = mStatusBarClockFontSize.findIndexOfValue((String) newValue);
+            int index = mFontStyle.findIndexOfValue((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_CLOCK_FONT_STYLE, val);
-            mStatusBarClockFontSize.setSummary(mStatusBarClockFontSize.getEntries()[index]);
+            mFontStyle.setSummary(mFontStyle.getEntries()[index]);
             return true;
         } else if (preference == mStatusBarClockFontSize) {
             int width = ((Integer)newValue).intValue();
-            Settings.System.putInt(resolver,
+            Settings.System.putInt(getContentResolver(),
                     Settings.System.STATUSBAR_CLOCK_FONT_SIZE, width);
             return true;
         }
