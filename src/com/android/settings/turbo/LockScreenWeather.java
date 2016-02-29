@@ -30,13 +30,14 @@ import com.android.settings.R;
 public class LockScreenWeather extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-    public LockScreenWeather(){}
-
+    private static final String KEY_LOCKCLOCK = "lockclock";
+    private static final String KEY_LOCKCLOCK_PACKAGE_NAME = "com.cyanogenmod.lockclock";
     private static final String PREF_CONDITION_ICON = "weather_condition_icon";
 
     private static final int MONOCHROME_ICON = 0;
 
     private ListPreference mConditionIcon;
+    private PreferenceScreen mLockClock;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
