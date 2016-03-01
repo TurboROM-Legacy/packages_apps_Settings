@@ -44,7 +44,8 @@
             settings:minimum="4"
             settings:defaultVal="14"
             settings:unitsLeft=""
-            settings:unitsRight="dp" />
+            settings:unitsRight="dp" 
+	    android:dependency="status_bar_show_clock" />
 
         <ListPreference
             android:key="clock_style"

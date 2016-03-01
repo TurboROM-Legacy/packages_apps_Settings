@@ -46,7 +46,7 @@
 
     <!-- Recents -->
     <string name="recents_settings_title">Recents settings</string>
-    <string name="recents_panel_category">Recents panel</string>
+    <string name="recents_panel_category">Stock recents</string>
     <string name="show_clear_all_recents_button_title">Clear all button</string>
     <string name="show_clear_all_recents_button_summary">Show clear all button</string>
     <string name="recents_clear_all_location_title">Clear all location</string>
@@ -713,7 +713,7 @@
     <string name="viper_settings_title">ViPER4Android</string>
     
     <!-- SlimRecents panel -->
-    <string name="recents_panel_style">Recent panel style</string>
+    <string name="recents_panel_style">SlimRecents</string>
     <string name="use_slim_recents_title">SlimRecents</string>
     <string name="show_running_tasks_title">Only show running apps</string>
     <string name="slim_recents_panel">SlimRecents panel</string>
