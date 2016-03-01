@@ -69,7 +69,8 @@
  
     <!-- Status bar strings -->
     <string name="status_bar_title">Status bar</string>
-    <string name="status_bar_icon_blacklist_title">Status bar icons</string>
+    <string name="statusbar_notifications_summary">Configure options for notifications in the status bar</string>
+    <string name="status_bar_icon_blacklist_title">Icons</string>
     <string name="status_bar_icon_blacklist_summary">Configure what icons are shown on the status bar</string>
 
     <!-- EdgeGesture service -->
@@ -311,6 +312,7 @@
     <!-- Lock screen wallpaper -->
     <string name="lockscreen_wallpaper_settings">Lock screen wallpaper</string>
     <string name="lockscreen_wallpaper_title">Wallpaper</string>
+    <string name="lockscreen_wallpaper_summary">Change or clear the lock screen wallpaper</string>
     <string name="lockscreen_wallpaper_set_title">Set lock screen wallpaper</string>
     <string name="lockscreen_wallpaper_clear_title">Clear lock screen wallpaper</string>
 
@@ -649,6 +651,7 @@
     <string name="lockscreen_general_category">General options</string>
     <string name="lockscreen_shortcuts_category">Shortcuts</string>
     <string name="lockscreen_colors_and_text">Hide items &amp; change colors/fonts</string>
+    <string name="lockscreen_colors_and_text_summary">Show/hide lock screen items and change their colors and fonts</string>
     <string name="hide_lockscreen_items_title">Hide items</string>
     <string name="lockscreen_fonts_category">Fonts</string>
 
@@ -663,9 +666,10 @@
     <string name="yes">Yes</string>
 
     <!-- Lock screen shortcuts -->
-    <string name="lockscreen_targets_message">Bottom lock screen shortcuts</string>
-    <string name="lockscreen_shortcuts_title">Middle lock screen shortcuts</string>
-    <string name="lockscreen_shortcuts_summary">Change the shortcuts on lock screen to whatever you want</string>
+    <string name="lockscreen_targets_message">Bottom L/R shortcuts</string>
+    <string name="lockscreen_targets_summary">Change the shortcuts on the bottom lock screen corners</string>
+    <string name="lockscreen_shortcuts_title">Mid-screen shortcuts</string>
+    <string name="lockscreen_shortcuts_summary">Change the shortcuts on the middle of the lock screen</string>
     <string name="lockscreen_shorcuts_launch_type_title">Shortcut click type</string>
     <string name="lockscreen_shortcuts_single_tap">Single tap</string>
     <string name="lockscreen_shortcuts_double_tap">Double tap</string>
@@ -791,6 +795,7 @@
     <!-- Status bar clock options -->
     <string name="status_bar_style_title">Style</string>
     <string name="status_bar_clock">Clock &amp; date</string>
+    <string name="status_bar_clock_summary">Hide or change the appearance of the status bar clock &amp; date</string>
     <string name="clock_title_enable">Alignment</string>
     <string name="clock_enabled">Enabled</string>
     <string name="clock_disabled">Disabled</string>
@@ -945,6 +950,7 @@
     <string name="pa_pie_button_color_title">Buttons color</string>
 
     <!-- Status bar temperature -->
+    <string name="status_bar_temperature_summary">Customize a temperature indicator in the status bar</string>
     <string name="status_bar_temperature_title">Status bar weather</string>
     <string name="status_bar_temperature_hidden">Hidden</string>
     <string name="status_bar_temperature_show_scale">Show with scale</string>

@@ -31,7 +31,8 @@
              android:defaultValue="false" />
 
          <PreferenceScreen
-            android:title="@string/lockscreen_targets_message" >
+            android:title="@string/lockscreen_targets_message" 
+	    android:summary="@string/lockscreen_targets_summary" >
             <intent
                 android:targetPackage="com.android.systemui"
                 android:targetClass="com.android.systemui.cm.LockscreenShortcutsActivity" />
@@ -40,7 +41,8 @@
          <PreferenceScreen
                  android:key="slim_lockscreen_shortcuts"
                  android:fragment="com.android.settings.slim.dslv.ActionListViewSettings"
-                 android:title="@string/lockscreen_shortcuts_title">
+                 android:title="@string/lockscreen_shortcuts_title"
+                 android:summary="@string/lockscreen_shortcuts_summary">
              <extra android:name="actionMode" android:value="4" />
              <extra android:name="maxAllowedActions" android:value="20" />
              <extra android:name="disableLongpress" android:value="true" />
@@ -51,16 +53,19 @@
          <PreferenceScreen
             android:key="lockscreen_colors_and_text"
             android:title="@string/lockscreen_colors_and_text"
+            android:summary="@string/lockscreen_colors_and_text_summary"
             android:fragment="com.android.settings.turbo.LockscreenColorsAndText" />
 
          <PreferenceScreen
             android:key="lockscreen_wallpaper_changer"
             android:title="@string/lockscreen_wallpaper_title"
+            android:summary="@string/lockscreen_wallpaper_summary"
             android:fragment="com.android.settings.turbo.LockScreenWallpaperSettings" />
 
          <PreferenceScreen
             android:key="weather"
             android:title="@string/weather_category"
+            android:summary="@string/lockscreen_weather_summary"
             android:fragment="com.android.settings.turbo.LockScreenWeather"/>
 
 </PreferenceScreen>

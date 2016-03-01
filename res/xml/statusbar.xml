@@ -21,17 +21,15 @@
          <PreferenceScreen
             android:key="battery"
             android:fragment="com.android.settings.turbo.BatterySettings"
+            android:summary="@string/battery2_summary"
             android:title="@string/battery_title" />
 
          <Preference
             android:key="statusbarclock"
             android:fragment="com.android.settings.turbo.StatusbarClock"
+            android:summary="@string/status_bar_clock_summary"
             android:title="@string/status_bar_clock" />
 
-         <PreferenceScreen
-            android:key="statusbar_notifications"
-            android:fragment="com.android.settings.turbo.StatusbarNotifications"
-            android:title="@string/statusbar_notifications_category" />
 
 	<PreferenceScreen
             android:key="quicksettings"
@@ -40,15 +38,23 @@
 
     	 <PreferenceScreen
  	    android:key="systemui_tuner_statusbar"
-            android:title="@string/status_bar_icon_blacklist_title" >
+            android:title="@string/status_bar_icon_blacklist_title" 
+            android:summary="@string/status_bar_icon_blacklist_summary">
             <intent android:action="android.intent.action.MAIN"
 		 android:targetPackage="com.android.systemui"
                  android:targetClass="com.android.systemui.tuner.TunerActivity" />
      	 </PreferenceScreen>
 
+         <PreferenceScreen
+            android:key="statusbar_notifications"
+            android:fragment="com.android.settings.turbo.StatusbarNotifications"
+            android:summary="@string/statusbar_notifications_summary"
+            android:title="@string/statusbar_notifications_category" />
+
 	<PreferenceScreen
             android:key="temperature"
             android:fragment="com.android.settings.turbo.SBTemperature"
+            android:summary="@string/status_bar_temperature_summary"
             android:title="@string/temperature_category" />
 
 </PreferenceScreen>
