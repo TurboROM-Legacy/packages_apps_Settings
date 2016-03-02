@@ -32,6 +32,7 @@ import android.provider.Settings;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.MetricsLogger;
+import com.android.settings.slim.fragments.LockscreenShortcutFragment;
 import com.android.settings.Utils;
 
 public class Lockscreen extends SettingsPreferenceFragment implements

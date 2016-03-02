@@ -39,7 +39,7 @@
          </PreferenceScreen>
 
          <PreferenceScreen
-                 android:key="slim_lockscreen_shortcuts"
+                 android:key="lockscreen_shortcuts"
                  android:fragment="com.android.settings.slim.dslv.ActionListViewSettings"
                  android:title="@string/lockscreen_shortcuts_title"
                  android:summary="@string/lockscreen_shortcuts_summary">
