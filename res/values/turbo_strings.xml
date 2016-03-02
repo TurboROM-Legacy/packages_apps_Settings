@@ -256,6 +256,7 @@
     <string name="notification_drawer_title">Notification panel &amp; QS</string>
     <string name="notification_panel_title">Notification panel</string>
     <string name="qs_panel_title">Quick Settings panel</string>
+    <string name="qs_panel_category">Customize items in the Quick Settings panel</string>
     <string name="qs_brightness_slider_title">Brightness slider</string>
     <string name="qs_brightness_slider_summary">Enable the brightness slider in the Quick Settings panel</string>
     <string name="quick_pulldown_title">Quick pulldown</string>
