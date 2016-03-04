@@ -131,7 +131,7 @@
 	<!-- Gestures -->
 	<PreferenceScreen
 		android:id="@+id/device_specific_gesture_settings"
-		android:title="@string/gesture_settings_title"
+		android:title="@string/gestures_category"
 		android:icon="@drawable/ic_settings_gestures">
 		<intent
 			android:action="com.cyanogenmod.action.LAUNCH_TOUCHSCREEN_GESTURE_SETTINGS"

@@ -46,6 +46,7 @@
 
     <!-- Recents -->
     <string name="recents_settings_title">Recents settings</string>
+    <string name="recents_settings_summary">Customize the layout and options for the recents app screen</string>
     <string name="recents_panel_category">Stock recents</string>
     <string name="show_clear_all_recents_button_title">Clear all button</string>
     <string name="show_clear_all_recents_button_summary">Show clear all button</string>
@@ -78,7 +79,7 @@
     <string name="edge_gesture_service_summary">Don\'t send touch events for navigation and status bar gestures to apps</string>
 
     <!-- Gestures -->
-    <string name="gesture_settings_title">Gestures</string>
+    <string name="gestures_summary">Configure double-tap and multi-finger gestures</string>
     <string name="gestures_title">Multi-finger gestures</string>
     <!-- Double tap options -->
     <string name="double_tap_options_title">Double tap gestures</string>
@@ -171,6 +172,7 @@
 
     <!-- Button settings -->
     <string name="button_settings">Buttons</string>
+    <string name="button_summary">Configure options for hardware keys and the volume rocker</string>
     <string name="hw_keys_category">Hardware buttons</string>
 
     <!-- Hardware keys -->
@@ -240,6 +242,7 @@
 
     <!-- Power menu settings --> 
     <string name="power_menu_title">Power menu</string>
+    <string name="power_menu_summary">Choose which options appear in the power menu</string>
     <string name="power_menu_reboot_title">Reboot menu</string>
     <string name="power_menu_screenshot_title">Screenshot</string>
     <string name="power_menu_airplane_title">Airplane mode</string>
@@ -382,6 +385,7 @@
 
     <!-- Expanded desktop -->
     <string name="power_menu_expanded_desktop">Expanded desktop</string>
+    <string name="expanded_desktop_summary">Configure how apps handle hiding the navigation bar &amp; status bar</string>
     <string name="expanded_hide_nothing">Hide nothing</string>
     <string name="expanded_hide_status">Hide status bar</string>
     <string name="expanded_hide_navigation">Hide navigation bar</string>
@@ -758,17 +762,18 @@
 
     <!-- AOSP Multi-window -->
     <string name="multiwindow_category">Multi-window</string>
+    <string name="multiwindow_category_summary">Enable multiple windows on the screen at the same time</string>
     <string name="enable_multi_window">Multi-window mode</string>
-    <string name="enable_multi_window_summary">Multiple activities on screen at the same time.</string>
+    <string name="enable_multi_window_summary">Multiple activities on screen at the same time</string>
     <string name="warning_multi_window_text">WARNING: This is a highly experimental feature that allows multiple activities on-screen at the same time through the Recent apps UI. Some apps may crash or not function correctly when used with this feature.</string>
 
-    <!-- Turbo Tweaks dialog -->
+    <!-- Turbo tweaks dialog -->
     <string name="turbotweaks_dialog_title">Help me help you!!!</string>
     <string name="turbotweaks_dialog_message">Unfortunately, I am not a wizard!\n\ If you find a bug with any of these settings, please contact me on XDA (@Yoshi_Guy) with the following.\n\n1. Logcat or Last_Kmsg\n2. Kernel and Mods used\n3. Useful information\n\nIf you fail to report something, do not expect things to be fixed. Remember, I am not a  wizard so I do miss things.</string>
     <string name="turbotweaks_dialog_toast">Read this!</string>
 
-    <!-- Turbo Tweaks categories -->
-    <string name="turbo_tweaks">Turbo Tweaks</string>
+    <!-- Turbo tweaks categories -->
+    <string name="turbo_tweaks">Turbo tweaks</string>
     <string name="battery_category">Battery</string>
     <string name="buttons_category">Buttons</string>
     <string name="expanded_desktop_category">Expanded desktop</string>
@@ -786,7 +791,7 @@
     <string name="recents_category">Recents panel</string>
     <string name="temperature_category">Temperature</string>
 
-    <!-- Turbo Tweaks tabs -->
+    <!-- Turbo tweaks tabs -->
     <string name="generalui_category">General UI</string>
     <string name="lockscreen_category">Lock screen</string>
     <string name="statusbar_category">Status bar</string>
@@ -874,7 +879,8 @@
     <string name="dpi">DPI</string>
     <string name="su_dialog_error_title">Warning</string>
     <string name="su_dialog_error_message">An error occurred.\n\nPlease check for root access. To activate go into superuser settings and enable root access.</string>
-    <string name="lcd_density_title">LCD Density</string>
+    <string name="lcd_density_title">LCD density</string>
+    <string name="lcd_density_summary">Change this device\'s DPI to a different size</string>
     <string name="lcd_density_category">Options</string>
     <string name="follow_through_title">Warning</string>
     <string name="follow_through_summary">Changing your default LCD density can sometimes cause certain apps to not function properly and/or the playstore to show apps being incompatible with your device</string>
