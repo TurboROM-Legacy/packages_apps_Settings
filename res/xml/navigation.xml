@@ -21,6 +21,7 @@
     <PreferenceScreen
         android:key="pa_pie_control"
         android:fragment="com.android.settings.turbo.PieControl"
-        android:title="@string/pa_pie_control_title" />
+        android:title="@string/pa_pie_control_title" 
+        android:summary="@string/pa_piecontrol_settings_summary" />
 
 </PreferenceScreen>

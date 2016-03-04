@@ -21,11 +21,13 @@
          <PreferenceScreen
             android:key="buttons"
             android:fragment="com.android.settings.turbo.ButtonSettings"
-            android:title="@string/buttons_category" />
+            android:title="@string/buttons_category" 
+            android:summary="@string/button_summary" />
 
          <PreferenceScreen
             android:key="powermenu"
             android:fragment="com.android.settings.turbo.PowerMenuActions"
-            android:title="@string/powermenu_category" />
+            android:title="@string/powermenu_category" 
+            android:summary="@string/power_menu_summary" />
 
 </PreferenceScreen>
