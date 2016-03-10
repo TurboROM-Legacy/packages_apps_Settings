@@ -514,9 +514,9 @@
     <string name="lock_clock_font_notoserif_bold">NotoSerif Bold</string>
     <string name="lock_clock_font_notoserif_bold_italic">NotoSerif Bold Italic</string>
 
-    <!-- Double tap power button for camera vib toggle -->
-    <string name="dbl_tap_vib_title">Double tap power for vibration in camera</string>
-    <string name="dbl_tap_vib_summary">Enable vibration when opening camera with a double tap of the power button</string>
+    <!-- Double tap power button for bottom right lock screen shortcut toggle -->
+    <string name="dbl_tap_vib_title">Double tap power button vibration</string>
+    <string name="dbl_tap_vib_summary">Enable vibration when opening the bottom right lock screen shortcut with a double tap of the power button</string>
 
     <!-- Doze notification color inversion -->
     <string name="doze_notification_color_invert_title">Ambient display notification inversion</string>
@@ -907,7 +907,7 @@
     <string name="custom_density_dialog_button_reboot">Reboot now</string>
 
     <!-- PA PIE control -->
-    <string name="pa_piecontrol_settings_summary">Customize PIE 3.0 targets, sytle, size and color</string>
+    <string name="pa_piecontrol_settings_summary">Customize PIE 3.0 (the style, colors, and targets)</string>
     <string name="pa_pie_title">PIE</string>
     <string name="pa_pie_control_title">PIE control</string>
     <string name="pa_pie_control_enable_title">Enable PIE control</string>
