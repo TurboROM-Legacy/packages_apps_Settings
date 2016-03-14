@@ -2663,6 +2663,16 @@
             </intent-filter>
         </activity>
 
+        <!-- Icon picker proxy for gallery -->
+        <activity android:name="com.android.settings.dui.IconPickerGallery"
+            android:theme="@android:style/Theme.Material.Light.Dialog.NoActionBar"
+            android:label="@string/icon_pack_picker_dialog_title"
+            android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
         <!-- Icon pack grid -->
         <activity android:name="com.android.settings.dui.IconPackGridActivity"
                 android:excludeFromRecents="true">
