@@ -80,7 +80,6 @@ import com.android.settings.applications.UsageAccessDetails;
 import com.android.settings.applications.WriteSettingsDetails;
 import com.android.settings.blacklist.BlacklistSettings;
 import com.android.settings.bluetooth.BluetoothSettings;
-import com.android.settings.turbo.DisplayRotation;
 import com.android.settings.dashboard.DashboardCategory;
 import com.android.settings.dashboard.DashboardSummary;
 import com.android.settings.dashboard.DashboardTile;
@@ -119,6 +118,8 @@ import com.android.settings.search.DynamicIndexableContentMonitor;
 import com.android.settings.search.Index;
 import com.android.settings.sim.SimSettings;
 import com.android.settings.tts.TextToSpeechSettings;
+import com.android.settings.turbo.DisplayRotation;
+import com.android.settings.turbo.turbotweaks.TurboTweaks;
 import com.android.settings.users.UserSettings;
 import com.android.settings.vpn2.VpnSettings;
 import com.android.settings.wfd.WifiDisplaySettings;
@@ -283,7 +284,8 @@ public class SettingsActivity extends Activity
             R.id.nfc_payment_settings,
             R.id.home_settings,
             R.id.dashboard,
-            R.id.bitsyko_layers
+            R.id.bitsyko_layers,
+	    R.id.turbotweaks
     };
 
     private static final String[] ENTRY_FRAGMENTS = {
@@ -361,7 +363,8 @@ public class SettingsActivity extends Activity
             WriteSettingsDetails.class.getName(),
             DisplayRotation.class.getName(),
             NotificationManagerSettings.class.getName(),
-            BlacklistSettings.class.getName()
+            BlacklistSettings.class.getName(),
+ 	    TurboTweaks.class.getName(),
     };
 
 

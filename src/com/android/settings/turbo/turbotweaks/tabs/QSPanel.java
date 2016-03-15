@@ -13,7 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.android.settings.turbo;
+
+package com.android.settings.turbo.turbotweaks.tabs;
 
 import android.content.ContentResolver;
 import android.content.res.Resources;
@@ -36,8 +37,9 @@ import java.util.Locale;
 import android.text.TextUtils;
 import android.view.View;
 
-public class QSPanelSettings extends SettingsPreferenceFragment implements
+public class QSPanel extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
+    private static final String TAG = "QSPanel";
 
     private static final String PRE_QUICK_PULLDOWN = "quick_pulldown";
     private static final String PREF_CUSTOM_HEADER = "status_bar_custom_header";
@@ -51,7 +53,7 @@ public class QSPanelSettings extends SettingsPreferenceFragment implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.quick_settings_panel);
+        addPreferencesFromResource(R.xml.qs_panel);
 
     }
 
@@ -102,6 +104,16 @@ public class QSPanelSettings extends SettingsPreferenceFragment implements
     @Override
     public void onResume() {
         super.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
     @Override
@@ -166,5 +178,4 @@ public class QSPanelSettings extends SettingsPreferenceFragment implements
             mQuickPulldown.setSummary(res.getString(R.string.summary_quick_pulldown, direction));
         }
     }
-
 }

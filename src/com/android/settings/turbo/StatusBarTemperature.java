@@ -43,7 +43,7 @@ import com.android.internal.logging.MetricsLogger;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
-public class SBTemperature extends SettingsPreferenceFragment implements
+public class StatusBarTemperature extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
 
     private static final String KEY_LOCKCLOCK = "lockclock";
