@@ -49,9 +49,10 @@ import android.widget.Toast;
 
 import com.android.internal.util.slim.DeviceUtils;
 import com.android.settings.turbo.turbotweaks.tabs.GeneralUI;
-import com.android.settings.turbo.turbotweaks.tabs.Lockscreen;
+import com.android.settings.turbo.turbotweaks.tabs.LockScreen;
 import com.android.settings.turbo.turbotweaks.tabs.MultiTasking;
 import com.android.settings.turbo.turbotweaks.tabs.Navigation;
+import com.android.settings.turbo.turbotweaks.tabs.QSPanel;
 import com.android.settings.turbo.turbotweaks.tabs.StatusBar;
 import com.android.settings.turbo.turbotweaks.tabs.System;
 import com.android.settings.turbo.turbotweaks.PagerSlidingTabStrip;
@@ -178,11 +179,12 @@ public class TurboTweaks extends SettingsPreferenceFragment {
         public StatusBarAdapter(FragmentManager fm) {
             super(fm);
             frags[0] = new GeneralUI();
-            frags[1] = new Lockscreen();
-            frags[2] = new StatusBar();
+            frags[1] = new LockScreen();
+            frags[2] = new MultiTasking();
             frags[3] = new Navigation();
-            frags[4] = new MultiTasking();
-            frags[5] = new System();
+            frags[4] = new QSPanel();
+            frags[5] = new StatusBar();
+            frags[6] = new System();
         }
 
         @Override
@@ -207,17 +209,19 @@ public class TurboTweaks extends SettingsPreferenceFragment {
         titleString = new String[]{
                     getString(R.string.generalui_category),
                     getString(R.string.lockscreen_category),
-                    getString(R.string.statusbar_category),
-                    getString(R.string.navigation_category),
                     getString(R.string.multitasking_category),
+                    getString(R.string.navigation_category),
+                    getString(R.string.qspanel_category),
+                    getString(R.string.statusbar_category),
                     getString(R.string.system_category)};
         } else {
         titleString = new String[]{
                     getString(R.string.generalui_category),
                     getString(R.string.lockscreen_category),
-                    getString(R.string.statusbar_category),
-                    getString(R.string.navigation_category),
                     getString(R.string.multitasking_category),
+                    getString(R.string.navigation_category),
+                    getString(R.string.qspanel_category),
+                    getString(R.string.statusbar_category),
                     getString(R.string.system_category)};
         }
         return titleString;

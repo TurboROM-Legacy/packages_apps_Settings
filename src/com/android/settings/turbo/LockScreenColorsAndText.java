@@ -39,7 +39,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
-public class LockscreenColorsAndText extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
+public class LockScreenColorsAndText extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
     private static final String TAG = "LockscreenColorsAndText";
 

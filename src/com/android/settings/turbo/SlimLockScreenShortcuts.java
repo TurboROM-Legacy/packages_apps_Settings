@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.slim.fragments;
+package com.android.settings.turbo;
 
 import android.os.Bundle;
 import android.preference.Preference;
@@ -31,7 +31,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.MetricsLogger;
 
-public class LockscreenShortcutFragment extends SettingsPreferenceFragment implements
+public class SlimLockScreenShortcuts extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
 
     private static final String PREF_LOCKSCREEN_SHORTCUTS_LAUNCH_TYPE =
@@ -41,14 +41,14 @@ public class LockscreenShortcutFragment extends SettingsPreferenceFragment imple
 
     @Override
     protected int getMetricsCategory() {
-        return MetricsLogger.APPLICATION;
+        return MetricsLogger.DONT_TRACK_ME_BRO;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.lockscreen_shortcut_fragment);
+        addPreferencesFromResource(R.xml.slim_lockscreen_shortcuts);
 
         PreferenceScreen prefSet = getPreferenceScreen();
 

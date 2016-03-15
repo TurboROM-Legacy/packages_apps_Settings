@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2016 Turbo ROM
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/recents_settings_title"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings" >
+
+    <PreferenceCategory
+        android:key="stock_recents"
+        android:title="@string/recents_panel_category" >
+
+        <com.android.settings.preference.SystemSettingSwitchPreference
+            android:key="systemui_recents_mem_display"
+            android:title="@string/recents_show_membar_title"
+            android:summary="@string/recents_show_membar_summary"
+            android:defaultValue="false" />
+
+        <com.android.settings.preference.SystemSettingSwitchPreference
+            android:key="recents_show_search_bar"
+            android:title="@string/recents_searchbar_title"
+            android:summary="@string/recents_searchbar_summary"
+            android:defaultValue="true" />
+
+        <com.android.settings.preference.SystemSettingSwitchPreference
+            android:key="show_clear_all_recents"
+            android:title="@string/show_clear_all_recents_button_title"
+            android:summary="@string/show_clear_all_recents_button_summary"
+            android:defaultValue="false" />
+
+        <ListPreference
+            android:key="recents_clear_all_location"
+            android:title="@string/recents_clear_all_location_title"
+            android:entries="@array/recents_clear_all_location_entries"
+            android:entryValues="@array/recents_clear_all_location_values"
+            android:defaultValue="3"
+            android:dependency="show_clear_all_recents" />
+
+	<com.android.settings.preference.SystemSettingSwitchPreference
+            android:key="recents_clear_all_dismiss_all"
+            android:title="@string/recents_clear_all_dismiss_all_title"
+            android:summary="@string/recents_clear_all_dismiss_all_summary"
+            android:defaultValue="true"
+            android:dependency="show_clear_all_recents" />
+
+         <ListPreference
+            android:key="immersive_recents"
+            android:title="@string/immersive_recents_title"
+            android:dialogTitle="@string/immersive_recents_dialog_title"
+            android:entries="@array/immersive_recents_entries"
+            android:entryValues="@array/immersive_recents_values"
+            android:summary="@string/immersive_recents_summary"
+            android:persistent="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="slim_recents_category"
+        android:title="@string/slim_recents_title" >
+
+        <SwitchPreference
+            android:key="slim_recents"
+            android:title="@string/slim_recents_enable_title"
+            android:summary="@string/slim_recents_enable_summary"
+            android:defaultValue="false" />
+
+        <SwitchPreference
+            android:key="only_show_running_tasks"
+            android:title="@string/show_running_tasks_title"
+            android:defaultValue="false" 
+	    android:dependency="slim_recents" />
+
+        <SlimSeekBarPreference
+            android:key="max_apps"
+            android:title="@string/recents_max_apps_title"
+	    android:dependency="slim_recents" />
+
+        <ListPreference
+            android:key="recent_panel_expanded_mode"
+            android:entries="@array/recent_panel_expanded_mode_entries"
+            android:entryValues="@array/recent_panel_expanded_mode_values"
+            android:title="@string/recent_panel_expanded_mode_title"
+            android:summary="@string/recent_panel_expanded_mode_summary"
+            android:persistent="false" 
+            android:dependency="slim_recents" />
+
+        <SwitchPreference
+            android:key="recent_panel_lefty_mode"
+            android:title="@string/recent_panel_lefty_mode_title"
+            android:summary="@string/recent_panel_lefty_mode_summary"
+            android:persistent="false" 
+            android:dependency="slim_recents" />
+
+        <SwitchPreference
+            android:key="recent_panel_show_topmost"
+            android:title="@string/recent_panel_show_topmost_title"
+            android:summary="@string/recent_panel_show_topmost_summary"
+            android:persistent="false" 
+            android:dependency="slim_recents" />
+
+        <SlimSeekBarPreference
+            android:key="recent_panel_scale"
+            android:title="@string/recent_panel_scale_title" 
+	    android:dependency="slim_recents" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="recent_panel_bg_color"
+            android:title="@string/recent_panel_bg_color_title"
+            android:defaultValue="0x00ffffff"
+            alphaSlider="true" 
+            android:dependency="slim_recents" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="recent_card_bg_color"
+            android:title="@string/recent_card_bg_color_title"
+            android:defaultValue="0x00ffffff"
+            alphaSlider="true" 
+            android:dependency="slim_recents" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="recent_card_text_color"
+            android:title="@string/recent_card_text_color_title"
+            android:defaultValue="0x00ffffff"
+            alphaSlider="true" 
+            android:dependency="slim_recents" />
+
+        <PreferenceScreen
+            android:key="recent_app_sidebar_content"
+            android:fragment="com.android.settings.slim.dslv.ActionListViewSettings"
+            android:title="@string/recent_app_sidebar_title"
+            android:summary="@string/recent_app_sidebar_summary"
+            android:dependency="slim_recents">
+                <extra android:name="actionMode" android:value="7" />
+                <extra android:name="maxAllowedActions" android:value="-1" />
+                <extra android:name="disableLongpress" android:value="true" />
+                <extra android:name="useAppPickerOnly" android:value="true" />
+                <extra android:name="fragment" android:value="com.android.settings.turbo.RecentAppSidebarFragment" />
+        </PreferenceScreen>
+            
+  </PreferenceCategory>
+
+</PreferenceScreen>

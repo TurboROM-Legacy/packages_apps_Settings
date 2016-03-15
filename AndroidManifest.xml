@@ -152,22 +152,6 @@
             </intent-filter>
         </activity>
 
- 
-	<!-- Pseudo-activity used to provide an intent-filter entry point to Rotation settings -->
-	<activity android:name="Settings$DisplayRotationSettingsActivity"
-		android:label="@string/display_rotation_title"
-		android:taskAffinity=""
-		android:excludeFromRecents="true">
-		<intent-filter>
-		<action android:name="android.intent.action.MAIN" />
-		<category android:name="android.intent.category.DEFAULT" />
-		</intent-filter>
-		<meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-		android:value="com.android.settings.turbo.DisplayRotation" />
-		<meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
-                android:resource="@id/display_and_lights_settings" />
-	</activity>
-
         <!-- Wireless Controls -->
 
         <activity android:name="Settings$WirelessSettingsActivity"
@@ -2157,6 +2141,22 @@
             android:launchMode="singleTop"
             android:theme="@style/CryptKeeperBlankTheme"
         />
+
+        <!-- Display rotation -->
+        <activity android:name="Settings$DisplayRotationActivity"
+                android:label="@string/display_rotation_title"
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.settings.DISPLAY_ROTATION_SETTINGS" />
+                <action android:name="com.android.settings.DISPLAY_ROTATION_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.turbo.DisplayRotation" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/display_and_lights_settings" />
+        </activity>
 
         <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->
         <activity android:name="Settings$CryptKeeperSettingsActivity"

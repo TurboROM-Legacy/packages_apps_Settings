@@ -1,19 +1,18 @@
 /*
- * Copyright (C) 2015 SlimRoms Project
+ * Copyright (C) 2016 Turbo ROM
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */
-
+*/
 package com.android.settings.turbo;
 
 import android.app.ActivityManager;
@@ -26,40 +25,41 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.UserHandle;
 import android.preference.ListPreference;
-import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.Preference;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.preference.SlimSeekBarPreference;
 import android.preference.SwitchPreference;
-import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.MenuInflater;
-
+import android.view.MenuItem;
 import com.android.internal.logging.MetricsLogger;
 import com.android.settings.DialogCreatable;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-
 import com.android.internal.util.slim.DeviceUtils;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
-public class SlimRecents extends SettingsPreferenceFragment implements DialogCreatable,
-        Preference.OnPreferenceChangeListener {
+public class Recents extends SettingsPreferenceFragment implements DialogCreatable,
+	Preference.OnPreferenceChangeListener {
 
-    @Override
-     protected int getMetricsCategory() {
-        return MetricsLogger.DEVELOPMENT;
-    }
+    private static final String TAG = "Recents";
 
-    private static final String TAG = "RecentPanelSettings";
+    private static final int MENU_RESET = Menu.FIRST;
+    private static final int DEFAULT_BACKGROUND_COLOR = 0x00ffffff;
 
-    private static final String USE_SLIM_RECENTS = "use_slim_recents";
+    private static final String CATEGORY_STOCK_RECENTS = "stock_recents";
+    private static final String CATEGORY_SLIM_RECENTS = "slim_recents_category";
+    private static final String SHOW_CLEAR_ALL_RECENTS = "show_clear_all_recents";
+    private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
+    private static final String IMMERSIVE_RECENTS = "immersive_recents";
+    private static final String USE_SLIM_RECENTS = "slim_recents";
     private static final String ONLY_SHOW_RUNNING_TASKS = "only_show_running_tasks";
     private static final String RECENTS_MAX_APPS = "max_apps";
     private static final String RECENT_PANEL_SHOW_TOPMOST = "recent_panel_show_topmost";
@@ -70,6 +70,11 @@ public class SlimRecents extends SettingsPreferenceFragment implements DialogCre
     private static final String RECENT_CARD_BG_COLOR = "recent_card_bg_color";
     private static final String RECENT_CARD_TEXT_COLOR = "recent_card_text_color";
 
+    private PreferenceCategory mStockRecents;
+    private PreferenceCategory mSlimRecents;
+    private SwitchPreference mRecentsClearAll;
+    private ListPreference mRecentsClearAllLocation;
+    private ListPreference mImmersiveRecents;
     private SwitchPreference mUseSlimRecents;
     private SwitchPreference mShowRunningTasks;
     private SlimSeekBarPreference mMaxApps;
@@ -81,18 +86,57 @@ public class SlimRecents extends SettingsPreferenceFragment implements DialogCre
     private ColorPickerPreference mRecentCardBgColor;
     private ColorPickerPreference mRecentCardTextColor;
 
-    private static final int MENU_RESET = Menu.FIRST;
-    private static final int DEFAULT_BACKGROUND_COLOR = 0x00ffffff;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.slim_recents);
+        addPreferencesFromResource(R.xml.recents);
         initializeAllPreferences();
+
+        ContentResolver resolver = getActivity().getContentResolver();
+        PreferenceScreen prefSet = getPreferenceScreen();
+
+        mStockRecents = (PreferenceCategory) findPreference(CATEGORY_STOCK_RECENTS);
+        mSlimRecents = (PreferenceCategory) findPreference(CATEGORY_SLIM_RECENTS);
+
+        mRecentsClearAll = (SwitchPreference) prefSet.findPreference(SHOW_CLEAR_ALL_RECENTS);
+
+        mRecentsClearAllLocation = (ListPreference) prefSet.findPreference(RECENTS_CLEAR_ALL_LOCATION);
+        int location = Settings.System.getIntForUser(resolver,
+                Settings.System.RECENTS_CLEAR_ALL_LOCATION, 3, UserHandle.USER_CURRENT);
+        mRecentsClearAllLocation.setValue(String.valueOf(location));
+        mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntry());
+        mRecentsClearAllLocation.setOnPreferenceChangeListener(this);
+
+        mImmersiveRecents = (ListPreference) findPreference(IMMERSIVE_RECENTS);
+        mImmersiveRecents.setValue(String.valueOf(Settings.System.getInt(
+                getContentResolver(), Settings.System.IMMERSIVE_RECENTS, 0)));
+        mImmersiveRecents.setSummary(mImmersiveRecents.getEntry());
+        mImmersiveRecents.setOnPreferenceChangeListener(this);
+ 	updateRecents();
     }
 
+    @Override
+    protected int getMetricsCategory() {
+        return MetricsLogger.DONT_TRACK_ME_BRO;
+    }
+
+    @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == mUseSlimRecents) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        if (preference == mRecentsClearAllLocation) {
+            int location = Integer.valueOf((String) newValue);
+            int index = mRecentsClearAllLocation.findIndexOfValue((String) newValue);
+            Settings.System.putIntForUser(getActivity().getContentResolver(),
+                    Settings.System.RECENTS_CLEAR_ALL_LOCATION, location, UserHandle.USER_CURRENT);
+            mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntries()[index]);
+            return true;
+        } else if (preference == mImmersiveRecents) {
+            Settings.System.putInt(getContentResolver(), Settings.System.IMMERSIVE_RECENTS,
+                    Integer.valueOf((String) newValue));
+            mImmersiveRecents.setValue(String.valueOf(newValue));
+            mImmersiveRecents.setSummary(mImmersiveRecents.getEntry());
+	    return true;
+        } else if (preference == mUseSlimRecents) {
             Settings.System.putInt(getContentResolver(), Settings.System.USE_SLIM_RECENTS,
                     ((Boolean) newValue) ? 1 : 0);
             return true;
@@ -318,4 +362,16 @@ public class SlimRecents extends SettingsPreferenceFragment implements DialogCre
         mRecentPanelExpandedMode.setOnPreferenceChangeListener(this);
     }
 
+    private void updateRecents() {
+        boolean slimRecent = Settings.System.getInt(getActivity().getContentResolver(),
+                    Settings.System.USE_SLIM_RECENTS, 0) == 1;
+
+        if (slimRecent) {
+            mSlimRecents.setEnabled(true);
+            mStockRecents.setEnabled(false);
+        } else {
+           mSlimRecents.setEnabled(true);
+           mStockRecents.setEnabled(true);
+        }
+    }
 }

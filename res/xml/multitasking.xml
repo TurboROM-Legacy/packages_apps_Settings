@@ -22,7 +22,7 @@
 
          <PreferenceScreen
             android:key="recents"
-            android:fragment="com.android.settings.turbo.RecentsSettings"
+            android:fragment="com.android.settings.turbo.Recents"
             android:title="@string/recents_category" 
 	    android:summary="@string/recents_settings_summary" />
 

@@ -49,10 +49,10 @@ import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 import java.util.Date;
 
-public class StatusbarClock extends SettingsPreferenceFragment
+public class StatusBarClock extends SettingsPreferenceFragment
         implements OnPreferenceChangeListener {
 
-    private static final String TAG = "StatusbarClock";
+    private static final String TAG = "StatusBarClock";
 
     private static final String PREF_ENABLE = "clock_style";
     private static final String PREF_AM_PM_STYLE = "status_bar_am_pm";
@@ -99,7 +99,7 @@ public class StatusbarClock extends SettingsPreferenceFragment
             prefSet.removeAll();
         }
 
-        addPreferencesFromResource(R.xml.statusbarclock);
+        addPreferencesFromResource(R.xml.statusbar_clock);
         prefSet = getPreferenceScreen();
 
         PackageManager pm = getPackageManager();
@@ -400,8 +400,8 @@ public class StatusbarClock extends SettingsPreferenceFragment
             return frag;
         }
 
-        StatusbarClock getOwner() {
-            return (StatusbarClock) getTargetFragment();
+        StatusBarClock getOwner() {
+            return (StatusBarClock) getTargetFragment();
         }
 
         @Override

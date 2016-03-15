@@ -36,7 +36,7 @@ import com.android.internal.logging.MetricsLogger;
 import com.android.settings.Utils;
 import com.android.internal.util.slim.DeviceUtils;
 
-public class StatusbarNotifications extends SettingsPreferenceFragment {
+public class StatusBarNotifications extends SettingsPreferenceFragment {
 
     @Override
     protected int getMetricsCategory() {
