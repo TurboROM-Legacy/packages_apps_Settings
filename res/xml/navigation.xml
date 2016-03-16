@@ -18,10 +18,4 @@
     android:layout="@layout/tab"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <PreferenceScreen
-        android:key="pa_pie_control"
-        android:fragment="com.android.settings.turbo.PieControl"
-        android:title="@string/pa_pie_control_title" 
-        android:summary="@string/pa_piecontrol_settings_summary" />
-
 </PreferenceScreen>
