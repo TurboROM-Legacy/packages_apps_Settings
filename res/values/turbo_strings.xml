@@ -58,7 +58,6 @@
     <string name="gestures_category">Gestures</string>
     <string name="lockscreen_notifications_category">Notifications</string>
     <string name="multiwindow_category">Multi-window</string>
-    <string name="powermenu_category">Power menu</string>
     <string name="qspanel_category">QS Panel</string>
     <string name="recents_category">Recents panel</string>
     <string name="statusbar_items_category">Status bar items</string>
@@ -327,7 +326,6 @@
     <string name="battery_stats_message">Battery history stats are going to be reset</string>
 
     <!-- Expanded desktop -->
-    <string name="power_menu_expanded_desktop">Expanded desktop</string>
     <string name="expanded_desktop_summary">Configure how apps handle hiding the navigation bar &amp; status bar</string>
     <string name="expanded_hide_nothing">Hide nothing</string>
     <string name="expanded_hide_status">Hide status bar</string>
@@ -549,21 +547,6 @@
     <string name="show_enter_key_summary">Force keyboard to show enter instead of emoticon key</string>
     <string name="ime_switcher_notify">Selector notification</string>
     <string name="ime_switcher_notify_summary">Display input method selector notification</string>
-
-    <!-- Power menu settings --> 
-    <string name="power_menu_title">Power menu</string>
-    <string name="power_menu_summary">Choose which options appear in the power menu</string>
-    <string name="power_menu_reboot_title">Reboot menu</string>
-    <string name="power_menu_screenshot_title">Screenshot</string>
-    <string name="power_menu_airplane_title">Airplane mode</string>
-    <string name="power_menu_users_title">User switcher</string>
-    <string name="power_menu_search_title">Search</string>
-    <string name="power_menu_voice_title">Voice search</string>
-    <string name="power_menu_settings_title">Settings shortcut</string>
-    <string name="power_menu_lockdown_title">Device lockdown</string>
-    <string name="power_menu_bug_report_title">Bug report</string>
-    <string name="power_menu_sound_title">Sound panel</string>
-    <string name="power_menu_bug_report_disabled">Bug reporting is disabled in development settings</string>
 
     <!-- Disable force close notifications -->
     <string name="disable_fc_notifications_title">Disable fc notifications</string>
