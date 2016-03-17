@@ -1538,5 +1538,6 @@
     <string name="app_ops_labels_toggle_nfc">Toggle NFC</string>
     <string name="app_ops_labels_toggle_mobile_data">Toggle mobile data</string>
     <string name="app_ops_labels_superuser">Root access</string>
+    <string name="app_ops_disabled_by_optimization">Disabled by battery optimization</string>
 
 </resources>
