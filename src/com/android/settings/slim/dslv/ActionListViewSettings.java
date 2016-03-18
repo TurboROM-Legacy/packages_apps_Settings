@@ -493,10 +493,10 @@ public class ActionListViewSettings extends ListFragment implements
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         menu.add(0, MENU_RESET, 0, R.string.shortcut_action_reset)
-                .setIcon(R.drawable.ic_settings_backup) // use the backup icon
+                .setIcon(R.drawable.ic_settings_reset_button) // use the reset icon
                 .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
         menu.add(0, MENU_ADD, 0, R.string.shortcut_action_add)
-                .setIcon(R.drawable.ic_menu_add_dark)
+                .setIcon(R.drawable.ic_menu_add)
                 .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
         menu.add(0, MENU_HELP, 0, R.string.help_label)
                 .setIcon(R.drawable.ic_settings_about)
