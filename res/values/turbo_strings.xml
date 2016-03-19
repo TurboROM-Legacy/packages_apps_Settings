@@ -1171,4 +1171,9 @@
     <!-- Kernel Adiutor -->
     <string name="kernel_adiutor_settings">Kernel Adiutor</string>
 
+    <!-- Header image shadow -->
+    <string name="status_bar_custom_header_shadow_title">Contextual header shadow</string>
+    <string name="status_bar_custom_header_shadow_summary">For better text/icon visibility on bright images</string>
+    <string name="unit_percent">\u0025</string>
+
 </resources>

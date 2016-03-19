@@ -33,6 +33,8 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.android.internal.logging.MetricsLogger;
 
+import com.android.settings.turbo.widget.SeekBarPreferenceCham;
+
 import java.util.Locale;
 import android.text.TextUtils;
 import android.view.View;
@@ -44,11 +46,13 @@ public class QSPanel extends SettingsPreferenceFragment implements
     private static final String PRE_QUICK_PULLDOWN = "quick_pulldown";
     private static final String PREF_CUSTOM_HEADER = "status_bar_custom_header";
     private static final String PREF_CUSTOM_HEADER_DEFAULT = "status_bar_custom_header_default";
+    private static final String CUSTOM_HEADER_IMAGE_SHADOW = "status_bar_custom_header_shadow";
 
     private ListPreference mNumColumns;
     private ListPreference mQuickPulldown;
     private SwitchPreference mCustomHeader;
     private SwitchPreference mCustomHeaderDefault;
+    private SeekBarPreferenceCham mHeaderShadow;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -85,6 +89,12 @@ public class QSPanel extends SettingsPreferenceFragment implements
         mCustomHeaderDefault.setChecked((Settings.System.getInt(resolver,
                 Settings.System.STATUS_BAR_CUSTOM_HEADER_DEFAULT, 0) == 1));
         mCustomHeaderDefault.setOnPreferenceChangeListener(this);
+
+        mHeaderShadow = (SeekBarPreferenceCham) findPreference(CUSTOM_HEADER_IMAGE_SHADOW);
+        final int headerShadow = Settings.System.getInt(getContentResolver(),
+                Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, 0);
+        mHeaderShadow.setValue((int)((headerShadow / 255) * 100));
+        mHeaderShadow.setOnPreferenceChangeListener(this);
 
         mNumColumns = (ListPreference) findPreference("sysui_qs_num_columns");
         int numColumns = Settings.Secure.getIntForUser(resolver,
@@ -139,6 +149,12 @@ public class QSPanel extends SettingsPreferenceFragment implements
         } else if (preference == mCustomHeaderDefault) {
             Settings.System.putInt(resolver, Settings.System.STATUS_BAR_CUSTOM_HEADER_DEFAULT,
                     (Boolean) objValue ? 1 : 0);
+            return true;
+        } else if (preference == mHeaderShadow) {
+         Integer headerShadow = (Integer) objValue;
+         int realHeaderValue = (int) (((double) headerShadow / 100) * 255);
+         Settings.System.putInt(getContentResolver(),
+                 Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, realHeaderValue);
             return true;
         }
         return false;
