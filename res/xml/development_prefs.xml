@@ -140,13 +140,6 @@
             android:title="@string/mobile_data_always_on"
             android:summary="@string/mobile_data_always_on_summary"/>
 
-        <ListPreference
-            android:key="select_usb_configuration"
-            android:title="@string/select_usb_configuration_title"
-            android:dialogTitle="@string/select_usb_configuration_dialog_title"
-            android:entries="@array/usb_configuration_titles"
-            android:entryValues="@array/usb_configuration_values" />
-
        <SwitchPreference
             android:key="show_unac_and_overcounted_stats"
             android:title="@string/show_unac_and_overcounted_stats_title"
