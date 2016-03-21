@@ -1050,4 +1050,8 @@
     <string name="shortcut_action_users">Users</string>
     <string name="shortcut_action_lockdown">Lock now</string>
 
+    <!-- Navigation bar -->
+    <string name="navbar_title">Navigation bar</string>
+    <string name="navbar_summary">Customize the options and items in the navigation bar</string>
+
 </resources>
