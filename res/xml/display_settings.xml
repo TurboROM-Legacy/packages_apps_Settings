@@ -41,6 +41,12 @@
             android:persistent="false"
             android:entries="@array/night_mode_entries"
             android:entryValues="@array/night_mode_values" />
+                
+	<SwitchPreference
+                android:key="proximity_on_wake"
+                android:title="@string/proximity_wake_title"
+                android:summary="@string/proximity_wake_summary"
+                android:defaultValue="true" />
 
         <ListPreference
                 android:key="screen_timeout"
@@ -49,6 +55,13 @@
                 android:persistent="false"
                 android:entries="@array/screen_timeout_entries"
                 android:entryValues="@array/screen_timeout_values" />
+
+        <SwitchPreference
+                android:key="wake_when_plugged_or_unplugged"
+                android:title="@string/wake_when_plugged_or_unplugged_title"
+                android:summary="@string/wake_when_plugged_or_unplugged_summary"
+                android:defaultValue="false"
+                android:persistent="false" />
 
         <SwitchPreference
                 android:key="camera_gesture"
@@ -131,25 +144,6 @@
                     android:persistent="false" />
 
         </PreferenceCategory>
-
-	<PreferenceCategory
-		android:key="category_wakeup_options"
-		android:title="@string/display_category_wakeup_options_title" >
-
-		<SwitchPreference
-                    android:key="wakeup_when_plugged_unplugged"
-                    android:title="@string/wakeup_when_plugged_unplugged_title"
-                    android:summary="@string/wakeup_when_plugged_unplugged_summary"
-                    android:defaultValue="true"
-                    android:persistent="false" />
-                
-		<com.android.settings.preference.SystemSettingSwitchPreference
-                    android:key="proximity_on_wake"
-                    android:title="@string/proximity_wake_title"
-                    android:summary="@string/proximity_wake_summary"
-                    android:defaultValue="true" />
-                    
-	</PreferenceCategory>
 
         <PreferenceCategory
                 android:key="category_doze_options"

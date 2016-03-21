@@ -90,8 +90,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_CAMERA_GESTURE = "camera_gesture";
     private static final String KEY_CAMERA_DOUBLE_TAP_POWER_GESTURE
             = "camera_double_tap_power_gesture";
-    private static final String KEY_WAKEUP_WHEN_PLUGGED_UNPLUGGED = "wakeup_when_plugged_unplugged";
-    private static final String KEY_WAKEUP_CATEGORY = "category_wakeup_options";
+    private static final String KEY_WAKE_WHEN_PLUGGED_OR_UNPLUGGED = "wake_when_plugged_or_unplugged";
     private static final String KEY_PROXIMITY_WAKE = "proximity_on_wake";
 
     private static final String DASHBOARD_COLUMNS = "dashboard_columns";
@@ -109,8 +108,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
     private PreferenceScreen mDisplayRotationPreference;
 
-    private SwitchPreference mWakeUpWhenPluggedOrUnplugged;
-    private PreferenceCategory mWakeUpOptions;
+    private SwitchPreference mWakeWhenPluggedOrUnplugged;
+    private SwitchPreference mProximityCheckOnWakePreference;
     private static final String KEY_DOZE_CATEGORY = "category_doze_options";
     private static final String KEY_DOZE = "doze";
     private static final String KEY_ADVANCED_DOZE_OPTIONS = "advanced_doze_options";
@@ -246,27 +245,26 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             mNightModePreference.setValue(String.valueOf(currentNightMode));
             mNightModePreference.setOnPreferenceChangeListener(this);
         }
-        mWakeUpOptions = (PreferenceCategory) prefSet.findPreference(KEY_WAKEUP_CATEGORY);
-        mWakeUpWhenPluggedOrUnplugged =
-            (SwitchPreference) findPreference(KEY_WAKEUP_WHEN_PLUGGED_UNPLUGGED);
 
-        // hide option if device is already set to never wake up
-        if(!getResources().getBoolean(
-                com.android.internal.R.bool.config_unplugTurnsOnScreen)) {
-                mWakeUpOptions.removePreference(mWakeUpWhenPluggedOrUnplugged);
-                prefSet.removePreference(mWakeUpOptions);
-        } else {
-            mWakeUpWhenPluggedOrUnplugged.setChecked(Settings.System.getInt(resolver,
-                        Settings.System.WAKEUP_WHEN_PLUGGED_UNPLUGGED, 1) == 1);
-            mWakeUpWhenPluggedOrUnplugged.setOnPreferenceChangeListener(this);
-        }
-
-        boolean proximityCheckOnWait = getResources().getBoolean(
+        mProximityCheckOnWakePreference = (SwitchPreference) findPreference(KEY_PROXIMITY_WAKE);
+        boolean proximityCheckOnWake = getResources().getBoolean(
                 com.android.internal.R.bool.config_proximityCheckOnWake);
-        if (!proximityCheckOnWait) {
-            mWakeUpOptions.removePreference(findPreference(KEY_PROXIMITY_WAKE));
-            Settings.System.putInt(getContentResolver(), Settings.System.PROXIMITY_ON_WAKE, 1);
+        if (!proximityCheckOnWake) {
+            if (mProximityCheckOnWakePreference != null) {
+                prefSet.removePreference(mProximityCheckOnWakePreference);
+            }
+            Settings.System.putInt(getContentResolver(), Settings.System.PROXIMITY_ON_WAKE, 0);
+        } else {
+            boolean proximityCheckOnWakeDefault = getResources().getBoolean(
+                    com.android.internal.R.bool.config_proximityCheckOnWakeEnabledByDefault);
+            mProximityCheckOnWakePreference.setChecked(Settings.System.getInt(getContentResolver(),
+                    Settings.System.PROXIMITY_ON_WAKE,
+                    (proximityCheckOnWakeDefault ? 1 : 0)) == 1);
         }
+
+        mWakeWhenPluggedOrUnplugged =
+                (SwitchPreference) findPreference(KEY_WAKE_WHEN_PLUGGED_OR_UNPLUGGED);
+
     }
 
     private static boolean allowAllRotations(Context context) {
@@ -433,6 +431,17 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         getContentResolver().registerContentObserver(
                 Settings.System.getUriFor(Settings.System.ACCELEROMETER_ROTATION), true,
                 mAccelerometerRotationObserver);
+
+        // Default value for wake-on-plug behavior from config.xml
+        boolean wakeUpWhenPluggedOrUnpluggedConfig = getResources().getBoolean(
+                com.android.internal.R.bool.config_unplugTurnsOnScreen);
+
+        if (mWakeWhenPluggedOrUnplugged != null) {
+        mWakeWhenPluggedOrUnplugged.setChecked(Settings.Global.getInt(getContentResolver(),
+                Settings.Global.WAKE_WHEN_PLUGGED_OR_UNPLUGGED,
+                (wakeUpWhenPluggedOrUnpluggedConfig ? 1 : 0)) == 1);
+        }
+
         updateDisplayRotationPreferenceDescription();
     }
 
@@ -620,12 +629,12 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 Log.e(TAG, "could not persist night mode setting", e);
             }
         }
-        if (KEY_WAKEUP_WHEN_PLUGGED_UNPLUGGED.equals(key)) {
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.WAKEUP_WHEN_PLUGGED_UNPLUGGED,
-                    (Boolean) objValue ? 1 : 0);
+        if (preference == mWakeWhenPluggedOrUnplugged) {
+            Settings.Global.putInt(getContentResolver(),
+                    Settings.Global.WAKE_WHEN_PLUGGED_OR_UNPLUGGED,
+                    mWakeWhenPluggedOrUnplugged.isChecked() ? 1 : 0);
+            return true;
         }
-
         return true;
     }
 
@@ -676,6 +685,10 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                     if (!context.getResources().getBoolean(
                             com.android.internal.R.bool.config_intrusiveBatteryLed)) {
                         result.add(KEY_BATTERY_LIGHT);
+                    }
+                    if (!context.getResources().getBoolean(
+                            com.android.internal.R.bool.config_proximityCheckOnWake)) {
+                        result.add(KEY_PROXIMITY_WAKE);
                     }
                     if (!isAutomaticBrightnessAvailable(context.getResources())) {
                         result.add(KEY_AUTO_BRIGHTNESS);
