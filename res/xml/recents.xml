@@ -137,7 +137,7 @@
 
         <PreferenceScreen
             android:key="recent_app_sidebar_content"
-            android:fragment="com.android.settings.slim.dslv.ActionListViewSettings"
+            android:fragment="com.android.settings.turbo.dslv.ActionListViewSettings"
             android:title="@string/recent_app_sidebar_title"
             android:summary="@string/recent_app_sidebar_summary"
             android:dependency="slim_recents">

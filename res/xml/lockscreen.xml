@@ -48,7 +48,7 @@
 
          <PreferenceScreen
                  android:key="lockscreen_shortcuts"
-                 android:fragment="com.android.settings.slim.dslv.ActionListViewSettings"
+                 android:fragment="com.android.settings.turbo.dslv.ActionListViewSettings"
                  android:title="@string/lockscreen_shortcuts_title"
                  android:summary="@string/lockscreen_shortcuts_summary">
              <extra android:name="actionMode" android:value="4" />

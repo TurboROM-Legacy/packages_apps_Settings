@@ -27,7 +27,7 @@
 
         <PreferenceScreen
 		 android:key="global_menu_settings"
-		 android:fragment="com.android.settings.slim.dslv.ActionListViewSettings"
+		 android:fragment="com.android.settings.turbo.dslv.ActionListViewSettings"
 		 android:title="@string/global_menu_entries_title"
 		 android:summary="@string/global_menu_entries_summary">
 	     <extra android:name="actionMode" android:value="5" />

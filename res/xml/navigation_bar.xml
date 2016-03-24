@@ -26,7 +26,7 @@
 
         <PreferenceScreen
                 android:key="navbar_button_settings"
-                android:fragment="com.android.settings.slim.dslv.ActionListViewSettings"
+                android:fragment="com.android.settings.turbo.dslv.ActionListViewSettings"
                 android:title="@string/navbar_button_title"
                 android:summary="@string/navbar_button_summary" >
             <extra android:name="actionMode" android:value="0" />
