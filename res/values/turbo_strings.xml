@@ -141,9 +141,10 @@
     <string name="immersive_recents_navbar">Navbar only</string>
 
     <!-- SlimRecents panel -->
+    <string name="slimrecents_reset">Reset all SlimRecents entries to default?</string>
     <string name="slim_recents_title">SlimRecents</string>
     <string name="slim_recents_enable_title">Enable SlimRecents</string>
-    <string name="slim_recents_enable_summary">Use Slim Recents for recents view</string>
+    <string name="slim_recents_enable_summary">Use SlimRecents for the recents view</string>
     <string name="use_slim_recents_title">SlimRecents</string>
     <string name="show_running_tasks_title">Only show running apps</string>
     <string name="slim_recents_panel">SlimRecents panel</string>

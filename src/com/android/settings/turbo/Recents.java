@@ -139,6 +139,7 @@ public class Recents extends SettingsPreferenceFragment implements DialogCreatab
         } else if (preference == mUseSlimRecents) {
             Settings.System.putInt(getContentResolver(), Settings.System.USE_SLIM_RECENTS,
                     ((Boolean) newValue) ? 1 : 0);
+	    updateRecents();
             return true;
         } else if (preference == mShowRunningTasks) {
             Settings.System.putInt(getContentResolver(), Settings.System.RECENT_SHOW_RUNNING_TASKS,
@@ -216,11 +217,12 @@ public class Recents extends SettingsPreferenceFragment implements DialogCreatab
     public void onResume() {
         super.onResume();
         updateRecentPanelPreferences();
+	updateRecents();
     }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        menu.add(0, MENU_RESET, 0, R.string.reset)
+        menu.add(0, MENU_RESET, 0, R.string.slimrecents_reset)
                 .setIcon(R.drawable.ic_settings_reset_button)
                 .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
     }
@@ -239,7 +241,7 @@ public class Recents extends SettingsPreferenceFragment implements DialogCreatab
     private void resetToDefault() {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity());
         alertDialog.setTitle(R.string.shortcut_action_reset);
-        alertDialog.setMessage(R.string.reset_message);
+        alertDialog.setMessage(R.string.slimrecents_reset);
         alertDialog.setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 resetValues();
@@ -262,6 +264,7 @@ public class Recents extends SettingsPreferenceFragment implements DialogCreatab
                 Settings.System.RECENT_CARD_TEXT_COLOR, DEFAULT_BACKGROUND_COLOR);
         mRecentCardTextColor.setNewPreviewColor(DEFAULT_BACKGROUND_COLOR);
         mRecentCardTextColor.setSummary(R.string.default_string);
+	updateRecents();
     }
 
     private void updateRecentPanelPreferences() {
@@ -276,6 +279,7 @@ public class Recents extends SettingsPreferenceFragment implements DialogCreatab
         final int recentExpandedMode = Settings.System.getInt(getContentResolver(),
                 Settings.System.RECENT_PANEL_EXPANDED_MODE, 0);
         mRecentPanelExpandedMode.setValue(recentExpandedMode + "");
+	updateRecents();
     }
 
     private void initializeAllPreferences() {
