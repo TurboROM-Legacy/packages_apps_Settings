@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.slim.dslv;
+package com.android.settings.turbo.dslv;
 
 import android.content.Context;
 import android.view.Gravity;
