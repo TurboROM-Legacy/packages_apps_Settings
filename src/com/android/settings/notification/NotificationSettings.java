@@ -185,9 +185,9 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
     }
 
     private boolean getUserHeadsUpState() {
-         return Settings.Global.getInt(getContentResolver(),
-                Settings.Global.HEADS_UP_NOTIFICATIONS_ENABLED,
-                Settings.Global.HEADS_UP_ON) != 0;
+         return Settings.System.getInt(getContentResolver(),
+                Settings.System.HEADS_UP_USER_ENABLED,
+                Settings.System.HEADS_UP_USER_ON) != 0;
     }
 
     @Override
