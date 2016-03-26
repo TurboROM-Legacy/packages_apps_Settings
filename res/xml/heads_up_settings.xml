@@ -17,6 +17,13 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings" >
 
+    <com.android.settings.preference.SystemSettingSwitchPreference
+        android:key="heads_up_force_all"
+        android:title="@string/force_heads_up_title"
+        android:summary="@string/force_heads_up_summary"
+        android:defaultValue="false"
+        android:disableDependentsState="true" />
+
     <PreferenceCategory
         android:title="@string/heads_up_dnd_title"
         android:key="dnd_applications_list" >
@@ -43,7 +50,8 @@
 
     <PreferenceCategory
         android:title="@string/heads_up_whitelist_title"
-        android:key="whitelist_applications" >
+        android:key="whitelist_applications"
+        android:dependency="heads_up_force_all" >
 
         <Preference
             android:key="add_whitelist_packages"
