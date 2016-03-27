@@ -14,6 +14,15 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Shortcut picker -->
+    <dimen name="shortcut_picker_left_padding">40dip</dimen>
+
+    <!-- Color picker -->
+
+    <!-- Width and height of the color picker preference preview -->
+    <dimen name="color_picker_preference_preview_width_height">33dp</dimen>
+
+    <!-- Floating action button -->
     <dimen name="fab_line_width">2dp</dimen>
 
     <!-- Navigation bar -->
