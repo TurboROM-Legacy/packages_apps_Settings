@@ -644,4 +644,14 @@
     <!-- Force Heads up in all apps -->
     <string name="force_heads_up_title">Force Heads up</string>
     <string name="force_heads_up_summary">Force Heads up in all applications</string>
+
+    <!-- Heads up timeout -->
+    <string name="heads_up_timeout_title">Timeout</string>
+    <string name="heads_up_timeout_summary">Notifications will show for <xliff:g id="number">%d</xliff:g> seconds</string>
+    <string name="heads_up_timeout_2sec">2 seconds</string>
+    <string name="heads_up_timeout_4sec">4 seconds</string>
+    <string name="heads_up_timeout_5sec">5 seconds</string>
+    <string name="heads_up_timeout_6sec">6 seconds</string>
+    <string name="heads_up_timeout_8sec">8 seconds</string>
+    <string name="heads_up_timeout_10sec">10 seconds</string>
 </resources>

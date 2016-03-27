@@ -460,4 +460,23 @@
         <item>EEEE MM/dd</item>
         <item>@string/clock_date_format_custom</item>
     </string-array>
+
+    <!-- Heads up timeout -->
+    <string-array name="heads_up_timeout_entries" translatable="false">
+        <item>@string/heads_up_timeout_2sec</item>
+        <item>@string/heads_up_timeout_4sec</item>
+        <item>@string/heads_up_timeout_5sec</item>
+        <item>@string/heads_up_timeout_6sec</item>
+        <item>@string/heads_up_timeout_8sec</item>
+        <item>@string/heads_up_timeout_10sec</item>
+    </string-array>
+
+    <string-array name="heads_up_timeout_values" translatable="false">
+        <item>2000</item>
+        <item>4000</item>
+        <item>5000</item>
+        <item>6000</item>
+        <item>8000</item>
+        <item>10000</item>
+    </string-array>
 </resources>
