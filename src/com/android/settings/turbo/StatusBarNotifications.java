@@ -82,7 +82,7 @@ public class StatusBarNotifications extends SettingsPreferenceFragment implement
             mVoicemailBreath.setOnPreferenceChangeListener(this);
 
             mSmsBreath.setChecked(Settings.Global.getInt(resolver,
-                    Settings.System.KEY_SMS_BREATH, 0) == 1);
+                    Settings.Global.KEY_SMS_BREATH, 0) == 1);
             mSmsBreath.setOnPreferenceChangeListener(this);
         } else {
             prefSet.removePreference(mMissedCallBreath);
@@ -110,7 +110,7 @@ public class StatusBarNotifications extends SettingsPreferenceFragment implement
             return true;
         } else if (preference == mSmsBreath) {
             boolean value = (Boolean) newValue;
-            Settings.Global.putInt(resolver, Settings.System.KEY_SMS_BREATH, value ? 1 : 0);
+            Settings.Global.putInt(resolver, Settings.Global.KEY_SMS_BREATH, value ? 1 : 0);
             return true;
         }
         return false;
