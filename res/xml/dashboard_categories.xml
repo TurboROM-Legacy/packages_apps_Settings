@@ -307,6 +307,17 @@
         android:id="@+id/system_section"
         android:title="@string/header_category_system" >
 
+ 	<!-- Kernel Auditor -->
+        <dashboard-tile
+            android:id="@+id/kernel_adiutor"
+            android:icon="@drawable/ic_kernel_adiutor"
+            android:title="@string/kernel_adiutor_settings">
+            <intent
+	       android:action="android.intent.action.MAIN"
+	       android:targetPackage="com.grarak.kerneladiutor"
+	       android:targetClass="com.grarak.kerneladiutor.MainActivity" />
+	</dashboard-tile>
+
         <!-- ViPER4Android -->
         <dashboard-tile
             android:id="@+id/viper_settings"
