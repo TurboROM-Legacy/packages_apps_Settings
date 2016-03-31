@@ -285,7 +285,8 @@ public class SettingsActivity extends Activity
             R.id.home_settings,
             R.id.dashboard,
             R.id.bitsyko_layers,
-	    R.id.turbotweaks
+	    R.id.turbotweaks,
+            R.id.kernel_adiutor
     };
 
     private static final String[] ENTRY_FRAGMENTS = {
@@ -1350,6 +1351,15 @@ public class SettingsActivity extends Activity
                     try {
                         supported = (getPackageManager().getPackageInfo("com.google.android.gms", 0).versionCode >= 1);
                     } catch (PackageManager.NameNotFoundException e) {
+                    }
+                    if (!supported) {
+                        removeTile = true;
+                    }
+                } else if (id == R.id.kernel_adiutor) {
+                       boolean supported = false;
+                    try {
+                   supported = (getPackageManager().getPackageInfo("com.grarak.kerneladiutor", 0).versionCode >= 0);
+                   } catch (PackageManager.NameNotFoundException e) {
                     }
                     if (!supported) {
                         removeTile = true;

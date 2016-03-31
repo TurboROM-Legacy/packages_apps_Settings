@@ -1168,4 +1168,7 @@
     <string name="lockscreen_vibrate_enabled_title">Vibrate</string>
     <string name="lockscreen_vibrate_enabled_head">Vibrate when unlocking</string>
 
+    <!-- Kernel Adiutor -->
+    <string name="kernel_adiutor_settings_title">Kernel Adiutor</string>
+
 </resources>
