@@ -41,6 +41,8 @@
     <string name="reset">Reset</string>
     <string name="reset_title">Reset</string>
     <string name="reset_message">Reset all entries to default?</string>
+    <string name="reset_android_title">Android default</string>
+    <string name="reset_turbo_title">Turbo default</string>
 
     <!-- Turbo tweaks dialog -->
     <string name="turbotweaks_dialog_title">Help me help you!!!</string>
@@ -1175,5 +1177,33 @@
     <string name="status_bar_custom_header_shadow_title">Contextual header shadow</string>
     <string name="status_bar_custom_header_shadow_summary">For better text/icon visibility on bright images</string>
     <string name="unit_percent">\u0025</string>
+
+    <!-- Global used -->
+    <string name="text_title">Text</string>
+    <string name="always_title">Always</string>
+    <string name="number_of_notifications_title">Number of notifications</string>
+    <string name="number_of_notifications_two_title">2</string>
+    <string name="number_of_notifications_three_title">3</string>
+    <string name="number_of_notifications_four_title">4</string>
+    <string name="number_of_notifications_five_title">5</string>
+    <string name="number_of_notifications_six_title">6</string>
+ 
+    <!-- Status bar -->
+    <string name="status_bar_carrier_label_settings_title">Carrier label</string>
+    <string name="status_bar_carrier_label_settings_summary">Customize the carrier label</string>
+
+    <!-- Carrier label settings -->
+    <string name="carrier_label_cat_notification_icons_title">Notification icons</string>
+    <string name="carrier_label_show_title">Show</string>
+    <string name="carrier_label_show_summary">Enable to show the (custom) carrier label on the status bar</string>
+    <string name="carrier_label_show_on_lock_screen_title">Show on lock screen</string>
+    <string name="carrier_label_show_on_lock_screen_summary">Enable to show the (custom) carrier label on the status bar of the lock screen</string>
+    <string name="carrier_label_use_custom_title">Custom carrier label</string>
+    <string name="carrier_label_use_custom_summary">Enable to use a custom carrier label</string>
+    <string name="carrier_label_custom_label_title">Custom label</string>
+    <string name="carrier_label_custom_label_dlg_message">Enter a new custom label to display instead of the real carrier name. An empty field will revert the name to \'Turbo\'</string>
+    <string name="carrier_label_hide_label_title">Hide</string>
+    <string name="carrier_label_hide_label_summary">Enable to choose a number of visible notification icons to hide the (custom) carrier label on the status bar</string>
+    <string name="carrier_label_number_of_notification_icons_title">Number of notification icons</string>
 
 </resources>
