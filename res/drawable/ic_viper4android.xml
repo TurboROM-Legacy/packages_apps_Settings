@@ -16,12 +16,11 @@
     android:width="72dp"
     android:height="72dp"
     android:tint="?android:attr/colorAccent">
-
     <group
-        android:scaleX="0.8"
-        android:scaleY="0.8"
-        android:translateX="-9.64"
-        android:translateY="-10">
+        android:scaleX="0.722"
+        android:scaleY="0.722"
+        android:translateX="-5.9"
+        android:translateY="-6.18">
         <path
             android:pathData="M22.4 18l3.12 0c0.81 0.82 1.62 1.63 2.44 2.44 0.01 3.19 0 6.37 -0.01 9.56l-7.99 0c0 -3.19 -0.01 -6.37 0 -9.56 0.82 -0.81 1.63 -1.62 2.44 -2.44z"
             android:fillColor="@android:color/black" />
@@ -29,7 +28,7 @@
             android:pathData="M46.4 18l3.12 0c0.81 0.82 1.62 1.63 2.44 2.44l0 45.6 -8 0 0 -45.6 2.4 -2.4z"
             android:fillColor="@android:color/black" />
         <path
-            android:pathData="M70.4 18l3.12 0c0.81 0.82 1.62 1.63 2.44 2.44l0 45.6 -8 0 0 -45.6C68.78 19.63 69.59 18.82 70.4 18Z"
+            android:pathData="M70.4 18l3.12 0c0.81 0.82 1.62 1.63 2.44 2.44l0 45.6 -8 0 0 -45.6c0.9 -0.8 1.7 -1.6 2.5 -2.4z"
             android:fillColor="@android:color/black" />
         <path
             android:pathData="M16.4 32l15.1 0c0.81 0.82 1.62 1.63 2.44 2.44 0.01 2.37 0.01 4.75 0 7.12 -0.82 0.81 -1.63 1.62 -2.44 2.44l-15.1 0c-0.81 -0.82 -1.62 -1.63 -2.44 -2.44 -0.01 -2.37 -0.01 -4.75 0 -7.12 0.82 -0.81 1.63 -1.62 2.44 -2.44z"
