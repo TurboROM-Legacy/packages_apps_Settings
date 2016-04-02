@@ -974,10 +974,6 @@
     <string name="qs_num_columns_title">Number of tiles per row</string>
     <string name="qs_num_columns_showing">%1$s tiles per row showing</string>
 
-    <!-- Custom status bar header -->
-    <string name="status_bar_custom_header_title">Time contextual header</string>
-    <string name="status_bar_custom_header_summary">Enable custom Quick Settings panel header images</string>
-
     <!-- QS auto brightness toggle -->
     <string name="brightness_icon_title">Auto-brightness icon</string>
     <string name="brightness_icon_summary">Show a brightness icon to the left of the brighness slider to adjust auto-brightness</string>
