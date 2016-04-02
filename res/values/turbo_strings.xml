@@ -977,8 +977,6 @@
     <!-- Custom status bar header -->
     <string name="status_bar_custom_header_title">Time contextual header</string>
     <string name="status_bar_custom_header_summary">Enable custom Quick Settings panel header images</string>
-    <string name="status_bar_custom_header_default_title">Poly HD headers</string>
-    <string name="status_bar_custom_header_default_summary">Enable to use Polygraphic HD header images</string>
 
     <!-- QS auto brightness toggle -->
     <string name="brightness_icon_title">Auto-brightness icon</string>
