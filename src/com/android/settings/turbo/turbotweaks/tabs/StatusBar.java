@@ -34,9 +34,15 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.MetricsLogger;
 import com.android.settings.Utils;
 
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
+
 public class StatusBar extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
     private static final String TAG = "StatusBar";
+
+    private static final String KEY_TURBO_LOGO_COLOR = "status_bar_turbo_logo_color";
+
+    private ColorPickerPreference mTurboLogoColor;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -45,7 +51,29 @@ public class StatusBar extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.statusbar);
         PreferenceScreen prefSet = getPreferenceScreen();
 
-        ContentResolver resolver = getActivity().getContentResolver();
+        // Turbo logo color
+	mTurboLogoColor =
+	    (ColorPickerPreference) prefSet.findPreference(KEY_TURBO_LOGO_COLOR);
+	mTurboLogoColor.setOnPreferenceChangeListener(this);
+	int intColor = Settings.System.getInt(getContentResolver(),
+	    Settings.System.STATUS_BAR_TURBO_LOGO_COLOR, 0xffffffff);
+	String hexColor = String.format("#%08x", (0xffffffff & intColor));
+	    mTurboLogoColor.setSummary(hexColor);
+            mTurboLogoColor.setNewPreviewColor(intColor);
+
+    }
+
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+	if (preference == mTurboLogoColor) {
+            String hex = ColorPickerPreference.convertToARGB(
+		Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getContentResolver(),
+		Settings.System.STATUS_BAR_TURBO_LOGO_COLOR, intHex);
+            return true;
+        }
+        return false;
     }
 
     @Override
@@ -66,11 +94,6 @@ public class StatusBar extends SettingsPreferenceFragment implements
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         return super.onPreferenceTreeClick(preferenceScreen, preference);
-    }
-
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
-        final String key = preference.getKey();
-        return true;
     }
 
 }
