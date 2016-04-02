@@ -17,4 +17,10 @@
         android:entries="@array/status_bar_battery_percentage_entries"
         android:entryValues="@array/status_bar_battery_percentage_values" />
 
+    <net.margaritov.preference.colorpicker.ColorPickerPreference
+        android:key="battery_icon_color"
+        android:title="@string/battery_color_title"
+        android:defaultValue="0xffffffff"
+        android:dialogTitle="@string/battery_color_title"/>
+
 </PreferenceScreen>

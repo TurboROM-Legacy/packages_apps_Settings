@@ -818,6 +818,7 @@
 
     <!-- Battery -->
     <string name="battery_title">Battery</string>
+    <string name="battery_color_title">Color</string>
     <string name="battery2_summary">Customize battery icons and percentage</string>
     <string name="status_bar_battery_style_title">Battery status style</string>
     <string name="status_bar_battery_style_icon_portrait">Icon portrait</string>

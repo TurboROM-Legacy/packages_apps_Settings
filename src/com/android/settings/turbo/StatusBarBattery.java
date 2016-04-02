@@ -20,12 +20,16 @@ import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.PreferenceFragment;
+import android.preference.PreferenceScreen;
 import android.provider.Settings;
 
 import com.android.internal.logging.MetricsLogger;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class StatusBarBattery extends SettingsPreferenceFragment
         implements OnPreferenceChangeListener {
@@ -34,12 +38,14 @@ public class StatusBarBattery extends SettingsPreferenceFragment
 
     private static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
     private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
+    private static final String PREF_BATT_ICON_COLOR = "battery_icon_color";
 
     private static final int STATUS_BAR_BATTERY_STYLE_HIDDEN = 4;
     private static final int STATUS_BAR_BATTERY_STYLE_TEXT = 6;
 
     private ListPreference mStatusBarBattery;
     private ListPreference mStatusBarBatteryShowPercent;
+    private ColorPickerPreference mBatteryIconColor;
 
     @Override
     protected int getMetricsCategory() {
@@ -67,8 +73,17 @@ public class StatusBarBattery extends SettingsPreferenceFragment
                 Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, 0);
         mStatusBarBatteryShowPercent.setValue(String.valueOf(batteryShowPercent));
         mStatusBarBatteryShowPercent.setSummary(mStatusBarBatteryShowPercent.getEntry());
-        enableStatusBarBatteryDependents(batteryStyle);
         mStatusBarBatteryShowPercent.setOnPreferenceChangeListener(this);
+
+        mBatteryIconColor = (ColorPickerPreference) findPreference(PREF_BATT_ICON_COLOR);
+        mBatteryIconColor.setOnPreferenceChangeListener(this);
+
+        enableStatusBarBatteryDependents(batteryStyle);
+    }
+
+    @Override
+    public void onResume() {
+	super.onResume();
     }
 
     @Override
@@ -91,16 +106,23 @@ public class StatusBarBattery extends SettingsPreferenceFragment
             mStatusBarBatteryShowPercent.setSummary(
                     mStatusBarBatteryShowPercent.getEntries()[index]);
             return true;
+        } else if (preference == mBatteryIconColor) {
+            Settings.System.putInt(getActivity().getContentResolver(), Settings.System.STATUS_BAR_BATTERY_COLOR, (Integer) newValue);
+            return true;
         }
         return false;
     }
 
     private void enableStatusBarBatteryDependents(int batteryIconStyle) {
-        if (batteryIconStyle == STATUS_BAR_BATTERY_STYLE_HIDDEN ||
-                batteryIconStyle == STATUS_BAR_BATTERY_STYLE_TEXT) {
+        if (batteryIconStyle == STATUS_BAR_BATTERY_STYLE_HIDDEN) {
             mStatusBarBatteryShowPercent.setEnabled(false);
+            mBatteryIconColor.setEnabled(false);
+        } else if (batteryIconStyle == STATUS_BAR_BATTERY_STYLE_TEXT) {
+            mStatusBarBatteryShowPercent.setEnabled(false);
+            mBatteryIconColor.setEnabled(true);
         } else {
             mStatusBarBatteryShowPercent.setEnabled(true);
+            mBatteryIconColor.setEnabled(true);
         }
     }
 }
