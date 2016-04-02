@@ -1215,11 +1215,12 @@
     <string name="carrier_label_number_of_notification_icons_title">Number of notification icons</string>
 
     <!-- Status bar network icons settings -->
-    <string name="network_icons_cat_signal_colors_title">Signal colors</string>
-    <string name="network_icons_cat_no_sim_colors_title">No sim card colors</string>
-    <string name="network_icons_cat_airplane_mode_colors_title">Airplane mode colors</string>
-    <string name="status_bar_network_icons_settings_title">Network icons</string>
-    <string name="status_bar_network_icons_settings_summary">Customize the network icons</string>
+    <string name="network_status_icons_cat_signal_colors_title">Signal colors</string>
+    <string name="network_status_icons_cat_no_sim_colors_title">No SIM card colors</string>
+    <string name="network_status_icons_cat_airplane_mode_colors_title">Airplane mode colors</string>
+    <string name="network_status_icons_cat_status_colors_title">Status colors</string>
+    <string name="status_bar_network_status_icons_settings_title">Network &amp; status icons</string>
+    <string name="status_bar_network_status_icons_settings_summary">Customize the network &amp; status icons</string>
 
     <!-- Increasing ring tone volume -->
     <string name="increasing_ring_volume_option_title">Increasing ring volume</string>
