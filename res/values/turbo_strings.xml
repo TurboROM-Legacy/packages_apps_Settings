@@ -905,7 +905,7 @@
 
     <!-- Status bar Turbo logo -->
     <string name="status_bar_turbo_title">Turbo ROM logo</string>
-    <string name="status_bar_turbo_summary">Display the Turbo logo in the status bar</string>
+    <string name="status_bar_turbo_summary">Customize the Turbo logo in the status bar</string>
     <string name="status_bar_turbo_logo_color">Turbo logo color</string>
 
     <!-- Status bar temperature -->
