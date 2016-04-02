@@ -108,6 +108,12 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">Set</string>
     <string name="color_default">Default</string>
+    <string name="color_dark_mode_title">Turbo Default</string>
+    <string name="dlg_dslv_reset_message">Restore default settings?</string>
+    <string name="dlg_reset_values_message">Reset values\nAndroid or Turbo\nto default?</string>
+    <string name="dlg_reset_colors_message">Reset colors\nAndroid or Turbo\nto default?</string>
+    <string name="dlg_reset_android">Android</string>
+    <string name="dlg_reset_turbo">Turbo</string>
 
     <!-- Recents -->
     <string name="recents_settings_title">Recents settings</string>
@@ -1205,5 +1211,12 @@
     <string name="carrier_label_hide_label_title">Hide</string>
     <string name="carrier_label_hide_label_summary">Enable to choose a number of visible notification icons to hide the (custom) carrier label on the status bar</string>
     <string name="carrier_label_number_of_notification_icons_title">Number of notification icons</string>
+
+    <!-- Status bar network icons settings -->
+    <string name="network_icons_cat_signal_colors_title">Signal colors</string>
+    <string name="network_icons_cat_no_sim_colors_title">No sim card colors</string>
+    <string name="network_icons_cat_airplane_mode_colors_title">Airplane mode colors</string>
+    <string name="status_bar_network_icons_settings_title">Network icons</string>
+    <string name="status_bar_network_icons_settings_summary">Customize the network icons</string>
 
 </resources>
