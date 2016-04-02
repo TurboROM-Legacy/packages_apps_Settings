@@ -31,6 +31,7 @@
     <!-- Turbo general strings -->
     <string name="attention">Attention</string>
     <string name="choose_app">Choose application</string>
+    <string name="category_general_title">General options</string>
     <string name="default_string">Default</string>
     <string name="disabled">Disabled</string>
     <string name="enabled">Enabled</string>
