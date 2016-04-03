@@ -1245,32 +1245,6 @@
         <item>6</item>
     </string-array>
 
-    <string-array name="network_traffic_activity_entries" >
-        <item>@string/network_traffic_activity_down</item>
-        <item>@string/network_traffic_activity_up</item>
-        <item>@string/network_traffic_activity_down_up</item>
-        <item>@string/disabled_title</item>
-    </string-array>
-
-    <string-array name="network_traffic_activity_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-    </string-array>
-
-    <string-array name="network_traffic_type_entries" >
-        <item>@string/text_title</item>
-        <item>@string/icon_title</item>
-        <item>@string/network_traffic_type_text_icon</item>
-    </string-array>
-
-    <string-array name="network_traffic_type_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-    </string-array>
-
     <array name="color_picker_panel_view_buttons">
         <item>@id/panel_view_button_1</item>
         <item>@id/panel_view_button_2</item>

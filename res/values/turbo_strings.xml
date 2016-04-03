@@ -1229,28 +1229,4 @@
     <string name="increasing_ring_min_volume_title">Start volume</string>
     <string name="increasing_ring_ramp_up_time_title">Ramp-up time</string>
 
-    <!-- Status bar network traffic settings -->
-    <string name="network_traffic_activity_title">Activity</string>
-    <string name="network_traffic_activity_down">Download</string>
-    <string name="network_traffic_activity_up">Upload</string>
-    <string name="network_traffic_activity_down_up">Download &amp; upload</string>
-    <string name="network_traffic_type_title">Type</string>
-    <string name="network_traffic_type_text_icon">Text &amp; icon</string>
-    <string name="network_traffic_bit_byte_title">Show bit values</string>
-    <string name="network_traffic_bit_byte_summary">Enable to show the values in bits instead of bytes</string>
-    <string name="network_traffic_hide_traffic_title">Hide the indicator</string>
-    <string name="network_traffic_hide_traffic_summary">Enable to hide the indicator if there is no traffic</string>
-    <string name="status_bar_network_traffic_settings_title">Network traffic</string>
-    <string name="status_bar_network_traffic_settings_summary">Customize the network traffic</string>
-    <string name="disabled_title">Disabled</string>
-    <string name="icon_title">Icon</string>
-    <string name="text_title">Text</string>
-    <string name="options_title">Options</string>
-    <string name="colors_title">Colors</string>
-    <string name="palette_darkkat_title">Turbo</string>
-    <string name="palette_material_title">Material</string>
-    <string name="palette_rgb_title">RGB</string>
-    <string name="reset_android_title">Android default</string>
-    <string name="reset_darkkat_title">Turbo default</string>
-
 </resources>
