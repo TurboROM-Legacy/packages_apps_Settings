@@ -1218,7 +1218,7 @@
     <string name="network_status_icons_cat_signal_colors_title">Signal colors</string>
     <string name="network_status_icons_cat_no_sim_colors_title">No SIM card colors</string>
     <string name="network_status_icons_cat_airplane_mode_colors_title">Airplane mode colors</string>
-    <string name="network_status_icons_cat_status_colors_title">Additional device status colors</string>
+    <string name="network_status_icons_cat_status_colors_title">Device status indicator colors</string>
     <string name="status_bar_network_status_icons_settings_title">Color tweaks</string>
     <string name="status_bar_network_status_icons_settings_summary">Customize the color of specific icons in the status bar</string>
 
