@@ -110,12 +110,16 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">Set</string>
     <string name="color_default">Default</string>
-    <string name="color_dark_mode_title">Turbo Default</string>
+    <string name="color_dark_mode_title">Color for dark icon mode</string>
     <string name="dlg_dslv_reset_message">Restore default settings?</string>
-    <string name="dlg_reset_values_message">Reset values\nAndroid or Turbo\nto default?</string>
-    <string name="dlg_reset_colors_message">Reset colors\nAndroid or Turbo\nto default?</string>
+    <string name="dlg_reset_values_message">Reset values to the Android or Turbo defaults?</string>
+    <string name="dlg_reset_colors_message">Reset colors to the Android or Turbo defaults?</string>
     <string name="dlg_reset_android">Android</string>
     <string name="dlg_reset_turbo">Turbo</string>
+    <string name="reset_darkkat_title">Turbo</string>
+    <string name="palette_darkkat_title">Turbo</string>
+    <string name="palette_material_title">Material</string>
+    <string name="palette_rgb_title">RGB</string>
 
     <!-- Recents -->
     <string name="recents_settings_title">Recents settings</string>
@@ -813,8 +817,8 @@
     <string name="statusbar_notifications_summary">Configure options for notifications in the status bar</string>
 
     <!-- SystemUI tuner icon blacklist -->
-    <string name="status_bar_icon_blacklist_title">Icons</string>
-    <string name="status_bar_icon_blacklist_summary">Configure what icons are shown on the status bar</string>
+    <string name="status_bar_icon_blacklist_title">Icon blacklist</string>
+    <string name="status_bar_icon_blacklist_summary">Configure what icons to hide in the status bar</string>
 
     <!-- Battery -->
     <string name="battery_title">Battery</string>
@@ -1205,24 +1209,24 @@
     <!-- Carrier label settings -->
     <string name="carrier_label_cat_notification_icons_title">Notification icons</string>
     <string name="carrier_label_show_title">Show</string>
-    <string name="carrier_label_show_summary">Enable to show the (custom) carrier label on the status bar</string>
+    <string name="carrier_label_show_summary">Enable to show the (custom) carrier label in the status bar</string>
     <string name="carrier_label_show_on_lock_screen_title">Show on lock screen</string>
-    <string name="carrier_label_show_on_lock_screen_summary">Enable to show the (custom) carrier label on the status bar of the lock screen</string>
+    <string name="carrier_label_show_on_lock_screen_summary">Enable to show the (custom) carrier label in the status bar of the lock screen</string>
     <string name="carrier_label_use_custom_title">Custom carrier label</string>
     <string name="carrier_label_use_custom_summary">Enable to use a custom carrier label</string>
     <string name="carrier_label_custom_label_title">Custom label</string>
     <string name="carrier_label_custom_label_dlg_message">Enter a new custom label to display instead of the real carrier name. An empty field will revert the name to \'Turbo\'</string>
     <string name="carrier_label_hide_label_title">Hide</string>
-    <string name="carrier_label_hide_label_summary">Enable to choose a number of visible notification icons to hide the (custom) carrier label on the status bar</string>
+    <string name="carrier_label_hide_label_summary">Enable to choose a number of visible notification icons to hide the (custom) carrier label in the status bar</string>
     <string name="carrier_label_number_of_notification_icons_title">Number of notification icons</string>
 
     <!-- Status bar network icons settings -->
     <string name="network_status_icons_cat_signal_colors_title">Signal colors</string>
     <string name="network_status_icons_cat_no_sim_colors_title">No SIM card colors</string>
     <string name="network_status_icons_cat_airplane_mode_colors_title">Airplane mode colors</string>
-    <string name="network_status_icons_cat_status_colors_title">Status colors</string>
-    <string name="status_bar_network_status_icons_settings_title">Network &amp; status icons</string>
-    <string name="status_bar_network_status_icons_settings_summary">Customize the network &amp; status icons</string>
+    <string name="network_status_icons_cat_status_colors_title">Additional device status colors</string>
+    <string name="status_bar_network_status_icons_settings_title">Color tweaks</string>
+    <string name="status_bar_network_status_icons_settings_summary">Customize the color of specific icons in the status bar</string>
 
     <!-- Increasing ring tone volume -->
     <string name="increasing_ring_volume_option_title">Increasing ring volume</string>

@@ -43,6 +43,12 @@
             android:summary="@string/status_bar_clock_summary"
             android:title="@string/status_bar_clock" />
 
+	 <PreferenceScreen
+	    android:key="status_bar_network_status_icons_settings"
+ 	    android:title="@string/status_bar_network_status_icons_settings_title"
+	    android:summary="@string/status_bar_network_status_icons_settings_summary"
+	    android:fragment="com.android.settings.turbo.StatusBarNetworkStatusIconsSettings" />
+
     	 <PreferenceScreen
  	    android:key="systemui_tuner_statusbar"
             android:title="@string/status_bar_icon_blacklist_title" 
@@ -51,12 +57,6 @@
 		 android:targetPackage="com.android.systemui"
                  android:targetClass="com.android.systemui.tuner.TunerActivity" />
      	 </PreferenceScreen>
-
-	 <PreferenceScreen
-	    android:key="status_bar_network_status_icons_settings"
- 	    android:title="@string/status_bar_network_status_icons_settings_title"
-	    android:summary="@string/status_bar_network_status_icons_settings_summary"
-	    android:fragment="com.android.settings.turbo.StatusBarNetworkStatusIconsSettings" />
 
          <PreferenceScreen
             android:key="statusbar_notifications"
