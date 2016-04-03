@@ -1218,7 +1218,7 @@
     <string name="increasing_ring_ramp_up_time_title">Ramp-up time</string>
 
     <!--Time Contexual Header -->
-    <string name="contexual_header_title">Contexual header</string>
+    <string name="contexual_header_title">Contexual headers</string>
     <string name="status_bar_custom_header_title">Time Contextual Header</string>
     <string name="status_bar_custom_header_summary">Enable notification panel header image</string>
     <string name="daylight_header_pack_title">Header image pack</string>

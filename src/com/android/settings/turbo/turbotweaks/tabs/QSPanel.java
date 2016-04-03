@@ -47,7 +47,7 @@ import com.android.settings.SettingsPreferenceFragment;
 
 import com.android.internal.logging.MetricsLogger;
 
-import com.android.settings.turbo.widget.SeekBarPreferenceCham;
+import com.android.settings.turbo.SeekBarPreference;
 
 import java.util.Locale;
 import android.text.TextUtils;
@@ -67,7 +67,7 @@ public class QSPanel extends SettingsPreferenceFragment implements
 
     private ListPreference mNumColumns;
     private ListPreference mQuickPulldown;
-    private SeekBarPreferenceCham mHeaderShadow;
+    private SeekBarPreference mHeaderShadow;
     private ListPreference mDaylightHeaderPack;
     private SwitchPreference mCustomHeaderImage;
 
@@ -130,7 +130,7 @@ public class QSPanel extends SettingsPreferenceFragment implements
             updateQuickPulldownSummary(statusQuickPulldown);
         }
 
-        mHeaderShadow = (SeekBarPreferenceCham) findPreference(CUSTOM_HEADER_IMAGE_SHADOW);
+        mHeaderShadow = (SeekBarPreference) findPreference(CUSTOM_HEADER_IMAGE_SHADOW);
         final int headerShadow = Settings.System.getInt(getContentResolver(),
                 Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, 0);
         mHeaderShadow.setValue((int)(((double) headerShadow / 255) * 100));
