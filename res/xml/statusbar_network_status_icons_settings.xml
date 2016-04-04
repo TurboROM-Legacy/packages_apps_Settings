@@ -27,7 +27,7 @@
 	<net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="network_status_icons_signal_color_dark_mode"
             android:title="@string/color_dark_mode_title"
-            android:defaultValue="#99000000" />
+            android:defaultValue="#ff000000" />
 
     </PreferenceCategory>
 
@@ -43,7 +43,7 @@
 	<net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="network_status_icons_no_sim_color_dark_mode"
             android:title="@string/color_dark_mode_title"
-            android:defaultValue="#99000000" />
+            android:defaultValue="#ff000000" />
 
     </PreferenceCategory>
 
@@ -59,7 +59,7 @@
 	<net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="network_status_icons_airplane_mode_color_dark_mode"
             android:title="@string/color_dark_mode_title"
-            android:defaultValue="#99000000" />
+            android:defaultValue="#ff000000" />
 
     </PreferenceCategory>
 
@@ -75,7 +75,7 @@
 	<net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="network_status_icons_status_color_dark_mode"
             android:title="@string/color_dark_mode_title"
-            android:defaultValue="#99000000" />
+            android:defaultValue="#ff000000" />
 
     </PreferenceCategory>
 

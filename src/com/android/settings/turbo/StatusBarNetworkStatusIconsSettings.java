@@ -56,11 +56,10 @@ public class StatusBarNetworkStatusIconsSettings extends SettingsPreferenceFragm
     private static final String PREF_STATUS_DARK =
             "network_status_icons_status_color_dark_mode";
 
-    private static final int WHITE                  = 0xffffffff;
-    private static final int HOLO_BLUE_LIGHT        = 0xff33b5e5;
-    private static final int RED_500                = 0xfff44336;
-    private static final int BLACK_TRANSLUCENT      = 0x99000000;
-    private static final int RED_900_TRANSLUCENT    = 0x99b71c1c;
+    private static final int WHITE           = 0xffffffff;
+    private static final int BLACK           = 0xff000000;
+    private static final int HOLO_BLUE_LIGHT = 0xff33b5e5;
+    private static final int RED_500         = 0xfff44336;
 
     private static final int MENU_RESET = Menu.FIRST;
     private static final int DLG_RESET  = 0;
@@ -109,11 +108,11 @@ public class StatusBarNetworkStatusIconsSettings extends SettingsPreferenceFragm
                 (ColorPickerPreference) findPreference(PREF_SIGNAL_DARK);
         intColor = Settings.System.getInt(mResolver,
                 Settings.System.STATUS_BAR_NETWORK_ICONS_SIGNAL_COLOR_DARK_MODE,
-                BLACK_TRANSLUCENT); 
+                BLACK); 
         mSignalDark.setNewPreviewColor(intColor);
         hexColor = String.format("#%08x", (0xffffffff & intColor));
         mSignalDark.setSummary(hexColor);
-        mSignalDark.setDefaultColors(BLACK_TRANSLUCENT, BLACK_TRANSLUCENT);
+        mSignalDark.setDefaultColors(BLACK, BLACK);
         mSignalDark.setOnPreferenceChangeListener(this);
 
         mNoSim =
@@ -131,11 +130,11 @@ public class StatusBarNetworkStatusIconsSettings extends SettingsPreferenceFragm
                 (ColorPickerPreference) findPreference(PREF_NO_SIM_DARK);
         intColor = Settings.System.getInt(mResolver,
                 Settings.System.STATUS_BAR_NETWORK_ICONS_NO_SIM_COLOR_DARK_MODE,
-                BLACK_TRANSLUCENT); 
+                BLACK);
         mNoSimDark.setNewPreviewColor(intColor);
         hexColor = String.format("#%08x", (0xffffffff & intColor));
         mNoSimDark.setSummary(hexColor);
-        mNoSimDark.setDefaultColors(BLACK_TRANSLUCENT, RED_900_TRANSLUCENT);
+        mNoSimDark.setDefaultColors(BLACK, RED_500);
         mNoSimDark.setOnPreferenceChangeListener(this);
 
         mAirplaneMode =
@@ -153,11 +152,11 @@ public class StatusBarNetworkStatusIconsSettings extends SettingsPreferenceFragm
                 (ColorPickerPreference) findPreference(PREF_AIRPLANE_MODE_DARK);
         intColor = Settings.System.getInt(mResolver,
                 Settings.System.STATUS_BAR_NETWORK_ICONS_AIRPLANE_MODE_COLOR_DARK_MODE,
-                BLACK_TRANSLUCENT); 
+                BLACK);
         mAirplaneModeDark.setNewPreviewColor(intColor);
         hexColor = String.format("#%08x", (0xffffffff & intColor));
         mAirplaneModeDark.setSummary(hexColor);
-        mAirplaneModeDark.setDefaultColors(BLACK_TRANSLUCENT, RED_900_TRANSLUCENT);
+        mAirplaneModeDark.setDefaultColors(BLACK, RED_500);
         mAirplaneModeDark.setOnPreferenceChangeListener(this);
 
         mStatus =
@@ -175,11 +174,11 @@ public class StatusBarNetworkStatusIconsSettings extends SettingsPreferenceFragm
                 (ColorPickerPreference) findPreference(PREF_STATUS_DARK);
         intColor = Settings.System.getInt(mResolver,
                 Settings.System.STATUS_BAR_STATUS_ICONS_COLOR_DARK_MODE,
-                BLACK_TRANSLUCENT); 
+                BLACK); 
         mStatusDark.setNewPreviewColor(intColor);
         hexColor = String.format("#%08x", (0xffffffff & intColor));
         mStatusDark.setSummary(hexColor);
-        mStatusDark.setDefaultColors(BLACK_TRANSLUCENT, BLACK_TRANSLUCENT);
+        mStatusDark.setDefaultColors(BLACK, BLACK);
         mStatusDark.setOnPreferenceChangeListener(this);
 
         setHasOptionsMenu(true);
@@ -318,25 +317,25 @@ public class StatusBarNetworkStatusIconsSettings extends SettingsPreferenceFragm
                                     WHITE);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_NETWORK_ICONS_SIGNAL_COLOR_DARK_MODE,
-                                    BLACK_TRANSLUCENT);
+                                    BLACK);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_NETWORK_ICONS_NO_SIM_COLOR,
                                     WHITE);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_NETWORK_ICONS_NO_SIM_COLOR_DARK_MODE,
-                                    BLACK_TRANSLUCENT);
+                                    BLACK);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_NETWORK_ICONS_AIRPLANE_MODE_COLOR,
                                     WHITE);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_NETWORK_ICONS_AIRPLANE_MODE_COLOR_DARK_MODE,
-                                    BLACK_TRANSLUCENT);
+                                    BLACK);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_STATUS_ICONS_COLOR,
                                     WHITE);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_STATUS_ICONS_COLOR_DARK_MODE,
-                                    BLACK_TRANSLUCENT);
+                                    BLACK);
                             getOwner().refreshSettings();
                         }
                     })
@@ -348,25 +347,25 @@ public class StatusBarNetworkStatusIconsSettings extends SettingsPreferenceFragm
                                     HOLO_BLUE_LIGHT);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_NETWORK_ICONS_SIGNAL_COLOR_DARK_MODE,
-                                    BLACK_TRANSLUCENT);
+                                    BLACK);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_NETWORK_ICONS_NO_SIM_COLOR,
                                     RED_500);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_NETWORK_ICONS_NO_SIM_COLOR_DARK_MODE,
-                                    RED_900_TRANSLUCENT);
+                                    RED_500);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_NETWORK_ICONS_AIRPLANE_MODE_COLOR,
                                     RED_500);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_NETWORK_ICONS_AIRPLANE_MODE_COLOR_DARK_MODE,
-                                    RED_900_TRANSLUCENT);
+                                    RED_500);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_STATUS_ICONS_COLOR,
                                     HOLO_BLUE_LIGHT);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_STATUS_ICONS_COLOR_DARK_MODE,
-                                    BLACK_TRANSLUCENT);
+                                    BLACK);
                             getOwner().refreshSettings();
                         }
                     })
