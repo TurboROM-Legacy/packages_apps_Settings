@@ -1251,4 +1251,38 @@
     <string name="network_traffic_color_reset">Reset color</string>
     <string name="network_traffic_color_reset_message">Reset network traffic color to default?</string>
 
+    <!-- Battery indicator -->
+    <string name="status_bar_battery_settings_title">Battery indicator</string>
+    <string name="status_bar_battery_settings_summary">Customize a battery indicator in the status bar</string>
+    <string name="battery_icon_title">Icon configuration</string>
+    <string name="battery_icon_indicator_title">Indicator</string>
+    <string name="hidden_title">Hidden</string>
+    <string name="battery_cut_out_title">Cut out</string>
+    <string name="battery_cut_out_summary">Enable to cut the percentage-text/charging-indicator out of the battery icon, if the battery fill overlaps the percentage text or charging indicator</string>
+    <string name="battery_show_text_title">Percentage text</string>
+    <string name="battery_show_text_summary">Enable to show the percentage indicator text</string>
+    <string name="battery_icon_color_title">Icon color</string>
+    <string name="battery_cat_charge_animation_title">Animation</string>
+    <string name="battery_show_charge_animation_title">Charging animation</string>
+    <string name="battery_show_charge_animation_summary">Enable to show an animation while charging</string>
+    <string name="battery_cat_text_charge_icon_title">Charging indicator &amp; percentage text</string>
+    <string name="battery_icon_indicator_battery_portrait">Portrait battery</string>
+    <string name="battery_icon_indicator_battery_landscape">Landscape battery</string>
+    <string name="battery_icon_indicator_circle">Circle battery</string>
+    <string name="battery_cat_circle_dotted_title">Dotted circle</string>
+    <string name="battery_circle_dot_no_dot_summary">The circle won\'t have any dots</string>
+    <string name="battery_circle_dot_interval_title">Interval</string>
+    <string name="battery_circle_dot_length_title">Length</string>
+    <string name="battery_circle_dot_no_dot">No dots</string>
+    <string name="battery_circle_dot_1">1</string>
+    <string name="battery_circle_dot_2">2</string>
+    <string name="battery_circle_dot_3">3</string>
+    <string name="battery_circle_dot_4">4</string>
+    <string name="battery_circle_dot_5">5</string>
+    <string name="battery_circle_dot_6">6</string>
+    <string name="battery_circle_dot_7">7</string>
+    <string name="battery_circle_dot_8">8</string>
+    <string name="battery_circle_dot_9">9</string>
+    <string name="battery_circle_dot_10">10</string>
+
 </resources>
