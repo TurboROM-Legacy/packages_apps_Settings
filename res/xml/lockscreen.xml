@@ -18,26 +18,6 @@
     android:layout="@layout/tab"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-         <com.android.settings.preference.SeekBarPreference
-             android:key="lockscreen_alpha"
-             android:title="@string/lockscreen_alpha"
-             android:max="100"
-             settings:minimum="0"
-             settings:interval="1"
-             settings:unitsLeft=""
-             settings:unitsRight="%"
-             android:persistent="false" />
-
-         <com.android.settings.preference.SeekBarPreference
-             android:key="lockscreen_security_alpha"
-             android:title="@string/lockscreen_security_alpha"
-             android:max="100"
-             settings:minimum="0"
-             settings:interval="1"
-             settings:unitsLeft=""
-             settings:unitsRight="%"
-             android:persistent="false" />
-
          <PreferenceScreen
             android:title="@string/lockscreen_targets_message" 
 	    android:summary="@string/lockscreen_targets_summary" >
@@ -87,5 +67,47 @@
             android:title="@string/weather_category"
             android:summary="@string/lockscreen_weather_summary"
             android:fragment="com.android.settings.turbo.LockScreenWeather"/>
+
+         <PreferenceCategory
+            android:title="@string/lockscreen_alpha_settings" />    
+
+         <com.android.settings.turbo.SeekBarPreference
+            android:key="lockscreen_alpha"
+            android:title="@string/lockscreen_alpha"
+            android:max="100"
+            settings:minimum="0"
+            settings:interval="1"
+            settings:unitsLeft=""
+            settings:unitsRight="%"
+            android:persistent="false" />
+
+         <com.android.settings.turbo.SeekBarPreference
+            android:key="lockscreen_security_alpha"
+            android:title="@string/lockscreen_security_alpha"
+            android:max="100"
+            settings:minimum="0"
+            settings:interval="1"
+            settings:unitsLeft=""
+            settings:unitsRight="%"
+            android:persistent="false" />
+
+         <PreferenceCategory
+            android:title="@string/lockscreen_see_through_settings" />    
+
+         <com.android.settings.preference.SystemSettingSwitchPreference
+            android:key="lockscreen_see_through"
+            android:title="@string/lockscreen_see_through_title"
+            android:summary="@string/lockscreen_see_through_summary"
+            android:defaultValue="false" />
+
+        <com.android.settings.turbo.SeekBarPreference
+            android:key="lockscreen_blur_radius"
+            android:title="@string/lockscreen_blur_radius"
+            android:max="25"
+            settings:minimum="0"
+            settings:unitsLeft=""
+            settings:unitsRight=""
+            android:persistent="false"
+            android:dependency="lockscreen_see_through" />
 
 </PreferenceScreen>

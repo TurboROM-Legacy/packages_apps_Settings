@@ -32,7 +32,7 @@ import android.provider.Settings;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.MetricsLogger;
-import com.android.settings.preference.SeekBarPreference;
+import com.android.settings.turbo.SeekBarPreference;
 import com.android.settings.Utils;
 
 public class LockScreen extends SettingsPreferenceFragment implements
@@ -42,10 +42,12 @@ public class LockScreen extends SettingsPreferenceFragment implements
     private static final String KEYGUARD_TOGGLE_TORCH = "keyguard_toggle_torch";
     private static final String LOCKSCREEN_ALPHA = "lockscreen_alpha";
     private static final String LOCKSCREEN_SECURITY_ALPHA = "lockscreen_security_alpha";
+    private static final String KEY_BLUR_RADIUS = "lockscreen_blur_radius";
 
     private SwitchPreference mKeyguardTorch;
     private SeekBarPreference mLsAlpha;
     private SeekBarPreference mLsSecurityAlpha;
+    private SeekBarPreference mBlurRadius;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,6 +67,15 @@ public class LockScreen extends SettingsPreferenceFragment implements
                 Settings.System.KEYGUARD_TOGGLE_TORCH, 0) == 1));
         }
 
+        // Blur
+        mBlurRadius =
+                (SeekBarPreference) findPreference(KEY_BLUR_RADIUS);
+        if (mBlurRadius != null) {
+            int blurRadius = Settings.System.getInt(getContentResolver(),
+                    Settings.System.LOCKSCREEN_BLUR_RADIUS, 14);
+            mBlurRadius.setValue(blurRadius);
+            mBlurRadius.setOnPreferenceChangeListener(this);
+
         mLsAlpha = (SeekBarPreference) findPreference(LOCKSCREEN_ALPHA);
         float alpha = Settings.System.getFloat(resolver,
                 Settings.System.LOCKSCREEN_ALPHA, 0.45f);
@@ -77,6 +88,7 @@ public class LockScreen extends SettingsPreferenceFragment implements
         mLsSecurityAlpha.setValue((int)(100 * alpha2));
         mLsSecurityAlpha.setOnPreferenceChangeListener(this);
     }
+ }
 
     @Override
     protected int getMetricsCategory() {
@@ -116,6 +128,11 @@ public class LockScreen extends SettingsPreferenceFragment implements
             Settings.System.putFloat(resolver,
                     Settings.System.LOCKSCREEN_SECURITY_ALPHA, alpha2 / 100.0f);
             return true;
+        } else if (preference == mBlurRadius) {
+                int width = ((Integer)newValue).intValue();
+                Settings.System.putInt(resolver,
+                        Settings.System.LOCKSCREEN_BLUR_RADIUS, width);
+                return true;
 	}
         return false;
     }

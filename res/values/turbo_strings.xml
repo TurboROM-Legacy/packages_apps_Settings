@@ -598,6 +598,12 @@
 
     <!-- Lock screen -->
 
+    <!-- Lock screen blur/see through -->
+    <string name="lockscreen_see_through_settings">Blur settings</string>
+    <string name="lockscreen_see_through_title">Blur</string>
+    <string name="lockscreen_see_through_summary">Blurs and displays the content behind your lock screen</string>
+    <string name="lockscreen_blur_radius">Blur effect intensity</string>
+
     <!-- Lock screen items, colors, and fonts -->
     <string name="lockscreen_colors_and_text">Hide items &amp; change colors/fonts</string>
     <string name="lockscreen_colors_and_text_summary">Show/hide lock screen items and change their colors and fonts</string>
@@ -685,6 +691,7 @@
     <string name="lockclock_settings_summary">Configure settings for the weather, calendar, and time widget (LockClock)</string>
 
     <!-- Lock screen alpha configuration -->
+    <string name="lockscreen_alpha_settings">Alpha settings</string>
     <string name="lockscreen_alpha">Alpha setting</string>
     <string name="lockscreen_security_alpha">Bouncer alpha setting</string>
 
