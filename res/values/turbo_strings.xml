@@ -1308,4 +1308,8 @@
     <string name="battery_circle_dot_9">9</string>
     <string name="battery_circle_dot_10">10</string>
 
+    <!-- Quick Settings edit icon -->
+    <string name="quick_settings_edit_icon_title">QS edit icon</string>
+    <string name="quick_settings_edit_icon_summary">Enable the Quick Settings edit icon in the status bar header</string>
+
 </resources>

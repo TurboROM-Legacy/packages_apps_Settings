@@ -84,6 +84,12 @@
 	android:summary="@string/qs_advanced_location_summary"
 	android:defaultValue="false" />
 
+    <com.android.settings.preference.SystemSettingSwitchPreference
+       android:key="quick_settings_edit_icon"
+       android:title="@string/quick_settings_edit_icon_title"
+       android:summary="@string/quick_settings_edit_icon_summary"
+       android:defaultValue="true" />
+
     <com.android.settings.preference.SecureSettingSwitchPreference
 	android:key="sysui_qs_main_tiles"
 	android:title="@string/qs_main_tiles_title"
