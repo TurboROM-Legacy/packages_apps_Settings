@@ -1282,8 +1282,10 @@
     <string name="hidden_title">Hidden</string>
     <string name="battery_cut_out_title">Cut out</string>
     <string name="battery_cut_out_summary">Enable to cut the percentage-text/charging-indicator out of the battery icon, if the battery fill overlaps the percentage text or charging indicator</string>
-    <string name="battery_show_text_title">Percentage text</string>
-    <string name="battery_show_text_summary">Enable to show the percentage indicator text</string>
+    <string name="battery_show_text_inside_title">Percentage text inside</string>
+    <string name="battery_show_text_inside_summary">Enable to show the percentage indicator text inside the battery icon</string>
+    <string name="battery_show_text_outside_title">Percentage text oustide</string>
+    <string name="battery_show_text_outside_summary">Enable to show the percentage indicator text next to the battery icon</string>
     <string name="battery_icon_color_title">Icon color</string>
     <string name="battery_cat_charge_animation_title">Animation</string>
     <string name="battery_show_charge_animation_title">Charging animation</string>

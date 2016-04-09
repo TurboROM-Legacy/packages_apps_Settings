@@ -29,9 +29,14 @@
             android:entryValues="@array/battery_icon_indicator_values" />
 
         <SwitchPreference
-            android:key="battery_show_text"
-            android:title="@string/battery_show_text_title"
-            android:summary="@string/battery_show_text_summary" />
+            android:key="battery_show_text_inside"
+            android:title="@string/battery_show_text_inside_title"
+            android:summary="@string/battery_show_text_inside_summary" />
+
+        <SwitchPreference
+            android:key="battery_show_text_outside"
+            android:title="@string/battery_show_text_outside_title"
+            android:summary="@string/battery_show_text_outside_summary" />
 
     </PreferenceCategory>
 

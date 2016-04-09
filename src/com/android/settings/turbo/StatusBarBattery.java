@@ -53,8 +53,10 @@ public class StatusBarBattery extends SettingsPreferenceFragment implements
             "battery_cat_colors";
     private static final String PREF_ICON_INDICATOR =
             "battery_icon_indicator";
-    private static final String PREF_SHOW_TEXT =
-            "battery_show_text";
+    private static final String PREF_SHOW_TEXT_INSIDE =
+            "battery_show_text_inside";
+    private static final String PREF_SHOW_TEXT_OUTSIDE =
+            "battery_show_text_outside";
     private static final String PREF_CIRCLE_DOT_INTERVAL =
             "battery_circle_dot_interval";
     private static final String PREF_CIRCLE_DOT_LENGTH =
@@ -80,7 +82,8 @@ public class StatusBarBattery extends SettingsPreferenceFragment implements
     private static final int DLG_RESET  = 0;
 
     private ListPreference mIconIndicator;
-    private SwitchPreference mShowText;
+    private SwitchPreference mShowTextInside;
+    private SwitchPreference mShowTextOutside;
     private ListPreference mCircleDotInterval;
     private ListPreference mCircleDotLength;
     private SwitchPreference mCutOutText;
@@ -111,8 +114,10 @@ public class StatusBarBattery extends SettingsPreferenceFragment implements
                Settings.System.STATUS_BAR_BATTERY_ICON_INDICATOR, 0) != 3;
         final boolean isBatteryIconCircle = Settings.System.getInt(mResolver,
                Settings.System.STATUS_BAR_BATTERY_ICON_INDICATOR, 0) == 2;
-        final boolean showText = Settings.System.getInt(mResolver,
-               Settings.System.STATUS_BAR_BATTERY_SHOW_TEXT, 0) == 1;
+        final boolean showTextInside = Settings.System.getInt(mResolver,
+               Settings.System.STATUS_BAR_BATTERY_SHOW_TEXT_INSIDE, 0) == 1;
+        final boolean showTextOutside = Settings.System.getInt(mResolver,
+               Settings.System.STATUS_BAR_BATTERY_SHOW_TEXT_OUTSIDE, 0) == 1;
         final boolean showCircleDotted = Settings.System.getInt(mResolver,
                Settings.System.STATUS_BAR_BATTERY_CIRCLE_DOT_INTERVAL, 0) != 0;
 
@@ -138,9 +143,13 @@ public class StatusBarBattery extends SettingsPreferenceFragment implements
         String hexColor;
 
         if (showBatteryIcon) {
-            mShowText = (SwitchPreference) findPreference(PREF_SHOW_TEXT);
-            mShowText.setChecked(showText);
-            mShowText.setOnPreferenceChangeListener(this);
+            mShowTextInside = (SwitchPreference) findPreference(PREF_SHOW_TEXT_INSIDE);
+            mShowTextInside.setChecked(showTextInside);
+            mShowTextInside.setOnPreferenceChangeListener(this);
+
+            mShowTextOutside = (SwitchPreference) findPreference(PREF_SHOW_TEXT_OUTSIDE);
+            mShowTextOutside.setChecked(showTextOutside);
+            mShowTextOutside.setOnPreferenceChangeListener(this);
 
             if (isBatteryIconCircle) {
                 mCircleDotInterval = (ListPreference) findPreference(PREF_CIRCLE_DOT_INTERVAL);
@@ -191,7 +200,8 @@ public class StatusBarBattery extends SettingsPreferenceFragment implements
             mTextColorDarkMode.setDefaultColors(BLACK, BLACK);
             mTextColorDarkMode.setOnPreferenceChangeListener(this);
         } else {
-            catIcon.removePreference(findPreference(PREF_SHOW_TEXT));
+            catIcon.removePreference(findPreference(PREF_SHOW_TEXT_INSIDE));
+            catIcon.removePreference(findPreference(PREF_SHOW_TEXT_OUTSIDE));
             catCircleDotted.removePreference(findPreference(PREF_CIRCLE_DOT_INTERVAL));
             catCircleDotted.removePreference(findPreference(PREF_CIRCLE_DOT_LENGTH));
             catTextChargeIcon.removePreference(findPreference(PREF_CUT_OUT_TEXT));
@@ -236,6 +246,15 @@ public class StatusBarBattery extends SettingsPreferenceFragment implements
             removePreference(PREF_CAT_COLORS);
         }
 
+	if (showTextInside) {
+	    catIcon.removePreference(findPreference(PREF_SHOW_TEXT_OUTSIDE));
+	}
+
+	if (showTextOutside) {
+	    catIcon.removePreference(findPreference(PREF_SHOW_TEXT_INSIDE));
+	    catTextChargeIcon.removePreference(findPreference(PREF_CUT_OUT_TEXT));
+	}
+
         setHasOptionsMenu(true);
     }
 
@@ -273,11 +292,19 @@ public class StatusBarBattery extends SettingsPreferenceFragment implements
             mIconIndicator.setSummary(mIconIndicator.getEntries()[index]);
             refreshSettings();
             return true;
-        } else if (preference == mShowText) {
+        } else if (preference == mShowTextInside) {
             value = (Boolean) newValue;
             Settings.System.putInt(mResolver,
-                    Settings.System.STATUS_BAR_BATTERY_SHOW_TEXT,
+                    Settings.System.STATUS_BAR_BATTERY_SHOW_TEXT_INSIDE,
                     value ? 1 : 0);
+	    refreshSettings();
+            return true;
+        } else if (preference == mShowTextOutside) {
+            value = (Boolean) newValue;
+            Settings.System.putInt(mResolver,
+                    Settings.System.STATUS_BAR_BATTERY_SHOW_TEXT_OUTSIDE,
+                    value ? 1 : 0);
+	    refreshSettings();
             return true;
         } else if (preference == mCircleDotInterval) {
             intValue = Integer.valueOf((String) newValue);
@@ -380,7 +407,9 @@ public class StatusBarBattery extends SettingsPreferenceFragment implements
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_BATTERY_ICON_INDICATOR, 0);
                             Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.STATUS_BAR_BATTERY_SHOW_TEXT, 0);
+                                    Settings.System.STATUS_BAR_BATTERY_SHOW_TEXT_INSIDE, 0);
+                            Settings.System.putInt(getOwner().mResolver,
+                                    Settings.System.STATUS_BAR_BATTERY_SHOW_TEXT_OUTSIDE, 0);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_BATTERY_CIRCLE_DOT_INTERVAL, 0);
                             Settings.System.putInt(getOwner().mResolver,
@@ -410,7 +439,9 @@ public class StatusBarBattery extends SettingsPreferenceFragment implements
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_BATTERY_ICON_INDICATOR, 2);
                             Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.STATUS_BAR_BATTERY_SHOW_TEXT, 1);
+                                    Settings.System.STATUS_BAR_BATTERY_SHOW_TEXT_INSIDE, 0);
+                            Settings.System.putInt(getOwner().mResolver,
+                                    Settings.System.STATUS_BAR_BATTERY_SHOW_TEXT_OUTSIDE, 1);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_BATTERY_CIRCLE_DOT_INTERVAL, 2);
                             Settings.System.putInt(getOwner().mResolver,
