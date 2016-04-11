@@ -206,6 +206,14 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         } else {
             removePreference(KEY_TAP_TO_WAKE);
 	}
+	
+       boolean proximityCheckOnWait = getResources().getBoolean(
+             com.android.internal.R.bool.config_proximityCheckOnWake);
+       if (!proximityCheckOnWait) {
+           removePreference(KEY_PROXIMITY_WAKE);
+           Settings.System.putInt(getContentResolver(), Settings.System.PROXIMITY_ON_WAKE, 0);
+        }
+
         if (isCameraGestureAvailable(getResources())) {
             mCameraGesturePreference = (SwitchPreference) findPreference(KEY_CAMERA_GESTURE);
             mCameraGesturePreference.setOnPreferenceChangeListener(this);
@@ -237,23 +245,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             mNightModePreference.setValue(String.valueOf(currentNightMode));
             mNightModePreference.setOnPreferenceChangeListener(this);
         }
-
-        mProximityCheckOnWakePreference = (SwitchPreference) findPreference(KEY_PROXIMITY_WAKE);
-        boolean proximityCheckOnWake = getResources().getBoolean(
-                com.android.internal.R.bool.config_proximityCheckOnWake);
-        if (!proximityCheckOnWake) {
-            if (mProximityCheckOnWakePreference != null) {
-                prefSet.removePreference(mProximityCheckOnWakePreference);
-            }
-            Settings.System.putInt(getContentResolver(), Settings.System.PROXIMITY_ON_WAKE, 0);
-        } else {
-            boolean proximityCheckOnWakeDefault = getResources().getBoolean(
-                    com.android.internal.R.bool.config_proximityCheckOnWakeEnabledByDefault);
-            mProximityCheckOnWakePreference.setChecked(Settings.System.getInt(getContentResolver(),
-                    Settings.System.PROXIMITY_ON_WAKE,
-                    (proximityCheckOnWakeDefault ? 1 : 0)) == 1);
-        }
-
+     
         mWakeWhenPluggedOrUnplugged =
                 (SwitchPreference) findPreference(KEY_WAKE_WHEN_PLUGGED_OR_UNPLUGGED);
 

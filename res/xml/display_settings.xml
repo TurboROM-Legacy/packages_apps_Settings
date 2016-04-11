@@ -151,13 +151,6 @@
         </PreferenceCategory>
 
         <PreferenceCategory
-                android:key="category_doze_options"
-                android:title="@string/display_category_doze_options_title" >
-
-
-        </PreferenceCategory>
-
-        <PreferenceCategory
                 android:key="lights"
                 android:title="@string/category_lights">
 

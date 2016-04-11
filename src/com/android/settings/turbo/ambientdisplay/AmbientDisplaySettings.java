@@ -57,6 +57,7 @@ public class AmbientDisplaySettings extends SettingsPreferenceFragment implement
     private static final String KEY_DOZE_PULSE_OUT = "doze_pulse_out";
     private static final String KEY_DOZE_PULSE_PICKUP = "doze_pulse_on_pickup";
     private static final String KEY_DOZE_BRIGHTNESS_LEVEL = "doze_brightness_level";
+    private static final String KEY_DOZE_WAKEUP_DOUBLETAP = "doze_wakeup_doubletap";
 
     private static final String SYSTEMUI_METADATA_NAME = "com.android.systemui";
 
@@ -65,6 +66,7 @@ public class AmbientDisplaySettings extends SettingsPreferenceFragment implement
     private ListPreference mDozePulseVisible;
     private ListPreference mDozePulseOut;
     private SystemSettingSwitchPreference mDozeTriggerPickup;
+    private SwitchPreference mDozeWakeupDoubleTap;
 
     private DozeBrightnessDialog mDozeBrightnessDialog;
     private Preference mDozeBrightness;
@@ -92,6 +94,9 @@ public class AmbientDisplaySettings extends SettingsPreferenceFragment implement
 
         mDozePulseOut = (ListPreference) findPreference(KEY_DOZE_PULSE_OUT);
         mDozePulseOut.setOnPreferenceChangeListener(this);
+
+        mDozeWakeupDoubleTap = (SwitchPreference) findPreference(KEY_DOZE_WAKEUP_DOUBLETAP);
+        mDozeWakeupDoubleTap.setOnPreferenceChangeListener(this);
 
         if (isPickupSensorUsedByDefault(activity)) {
             mDozeTriggerPickup = (SystemSettingSwitchPreference) findPreference(KEY_DOZE_PULSE_PICKUP);
@@ -154,6 +159,11 @@ public class AmbientDisplaySettings extends SettingsPreferenceFragment implement
                     com.android.internal.R.bool.config_doze_enabled_by_default) ? 1 : 0);
             mDozePreference.setChecked(value != 0);
         }
+        if (mDozeWakeupDoubleTap != null) {
+            int value = Settings.System.getInt(getContentResolver(),
+                    Settings.System.DOZE_WAKEUP_DOUBLETAP, 0);
+            mDozeWakeupDoubleTap.setChecked(value != 0);
+        }
     }
 
     @Override
@@ -192,6 +202,11 @@ public class AmbientDisplaySettings extends SettingsPreferenceFragment implement
             mDozePulseOut.setSummary(mDozePulseOut.getEntries()[index]);
             Settings.System.putInt(getContentResolver(),
                     Settings.System.DOZE_PULSE_DURATION_OUT, dozePulseOut);
+        }
+        if (preference == mDozeWakeupDoubleTap) {
+            boolean value = (Boolean) objValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.DOZE_WAKEUP_DOUBLETAP, value ? 1 : 0);
         }
         return true;
     }
