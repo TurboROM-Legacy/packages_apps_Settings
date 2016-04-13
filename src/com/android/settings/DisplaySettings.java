@@ -411,7 +411,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     @Override
     public void onResume() {
         super.onResume();
-        updateState();
         getContentResolver().registerContentObserver(
                 Settings.System.getUriFor(Settings.System.ACCELEROMETER_ROTATION), true,
                 mAccelerometerRotationObserver);
@@ -424,6 +423,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         mWakeWhenPluggedOrUnplugged.setChecked(Settings.Global.getInt(getContentResolver(),
                 Settings.Global.WAKE_WHEN_PLUGGED_OR_UNPLUGGED,
                 (wakeUpWhenPluggedOrUnpluggedConfig ? 1 : 0)) == 1);
+        } 
 
         boolean dozeEnabled = Settings.Secure.getInt(
                 getContentResolver(), Settings.Secure.DOZE_ENABLED, 1) != 0;
@@ -431,7 +431,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             mDozeFragement.setSummary(dozeEnabled
                     ? R.string.summary_doze_enabled : R.string.summary_doze_disabled);
         }
-   } 
+	updateState();
         updateDisplayRotationPreferenceDescription();
     }
 
@@ -543,6 +543,12 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        if (preference == mWakeWhenPluggedOrUnplugged) {
+            Settings.Global.putInt(getContentResolver(),
+                    Settings.Global.WAKE_WHEN_PLUGGED_OR_UNPLUGGED,
+                    mWakeWhenPluggedOrUnplugged.isChecked() ? 1 : 0);
+            return true;
+        }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
@@ -608,12 +614,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             } catch (NumberFormatException e) {
                 Log.e(TAG, "could not persist night mode setting", e);
             }
-        }
-        if (preference == mWakeWhenPluggedOrUnplugged) {
-            Settings.Global.putInt(getContentResolver(),
-                    Settings.Global.WAKE_WHEN_PLUGGED_OR_UNPLUGGED,
-                    mWakeWhenPluggedOrUnplugged.isChecked() ? 1 : 0);
-            return true;
         }
         return true;
     }
