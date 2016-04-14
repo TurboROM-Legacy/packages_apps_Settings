@@ -921,6 +921,10 @@
     <string name="status_bar_turbo_title">Turbo ROM logo</string>
     <string name="status_bar_turbo_summary">Customize the Turbo logo in the status bar</string>
     <string name="status_bar_turbo_logo_color">Turbo logo color</string>
+    <string name="status_bar_turbo_logo_position">Logo location</string>
+    <string name="status_bar_turbo_logo_position_summary">Choose which side to display the logo on, either left or right</string>
+    <string name="status_bar_logo_position_left">Left</string>
+    <string name="status_bar_logo_position_right">Right</string>
 
     <!-- Status bar temperature -->
     <string name="status_bar_temperature_summary">Customize a weather temperature indicator in the status bar</string>
