@@ -37,6 +37,16 @@
                     android:targetClass="@string/additional_system_update_menu" />
         </PreferenceScreen> -->
 
+        <!-- Turbo OTA -->
+        <PreferenceScreen
+                android:key="turboota"
+                android:title="@string/turboota_title">
+                <intent
+                    android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.turborom.turboota"
+                    android:targetClass="com.turborom.turboota.MainActivity" />
+        </PreferenceScreen>
+
         <!-- Changelog -->
  	<PreferenceScreen 
                android:key="translator"

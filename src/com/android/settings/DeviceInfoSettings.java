@@ -83,6 +83,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String KEY_EQUIPMENT_ID = "fcc_equipment_id";
     private static final String PROPERTY_EQUIPMENT_ID = "ro.ril.fccid";
     private static final String KEY_DEVICE_FEEDBACK = "device_feedback";
+    private static final String KEY_TURBO_OTA = "turboota";
 
     static final int TAPS_TO_BE_A_DEVELOPER = 7;
 
@@ -275,6 +276,12 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
             }
         } else if (preference.getKey().equals(KEY_DEVICE_FEEDBACK)) {
             sendFeedback();
+	} else if (preference.getKey().equals(KEY_TURBO_OTA)) {
+            boolean supported = false;
+                try {
+		    supported = (getPackageManager().getPackageInfo("com.turborom.turboota", 0).versionCode > 0);
+		} catch (PackageManager.NameNotFoundException e) {
+	    }
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
