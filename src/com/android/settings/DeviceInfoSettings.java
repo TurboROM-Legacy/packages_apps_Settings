@@ -84,6 +84,12 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String PROPERTY_EQUIPMENT_ID = "ro.ril.fccid";
     private static final String KEY_DEVICE_FEEDBACK = "device_feedback";
     private static final String KEY_TURBO_OTA = "turboota";
+    private static final String PROPERTY_UBER_ANDROID = "ro.uber.android";
+    private static final String PROPERTY_UBER_KERNEL = "ro.uber.kernel";
+    private static final String PROPERTY_UBER_FLAGS = "ro.uber.flags";
+    private static final String KEY_UBER_ANDROID = "uber_android";
+    private static final String KEY_UBER_KERNEL = "uber_kernel";
+    private static final String KEY_UBER_FLAGS = "uber_flags";
 
     static final int TAPS_TO_BE_A_DEVELOPER = 7;
 
@@ -131,7 +137,11 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         setStringSummary(KEY_DEVICE_MODEL, Build.MODEL);
         setStringSummary(KEY_BUILD_NUMBER, Build.DISPLAY);
         findPreference(KEY_BUILD_NUMBER).setEnabled(true);
-        findPreference(KEY_KERNEL_VERSION).setSummary(getFormattedKernelVersion());
+        setValueSummary(KEY_UBER_ANDROID, PROPERTY_UBER_ANDROID);
+        setValueSummary(KEY_UBER_KERNEL, PROPERTY_UBER_KERNEL);
+        setValueSummary(KEY_UBER_FLAGS, PROPERTY_UBER_FLAGS);
+        setStringSummary(KEY_KERNEL_VERSION, getFormattedKernelVersion());
+        findPreference(KEY_KERNEL_VERSION).setEnabled(true);
         setStringSummary(KEY_BUILD_ID, Build.ID);
         setValueSummary(KEY_MOD_BUILD_DATE, "ro.build.date");
 
@@ -162,6 +172,14 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         // Remove selinux information if property is not present
         removePreferenceIfPropertyMissing(getPreferenceScreen(), KEY_SELINUX_STATUS,
                 PROPERTY_SELINUX_STATUS);
+
+        // Remove UBERTC information if property is not present
+        removePreferenceIfPropertyMissing(getPreferenceScreen(), KEY_UBER_ANDROID,
+                PROPERTY_UBER_ANDROID);
+        removePreferenceIfPropertyMissing(getPreferenceScreen(), KEY_UBER_KERNEL,
+                PROPERTY_UBER_KERNEL);
+        removePreferenceIfPropertyMissing(getPreferenceScreen(), KEY_UBER_FLAGS,
+                PROPERTY_UBER_FLAGS);
 
         // Remove Equipment id preference if FCC ID is not set by RIL
         removePreferenceIfPropertyMissing(getPreferenceScreen(), KEY_EQUIPMENT_ID,
@@ -207,7 +225,8 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference.getKey().equals(KEY_FIRMWARE_VERSION)) {
+        String prefKey = preference.getKey();
+	if (prefKey.equals(KEY_FIRMWARE_VERSION)) {
             System.arraycopy(mHits, 1, mHits, 0, mHits.length-1);
             mHits[mHits.length-1] = SystemClock.uptimeMillis();
             if (mHits[0] >= (SystemClock.uptimeMillis()-500)) {
@@ -276,6 +295,9 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
             }
         } else if (preference.getKey().equals(KEY_DEVICE_FEEDBACK)) {
             sendFeedback();
+        } else if (prefKey.equals(KEY_KERNEL_VERSION)) {
+            setStringSummary(KEY_KERNEL_VERSION, getKernelVersion());
+            return true;
 	} else if (preference.getKey().equals(KEY_TURBO_OTA)) {
             boolean supported = false;
                 try {
@@ -349,6 +371,20 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
             return reader.readLine();
         } finally {
             reader.close();
+        }
+    }
+
+    private String getKernelVersion() {
+        String procVersionStr;
+        try {
+            procVersionStr = readLine(FILENAME_PROC_VERSION);
+            return procVersionStr;
+        } catch (IOException e) {
+            Log.e(LOG_TAG,
+               "IO Exception when getting kernel version for Device Info screen",
+                 e);
+
+            return "Unavailable";
         }
     }
 

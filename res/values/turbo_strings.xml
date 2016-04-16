@@ -1329,4 +1329,14 @@
     <string name="unlock_scramble_pin_layout_title">Scramble layout</string>
     <string name="unlock_scramble_pin_layout_summary">Scramble PIN layout when unlocking device</string>
 
+    <!-- UBER GCC version info -->
+    <string name="uber_android">GCC for Android</string>
+    <string name="uber_android_default">Unknown</string>
+    <string name="uber_kernel">GCC for kernel</string>
+    <string name="uber_kernel_default">Unknown</string>
+
+    <!-- UBER GCC build flags info -->
+    <string name="uber_flags">Build flags</string>
+    <string name="uber_flags_default">None</string>
+
 </resources>
