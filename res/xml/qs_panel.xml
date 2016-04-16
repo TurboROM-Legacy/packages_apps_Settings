@@ -88,7 +88,7 @@
        android:key="quick_settings_edit_icon"
        android:title="@string/quick_settings_edit_icon_title"
        android:summary="@string/quick_settings_edit_icon_summary"
-       android:defaultValue="true" />
+       android:defaultValue="false" />
 
     <com.android.settings.preference.SecureSettingSwitchPreference
 	android:key="sysui_qs_main_tiles"
