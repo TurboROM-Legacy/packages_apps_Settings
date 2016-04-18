@@ -57,7 +57,6 @@ public class StatusBarNotifications extends SettingsPreferenceFragment
     private static final String PREF_ICON_COLOR = "notification_icon_color";
     private static final String PREF_ICON_COLOR_DARK = "notification_icon_color_dark_mode";
 
-    private PreferenceGroup mBreathingNotifications;
     private SwitchPreference mMissedCallBreath;
     private SwitchPreference mSmsBreath;
     private SwitchPreference mVoicemailBreath;
@@ -88,7 +87,8 @@ public class StatusBarNotifications extends SettingsPreferenceFragment
         addPreferencesFromResource(R.xml.statusbar_notifications);
  	mResolver = getActivity().getContentResolver();
 
-        mBreathingNotifications = (PreferenceGroup) findPreference(BREATHING_NOTIFICATIONS);
+        PreferenceCategory mBreathingNotifications = 
+            (PreferenceCategory) findPreference(BREATHING_NOTIFICATIONS);
         mMissedCallBreath = (SwitchPreference) findPreference(MISSED_CALL_BREATH);
         mSmsBreath = (SwitchPreference) findPreference(SMS_BREATH);
         mVoicemailBreath = (SwitchPreference) findPreference(VOICEMAIL_BREATH);
@@ -111,10 +111,7 @@ public class StatusBarNotifications extends SettingsPreferenceFragment
                     Settings.Global.KEY_SMS_BREATH, 0) == 1);
             mSmsBreath.setOnPreferenceChangeListener(this);
         } else {
-            prefs.removePreference(mMissedCallBreath);
-            prefs.removePreference(mVoicemailBreath);
-            prefs.removePreference(mSmsBreath);
-            prefs.removePreference(mBreathingNotifications);
+            removePreference(BREATHING_NOTIFICATIONS);
         }
 
         int intColor;
