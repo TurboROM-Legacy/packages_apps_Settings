@@ -19,6 +19,7 @@ package com.android.settings.turbo.turbotweaks.tabs;
 import android.content.Context;
 import android.content.ContentResolver;
 import android.content.res.Resources;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.preference.ListPreference;
@@ -38,6 +39,8 @@ public class StatusBar extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
     private static final String TAG = "StatusBar";
 
+    private static final String PREF_CARRIER_LABEL = "status_bar_carrier_label_settings";
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +49,15 @@ public class StatusBar extends SettingsPreferenceFragment implements
         PreferenceScreen prefSet = getPreferenceScreen();
 
         ContentResolver resolver = getActivity().getContentResolver();
+
+        Context context = getActivity();
+        ConnectivityManager cm = (ConnectivityManager)
+                context.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        if(!cm.isNetworkSupported(ConnectivityManager.TYPE_MOBILE)) {
+            removePreference(PREF_CARRIER_LABEL);
+        }
+
     }
 
     @Override
