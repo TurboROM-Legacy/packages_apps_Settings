@@ -132,6 +132,14 @@ public class StatusBarBattery extends SettingsPreferenceFragment implements
         PreferenceCategory catColors =
                 (PreferenceCategory) findPreference(PREF_CAT_COLORS);
 
+	mShowTextInside = (SwitchPreference) findPreference(PREF_SHOW_TEXT_INSIDE);
+	mShowTextInside.setChecked(showTextInside);
+	mShowTextInside.setOnPreferenceChangeListener(this);
+
+	mShowTextOutside = (SwitchPreference) findPreference(PREF_SHOW_TEXT_OUTSIDE);
+	mShowTextOutside.setChecked(showTextOutside);
+	mShowTextOutside.setOnPreferenceChangeListener(this);
+
         mIconIndicator = (ListPreference) findPreference(PREF_ICON_INDICATOR);
         int iconIndicator = Settings.System.getInt(mResolver,
                 Settings.System.STATUS_BAR_BATTERY_ICON_INDICATOR, 0);
@@ -143,13 +151,6 @@ public class StatusBarBattery extends SettingsPreferenceFragment implements
         String hexColor;
 
         if (showBatteryIcon) {
-            mShowTextInside = (SwitchPreference) findPreference(PREF_SHOW_TEXT_INSIDE);
-            mShowTextInside.setChecked(showTextInside);
-            mShowTextInside.setOnPreferenceChangeListener(this);
-
-            mShowTextOutside = (SwitchPreference) findPreference(PREF_SHOW_TEXT_OUTSIDE);
-            mShowTextOutside.setChecked(showTextOutside);
-            mShowTextOutside.setOnPreferenceChangeListener(this);
 
             if (isBatteryIconCircle) {
                 mCircleDotInterval = (ListPreference) findPreference(PREF_CIRCLE_DOT_INTERVAL);
@@ -157,7 +158,7 @@ public class StatusBarBattery extends SettingsPreferenceFragment implements
                         Settings.System.STATUS_BAR_BATTERY_CIRCLE_DOT_INTERVAL, 0);
                 mCircleDotInterval.setValue(String.valueOf(circleDotInterval));
                 mCircleDotInterval.setOnPreferenceChangeListener(this);
-                updateCircleDotIntervalSummary(circleDotInterval);
+                updateCircleDotIntervalSummary(circleDotInterval);	        
 
                 if (showCircleDotted) {
                     mCircleDotLength = (ListPreference) findPreference(PREF_CIRCLE_DOT_LENGTH);
@@ -246,13 +247,21 @@ public class StatusBarBattery extends SettingsPreferenceFragment implements
             removePreference(PREF_CAT_COLORS);
         }
 
-	if (showTextInside) {
-	    catIcon.removePreference(findPreference(PREF_SHOW_TEXT_OUTSIDE));
+	if (isBatteryIconCircle && catTextChargeIcon != null && PREF_CAT_TEXT_CHARGE_ICON != null) {
+	    removePreference(PREF_CAT_TEXT_CHARGE_ICON);
 	}
 
-	if (showTextOutside) {
-	    catIcon.removePreference(findPreference(PREF_SHOW_TEXT_INSIDE));
-	    catTextChargeIcon.removePreference(findPreference(PREF_CUT_OUT_TEXT));
+	if (showTextInside) {
+	    if (mShowTextOutside != null) {
+		mShowTextOutside.setEnabled(false);
+	    }
+	}
+
+	if (showTextOutside && catTextChargeIcon != null && PREF_CAT_TEXT_CHARGE_ICON != null) {
+	    if (mShowTextInside!= null) {
+		mShowTextInside.setEnabled(false);
+	        removePreference(PREF_CAT_TEXT_CHARGE_ICON);
+	    }
 	}
 
         setHasOptionsMenu(true);
