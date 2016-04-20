@@ -285,6 +285,7 @@ public class SettingsActivity extends Activity
             R.id.home_settings,
             R.id.dashboard,
             R.id.bitsyko_layers,
+	    R.id.root_settings,
 	    R.id.kernel_adiutor,
 	    R.id.turbotweaks
     };
