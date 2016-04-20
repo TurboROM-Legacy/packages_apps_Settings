@@ -225,4 +225,13 @@
     <!-- Proximity check on wake -->
     <string name="proximity_check_on_wake_title">Prevent accidental wake up</string>
     <string name="proximity_check_on_wake_summary">Check the proximity sensor prior to waking up screen</string>
+
+    <!-- Root access control -->
+    <string name="root_access_title">Root access</string>
+    <string name="root_access_warning_title">Allow root access?</string>
+    <string name="root_access_warning_message">Allowing apps to have root access upon request has the potential to be very dangerous!</string>
+    <string name="root_access_none">Disabled</string>
+    <string name="root_access_apps">Apps only</string>
+    <string name="root_access_adb">ADB only</string>
+    <string name="root_access_all">Apps and ADB</string>
 </resources>

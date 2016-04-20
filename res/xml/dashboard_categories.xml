@@ -266,6 +266,14 @@
                 android:icon="@drawable/ic_settings_development"
                 />
 
+        <!-- Root -->
+        <dashboard-tile
+                android:id="@+id/root_settings"
+                android:title="@string/root_access_title"
+                android:fragment="com.android.settings.turbo.RootSettings"
+                android:icon="@drawable/ic_settings_root"
+                />
+
         <!-- About Device -->
         <dashboard-tile
                 android:id="@+id/about_settings"

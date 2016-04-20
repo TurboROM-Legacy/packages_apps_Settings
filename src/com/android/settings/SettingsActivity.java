@@ -280,7 +280,8 @@ public class SettingsActivity extends Activity
             R.id.nfc_payment_settings,
             R.id.home_settings,
             R.id.dashboard,
-            R.id.main_settings
+            R.id.main_settings,
+            R.id.root_settings
     };
 
     private static final String[] ENTRY_FRAGMENTS = {
