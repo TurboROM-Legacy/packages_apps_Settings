@@ -703,8 +703,7 @@
     <string name="keyguard_torch_summary">Long-press power button with screen off to turn on torch</string>
 
     <!-- LockClock Setting -->
-    <string name="lockclock_settings_title">LockClock settings</string>
-    <string name="lockclock_settings_summary">Configure settings for the weather, calendar, and time widget (LockClock)</string>
+    <string name="lockclock_settings_title">Weather provider</string>
 
     <!-- Lock screen alpha configuration -->
     <string name="lockscreen_alpha_settings">Alpha settings</string>

@@ -289,7 +289,8 @@ public class SettingsActivity extends Activity
 	    R.id.root_settings,
 	    R.id.kernel_adiutor,
 	    R.id.turbotweaks,
-            R.id.privacy_guard
+            R.id.privacy_guard,
+	    R.id.lockclock_settings
     };
 
     private static final String[] ENTRY_FRAGMENTS = {

@@ -211,6 +211,15 @@
                 android:icon="@drawable/ic_settings_accounts"
                 />
 
+        <PreferenceScreen 
+                android:id="@+id/lockclock_settings"
+		android:icon="@drawable/ic_settings_weather"
+		android:title="@string/lockclock_settings_title">
+		<intent android:action="android.intent.action.MAIN"
+			android:targetPackage="com.cyanogenmod.lockclock"
+			android:targetClass="com.cyanogenmod.lockclock.preference.WeatherPreferences" />
+	</PreferenceScreen>
+
         <!-- Memory -->
         <dashboard-tile
                 android:id="@+id/manage_memory"
