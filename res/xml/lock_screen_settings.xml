@@ -64,6 +64,12 @@
         android:summaryOff="@string/keyguard_date_summary_off"
         android:defaultValue="true" />
 
+    <com.android.settings.preference.SystemSettingSwitchPreference
+        android:key="lock_screen_show_current"
+        android:title="@string/lock_screen_show_current_title"
+        android:summary="@string/lock_screen_show_current_summary"
+        android:defaultValue="false" />
+
     <PreferenceCategory
         android:title="@string/general_options_title" />
 
