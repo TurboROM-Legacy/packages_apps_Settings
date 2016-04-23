@@ -39,6 +39,12 @@
             android:summaryOn="@string/summary_heads_up_enabled"
             android:summaryOff="@string/summary_heads_up_disabled" />
 
+    <!-- Toast icons -->
+    <com.android.settings.preference.SystemSettingSwitchPreference
+	android:key="toast_icon"
+	android:title="@string/toast_icon_title"
+	android:summary="@string/toast_icon_summary" />
+
     <!-- Zen Mode -->
     <PreferenceScreen
             android:key="zen_mode"
