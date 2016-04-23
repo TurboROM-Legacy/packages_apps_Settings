@@ -1245,8 +1245,8 @@
 
     <!--Time Contexual Header -->
     <string name="contexual_header_title">Contexual headers</string>
-    <string name="status_bar_custom_header_title">Time Contextual Header</string>
-    <string name="status_bar_custom_header_summary">Enable notification panel header image</string>
+    <string name="status_bar_custom_header_title">Time contextual headers</string>
+    <string name="status_bar_custom_header_summary">Enable custom Quick Settings panel header images</string>
     <string name="daylight_header_pack_title">Header image pack</string>
     <string name="custom_header_image_0">Default</string>
     <string name="custom_header_image_1">Modern</string>
