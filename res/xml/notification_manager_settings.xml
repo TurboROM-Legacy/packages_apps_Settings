@@ -32,12 +32,11 @@
         android:title="@string/force_expanded_notifications_title"
         android:summary="@string/force_expanded_notifications_summary" />
 
-    <!-- Heads up -->
-    <com.android.settings.preference.GlobalSettingSwitchPreference
-            android:key="heads_up_notifications_enabled"
-            android:title="@string/heads_up_notifications"
-            android:summaryOn="@string/summary_heads_up_enabled"
-            android:summaryOff="@string/summary_heads_up_disabled" />
+    <!-- Heads Up -->
+    <Preference
+        android:key="heads_up_notifications"
+        android:title="@string/heads_up_notifications"
+        android:fragment="com.android.settings.headsup.HeadsUpSettings" />
 
     <!-- Toast icons -->
     <com.android.settings.preference.SystemSettingSwitchPreference
