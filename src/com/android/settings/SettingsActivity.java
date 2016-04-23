@@ -98,6 +98,7 @@ import com.android.settings.inputmethod.InputMethodAndLanguageSettings;
 import com.android.settings.inputmethod.KeyboardLayoutPickerFragment;
 import com.android.settings.inputmethod.SpellCheckersSettings;
 import com.android.settings.inputmethod.UserDictionaryList;
+import com.android.settings.headsup.HeadsUpSettings;
 import com.android.settings.location.LocationSettings;
 import com.android.settings.nfc.AndroidBeam;
 import com.android.settings.nfc.PaymentSettings;
@@ -369,6 +370,7 @@ public class SettingsActivity extends Activity
             DisplayRotation.class.getName(),
             NotificationManagerSettings.class.getName(),
             BlacklistSettings.class.getName(),
+	    HeadsUpSettings.class.getName(),
  	    TurboTweaks.class.getName(),
             com.android.settings.privacyguard.PrivacyGuardManager.class.getName()
     };

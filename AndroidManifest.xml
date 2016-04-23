@@ -2649,7 +2649,21 @@
                 android:value="com.android.settings.applications.ManageApplications" />
         </activity>
 
-        <activity android:name="Settings$AppDrawOverlaySettingsActivity"
+	<activity android:name="Settings$HeadsUpSettingsActivity"
+		android:label="@string/heads_up_notifications"
+		android:excludeFromRecents="true">
+	<intent-filter>
+		<action android:name="android.intent.action.MAIN" />
+		<action android:name="android.settings.HEADS_UP_SETTINGS" />
+		<action android:name="com.android.settings.HEADS_UP_SETTINGS" />
+		<category android:name="android.intent.category.DEFAULT" />
+		<category android:name="android.intent.category.SHORTCUT" />
+	</intent-filter>
+	<meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+		android:value="com.android.settings.headsup.HeadsUpSettings" />
+	</activity>
+    
+	<activity android:name="Settings$AppDrawOverlaySettingsActivity"
                 android:label="@string/draw_overlay_title"
                 android:taskAffinity="">
             <intent-filter android:priority="1">
