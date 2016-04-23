@@ -614,6 +614,10 @@
 
     <!-- Lock screen -->
 
+    <!-- Lock screen charging current -->
+    <string name="lock_screen_show_current">Charging current</string>
+    <string name="lock_screen_show_current_summary">Show charging current rate on the lock screen</string>
+
     <!-- Lock screen blur/see through -->
     <string name="lockscreen_see_through_settings">Blur settings</string>
     <string name="lockscreen_see_through_title">Blur</string>

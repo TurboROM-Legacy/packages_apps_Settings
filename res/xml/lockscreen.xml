@@ -18,6 +18,12 @@
     android:layout="@layout/tab"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+	<com.android.settings.preference.SystemSettingSwitchPreference
+	    android:key="lock_screen_show_current"
+	    android:title="@string/lock_screen_show_current"
+	    android:summary="@string/lock_screen_show_current_summary"
+	    android:defaultValue="false" />
+
         <SwitchPreference
             android:key="block_on_secure_keyguard"
             android:title="@string/block_on_secure_keyguard_title"
