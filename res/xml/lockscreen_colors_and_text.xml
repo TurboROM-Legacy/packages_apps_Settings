@@ -68,6 +68,11 @@
             android:defaultValue="0xffffffff" 
             android:dependency="hide_lockscreen_date" />
 
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="ls_shortcut_icon_color"
+            android:title="@string/lockscreen_shortcut_icon_color"
+            android:defaultValue="0xffffffff" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

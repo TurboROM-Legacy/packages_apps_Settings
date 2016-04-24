@@ -662,6 +662,7 @@
     <string name="lockscreen_alarm_color">Alarm</string>
     <string name="lockscreen_clock_color">Clock</string>
     <string name="lockscreen_date_color">Date</string>
+    <string name="lockscreen_shortcut_icon_color">Shortcut icons</string>
     <string name="lockscreen_colors_reset_title">Reset lock screen colors</string>
     <string name="lockscreen_colors_reset_message">Are you sure you want to reset these colors to default?</string>
     <string name="yes">Yes</string>
