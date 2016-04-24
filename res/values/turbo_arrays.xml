@@ -1607,4 +1607,19 @@
         <item>5</item>
     </string-array>
 
+    <!-- Option to enable/disable scrolling cache -->
+    <string-array name="scrolling_cache_entries" translatable="false">
+        <item>@string/pref_scrolling_cache_force_enable</item>
+        <item>@string/pref_scrolling_cache_default_enable</item>
+        <item>@string/pref_scrolling_cache_default_disable</item>
+        <item>@string/pref_scrolling_cache_force_disable</item>
+    </string-array>
+
+    <string-array name="scrolling_cache_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
 </resources>

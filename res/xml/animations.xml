@@ -24,6 +24,14 @@
             android:summary="@string/power_menu_animation_summary"
             android:persistent="false" />
 
+	<ListPreference
+	    android:key="pref_scrolling_cache"
+	    android:dialogTitle="@string/pref_scrolling_cache_title"
+	    android:title="@string/pref_scrolling_cache_title"
+	    android:summary="@string/pref_scrolling_cache_summary"
+	    android:entries="@array/scrolling_cache_entries"
+	    android:entryValues="@array/scrolling_cache_values" />
+ 
         <ListPreference
             android:key="toast_animation"
             android:title="@string/toast_animation_title"

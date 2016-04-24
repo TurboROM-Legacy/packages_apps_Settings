@@ -1593,4 +1593,12 @@
     <string name="volume_steps_voice_call_title">Volume steps: Voice call</string>
     <string name="volume_steps_reset">Reset</string>
 
+    <!-- Option to enable/disable scrolling cache -->
+    <string name="pref_scrolling_cache_title">Scrolling cache</string>
+    <string name="pref_scrolling_cache_summary">Scrolling cache may improve scrolling performance at the cost of memory</string>
+    <string name="pref_scrolling_cache_force_enable">Force enable</string>
+    <string name="pref_scrolling_cache_default_enable">Default enable</string>
+    <string name="pref_scrolling_cache_default_disable">Default disable</string>
+    <string name="pref_scrolling_cache_force_disable">Force disable</string>
+
 </resources>

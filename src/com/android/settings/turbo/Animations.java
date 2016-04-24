@@ -24,6 +24,7 @@ import android.content.res.Resources;
 import android.database.ContentObserver;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.SystemProperties;
 import android.os.UserHandle;
 import android.preference.ListPreference;
 import android.preference.SwitchPreference;
@@ -43,6 +44,8 @@ import com.android.settings.turbo.AnimBarPreference;
 import com.android.internal.util.turbo.AwesomeAnimationHelper;
 
 import java.util.Arrays;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 
 public class Animations extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
@@ -63,6 +66,9 @@ public class Animations extends SettingsPreferenceFragment implements OnPreferen
     private static final String KEY_LISTVIEW_INTERPOLATOR = "listview_interpolator";
     private static final String KEY_TOAST_ANIMATION = "toast_animation";
     private static final String POWER_MENU_ANIMATIONS = "power_menu_animations";
+    private static final String SCROLLING_CACHE_PREF = "pref_scrolling_cache";
+    private static final String SCROLLING_CACHE_PERSIST_PROP = "persist.sys.scrollingcache";
+    private static final String SCROLLING_CACHE_DEFAULT = "2";
 
     ListPreference mActivityOpenPref;
     ListPreference mActivityClosePref;
@@ -80,6 +86,7 @@ public class Animations extends SettingsPreferenceFragment implements OnPreferen
     AnimBarPreference mAnimationDuration;
     SwitchPreference mAnimNoOverride;
     ListPreference mPowerMenuAnimations;
+    private ListPreference mScrollingCachePref;
 
     private int[] mAnimations;
     private String[] mAnimationsStrings;
@@ -200,6 +207,11 @@ public class Animations extends SettingsPreferenceFragment implements OnPreferen
                 getContentResolver(), Settings.System.POWER_MENU_ANIMATIONS, 0)));
         mPowerMenuAnimations.setSummary(mPowerMenuAnimations.getEntry());
         mPowerMenuAnimations.setOnPreferenceChangeListener(this);
+
+        mScrollingCachePref = (ListPreference) findPreference(SCROLLING_CACHE_PREF);
+        mScrollingCachePref.setValue(SystemProperties.get(SCROLLING_CACHE_PERSIST_PROP,
+                SystemProperties.get(SCROLLING_CACHE_PERSIST_PROP, SCROLLING_CACHE_DEFAULT)));
+        mScrollingCachePref.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -298,6 +310,11 @@ public class Animations extends SettingsPreferenceFragment implements OnPreferen
                     Integer.valueOf((String) newValue));
             mPowerMenuAnimations.setValue(String.valueOf(newValue));
             mPowerMenuAnimations.setSummary(mPowerMenuAnimations.getEntry());
+            return true;
+        } else if (preference == mScrollingCachePref) {
+            if (newValue != null) {
+                SystemProperties.set(SCROLLING_CACHE_PERSIST_PROP, (String) newValue);
+            }
             return true;
         }
         preference.setSummary(getProperSummary(preference));
