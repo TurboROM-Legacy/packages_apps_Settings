@@ -1262,7 +1262,7 @@
 
     <!-- Quick Settings edit icon -->
     <string name="quick_settings_edit_icon_title">QS edit icon</string>
-    <string name="quick_settings_edit_icon_summary">Enable the Quick Settings edit icon in the status bar header</string>
+    <string name="quick_settings_edit_icon_summary">Enable the Quick Settings edit icon in the expanded status bar area</string>
 
     <!-- Turbo OTA -->
     <string name="turboota_title">Turbo OTA</string>
@@ -1654,5 +1654,9 @@
     <string name="battery_saver_notif_summary">Show battery saver notification when enabled</string>
     <string name="battery_low_notif_title">Low battery notification</string>
     <string name="battery_low_notif_summary">Show low battery notification when enabled</string>
-    
+
+    <!-- Task manager -->
+    <string name="enable_task_manager_title">Task manager</string>
+    <string name="enable_task_manager_summary">Enable/Disable the task manager button in the expanded status bar area</string>
+
 </resources>

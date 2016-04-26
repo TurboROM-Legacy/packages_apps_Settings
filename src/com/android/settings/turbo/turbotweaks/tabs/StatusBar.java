@@ -40,6 +40,9 @@ public class StatusBar extends SettingsPreferenceFragment implements
     private static final String TAG = "StatusBar";
 
     private static final String PREF_CARRIER_LABEL = "status_bar_carrier_label_settings";
+    private static final String ENABLE_TASK_MANAGER = "enable_task_manager";
+
+    private SwitchPreference mEnableTaskManager;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -58,6 +61,9 @@ public class StatusBar extends SettingsPreferenceFragment implements
             removePreference(PREF_CARRIER_LABEL);
         }
 
+	mEnableTaskManager = (SwitchPreference) findPreference(ENABLE_TASK_MANAGER);
+	mEnableTaskManager.setChecked((Settings.System.getInt(resolver,
+                Settings.System.ENABLE_TASK_MANAGER, 0) == 1));
     }
 
     @Override
@@ -81,8 +87,12 @@ public class StatusBar extends SettingsPreferenceFragment implements
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
-        final String key = preference.getKey();
-        return true;
+	if (preference == mEnableTaskManager) {
+	    boolean checked = ((SwitchPreference)preference).isChecked();
+	    Settings.System.putInt(getActivity().getContentResolver(),
+		Settings.System.ENABLE_TASK_MANAGER, checked ? 1:0);
+	    return true;
+	}
+        return false;
     }
-
 }
