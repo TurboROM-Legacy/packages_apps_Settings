@@ -32,12 +32,6 @@
         android:title="@string/force_expanded_notifications_title"
         android:summary="@string/force_expanded_notifications_summary" />
 
-    <!-- Heads Up -->
-    <Preference
-        android:key="heads_up_notifications"
-        android:title="@string/heads_up_notifications"
-        android:fragment="com.android.settings.headsup.HeadsUpSettings" />
-
     <!-- Toast icons -->
     <com.android.settings.preference.SystemSettingSwitchPreference
 	android:key="toast_icon"
@@ -50,6 +44,12 @@
             android:title="@string/zen_mode_settings_title"
             settings:keywords="@string/keywords_sounds_and_notifications_interruptions"
             android:fragment="com.android.settings.notification.ZenModeSettings" />
+
+    <!-- Heads Up -->
+    <Preference
+	    android:key="heads_up_notifications"
+            android:title="@string/heads_up_notifications"
+            android:fragment="com.android.settings.headsup.HeadsUpSettings" />
 
     <!-- When device is locked -->
     <com.android.settings.DropDownPreference
