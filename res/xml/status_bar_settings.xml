@@ -18,6 +18,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/status_bar_title" >
 
+    <com.android.settings.preference.SystemSettingSwitchPreference
+        android:key="double_tap_to_sleep_status_bar"
+        android:title="@string/double_tap_to_sleep_status_bar_title"
+        android:summary="@string/double_tap_to_sleep_status_bar_summary"
+        android:defaultValue="false" />
+
     <PreferenceScreen
 	android:title="@string/status_bar_icon_blacklist_title"
 	android:summary="@string/status_bar_icon_blacklist_summary" >
