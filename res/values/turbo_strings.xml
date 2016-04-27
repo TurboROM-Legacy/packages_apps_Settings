@@ -1189,22 +1189,6 @@
     <string name="show_ime_arrows_title">Show arrow keys while typing</string>
     <string name="show_ime_arrows_summary">Display left and right cursor buttons in navigation bar while typing. Longpress to navigate up/down. Overrides IME switcher and menu buttons</string>
 
-    <!-- SlimDim -->
-    <string name="dim_nav_buttons_category">SlimDim</string>
-    <string name="dim_nav_buttons_title">Dim buttons after inactivity</string>
-    <string name="dim_nav_buttons_summary">Dim navigation bar buttons after not interacting with navigation bar for a specified time</string>
-    <string name="dim_nav_buttons_timeout_title">Timeout before dimming</string>
-    <string name="dim_nav_buttons_timeout_summary">Time (in milliseconds) to wait before dimming buttons</string>
-    <string name="dim_nav_buttons_alpha_title">Dim alpha</string>
-    <string name="dim_nav_buttons_alpha_summary">Alpha value to dim buttons to</string>
-    <string name="dim_nav_buttons_animate_title">Dim animation</string>
-    <string name="dim_nav_buttons_animate_summary">Animate the alpha fade</string>
-    <string name="dim_nav_buttons_animate_duration_title">Animation duration</string>
-    <string name="dim_nav_buttons_animate_duration_summary">Duration (in milliseconds) of the alpha animation</string>
-    <string name="dim_nav_buttons_touch_anywhere_title">Listen for touches on entire screen</string>
-    <string name="dim_nav_buttons_touch_anywhere_summary_on">Touching anywhere on the screen will cause buttons to un-dim</string>
-    <string name="dim_nav_buttons_touch_anywhere_summary_off">Only touches on the navbar will cause buttons to un-dim</string>
-
     <!-- Double tap to sleep on navigation bar -->
     <string name="double_tap_sleep_nav_bar_title">Double tap navigation bar to sleep</string>
     <string name="double_tap_sleep_nav_bar_summary">Double tap on the navigation bar to turn off the display</string>
