@@ -16,16 +16,4 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/navbar_title" >
 
-    <PreferenceCategory
-        android:key="category_navbar_general"
-        android:title="@string/general_category" >
-
-        <com.android.settings.preference.SystemSettingSwitchPreference
-            android:key="navigation_bar_left"
-            android:title="@string/navigation_bar_left_title"
-            android:summary="@string/navigation_bar_left_summary"
-            android:defaultValue="false" />
-
-    </PreferenceCategory>
-
 </PreferenceScreen>
