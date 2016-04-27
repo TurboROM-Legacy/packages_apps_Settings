@@ -51,7 +51,7 @@ import com.android.internal.util.slim.DeviceUtils;
 import com.android.settings.turbo.turbotweaks.tabs.GeneralUI;
 import com.android.settings.turbo.turbotweaks.tabs.LockScreen;
 import com.android.settings.turbo.turbotweaks.tabs.MultiTasking;
-import com.android.settings.turbo.turbotweaks.tabs.Navigation;
+import com.android.settings.turbo.turbotweaks.tabs.NavigationBar;
 import com.android.settings.turbo.turbotweaks.tabs.QSPanel;
 import com.android.settings.turbo.turbotweaks.tabs.StatusBar;
 import com.android.settings.turbo.turbotweaks.tabs.System;
@@ -181,7 +181,7 @@ public class TurboTweaks extends SettingsPreferenceFragment {
             frags[0] = new GeneralUI();
             frags[1] = new LockScreen();
             frags[2] = new MultiTasking();
-            frags[3] = new Navigation();
+            frags[3] = new NavigationBar();
             frags[4] = new QSPanel();
             frags[5] = new StatusBar();
             frags[6] = new System();
@@ -210,7 +210,7 @@ public class TurboTweaks extends SettingsPreferenceFragment {
                     getString(R.string.generalui_category),
                     getString(R.string.lockscreen_category),
                     getString(R.string.multitasking_category),
-                    getString(R.string.navigation_category),
+                    getString(R.string.navigationbar_category),
                     getString(R.string.qspanel_category),
                     getString(R.string.statusbar_category),
                     getString(R.string.system_category)};
@@ -219,7 +219,7 @@ public class TurboTweaks extends SettingsPreferenceFragment {
                     getString(R.string.generalui_category),
                     getString(R.string.lockscreen_category),
                     getString(R.string.multitasking_category),
-                    getString(R.string.navigation_category),
+                    getString(R.string.navigationbar_category),
                     getString(R.string.qspanel_category),
                     getString(R.string.statusbar_category),
                     getString(R.string.system_category)};

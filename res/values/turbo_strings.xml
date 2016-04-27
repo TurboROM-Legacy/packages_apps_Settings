@@ -75,7 +75,7 @@
     <string name="generalui_category">General UI</string>
     <string name="lockscreen_category">Lock screen</string>
     <string name="statusbar_category">Status bar</string>
-    <string name="navigation_category">Navigation</string>
+    <string name="navigationbar_category">Nav. bar</string>
     <string name="multitasking_category">Multi-Tasking</string>
     <string name="system_category">System</string>
 

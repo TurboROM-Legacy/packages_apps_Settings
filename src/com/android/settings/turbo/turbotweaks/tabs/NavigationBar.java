@@ -34,15 +34,15 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.logging.MetricsLogger;
 import com.android.settings.Utils;
 
-public class Navigation extends SettingsPreferenceFragment implements
+public class NavigationBar extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
-    private static final String TAG = "Navigation";
+    private static final String TAG = "NavigationBar";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.navigation);
+        addPreferencesFromResource(R.xml.navigationbar);
         PreferenceScreen prefSet = getPreferenceScreen();
 
         ContentResolver resolver = getActivity().getContentResolver();
