@@ -1029,9 +1029,10 @@
         <item>@string/shortcut_action_lockdown</item>
         <item>@string/shortcut_action_power_off</item>
         <item>@string/shortcut_action_reboot</item>
+        <item>@string/shortcut_action_screenrecord</item>
         <item>@string/shortcut_action_screenshot</item>
         <item>@string/shortcut_action_sound</item>
- 	<item>@string/shortcut_action_torch</item>
+		<item>@string/shortcut_action_torch</item>
     </string-array>
 
     <string-array name="shortcut_action_power_menu_values" translatable="false">
@@ -1041,9 +1042,10 @@
         <item>**lockdown**</item>
         <item>**poweroff**</item>
         <item>**reboot**</item>
+        <item>**screenrecord**</item>
         <item>**screenshot**</item>
         <item>**sound**</item>
- 	<item>**torch**</item>
+		<item>**torch**</item>
     </string-array>
 
     <string-array name="number_of_notifications_entries">

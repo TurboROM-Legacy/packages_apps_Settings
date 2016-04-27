@@ -1109,6 +1109,7 @@
     <string name="shortcut_action_airplane">Airplane mode</string>
     <string name="shortcut_action_power_off">Power off</string>
     <string name="shortcut_action_reboot">Reboot</string>
+    <string name="shortcut_action_screenrecord">Screen record</string>
     <string name="shortcut_action_sound">Sound</string>
     <string name="shortcut_action_users">Users</string>
     <string name="shortcut_action_lockdown">Lock now</string>
