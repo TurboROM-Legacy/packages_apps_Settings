@@ -548,13 +548,13 @@ public class ActionListViewSettings extends ListFragment implements
             case POWER_MENU_SHORTCUT:
                 return ActionHelper.getPowerMenuConfigWithDescription(
                     mActivity, mActionValuesKey, mActionEntriesKey);
-            case NAV_BAR:
-                return ActionHelper.getNavBarConfigWithDescription(
-                    mActivity, mActionValuesKey, mActionEntriesKey);
 	    case RECENT_APP_SIDEBAR:
                 return ActionHelper.getRecentAppSidebarConfigWithDescription(
 		    mActivity, mActionValuesKey, mActionEntriesKey);
 /* Disabled for now till all features are back. Enable it step per step!!!!!!
+            case NAV_BAR:
+                return ActionHelper.getNavBarConfigWithDescription(
+                    mActivity, mActionValuesKey, mActionEntriesKey);
             case NAV_RING:
                 return ActionHelper.getNavRingConfigWithDescription(
                     mActivity, mActionValuesKey, mActionEntriesKey);
@@ -579,13 +579,13 @@ public class ActionListViewSettings extends ListFragment implements
             case POWER_MENU_SHORTCUT:
                 ActionHelper.setPowerMenuConfig(mActivity, actionConfigs, reset);
                 break;
-            case NAV_BAR:
-                ActionHelper.setNavBarConfig(mActivity, actionConfigs, reset);
-                break;
             case RECENT_APP_SIDEBAR:
                 ActionHelper.setRecentAppSidebarConfig(mActivity, actionConfigs, reset);
                 break;
 /* Disabled for now till all features are back. Enable it step per step!!!!!!
+            case NAV_BAR:
+                ActionHelper.setNavBarConfig(mActivity, actionConfigs, reset);
+                break;
             case NAV_RING:
                 ActionHelper.setNavRingConfig(mActivity, actionConfigs, reset);
                 break;
