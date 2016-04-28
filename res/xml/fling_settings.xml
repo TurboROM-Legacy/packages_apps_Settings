@@ -145,8 +145,7 @@
             android:key="eos_fling_logo_color"
             android:title="@string/fling_logo_color"
             android:defaultValue="0xffffff"
-            android:dependency="eos_fling_show_logo"
-            settings:defaultColorValue="-1" />
+            android:dependency="eos_fling_show_logo" />
 
          <SwitchPreference
             android:key="eos_fling_show_ripple"
