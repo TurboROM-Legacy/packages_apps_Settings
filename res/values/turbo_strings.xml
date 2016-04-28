@@ -1617,7 +1617,7 @@
 
     <!-- Pulse navigation bar music visualizer -->
     <string name="pulse_help_policy_notice_title">About Pulse</string>
-    <string name="pulse_help_policy_notice_summary">Pulse is brilliant equalizer bar style audio visualization on the navigation bar when music plays. Pulse does not work with some audio sources when listening on device speaker</string>
+    <string name="pulse_help_policy_notice_summary">Pulse is a brilliant equalizer bar style audio visualization on the navigation bar when music plays. Pulse does not work with some audio sources when listening on this device speaker</string>
     <string name="pulse_settings">Pulse</string>
     <string name="pulse_settings_summary">Navigation bar audio visualization</string>
     <string name="fling_show_pulse_title">Show Pulse</string>
