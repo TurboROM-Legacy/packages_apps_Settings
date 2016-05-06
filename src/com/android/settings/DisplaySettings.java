@@ -84,6 +84,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             = "camera_double_tap_power_gesture";
     private static final String KEY_WAKE_UP_CATEGORY = "category_wake_up_options";
     private static final String KEY_PROXIMITY_CHECK_ON_WAKE = "proximity_check_on_wake";
+    private static final String KEY_WAKE_UP_WHEN_PLUGGED_UNPLUGGED = "wake_up_when_plugged_unplugged";
 
     private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
 
@@ -102,6 +103,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private SwitchPreference mAutoBrightnessPreference;
     private SwitchPreference mCameraGesturePreference;
     private SwitchPreference mCameraDoubleTapPowerGesturePreference;
+    private SwitchPreference mWakeUpWhenPluggedOrUnplugged;
 
     @Override
     protected int getMetricsCategory() {
@@ -236,6 +238,16 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(resolver, Settings.System.PROXIMITY_CHECK_ON_WAKE, 0);
         }
 
+        mWakeUpWhenPluggedOrUnplugged =
+            (SwitchPreference) findPreference(KEY_WAKE_UP_WHEN_PLUGGED_UNPLUGGED);
+
+        // Default value for wake-on-plug behavior from config.xml
+        boolean wakeUpWhenPluggedOrUnpluggedConfig = getResources().getBoolean(
+            com.android.internal.R.bool.config_unplugTurnsOnScreen);
+
+        mWakeUpWhenPluggedOrUnplugged.setChecked(Settings.System.getInt(getContentResolver(),
+            Settings.System.WAKE_UP_WHEN_PLUGGED_UNPLUGGED,
+            (wakeUpWhenPluggedOrUnpluggedConfig ? 1 : 0)) == 1);
     }
 
     private static boolean allowAllRotations(Context context) {
@@ -441,6 +453,12 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        if (preference == mWakeUpWhenPluggedOrUnplugged) {
+            Settings.System.putInt(getContentResolver(),
+                Settings.System.WAKE_UP_WHEN_PLUGGED_UNPLUGGED,
+                mWakeUpWhenPluggedOrUnplugged.isChecked() ? 1 : 0);
+            return true;
+        }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 

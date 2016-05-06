@@ -117,6 +117,12 @@
                 android:summary="@string/proximity_check_on_wake_summary"
                 android:defaultValue="false" />
 
+            <SwitchPreference
+                android:key="wake_up_when_plugged_unplugged"
+                android:title="@string/wake_up_when_plugged_unplugged_title"
+                android:summary="@string/wake_up_when_plugged_unplugged_summary"
+                android:defaultValue="false" />
+
         </PreferenceCategory>
 
 </PreferenceScreen>

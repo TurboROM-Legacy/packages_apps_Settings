@@ -226,6 +226,10 @@
     <string name="proximity_check_on_wake_title">Prevent accidental wake up</string>
     <string name="proximity_check_on_wake_summary">Check the proximity sensor prior to waking up screen</string>
 
+    <!-- Wake up when plugged/unplugged -->
+    <string name="wake_up_when_plugged_unplugged_title">Wake up on charge</string>
+    <string name="wake_up_when_plugged_unplugged_summary">Wake up device if charger is plugged/unplugged</string>
+
     <!-- Root access control -->
     <string name="root_access_title">Root access</string>
     <string name="root_access_warning_title">Allow root access?</string>
