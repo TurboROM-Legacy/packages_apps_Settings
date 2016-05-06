@@ -865,6 +865,11 @@
     <string name="battery_bar_animate_summary">Enable to animate the battery bar while charging</string>
 
     <!-- Status bar -->
+
+    <!-- Expanded status bar title -->
+    <string name="expanded_statusbar_title">Expanded status bar</string>
+
+    <!-- Notification options -->
     <string name="statusbar_notifications_summary">Configure options for notifications in the status bar</string>
 
     <!-- SystemUI tuner icon blacklist -->
@@ -1260,10 +1265,6 @@
     <string name="battery_circle_dot_9">9</string>
     <string name="battery_circle_dot_10">10</string>
 
-    <!-- Quick Settings edit icon -->
-    <string name="quick_settings_edit_icon_title">QS edit icon</string>
-    <string name="quick_settings_edit_icon_summary">Enable the Quick Settings edit icon in the expanded status bar area</string>
-
     <!-- Turbo OTA -->
     <string name="turboota_title">Turbo OTA</string>
 
@@ -1654,6 +1655,14 @@
     <string name="battery_saver_notif_summary">Show battery saver notification when enabled</string>
     <string name="battery_low_notif_title">Low battery notification</string>
     <string name="battery_low_notif_summary">Show low battery notification when enabled</string>
+
+    <!-- Heads Up button -->
+    <string name="enable_headsup_button_extended_statusbar_title">Heads Up</string>
+    <string name="enable_headsup_button_extended_statusbar_summary">Enable/Disable the Heads Up button in the expanded status bar area</string>
+
+    <!-- Edit Quick Settings button -->
+    <string name="quick_settings_edit_icon_title">Edit QS button</string>
+    <string name="quick_settings_edit_icon_summary">Enable/Disable the Quick Settings edit button in the expanded status bar area</string>
 
     <!-- Task manager -->
     <string name="enable_task_manager_title">Task manager</string>

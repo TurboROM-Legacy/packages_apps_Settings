@@ -71,11 +71,6 @@
             android:summary="@string/statusbar_notifications_summary"
             android:title="@string/statusbar_notifications_category" />
 
-	 <SwitchPreference
-	    android:key="enable_task_manager"
-	    android:title="@string/enable_task_manager_title"
-	    android:summary="@string/enable_task_manager_summary" />
-
          <PreferenceScreen
             android:key="turbo_statusbar_logo"
             android:fragment="com.android.settings.turbo.StatusBarLogoSettings"
@@ -87,5 +82,26 @@
             android:fragment="com.android.settings.turbo.StatusBarTemperature"
             android:summary="@string/status_bar_temperature_summary"
             android:title="@string/temperature_category" />
+
+	<PreferenceCategory
+	    android:title="@string/expanded_statusbar_title" /> 
+
+	<com.android.settings.preference.SystemSettingSwitchPreference
+	    android:key="heads_up_show_status_button"
+	    android:title="@string/enable_headsup_button_extended_statusbar_title"
+	    android:summary="@string/enable_headsup_button_extended_statusbar_summary" 
+	    android:defaultValue="false" />
+
+	<com.android.settings.preference.SystemSettingSwitchPreference
+	    android:key="quick_settings_edit_icon"
+	    android:title="@string/quick_settings_edit_icon_title"
+	    android:summary="@string/quick_settings_edit_icon_summary"
+	    android:defaultValue="false" />
+
+	<com.android.settings.preference.SystemSettingSwitchPreference
+	    android:key="enable_task_manager"
+	    android:title="@string/enable_task_manager_title"
+	    android:summary="@string/enable_task_manager_summary" 
+	    android:defaultValue="false" />
 
 </PreferenceScreen>
