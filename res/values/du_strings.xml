@@ -18,6 +18,9 @@
     <!-- Icon packs -->
     <string name="icon_pack_picker_dialog_title">Icon packs</string>
 
+    <!-- Icon pick helper -->
+    <string name="invalid_icon_from_uri">Unable to load image from content provider</string>
+
     <!-- Shortcut picker -->
     <string name="picker_activities">Activities</string>
     <string name="profile_applist_title">Applications</string>
