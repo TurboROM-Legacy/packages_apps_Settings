@@ -727,7 +727,7 @@
     <string name="weather_show_location_title">Mostrar local</string>
     <string name="weather_show_location_summary">Ativar para mostrar o local</string>
     <string name="weather_condition_icon_title">Ícone de condições climáticas</string>
-    <string name="weather_condition_icon_monochrome_title">Monocromático/string>
+    <string name="weather_condition_icon_monochrome_title">Monocromático</string>
     <string name="weather_condition_icon_colored_title">Colorido</string>
     <string name="weather_condition_icon_vclouds_title">VClouds</string>
 
@@ -741,7 +741,7 @@
     <!-- Lock screen alpha configuration -->
     <string name="lockscreen_alpha_settings">Configurações alfa</string>
     <string name="lockscreen_alpha">Configuração alfa</string>
-    <string name="lockscreen_security_alpha">Configuração bouncer alpha/string>
+    <string name="lockscreen_security_alpha">Configuração bouncer alpha</string>
 
     <!-- Media art -->
     <string name="media_art_title">Arte da capa de mídia</string>
