@@ -504,8 +504,13 @@
     <!-- QS strings -->
     <string name="qs_panel_title">QS panel</string>
     <string name="qs_general_title">General QS options</string>
+    <string name="qs_tiles_title">QS tile options</string>
 
     <!-- Brightness slider -->
     <string name="qs_brightness_slider_title">Brightness slider</string>
     <string name="qs_brightness_slider_summary">Enable the brightness slider in the Quick Settings panel</string>
+
+    <!-- QS main tiles -->
+    <string name="qs_main_tiles_title">Enlarge first row</string>
+    <string name="qs_main_tiles_summary">Use two larger main tiles on the first row</string>
 </resources>
