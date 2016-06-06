@@ -513,4 +513,11 @@
     <!-- QS main tiles -->
     <string name="qs_main_tiles_title">Enlarge first row</string>
     <string name="qs_main_tiles_summary">Use two larger main tiles on the first row</string>
+
+    <!-- Quicks Settings columns -->
+    <string name="qs_num_columns_title">Number of tiles per row</string>
+    <string name="qs_num_columns_showing">%1$s tiles per row showing</string>
+    <string name="qs_columns_three">Three</string>
+    <string name="qs_columns_four">Four</string>
+    <string name="qs_columns_five">Five</string>
 </resources>
