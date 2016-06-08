@@ -120,6 +120,7 @@ import com.android.settings.sim.SimSettings;
 import com.android.settings.tts.TextToSpeechSettings;
 import com.android.settings.turbo.MainSettings;
 import com.android.settings.turbo.DisplayRotation;
+import com.android.settings.turbo.HeadsUpSettings;
 import com.android.settings.users.UserSettings;
 import com.android.settings.vpn2.VpnSettings;
 import com.android.settings.wfd.WifiDisplaySettings;
@@ -365,6 +366,7 @@ public class SettingsActivity extends Activity
 	    MainSettings.class.getName(),
             com.android.settings.turbo.DisplayRotation.class.getName(),
             ExpandedDesktopPreferenceFragment.class.getName(),
+            HeadsUpSettings.class.getName(),
 	    com.android.settings.privacyguard.PrivacyGuardManager.class.getName()
     };
 

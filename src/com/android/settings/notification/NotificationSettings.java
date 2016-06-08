@@ -43,6 +43,7 @@ import android.os.Vibrator;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceCategory;
+import android.preference.PreferenceScreen;
 import android.preference.SeekBarVolumizer;
 import android.preference.SwitchPreference;
 import android.preference.TwoStatePreference;
@@ -85,6 +86,7 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
     private static final String KEY_ZEN_ACCESS = "manage_zen_access";
     private static final String KEY_ZEN_MODE = "zen_mode";
     private static final String KEY_VOLUME_LINK_NOTIFICATION = "volume_link_notification";
+    private static final String KEY_HEADS_UP_SETTINGS = "heads_up_settings";
 
     private static final String[] RESTRICTED_KEYS = {
         KEY_MEDIA_VOLUME,
@@ -110,6 +112,8 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
     private AudioManager mAudioManager;
     private VolumeSeekBarPreference mRingPreference;
     private VolumeSeekBarPreference mNotificationPreference;
+
+    private PreferenceScreen mHeadsUp;
 
     private Preference mPhoneRingtonePreference;
     private Preference mNotificationRingtonePreference;
@@ -176,6 +180,14 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
         refreshZenAccess();
         updateRingerMode();
         updateEffectsSuppressor();
+
+        mHeadsUp = (PreferenceScreen) findPreference(KEY_HEADS_UP_SETTINGS);
+    }
+
+    private boolean getUserHeadsUpState() {
+         return Settings.Global.getInt(getContentResolver(),
+                Settings.Global.HEADS_UP_NOTIFICATIONS_ENABLED,
+                Settings.Global.HEADS_UP_ON) != 0;
     }
 
     @Override
@@ -199,6 +211,8 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
                 pref.setEnabled(!isRestricted);
             }
         }
+        mHeadsUp.setSummary(getUserHeadsUpState()
+            ? R.string.summary_heads_up_enabled : R.string.summary_heads_up_disabled);
     }
 
     @Override

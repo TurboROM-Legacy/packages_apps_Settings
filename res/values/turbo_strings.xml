@@ -256,7 +256,7 @@
     <string name="notification_light_missed_call_title">Missed call</string>
     <string name="notification_light_screen_on">Lights with screen on</string>
     <string name="notification_light_voicemail_title">Voicemail</string>
-    <string name="allow_lights_title">Lights in do not disturb mode</string>
+    <string name="allow_lights_title">Lights in Do Not Disturb mode</string>
 
     <!-- Display strings -->
     <string name="display_category_interface_options_title">Interface options</string>
@@ -511,11 +511,6 @@
     <string name="status_bar_battery_percentage_text_inside">Inside the icon</string>
     <string name="status_bar_battery_percentage_text_next">Next to the icon</string>
 
-    <!-- Heads up -->
-    <string name="heads_up_notifications">Heads up</string>
-    <string name="summary_heads_up_enabled">Pop-up notifications are enabled</string>
-    <string name="summary_heads_up_disabled">Pop-up notifications are disabled</string>
-
     <!-- QS strings -->
     <string name="qs_panel_title">QS panel</string>
     <string name="qs_general_title">General QS options</string>
@@ -629,4 +624,20 @@
 
     <!-- Volume settings - Volume adjustment sound -->
     <string name="volume_adjust_sounds_title">Volume adjustment sounds</string>
+
+    <!-- Heads up settings -->
+    <string name="heads_up_settings_title">Heads up notifications</string>
+    <string name="summary_heads_up_enabled">Pop-up notifications are enabled</string>
+    <string name="summary_heads_up_disabled">Pop-up notifications are disabled</string>
+
+    <!-- Heads up blacklist / whitelist/ DND -->
+    <string name="add_heads_up_package">Add app</string>
+    <string name="add_heads_up_dnd_summary">Don\'t show Heads up in these applications</string>
+    <string name="add_heads_up_blacklist_summary">Don\'t show Heads up from these applications</string>
+    <string name="add_heads_up_whitelist_summary">Force Heads up from these applications</string>
+    <string name="heads_up_dnd_title">Do Not Disturb</string>
+    <string name="heads_up_blacklist_title">Blacklist</string>
+    <string name="heads_up_whitelist_title">Whitelist</string>
+    <string name="heads_up_disabled_notice">To allow applications to display interactive notifications in a pop-up window on your screen, enable Heads up.</string>
+    <string name="heads_up_contains_key">Already added this application to the list</string>
 </resources>

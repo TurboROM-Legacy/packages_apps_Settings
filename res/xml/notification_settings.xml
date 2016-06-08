@@ -101,12 +101,10 @@
         android:key="notification"
         android:title="@string/notification_section_header" >
 
-        <!-- Heads up -->
-        <com.android.settings.preference.GlobalSettingSwitchPreference
-                android:key="heads_up_notifications_enabled"
-                android:title="@string/heads_up_notifications"
-                android:summaryOn="@string/summary_heads_up_enabled"
-                android:summaryOff="@string/summary_heads_up_disabled" />
+        <PreferenceScreen
+            android:fragment="com.android.settings.turbo.HeadsUpSettings"
+            android:key="heads_up_settings"
+            android:title="@string/heads_up_settings_title" />
 
         <!-- Pulse notification light -->
         <PreferenceScreen

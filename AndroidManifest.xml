@@ -2618,6 +2618,31 @@
                 android:resource="@id/display_settings" />
         </activity>
 
+        <!-- Heads up -->
+        <activity android:name="Settings$HeadsUpSettingsActivity"
+                android:label="@string/heads_up_settings_title"
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.turbo.HeadsUpSettings" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/notification_settings" />
+        </activity>
+
+        <activity-alias android:name=".turbo.HeadsUpSettings"
+                  android:label="@string/heads_up_settings_title"
+                  android:clearTaskOnLaunch="true"
+                  android:exported="true"
+                  android:targetActivity="Settings$HeadsUpSettingsActivity">
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.turbo.HeadsUpSettings" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/notification_settings" />
+        </activity-alias>
+
         <!-- Turbo Extra info -->
         <activity android:name="com.android.settings.turbo.extrainfo.MainActivity"
                   android:theme="@style/Theme.Material.Light.Dialog.NoActionBar.MinWidth">
