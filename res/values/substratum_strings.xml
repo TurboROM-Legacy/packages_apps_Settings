@@ -15,6 +15,9 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Substratum dashboard strings -->
+    <string name="substratum_title">Substratum</string>
+
    <!-- Manage applications: show substratum overlays -->
    <string name="filter_substratum_apps">Substratum overlays</string>
    <string name="menu_show_substratum">Show overlays</string>

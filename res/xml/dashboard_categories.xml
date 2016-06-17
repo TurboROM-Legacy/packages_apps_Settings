@@ -95,6 +95,17 @@
                 android:fragment="com.android.settings.turbo.RootSettings"
                 android:icon="@drawable/ic_settings_root" />
 
+
+        <!-- Substratum --> 
+        <dashboard-tile
+                android:id="@+id/substratum"
+                android:icon="@drawable/ic_settings_substratum"
+                android:title="@string/substratum_title">
+                <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="projekt.substratum" 
+                    android:targetClass="projekt.substratum.LaunchActivity" />
+        </dashboard-tile>
+
         <!-- Turbo settings -->
         <dashboard-tile
                 android:id="@+id/main_settings"
