@@ -61,6 +61,12 @@
 	android:fragment="com.android.settings.turbo.StatusBarSettings"
 	/>
 
+    <!-- UI blur -->
+    <PreferenceScreen
+        android:key="blur_settings"
+        android:fragment="com.android.settings.turbo.BlurSettings"
+        android:title="@string/blur_settings_title" />
+
     <!-- Weather -->
     <Preference
         android:key="lockclock_weather"

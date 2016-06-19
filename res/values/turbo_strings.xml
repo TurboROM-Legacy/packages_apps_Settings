@@ -1105,4 +1105,24 @@
     <string name="network_traffic_color_override">Use custom color</string>
     <string name="network_traffic_color_title">Color</string>
     <string name="network_traffic_color_reset_message">Reset network traffic indicator color?</string>
+
+    <!-- Blur/transluency settings -->
+    <string name="blur_settings_title">UI blur</string>
+    <string name="blur_notifpanel_cat">Notification panel background </string>
+    <string name="translucent_qs_cat">Quick Settings</string>
+    <string name="translucent_header_cat">Status bar header</string>
+    <string name="translucent_notifications_cat">Notifications</string>
+    <string name="transluency_level_universal">Transluency level</string>
+    <string name="blurred_scale">Blur scale</string>
+    <string name="blurred_scale_summary">Quailty of blur image</string>
+    <string name="blurred_radius_title">Blur radius</string>
+    <string name="blurred_radius_summary">Amount of blur</string>
+    <string name="blurred_status_bar_expanded_enabled_title">Blur notification panel background</string>
+    <string name="blurred_status_bar_expanded_enabled_summary">Expanded notification panel background blur</string>
+    <string name="translucent_quick_settings_title">Translucent Quick Settings panel</string>
+    <string name="translucent_quick_settings_summary">Apply translucency to the Quick Settings panel </string>
+    <string name="translucent_header_title">Translucent status bar header </string>
+    <string name="translucent_header_summary">Apply translucency to the status bar header</string>
+    <string name="translucent_notifications_title">Translucent notifications</string>
+    <string name="translucent_notifications_summary">Apply translucency to notifications</string>
 </resources>
