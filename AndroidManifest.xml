@@ -2515,6 +2515,18 @@
                        android:resource="@id/wireless_settings" />
         </activity>
 
+        <!-- Start of Turbo activities -->
+ 
+        <!-- Turbo Extra info -->
+        <activity android:name="com.android.settings.turbo.extrainfo.MainActivity"
+                  android:theme="@style/Theme.Material.Light.Dialog.NoActionBar.MinWidth">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+ 
+        <!-- End of Turbo activities -->
+
         <provider
             android:name=".search.SettingsSearchIndexablesProvider"
             android:authorities="com.android.settings"
