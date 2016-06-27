@@ -99,6 +99,10 @@
     <!-- Status bar strings -->
     <string name="status_bar_title">Status bar</string>
 
+    <!-- Status bar icons -->
+    <string name="status_bar_icon_blacklist_title">Status bar icons</string>
+    <string name="status_bar_icon_blacklist_summary">Configure which icons are shown in the status bar</string>
+
     <!-- Button strings -->
     <string name="button_settings">Buttons</string>
     <string name="hw_keys_category">Hardware keys</string>
