@@ -218,4 +218,11 @@
     <string name="notification_light_screen_on">Lights with screen on</string>
     <string name="notification_light_voicemail_title">Voicemail</string>
     <string name="allow_lights_title">Lights in do not disturb mode</string>
+
+    <!-- Display strings -->
+    <string name="display_category_wake_up_options_title">Wake up options</string>
+
+    <!-- Proximity check on wake -->
+    <string name="proximity_check_on_wake_title">Prevent accidental wake up</string>
+    <string name="proximity_check_on_wake_summary">Check the proximity sensor prior to waking up screen</string>
 </resources>

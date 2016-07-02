@@ -50,6 +50,7 @@ import android.os.SystemProperties;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceClickListener;
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.provider.SearchIndexableResource;
@@ -81,12 +82,16 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_CAMERA_GESTURE = "camera_gesture";
     private static final String KEY_CAMERA_DOUBLE_TAP_POWER_GESTURE
             = "camera_double_tap_power_gesture";
+    private static final String KEY_WAKE_UP_CATEGORY = "category_wake_up_options";
+    private static final String KEY_PROXIMITY_CHECK_ON_WAKE = "proximity_check_on_wake";
 
     private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
 
     private FontDialogPreference mFontSizePref;
 
     private final Configuration mCurConfig = new Configuration();
+
+    private PreferenceCategory mWakeUpOptions;
 
     private ListPreference mScreenTimeoutPreference;
     private ListPreference mNightModePreference;
@@ -110,6 +115,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         final ContentResolver resolver = activity.getContentResolver();
 
         addPreferencesFromResource(R.xml.display_settings);
+
+        PreferenceScreen prefSet = getPreferenceScreen();
 
         mScreenSaverPreference = findPreference(KEY_SCREEN_SAVER);
         if (mScreenSaverPreference != null
@@ -219,6 +226,16 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             mNightModePreference.setValue(String.valueOf(currentNightMode));
             mNightModePreference.setOnPreferenceChangeListener(this);
         }
+
+        mWakeUpOptions = (PreferenceCategory) prefSet.findPreference(KEY_WAKE_UP_CATEGORY);
+
+        boolean proximityCheckOnWake = getResources().getBoolean(
+                com.android.internal.R.bool.config_proximityCheckOnWake);
+        if (!proximityCheckOnWake) {
+	    mWakeUpOptions.removePreference(findPreference(KEY_PROXIMITY_CHECK_ON_WAKE));
+            Settings.System.putInt(resolver, Settings.System.PROXIMITY_CHECK_ON_WAKE, 0);
+        }
+
     }
 
     private static boolean allowAllRotations(Context context) {
