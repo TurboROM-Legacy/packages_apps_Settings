@@ -18,6 +18,10 @@
 -keep class com.android.settings.notification.*
 -keep class com.android.settings.preference.*
 
+# Turbo settings
+-keep class com.android.settings.turbo.*Settings
+-keep class com.android.settings.turbo.**
+
 # Keep click responders
 -keepclassmembers class com.android.settings.inputmethod.UserDictionaryAddWordActivity {
   *** onClick*(...);
