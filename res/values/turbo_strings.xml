@@ -105,7 +105,6 @@
 
     <!-- Button strings -->
     <string name="button_settings">Buttons</string>
-    <string name="hw_keys_category">Hardware keys</string>
     <string name="hw_keys_title">Hardware keys</string>
 
     <!-- Hardware key strings -->

@@ -19,14 +19,9 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/button_settings" >
 
-    <PreferenceCategory
-	android:title="@string/hw_keys_category" >
-
 	<PreferenceScreen
 	    android:key="hardwarekeys_settings"
             android:fragment="com.android.settings.turbo.HardwareKeysSettings"
             android:title="@string/hw_keys_title" />
-
-    </PreferenceCategory>
 
 </PreferenceScreen>
