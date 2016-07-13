@@ -266,14 +266,6 @@
                 android:icon="@drawable/ic_settings_development"
                 />
 
-        <!-- Privacy Guard -->
-        <dashboard-tile
-                android:id="@+id/privacy_guard"
-                android:title="@string/privacy_guard_title"
-                android:fragment="com.android.settings.privacyguard.PrivacyGuardManager"
-                android:icon="@drawable/ic_privacy_guard_alternate"
-                />
-
         <!-- Root -->
         <dashboard-tile
                 android:id="@+id/root_settings"
