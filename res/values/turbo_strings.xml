@@ -496,4 +496,7 @@
     <string name="heads_up_notifications">Heads up</string>
     <string name="summary_heads_up_enabled">Pop-up notifications are enabled</string>
     <string name="summary_heads_up_disabled">Pop-up notifications are disabled</string>
+
+    <!-- QS strings -->
+    <string name="qs_panel_title">QS panel</string>
 </resources>

@@ -26,6 +26,13 @@
 	android:fragment="com.android.settings.turbo.ButtonSettings"
 	/>
 
+    <!-- Quick Settings -->
+    <PreferenceScreen
+	android:id="@+id/qs_panel_settings"
+	android:fragment="com.android.settings.turbo.QSPanelSettings"
+	android:title="@string/qs_panel_title"
+	/>
+
     <!-- Recents -->
     <PreferenceScreen
 	android:id="@+id/recents_settings"
