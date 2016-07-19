@@ -17,6 +17,7 @@
 package com.android.settings;
 
 import com.android.internal.logging.MetricsLogger;
+import com.android.internal.util.turbo.Helpers;
 import com.android.internal.view.RotationPolicy;
 import com.android.settings.DropDownPreference.Callback;
 import com.android.settings.search.BaseSearchIndexProvider;
@@ -57,8 +58,6 @@ import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
-
-import com.android.settings.util.Helpers;
 
 import java.util.ArrayList;
 import java.util.List;
