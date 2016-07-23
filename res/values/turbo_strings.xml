@@ -520,4 +520,8 @@
     <string name="qs_columns_three">Three</string>
     <string name="qs_columns_four">Four</string>
     <string name="qs_columns_five">Five</string>
+
+    <!-- QS tiles configuration (in SystemUI Tuner) -->
+    <string name="qs_configure_tiles_title">Tile configuration</string>
+    <string name="qs_configure_tiles_summary">Add, remove, or arrange QS tiles</string>
 </resources>

@@ -32,6 +32,14 @@
     <PreferenceCategory
         android:title="@string/qs_tiles_title" >
 
+	<PreferenceScreen
+	    android:title="@string/qs_configure_tiles_title"
+	    android:summary="@string/qs_configure_tiles_summary" >
+	    <intent android:action="android.intent.action.MAIN"
+	        android:targetPackage="com.android.systemui"
+	        android:targetClass="com.android.systemui.tuner.QsActivity" />
+	</PreferenceScreen>
+
 	<com.android.settings.preference.SecureSettingSwitchPreference
 	    android:key="sysui_qs_main_tiles"
 	    android:title="@string/qs_main_tiles_title"
