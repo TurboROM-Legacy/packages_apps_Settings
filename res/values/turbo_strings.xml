@@ -178,6 +178,7 @@
     <string name="shortcut_action_assist">Search</string>
     <string name="shortcut_action_back">Back</string>
     <string name="shortcut_action_camera">Camera</string>
+    <string name="shortcut_action_expanded_desktop">Expanded desktop</string>
     <string name="shortcut_action_home">Home</string>
     <string name="shortcut_action_ime">Open IME switcher</string>
     <string name="shortcut_action_kill">Kill app</string>
@@ -195,7 +196,7 @@
     <string name="shortcut_action_ring_vib_silent">Ring/Vib/Silent</string>
     <string name="shortcut_action_screenshot">Screenshot</string>
     <string name="shortcut_action_search">Search in app</string>
-    <string name="shortcut_action_smart">Smart pulldown</string>
+    <string name="shortcut_action_smart_pulldown">Smart pull-down</string>
     <string name="shortcut_action_torch">Torch</string>
     <string name="shortcut_action_voice_search">Voice search</string>
     <string name="shortcuts_applications">Applications</string>

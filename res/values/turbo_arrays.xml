@@ -40,6 +40,7 @@
         <item>@string/shortcut_action_assist</item>
         <item>@string/shortcut_action_back</item>
         <item>@string/shortcut_action_camera</item>
+        <item>@string/shortcut_action_expanded_desktop</item>
         <item>@string/shortcut_action_home</item>
         <item>@string/shortcut_action_ime</item>
         <item>@string/shortcut_action_kill</item>
@@ -51,6 +52,8 @@
         <item>@string/shortcut_action_ring_vib</item>
         <item>@string/shortcut_action_ring_vib_silent</item>
         <item>@string/shortcut_action_screenshot</item>
+        <item>@string/shortcut_action_qs</item>
+        <item>@string/shortcut_action_smart_pulldown</item>
         <item>@string/shortcut_action_voice_search</item>
         <item>@string/shortcut_action_none</item>
     </string-array>
@@ -60,6 +63,7 @@
         <item>**assist**</item>
         <item>**back**</item>
         <item>**camera**</item>
+        <item>**expanded_desktop**</item>
         <item>**home**</item>
         <item>**ime**</item>
         <item>**kill**</item>
@@ -71,6 +75,8 @@
         <item>**ring_vib**</item>
         <item>**ring_vib_silent**</item>
         <item>**screenshot**</item>
+        <item>**settings_panel**</item>
+        <item>**smart_pulldown**</item>
         <item>**voice_search**</item>
         <item>**null**</item>
     </string-array>
