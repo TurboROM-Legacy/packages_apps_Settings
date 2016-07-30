@@ -122,14 +122,13 @@ public class ManageApplications extends InstrumentedFragment
     public static final int FILTER_APPS_DISABLED                = 4;
     public static final int FILTER_APPS_BLOCKED                 = 5;
     public static final int FILTER_APPS_PRIORITY                = 6;
-    public static final int FILTER_APPS_NO_PEEKING              = 7;
-    public static final int FILTER_APPS_SENSITIVE               = 8;
-    public static final int FILTER_APPS_PERSONAL                = 9;
-    public static final int FILTER_APPS_WORK                    = 10;
-    public static final int FILTER_APPS_WITH_DOMAIN_URLS        = 11;
-    public static final int FILTER_APPS_USAGE_ACCESS            = 12;
-    public static final int FILTER_APPS_WITH_OVERLAY            = 13;
-    public static final int FILTER_APPS_WRITE_SETTINGS          = 14;
+    public static final int FILTER_APPS_SENSITIVE               = 7;
+    public static final int FILTER_APPS_PERSONAL                = 8;
+    public static final int FILTER_APPS_WORK                    = 9;
+    public static final int FILTER_APPS_WITH_DOMAIN_URLS        = 10;
+    public static final int FILTER_APPS_USAGE_ACCESS            = 11;
+    public static final int FILTER_APPS_WITH_OVERLAY            = 12;
+    public static final int FILTER_APPS_WRITE_SETTINGS          = 13;
 
     // This is the string labels for the filter modes above, the order must be kept in sync.
     public static final int[] FILTER_LABELS = new int[] {
@@ -140,7 +139,6 @@ public class ManageApplications extends InstrumentedFragment
         R.string.filter_apps_disabled, // Disabled
         R.string.filter_notif_blocked_apps,   // Blocked Notifications
         R.string.filter_notif_priority_apps,  // Priority Notifications
-        R.string.filter_notif_no_peeking,     // No peeking Notifications
         R.string.filter_notif_sensitive_apps, // Sensitive Notifications
         R.string.filter_personal_apps, // Personal
         R.string.filter_work_apps,     // Work
@@ -161,7 +159,6 @@ public class ManageApplications extends InstrumentedFragment
         ApplicationsState.FILTER_DISABLED,    // Disabled
         AppStateNotificationBridge.FILTER_APP_NOTIFICATION_BLOCKED,   // Blocked Notifications
         AppStateNotificationBridge.FILTER_APP_NOTIFICATION_PRIORITY,  // Priority Notifications
-        AppStateNotificationBridge.FILTER_APP_NOTIFICATION_NO_PEEK,   // No peeking Notifications
         AppStateNotificationBridge.FILTER_APP_NOTIFICATION_SENSITIVE, // Sensitive Notifications
         ApplicationsState.FILTER_PERSONAL,    // Personal
         ApplicationsState.FILTER_WORK,        // Work
@@ -349,7 +346,6 @@ public class ManageApplications extends InstrumentedFragment
             mFilterAdapter.enableFilter(FILTER_APPS_BLOCKED);
             mFilterAdapter.enableFilter(FILTER_APPS_PRIORITY);
             mFilterAdapter.enableFilter(FILTER_APPS_SENSITIVE);
-            mFilterAdapter.enableFilter(FILTER_APPS_NO_PEEKING);
         }
         if (mListType == LIST_TYPE_HIGH_POWER) {
             mFilterAdapter.enableFilter(FILTER_APPS_POWER_WHITELIST_ALL);

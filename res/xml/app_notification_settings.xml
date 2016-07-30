@@ -34,27 +34,19 @@
             android:order="2"
             android:persistent="false" />
 
-    <!-- Peekable -->
-    <SwitchPreference
-            android:key="peekable"
-            android:title="@string/app_notification_peekable_title"
-            android:summary="@string/app_notification_peekable_summary"
-            android:order="3"
-            android:persistent="false" />
-
     <!-- Sensitive -->
     <SwitchPreference
             android:key="sensitive"
             android:title="@string/app_notification_sensitive_title"
             android:summary="@string/app_notification_sensitive_summary"
-            android:order="4"
+            android:order="3"
             android:persistent="false" />
 
     <!-- App notification preferences -->
     <Preference
             android:key="app_settings"
             android:title="@string/app_notification_preferences"
-            android:order="5"
+            android:order="4"
             android:persistent="false" />
 
 </PreferenceScreen>
