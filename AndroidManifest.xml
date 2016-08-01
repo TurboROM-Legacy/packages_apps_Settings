@@ -2600,6 +2600,13 @@
         <activity
              android:name=".turbo.MainSettings" />
 
+        <!-- Boot receiver -->
+        <receiver android:name=".turbo.BootReceiver" android:enabled="true">
+            <intent-filter android:priority="100">
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
         <!-- Display rotation -->
         <activity android:name="Settings$DisplayRotationActivity"
                 android:label="@string/display_rotation_title"

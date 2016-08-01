@@ -21,6 +21,12 @@
 	    android:key="general_keys_cat"
 	    android:title="@string/keys_bindings_title" >
 
+            <SwitchPreference
+                android:key="enable_hardware_keys"
+                android:title="@string/enable_hw_keys_title"
+                android:summary="@string/enable_hw_keys_summary"
+                android:defaultValue="true" />
+
             <com.android.settings.turbo.ButtonBacklightBrightness
                 android:key="button_backlight"
                 android:title="@string/button_backlight_title"
@@ -28,7 +34,7 @@
                 android:persistent="false" />
 
             <SwitchPreference
-                android:key="enable_hardware_rebind"
+                android:key="enable_hardware_keys_rebind"
                 android:title="@string/keys_enable_custom_title"
                 android:summary="@string/keys_enable_custom_summary" />
 

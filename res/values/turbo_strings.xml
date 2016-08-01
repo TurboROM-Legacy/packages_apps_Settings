@@ -135,6 +135,8 @@
     <string name="global_menu_title">Global menu</string>
 
     <!-- Hardware key strings -->
+    <string name="enable_hw_keys_title">Enable hardware keys</string>
+    <string name="enable_hw_keys_summary">Enable hardware keys</string>
     <string name="keys_action_double">Double tap</string>
     <string name="keys_action_long">Long press</string>
     <string name="keys_action_normal">Normal press</string>
