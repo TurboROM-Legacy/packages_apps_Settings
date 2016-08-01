@@ -100,8 +100,13 @@
     <string name="turbo_settings_title">Turbo settings</string>
 
     <!-- Recents strings -->
-    <string name="recents_title">Recents overview</string>
-    <string name="recents_overview_category">Recents screen settings</string>
+    <string name="recents_title">Recent apps overview</string>
+    <string name="aosp_recents_overview_category">AOSP recents</string>
+    <string name="omni_recents_overview_category">OmniSwitch recents</string>
+    <string name="slim_recents_overview_category">Slim recents</string>
+    <string name="stock_and_slim_recents_category">AOSP &amp; Slim recents</string>
+
+    <!-- AOSP recents -->
     <string name="show_clear_all_recents_button_title">Clear all button</string>
     <string name="show_clear_all_recents_button_summary">Show clear all button</string>
     <string name="recents_clear_all_location_title">Clear all location</string>
@@ -113,12 +118,41 @@
     <string name="recents_clear_all_location_bottom_center">Bottom center</string>
     <string name="recents_clear_all_dismiss_all_title">Clear all tasks</string>
     <string name="recents_clear_all_dismiss_all_summary">Include the foreground task when clearing all recent tasks</string>
-    <string name="recents_searchbar_title">Search bar</string>
-    <string name="recents_searchbar_summary">Show a Google search bar in the recents screen</string>
-
-    <!-- Recents memory bar -->
     <string name="recents_show_membar_title">Memory bar</string>
     <string name="recents_show_membar_summary">Show a bar with the device\'s available memory</string>
+    <string name="recents_show_searchbar_title">Search bar</string>
+    <string name="recents_show_searchbar_summary">Show a Google search bar in the recents screen</string>
+
+    <!-- OmniSwitch recents -->
+    <string name="recents_use_omniswitch_title">Enable Omni recents</string>
+    <string name="recents_use_omniswitch_summary">Use OmniSwitch for recents view</string>
+    <string name="omniswitch_first_time_title">Information</string>
+    <string name="omniswitch_first_time_message">Make sure you have enabled OmniSwitch. You can do this by using \"Settings\" below</string>
+    <string name="omniswitch_start_settings_title">OmniSwitch</string>
+    <string name="omniswitch_start_settings_summary">Open OmniSwitch settings</string>
+
+    <!-- Slim recents -->
+    <string name="slim_recents_title">Slim recents</string>
+    <string name="slim_recents_enable_title">Enable Slim recents</string>
+    <string name="slim_recents_enable_summary">Use Slim Recents for recents view</string>
+    <string name="show_running_tasks_title">Only show running apps</string>
+    <string name="recents_max_apps_title">Max allowed apps</string>
+    <string name="recent_panel_scale_title">Size</string>
+    <string name="recent_panel_expanded_mode_title">Expanded mode</string>
+    <string name="recent_panel_expanded_mode_summary">Recent tasks expanded preview mode</string>
+    <string name="recent_panel_expanded_mode_auto">Auto (default)</string>
+    <string name="recent_panel_expanded_mode_always">Always</string>
+    <string name="recent_panel_expanded_mode_never">Never</string>
+    <string name="recent_panel_show_topmost_title">Show topmost task</string>
+    <string name="recent_panel_show_topmost_summary">Don\'t exclude the topmost task in recents view</string>
+    <string name="recent_panel_bg_color_title">Panel background color</string>
+    <string name="recent_card_bg_color_title">Card background color</string>
+    <string name="recent_card_text_color_title">Card text color</string>
+    <string name="slim_recents_reset_message">Reset Slim recents colors to default?</string>
+
+    <!-- ATTENTION: RTL languages need to replace left with right -->
+    <string name="recent_panel_lefty_mode_title">Show on the left edge</string>
+    <string name="recent_panel_lefty_mode_summary">Show recent apps panel on the left edge</string>
  
     <!-- Status bar strings -->
     <string name="status_bar_title">Status bar</string>
