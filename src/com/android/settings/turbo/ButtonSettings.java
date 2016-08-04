@@ -24,6 +24,7 @@ import android.provider.Settings;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.view.IWindowManager;
 
@@ -34,9 +35,10 @@ import com.android.settings.SettingsPreferenceFragment;
 public class ButtonSettings extends SettingsPreferenceFragment
        implements OnPreferenceChangeListener {
 
-    private static final String KEY_HARDWARE_KEYS = "hardwarekeys_settings";
+    private static final String GENERAL_CATEGORY = "general_options";
     private static final String KEY_ADVANCED_REBOOT = "advanced_reboot";
 
+    private PreferenceCategory mGeneralCategory;
     private ListPreference mAdvancedReboot;
 
     private boolean mIsPrimary;
@@ -53,13 +55,14 @@ public class ButtonSettings extends SettingsPreferenceFragment
 
         addPreferencesFromResource(R.xml.button_settings);
         root = getPreferenceScreen();
+
+        mGeneralCategory = (PreferenceCategory) findPreference(GENERAL_CATEGORY);
         
         // Hide Hardware Keys menu if device doesn't have any
-        PreferenceScreen hardwareKeys = (PreferenceScreen) findPreference(KEY_HARDWARE_KEYS);
         int deviceKeys = getResources().getInteger(
                 com.android.internal.R.integer.config_deviceHardwareKeys);
-        if (deviceKeys == 0 && hardwareKeys != null) {
-            getPreferenceScreen().removePreference(hardwareKeys);
+        if (deviceKeys == 0 && mGeneralCategory != null) {
+            root.removePreference(mGeneralCategory);
         }
 
         mIsPrimary = MY_USER_ID == UserHandle.USER_OWNER;

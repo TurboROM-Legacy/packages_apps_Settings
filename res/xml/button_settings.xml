@@ -20,12 +20,15 @@
     android:title="@string/button_settings" >
 
     <PreferenceCategory
-        android:title="@string/general_options_title" />
+        android:key="general_options"
+        android:title="@string/general_options_title" >
 
-    <PreferenceScreen
-        android:key="hardwarekeys_settings"
-        android:fragment="com.android.settings.turbo.HardwareKeysSettings"
-        android:title="@string/hw_keys_title" />
+        <PreferenceScreen
+            android:key="hardwarekeys_settings"
+            android:fragment="com.android.settings.turbo.HardwareKeysSettings"
+            android:title="@string/hw_keys_title" />
+
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:title="@string/global_menu_title" />
