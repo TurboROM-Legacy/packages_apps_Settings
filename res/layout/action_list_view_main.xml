@@ -38,7 +38,7 @@
         android:layout_marginTop="20dip"
         android:layout_gravity="center"
         android:gravity="center_horizontal"
-        android:textColor="@android:color/white"
+        android:textColor="?android:attr/colorAccent"
         android:text="@string/shortcut_action_disable_message"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:visibility="gone" />
