@@ -799,8 +799,11 @@
     <string name="expanded_desktop_style_description">Choose a default expanded desktop style</string>
 
     <!-- Custom carrier label and position -->
-    <string name="carrier_label_settings_title">Carrier Label</string>
+    <string name="carrier_label_settings_title">Carrier label</string>
     <string name="carrier_label_settings_summary">Customize the carrier label</string>
+    <string name="carrier_label_color_override">Use custom color</string>
+    <string name="carrier_label_color">Color</string>
+    <string name="carrier_label_color_reset_message">Reset carrier label color?</string>
     <string name="custom_carrier_label_title">Custom carrier label</string>
     <string name="custom_carrier_label_explain">Please enter a new label. Leave blank to revert to stock label.</string>
     <string name="custom_carrier_label_notset">Custom label currently not set</string>
