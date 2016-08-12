@@ -55,13 +55,4 @@
     <declare-styleable name="ColorPreference">
         <attr name="defaultColorValue" format="integer" />
     </declare-styleable>
-
-    <!-- SeekBarPreferenceCham -->
-    <declare-styleable name="SeekBarPreferenceCham">
-        <attr name="maximum" format="integer" />
-        <attr name="minimum" format="integer" />
-        <attr name="unitsLeft" format="string" />
-        <attr name="unitsRight" format="string" />
-        <attr name="interval" format="integer" />
-    </declare-styleable>
 </resources>
