@@ -54,4 +54,11 @@
 	android:fragment="com.android.settings.turbo.StatusBarSettings"
 	/>
 
+    <!-- Weather -->
+    <Preference
+        android:key="lockclock_weather"
+        android:title="@string/weather_settings"
+        android:persistent="false"
+        />
+
 </PreferenceScreen>

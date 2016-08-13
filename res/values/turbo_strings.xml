@@ -956,4 +956,7 @@
     <string name="keyguard_shortcuts_single_tap">Click</string>
     <string name="keyguard_shortcuts_double_tap">Double tap</string>
     <string name="keyguard_shortcuts_longpress">Longpress</string>
+
+    <!-- Weather settings -->
+    <string name="weather_settings">Weather</string>
 </resources>

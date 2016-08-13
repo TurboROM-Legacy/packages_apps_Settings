@@ -16,6 +16,7 @@
 
 package com.android.settings.turbo;
 
+import android.content.ComponentName;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
@@ -31,14 +32,36 @@ import java.util.List;
 
 public class MainSettings extends SettingsPreferenceFragment {
 
+    private static final String LOCKCLOCK_WEATHER = "lockclock_weather";
+
+    private Preference mWeatherSettings;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.turbo_main_settings);
+
+        mWeatherSettings = (Preference) findPreference(LOCKCLOCK_WEATHER);
     }
 
-    protected int getMetricsCategory()
-    {
-	return MetricsLogger.APPLICATION;
+    @Override
+    protected int getMetricsCategory() {
+	return MetricsLogger.DONT_TRACK_ME_BRO;
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        if (preference == mWeatherSettings) {
+            launchWeatherSettings();
+            return true;
+        }
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
+    }
+
+    private void launchWeatherSettings() {
+        Intent intent = new Intent();
+        intent.setComponent(new ComponentName("com.cyanogenmod.lockclock", "com.cyanogenmod.lockclock.preference.Preferences"));
+        intent.putExtra(":android:show_fragment", "com.cyanogenmod.lockclock.preference.WeatherPreferences");
+        startActivity(intent);
     }
 }

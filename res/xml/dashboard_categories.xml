@@ -94,7 +94,7 @@
                 android:id="@+id/main_settings"
                 android:title="@string/turbo_settings_title"
                 android:fragment="com.android.settings.turbo.MainSettings"
-                android:icon="@drawable/ic_turbo_settings"/>
+                android:icon="@drawable/ic_turbo_settings" />
 
         <!-- Home -->
         <dashboard-tile
