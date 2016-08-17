@@ -19,8 +19,8 @@ package com.android.settings.turbo;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.preference.CustomSeekBarPreference;
 import android.preference.Preference;
-import android.preference.SlimSeekBarPreference;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.view.Menu;
@@ -44,7 +44,7 @@ public class RecentAppSidebar extends SettingsPreferenceFragment implements Dial
     private static final String APP_SIDEBAR_BG_COLOR = "recent_app_sidebar_bg_color";
     private static final String APP_SIDEBAR_SCALE = "recent_app_sidebar_scale";
 
-    private SlimSeekBarPreference mAppSidebarScale;
+    private CustomSeekBarPreference mAppSidebarScale;
     private SwitchPreference mAppSidebarHideLabels;
     private ColorPickerPreference mAppSidebarLabelColor;
     private ColorPickerPreference mAppSidebarBgColor;
@@ -61,9 +61,9 @@ public class RecentAppSidebar extends SettingsPreferenceFragment implements Dial
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mAppSidebarScale) {
-            int value = Integer.parseInt((String) newValue);
+            int val = (Integer) newValue;
             Settings.System.putInt(getContentResolver(),
-                    Settings.System.RECENT_APP_SIDEBAR_SCALE_FACTOR, value);
+                    Settings.System.RECENT_APP_SIDEBAR_SCALE_FACTOR, val * 1);
             return true;
         } else if (preference == mAppSidebarHideLabels) {
             Settings.System.putInt(getContentResolver(), Settings.System.RECENT_APP_SIDEBAR_DISABLE_LABELS,
@@ -142,19 +142,16 @@ public class RecentAppSidebar extends SettingsPreferenceFragment implements Dial
     }
 
     private void initializeAllPreferences() {
-        mAppSidebarScale = (SlimSeekBarPreference) findPreference(APP_SIDEBAR_SCALE);
-        mAppSidebarScale.setInterval(5);
-        mAppSidebarScale.setDefault(100);
-        mAppSidebarScale.minimumValue(60);
+        mAppSidebarScale = (CustomSeekBarPreference) findPreference(APP_SIDEBAR_SCALE);
         mAppSidebarScale.setOnPreferenceChangeListener(this);
-        mAppSidebarScale.setInitValue(Settings.System.getInt(getContentResolver(),
-                Settings.System.RECENT_APP_SIDEBAR_SCALE_FACTOR, 100) - 60);
+        int appSidebarScale = Settings.System.getInt(getContentResolver(),
+                Settings.System.RECENT_APP_SIDEBAR_SCALE_FACTOR, 100);
+        mAppSidebarScale.setValue(appSidebarScale);
 
         mAppSidebarHideLabels =  (SwitchPreference) findPreference(APP_SIDEBAR_HIDE_LABELS);
         mAppSidebarHideLabels.setOnPreferenceChangeListener(this);
         mAppSidebarHideLabels.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.RECENT_APP_SIDEBAR_DISABLE_LABELS, 0) == 1);
-
 
         mAppSidebarLabelColor = (ColorPickerPreference) findPreference(APP_SIDEBAR_LABEL_COLOR);
         mAppSidebarLabelColor.setOnPreferenceChangeListener(this);

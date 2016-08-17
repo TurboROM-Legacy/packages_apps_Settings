@@ -18,7 +18,7 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/recent_app_sidebar_title" >
 
-    <SlimSeekBarPreference
+    <CustomSeekBarPreference
             android:key="recent_app_sidebar_scale"
             android:title="@string/recent_app_sidebar_scale_title"
             android:persistent="false" />

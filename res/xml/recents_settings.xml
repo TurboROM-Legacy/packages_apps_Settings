@@ -94,7 +94,7 @@
             android:summary="@string/slim_recents_enable_summary"
             android:defaultValue="false" />
 
-        <SlimSeekBarPreference
+        <CustomSeekBarPreference
             android:key="max_apps"
             android:title="@string/recents_max_apps_title"
             android:dependency="use_slim_recents" />
@@ -122,7 +122,7 @@
             android:persistent="true" 
             android:dependency="use_slim_recents" />
 
-        <SlimSeekBarPreference
+        <CustomSeekBarPreference
             android:key="recent_panel_scale"
             android:title="@string/recent_panel_scale_title" 
             android:dependency="use_slim_recents" />
