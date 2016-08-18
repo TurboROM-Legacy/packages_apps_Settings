@@ -20,6 +20,9 @@
     <string name="turbo_version_default">Unknown</string>
     <string name="build_date">Build date</string>
 
+    <!-- Customization dashboard category -->
+    <string name="header_category_customization">Customization</string>
+
     <!-- Changelog -->
     <string name="changelog_turbo_title">Changelog</string>
     <string name="changelog_turbo_error">Unable to load changelog</string>

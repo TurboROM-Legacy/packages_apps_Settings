@@ -83,11 +83,17 @@
 
     </dashboard-category>
 
-    <!-- DEVICE -->
+    <!-- CUSTOMIZATION -->
     <dashboard-category
-            android:id="@+id/device_section"
-            android:key="@string/category_key_device"
-            android:title="@string/header_category_device" >
+            android:id="@+id/customization_section"
+            android:title="@string/header_category_customization" >
+
+        <!-- Root -->
+        <dashboard-tile
+                android:id="@+id/root_settings"
+                android:title="@string/root_access_title"
+                android:fragment="com.android.settings.turbo.RootSettings"
+                android:icon="@drawable/ic_settings_root" />
 
         <!-- Turbo settings -->
         <dashboard-tile
@@ -95,6 +101,14 @@
                 android:title="@string/turbo_settings_title"
                 android:fragment="com.android.settings.turbo.MainSettings"
                 android:icon="@drawable/ic_turbo_settings" />
+
+    </dashboard-category>
+
+    <!-- DEVICE -->
+    <dashboard-category
+            android:id="@+id/device_section"
+            android:key="@string/category_key_device"
+            android:title="@string/header_category_device" >
 
         <!-- Home -->
         <dashboard-tile
@@ -264,14 +278,6 @@
                 android:title="@string/development_settings_title"
                 android:fragment="com.android.settings.DevelopmentSettings"
                 android:icon="@drawable/ic_settings_development"
-                />
-
-        <!-- Root -->
-        <dashboard-tile
-                android:id="@+id/root_settings"
-                android:title="@string/root_access_title"
-                android:fragment="com.android.settings.turbo.RootSettings"
-                android:icon="@drawable/ic_settings_root"
                 />
 
         <!-- About Device -->
