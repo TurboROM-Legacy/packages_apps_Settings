@@ -975,6 +975,35 @@
     <string name="keyguard_date_summary_on">Show lock screen date</string>
     <string name="keyguard_date_summary_off">Hide lock screen date</string>
 
+    <!-- Lock screen clock fonts -->
+    <string name="keyguard_clock_font_title">Clock font</string>
+    <string name="keyguard_clock_font_summary">Change the default font of the lock screen clock widget</string>
+    <string name="keyguard_clock_font_normal">Roboto</string>
+    <string name="keyguard_clock_font_bold">Roboto Bold</string>
+    <string name="keyguard_clock_font_italic">Roboto Italic</string>
+    <string name="keyguard_clock_font_bold_italic">Roboto Bold Italic</string>
+    <string name="keyguard_clock_font_light_normal">Roboto Light (default)</string>
+    <string name="keyguard_clock_font_light_italic">Roboto Light Italic</string>
+    <string name="keyguard_clock_font_thin_normal">Roboto Thin</string>
+    <string name="keyguard_clock_font_thin_italic">Roboto Thin Italic</string>
+    <string name="keyguard_clock_font_condensed_normal">Roboto Condensed</string>
+    <string name="keyguard_clock_font_condensed_bold">Roboto Condensed Bold</string>
+    <string name="keyguard_clock_font_condensed_italic">Roboto Condensed Italic</string>
+    <string name="keyguard_clock_font_condensed_bold_italic">Roboto Condensed Bold Italic</string>
+    <string name="keyguard_clock_font_medium_normal">Roboto Medium</string>
+    <string name="keyguard_clock_font_medium_italic">Roboto Medium Italic</string>
+    <string name="keyguard_clock_font_black_normal">Roboto Black</string>
+    <string name="keyguard_clock_font_black_italic">Roboto Black Italic</string>
+    <string name="keyguard_clock_font_condensed_light_normal">Roboto Condensed Light</string>
+    <string name="keyguard_clock_font_condensed_light_italic">Roboto Condensed Light Italic</string>
+    <string name="keyguard_clock_font_dancingscript">DancingScript</string>
+    <string name="keyguard_clock_font_dancingscript_bold">DancingScript Bold</string>
+    <string name="keyguard_clock_font_comingsoon">ComingSoon</string>
+    <string name="keyguard_clock_font_notoserif">NotoSerif Normal</string>
+    <string name="keyguard_clock_font_notoserif_italic">NotoSerif Italic</string>
+    <string name="keyguard_clock_font_notoserif_bold">NotoSerif Bold</string>
+    <string name="keyguard_clock_font_notoserif_bold_italic">NotoSerif Bold Italic</string>
+
     <!-- Weather settings -->
     <string name="weather_settings">Weather</string>
 

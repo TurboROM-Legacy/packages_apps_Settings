@@ -64,4 +64,17 @@
         android:summaryOff="@string/keyguard_date_summary_off"
         android:defaultValue="true" />
 
+    <PreferenceCategory
+        android:title="@string/general_options_title" />
+
+    <ListPreference
+        android:key="keyguard_clock_font"
+        android:title="@string/keyguard_clock_font_title"
+        android:dialogTitle="@string/keyguard_clock_font_title"
+        android:entries="@array/keyguard_clock_fonts_entries"
+        android:entryValues="@array/keyguard_clock_fonts_values"
+        android:summary="@string/keyguard_clock_font_summary"
+        android:dependency="show_lock_screen_clock"
+        android:persistent="false" />
+
 </PreferenceScreen>
