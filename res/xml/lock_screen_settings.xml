@@ -40,4 +40,28 @@
         <extra android:name="fragment" android:value="com.android.settings.turbo.KeyguardShortcutSettings" />
      </PreferenceScreen>
 
+    <PreferenceCategory
+        android:title="@string/keyguard_toggles_category" />
+
+    <com.android.settings.preference.SystemSettingSwitchPreference
+        android:key="show_lock_screen_alarm"
+        android:title="@string/keyguard_alarm_text_title"
+        android:summaryOn="@string/keyguard_alarm_text_summary_on"
+        android:summaryOff="@string/keyguard_alarm_text_summary_off"
+        android:defaultValue="true" />
+
+    <com.android.settings.preference.SystemSettingSwitchPreference
+        android:key="show_lock_screen_clock"
+        android:title="@string/keyguard_clock_title"
+        android:summaryOn="@string/keyguard_clock_summary_on"
+        android:summaryOff="@string/keyguard_clock_summary_off"
+        android:defaultValue="true" />
+
+    <com.android.settings.preference.SystemSettingSwitchPreference
+        android:key="show_lock_screen_date"
+        android:title="@string/keyguard_date_title"
+        android:summaryOn="@string/keyguard_date_summary_on"
+        android:summaryOff="@string/keyguard_date_summary_off"
+        android:defaultValue="true" />
+
 </PreferenceScreen>

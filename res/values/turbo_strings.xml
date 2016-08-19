@@ -952,6 +952,7 @@
     <!-- Lock screen strings -->
     <string name="lock_screen_title">Lock screen</string>
     <string name="keyguard_shortcuts_category">Shortcuts</string>
+    <string name="keyguard_toggles_category">Toggles</string>
 
     <!-- CyanogenMod lock screen shortcuts -->
     <string name="keyguard_shortcuts_title_cm">Bottom L/R shortcuts</string>
@@ -962,6 +963,17 @@
     <string name="keyguard_shortcuts_single_tap">Click</string>
     <string name="keyguard_shortcuts_double_tap">Double tap</string>
     <string name="keyguard_shortcuts_longpress">Longpress</string>
+
+    <!-- Lock screen alarm text, clock, and date -->
+    <string name="keyguard_alarm_text_title">Lock screen alarm text</string>
+    <string name="keyguard_alarm_text_summary_on">Show lock screen alarm text</string>
+    <string name="keyguard_alarm_text_summary_off">Hide lock screen alarm text</string>
+    <string name="keyguard_clock_title">Lock screen clock</string>
+    <string name="keyguard_clock_summary_on">Show lock screen clock</string>
+    <string name="keyguard_clock_summary_off">Show lock screen clock</string>
+    <string name="keyguard_date_title">Lock screen date</string>
+    <string name="keyguard_date_summary_on">Show lock screen date</string>
+    <string name="keyguard_date_summary_off">Hide lock screen date</string>
 
     <!-- Weather settings -->
     <string name="weather_settings">Weather</string>
