@@ -951,13 +951,13 @@
 
     <!-- Lock screen strings -->
     <string name="lock_screen_title">Lock screen</string>
+    <string name="keyguard_shortcuts_category">Shortcuts</string>
 
     <!-- CyanogenMod lock screen shortcuts -->
-    <string name="lock_screen_targets_message">Bottom L/R shortcuts</string>
+    <string name="keyguard_shortcuts_title_cm">Bottom L/R shortcuts</string>
 
     <!-- Slim's lock screen shortcuts -->
-    <string name="keyguard_shortcuts_title">Mid-screen shortcuts</string>
-    <string name="keyguard_shortcuts_summary">Configure shortcuts to show on the lock screen</string>
+    <string name="keyguard_shortcuts_title_slim">Mid-screen shortcuts</string>
     <string name="keyguard_shorcuts_launch_type_title">Shortcut click type</string>
     <string name="keyguard_shortcuts_single_tap">Click</string>
     <string name="keyguard_shortcuts_double_tap">Double tap</string>
