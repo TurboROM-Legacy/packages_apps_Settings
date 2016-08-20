@@ -507,6 +507,10 @@
     <string name="root_access_adb">ADB only</string>
     <string name="root_access_all">Apps and ADB</string>
 
+    <!-- Preference link for AppOps root settings -->
+    <string name="root_appops_title">Manage root access per app</string>
+    <string name="root_appops_summary">View and control the root rules for apps</string>
+
     <!-- Privacy Guard -->
     <string name="privacy_guard_title">Privacy Guard</string>
     <string name="privacy_guard_switch_label">Enable Privacy Guard</string>

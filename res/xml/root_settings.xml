@@ -26,6 +26,11 @@
         android:entries="@array/root_access_entries"
         android:entryValues="@array/root_access_values" />
 
+    <Preference
+        android:key="root_appops"
+        android:title="@string/root_appops_title"
+        android:summary="@string/root_appops_summary" />
+
     <com.android.settings.preference.SystemSettingSwitchPreference
         android:key="show_su_indicator"
         android:title="@string/su_indicator"

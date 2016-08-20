@@ -51,6 +51,7 @@ import android.os.UserManager;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
@@ -76,15 +77,17 @@ import java.util.List;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.Settings.AppOpsSummaryActivity;
 
 public class RootSettings extends SettingsPreferenceFragment implements 
 	DialogInterface.OnClickListener, DialogInterface.OnDismissListener, 
-	OnPreferenceChangeListener {
+	OnPreferenceChangeListener, OnPreferenceClickListener {
 
     private static final String TAG = "RootSettings";
 
     private static final String ROOT_ACCESS_KEY = "root_access";
     private static final String ROOT_ACCESS_PROPERTY = "persist.sys.root_access";
+    private static final String ROOT_APPOPS_KEY = "root_appops";
 
     private boolean mDialogClicked;
     private boolean mLastEnabledState;
@@ -92,6 +95,7 @@ public class RootSettings extends SettingsPreferenceFragment implements
 
     private ListPreference mRootAccess;
     private Object mSelectedRootValue;
+    private Preference mRootAppops;
 
     private Dialog mRootDialog;
 
@@ -115,6 +119,9 @@ public class RootSettings extends SettingsPreferenceFragment implements
 
         mRootAccess = (ListPreference) findPreference(ROOT_ACCESS_KEY);
         mRootAccess.setOnPreferenceChangeListener(this);
+
+        mRootAppops = (Preference) findPreference(ROOT_APPOPS_KEY);
+        mRootAppops.setOnPreferenceClickListener(this);
     }
 
     private ListPreference addListPreference(String prefKey) {
@@ -182,6 +189,9 @@ public class RootSettings extends SettingsPreferenceFragment implements
         mRootAccess.setValue(value);
         mRootAccess.setSummary(getResources()
                 .getStringArray(R.array.root_access_entries)[Integer.valueOf(value)]);
+        if (mRootAppops != null) {
+            mRootAppops.setEnabled(isRootForAppsEnabled());
+        }
     }
 
     public static boolean isRootForAppsEnabled() {
@@ -217,6 +227,19 @@ public class RootSettings extends SettingsPreferenceFragment implements
                     Settings.Secure.ADB_ENABLED, 1);
         }
         updateRootAccessOptions();
+    }
+
+     @Override
+     public boolean onPreferenceClick(Preference preference) {
+        if (preference == mRootAppops) {
+            Activity mActivity = getActivity();
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.putExtra("appops_tab", getString(R.string.app_ops_categories_su));
+            intent.setClass(mActivity, AppOpsSummaryActivity.class);
+            mActivity.startActivity(intent);
+            return true;
+        }
+        return false;
     }
 
     @Override
