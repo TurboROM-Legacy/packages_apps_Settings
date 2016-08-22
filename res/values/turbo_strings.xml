@@ -1113,6 +1113,7 @@
     <string name="translucent_qs_cat">Quick Settings</string>
     <string name="translucent_header_cat">Status bar header</string>
     <string name="translucent_notifications_cat">Notifications</string>
+    <string name="blur_recents_cat">Recents</string>
     <string name="transluency_level_universal">Transluency level</string>
     <string name="blurred_scale">Blur scale</string>
     <string name="blurred_scale_summary">Quailty of blur image</string>
@@ -1126,6 +1127,8 @@
     <string name="translucent_header_summary">Apply translucency to the status bar header</string>
     <string name="translucent_notifications_title">Translucent notifications</string>
     <string name="translucent_notifications_summary">Apply translucency to notifications</string>
+    <string name="blurred_recent_app_enabled_title">Blurred Recents apps background </string>
+    <string name="blurred_recent_app_enabled_summary">Blur the background of recents apps</string>
 
     <!-- Status bar header weather -->
     <string name="status_bar_expanded_show_weather_title">Show weather</string>
