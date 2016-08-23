@@ -57,6 +57,12 @@
         android:summary="@string/status_bar_clock_summary"
         android:fragment="com.android.settings.turbo.StatusBarClockSettings" />
 
+    <PreferenceScreen
+        android:key="status_bar_network_traffic"
+        android:title="@string/status_bar_network_traffic_title"
+        android:summary="@string/status_bar_network_traffic_summary" 
+        android:fragment="com.android.settings.turbo.StatusBarNetworkTrafficSettings" />
+
     <com.android.settings.preference.SystemSettingSwitchPreference
         android:key="double_tap_to_sleep_status_bar"
         android:title="@string/double_tap_to_sleep_status_bar_title"
