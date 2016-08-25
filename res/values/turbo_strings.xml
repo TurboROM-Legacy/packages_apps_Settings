@@ -1140,4 +1140,12 @@
     <string name="doze_notification_color_invert_title">Ambient display notification inversion</string>
     <string name="doze_notification_color_invert_summary_off">Ambient display notifications will not be inverted. Use for dark themes.</string>
     <string name="doze_notification_color_invert_summary_on">Ambient display notifications will show as inverted. Use for light/stock theme.</string>
+
+    <!-- Time contexual headers -->
+    <string name="contexual_headers_title">Contexual headers</string>
+    <string name="status_bar_custom_header_title">Time contextual header</string>
+    <string name="status_bar_custom_header_summary">Enable custom expanded status bar header images</string>
+    <string name="daylight_header_pack_title">Header image pack</string>
+    <string name="status_bar_custom_header_shadow_title">Contextual header shadow</string>
+    <string name="status_bar_custom_header_shadow_summary">Use for better text/icon visibility on bright images</string>
 </resources>
