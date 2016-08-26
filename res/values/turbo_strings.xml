@@ -1148,4 +1148,23 @@
     <string name="daylight_header_pack_title">Header image pack</string>
     <string name="status_bar_custom_header_shadow_title">Contextual header shadow</string>
     <string name="status_bar_custom_header_shadow_summary">Use for better text/icon visibility on bright images</string>
+
+    <!-- Lock screen weather -->
+    <string name="weather_title">Weather</string>
+    <string name="weather_show_weather_title">Show weather options</string>
+    <string name="weather_show_weather_summary">Enable to show weather options on the lock screen</string>
+    <string name="weather_show_location_title">Show location</string>
+    <string name="weather_show_location_summary">Enable to show the location</string>
+    <string name="weather_condition_icon_title">Condition icon</string>
+    <string name="weather_condition_icon_dlg_title">Pick a weather icon pack</string>
+    <string name="weather_condition_icon_monochrome_title">Monochrome</string>
+    <string name="weather_condition_icon_colored_title">Colored</string>
+    <string name="weather_condition_icon_vclouds_title">VClouds</string>
+    <string name="weather_colorize_all_icons_title">Colorize all icons</string>
+    <string name="weather_colorize_all_icons_summary">Enable to colorize all icons, disable to colorize only the monochrome icons</string>
+    <string name="colors_title">Colors</string>
+    <string name="icons_title">Icons</string>
+    <string name="text_title">Text</string>
+    <string name="reset_lock_screen_weather">OK</string>
+    <string name="reset_values_message">Reset values?</string>
 </resources>
